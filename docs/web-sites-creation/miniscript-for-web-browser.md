@@ -1,6 +1,6 @@
 # Miniscript for Web Browser
 
-The web browser can also run [Minicript](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21) code for web pages. Each web page created in the Web Page Editor in the Forge can have its own script. The main purpose of the script is to manipulate the `absoluteDiv` elements.
+The web browser can also run [Miniscript](../miniscript-anvil-scripting-language.md) code for web pages. Each web page created in the Web Page Editor in the Forge can have its own script. The main purpose of the script is to manipulate the `absoluteDiv` elements.
 
 You can manually add the `<script>` tag to the `metadata` section in the Forge:
 
@@ -122,8 +122,8 @@ browser_get_absolute_div("id", "attributeName")
 | width | number, width of the block |
 | height | number, height of the block |
 | isForm | is current div a form (ability to type a text). Possible values: 0 (not a form), 1 (is a form) |
-| backColor | background color in a RGBA bytes format. Example: `255255255050` - this is white color with approximately 20 % alpha. You can [parse the string](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21) if you need. |
-| color | text color in a RGBA bytes format. Example: `255255255050` - this is white color with approximately 20 % alpha. You can [parse the string](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21) if you need. |
+| backColor | background color in a RGBA bytes format. Example: `255255255050` - this is white color with approximately 20 % alpha. You can [parse the string](../miniscript-anvil-scripting-language.md) if you need. |
+| color | text color in a RGBA bytes format. Example: `255255255050` - this is white color with approximately 20 % alpha. You can [parse the string](../miniscript-anvil-scripting-language.md) if you need. |
 | alignment | text alignment, possible values: `Left` , `Center` , `Right` , `Justified` , `Flush` , `Geometry` |
 | fontSize | number |
 | text | current content of the div (the text, that a user sees) |

@@ -4,7 +4,7 @@
 
 There are two ways to create missions in the Forge: via the Step Editor and Miniscript. The Step Editor is an easier, visual way; it's recommended to start your Forge journey with this tool and create a couple of missions. However, it has restrictions: you can't create non-linear missions or include hints if you use it.
 
-The Miniscript approach uses the [in-built scripting system](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21). That gives you a boost of flexibility; however, it requires basic coding skills. But don't worry, everything you need to know is the concepts of "`if`" and "`while`". All complicated computations are hidden in the in-built [`CommandWaiting`](story-creation-with-miniscript.md) and [`Sequence`](story-creation-with-miniscript.md) objects.
+The Miniscript approach uses the [in-built scripting system](miniscript-anvil-scripting-language.md). That gives you a boost of flexibility; however, it requires basic coding skills. But don't worry, everything you need to know is the concepts of "`if`" and "`while`". All complicated computations are hidden in the in-built [`CommandWaiting`](story-creation-with-miniscript.md) and [`Sequence`](story-creation-with-miniscript.md) objects.
 
 To use the Miniscript approach instead of steps, go to the "General Info" tab in the Forge, scroll down, and make sure the "is Miniscript-driven mission" toggle is turned on.
 
@@ -816,7 +816,7 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     println(users)
     ```
     
-    Note that an array (list) is returned. To navigate through the array, you should use [special functions](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21).
+    Note that an array (list) is returned. To navigate through the array, you should use [special functions](miniscript-anvil-scripting-language.md).
     
 - set_device_users
     
@@ -838,7 +838,7 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     In this example, a new user with the username "new_user" and password "new_psw" will be added.
     
-    Note that an array (list) is used in the argument. To navigate through the array, you should use [special functions](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21).
+    Note that an array (list) is used in the argument. To navigate through the array, you should use [special functions](miniscript-anvil-scripting-language.md).
     
 - get_device_sudo_password
     
@@ -902,7 +902,7 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     | device_name | string |
     | --- | --- |
     
-    Note that an array (list) is returned. To navigate through the array, you should use [special functions](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21).
+    Note that an array (list) is returned. To navigate through the array, you should use [special functions](miniscript-anvil-scripting-language.md).
     
 - set_device_port_list
     
@@ -925,7 +925,7 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     In this example, the FTP port will be added.
     
-    Note that an array (list) is used in the argument. To navigate through the array, you should use [special functions](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21).
+    Note that an array (list) is used in the argument. To navigate through the array, you should use [special functions](miniscript-anvil-scripting-language.md).
     
 - get_device_computer_name
     
@@ -2050,7 +2050,7 @@ The command name specifies the name of the application, or the command that will
 
 **Script**
 
-This section contains the Miniscript code for your application. The script can include all administrative functions listed above. This is where all the action takes place. Typically, you'll use [println](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21) and [waitForTerminalInput](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21) to interact with the user, modify device properties, or create/delete files.
+This section contains the Miniscript code for your application. The script can include all administrative functions listed above. This is where all the action takes place. Typically, you'll use [println](miniscript-anvil-scripting-language.md) and [waitForTerminalInput](miniscript-anvil-scripting-language.md) to interact with the user, modify device properties, or create/delete files.
 
 An essential aspect of the script is connecting your application with the main mission script. This can be achieved using [dispatch_successful_command](story-creation-with-miniscript.md).
 

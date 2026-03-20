@@ -1274,13 +1274,13 @@ mini
 ```markdown
 Miniscript is a simple scripting language added into the game for players to build their scripts and exploits.
 
-Scripting documentation: https://worldofhaiku.notion.site/worldofhaiku/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca
+Scripting documentation: see Miniscript Anvil Scripting Language page
 
 Usage:
 mini [file]
 ```
 
-[Miniscript Anvil Scripting Language](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21)
+[Miniscript Anvil Scripting Language](miniscript-anvil-scripting-language.md)
 
 ## **World of Haiku**
 
