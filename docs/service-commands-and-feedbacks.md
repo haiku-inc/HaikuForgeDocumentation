@@ -8,14 +8,14 @@ Text substitution phrases are used to show text that is unknown to the mission a
 
 These phrases can be used in Nitro messages, text file contents, or internal web browser pages.
 
-- LocalizationKey
-    
+??? note "LocalizationKey"
+
     ```lua
     {LocalizationKey:PASTE_KEY_HERE}
     ```
     
-- PlayerName
-    
+??? note "PlayerName"
+
     ```jsx
     {PlayerName}
     ```
@@ -24,8 +24,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     *If the LMS mode is active, the phrase will be replaced with "Student Name."*
     
-- DeviceIP
-    
+??? note "DeviceIP"
+
     ```jsx
     {DeviceIP:DEVICE_NAME}
     ```
@@ -34,22 +34,22 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     Please note, reading this IP address by a player reveals the device on the map if it was not discovered initially.
     
-- Hash
-    
+??? note "Hash"
+
     ```jsx
     {Hash:ORIGINAL_VALUE}
     ```
     
     Converts the original value to a SHA256 hash and saves it, allowing it to be decoded by the John tool later.
     
-- LMS Phrases
-    
+??? note "LMS Phrases"
+
     These phrases are only available if LMS mode is active.
     
     [https://docs.rusticisoftware.com/crossdomain/3.x/API.html](https://docs.rusticisoftware.com/crossdomain/3.x/API.html)
     
-    - StudentName
-        
+    ??? note "StudentName"
+
         ```jsx
         {StudentName}
         ```
@@ -58,32 +58,32 @@ These phrases can be used in Nitro messages, text file contents, or internal web
         
         Gets the value from **GetStudentName()** function.
         
-    - LMS_Bookmark
-        
+    ??? note "LMS_Bookmark"
+
         ```jsx
         {LMS_Bookmark}
         ```
         
         Is replaced with the result of the *GetBookmark()* function.
         
-    - LMS_SuspendData
-        
+    ??? note "LMS_SuspendData"
+
         ```jsx
         {LMS_SuspendData}
         ```
         
         Is replaced with the result of the *GetSuspendData()* function.
         
-    - LMS_Status
-        
+    ??? note "LMS_Status"
+
         ```jsx
         {LMS_Status}
         ```
         
         Is replaced with the result of the *GetStatus()* function.
         
-    - LMS_Score
-        
+    ??? note "LMS_Score"
+
         ```jsx
         {LMS_Score}
         ```
@@ -93,8 +93,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
 
 ### Service commands (that commands are not allowed to print in the in-game terminal)
 
-- nitroapp
-    
+??? note "nitroapp"
+
     **nitroapp** "CHARACTER_NAME" "ENCODED MESSAGE" "TIME" "DELAY" "BOOL-BY USER INPUT"
     
     Example:
@@ -163,8 +163,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     *"BOOL-BY USER INPUT"* - legacy feature, set it true
     
-- smdelay
-    
+??? note "smdelay"
+
     **smdelay** NUMBER
     
     This command pauses the commands execution list for some seconds, which you set in arguments. Mostly used together with nitroapp command to wait while message is printing.
@@ -176,8 +176,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     smdelay 0.7
     ```
     
-- autoconnect
-    
+??? note "autoconnect"
+
     **autoconnect** "DEVICE_UNIQUE_NAME"
     
     This command emulates ssh command, it means it connects to a specific device, but you do not need to know device ip and credentials.
@@ -188,8 +188,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     autoconnect N_5_Workstation_01
     ```
     
-- nitrocaption
-    
+??? note "nitrocaption"
+
     **nitrocaption** OPTION
     
     Shows or hides specific captions in the nitro window. List of options:
@@ -211,8 +211,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     Note. You don’t need to show the “Complete Mission” caption, it will be automatically when the last step is reached. It exists only as an option.
     
-- starttimer
-    
+??? note "starttimer"
+
     **starttimer** TIME_FOR_EASY TIME_FOR_MEDIUM TIME_FOR_HARD
     
     Starts the game timer. When this timer is finished, the mission will fail. You should set time in seconds. If you do not want to set a timer for a specific difficulty level, set it as zero.
@@ -225,8 +225,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     Note. This command is strictly recommended to use with “!” mark to be sure the timer will be started if the user skips this step.
     
-- downloadfile
-    
+??? note "downloadfile"
+
     **downloadfile** "ENCODED_JSON" DEVICE_NAME "ENCODED_DESTINATION"
     
     This command creates a single file or directory (overwrite it if this file already exists) in a specific device and destination.
@@ -273,8 +273,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     ENCODED_DESTINATION must have the same value as *Path* in the json.
     
-- updntp
-    
+??? note "updntp"
+
     **updntp** MISSION_INDEX ****"ENCODED_TEXT"
     
     Adds mission and message and text from argument if it doesn’t exist in the Rascal notepad section.
@@ -289,8 +289,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     updntp -1 \"%3Cb%3EAZS%20Security%20Username%3A%3C%2Fb%3E%20kunwu\"
     ```
     
-- unlockapp
-    
+??? note "unlockapp"
+
     unlockapp COMMAND_NAME
     
     Unlock the terminal application. Example
@@ -301,8 +301,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     Strongly recommended to use together “!” symbol.
     
-- mnlsetactive
-    
+??? note "mnlsetactive"
+
     **mnlsetactive** COMMAND_NAME
     
     Set active the section of defined command in Manual application. Example:
@@ -311,8 +311,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     !mnlsetactive ls
     ```
     
-- appbtnunlock
-    
+??? note "appbtnunlock"
+
     **appbtnunlock** BUTTON_NAME NOTIFICATION
     
     Set as active and highlight the application button in the toolbar. Possible options: OpenManual, OpenExplorer, OpenNotes, OpenSkillTree, OpenWebBrowser. Second argument: 0 - do not show the notification (good for set the list of command at mission start), 1 - show APP UNLOCKED notification.
@@ -323,36 +323,36 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     !appbtnunlock OpenExplorer 1
     ```
     
-- tmplockapp
-    
+??? note "tmplockapp"
+
     Temporarily lock window app (only for current mission) with optional nitro feedback. Arguments:
     
     - Application Name - name of app. Possible parameters: File Editor, Explorer, Manual, Nitro, Notes, App *(for settings)*, Skill Tree, Terminal
     - Device Name - lock app if user is only logged in defined device. Set it “-” to ignore device. Then this app will be locked for every device in the current mission.
     - NPC Name to provide feedback. This is optional parameter, do not set it to lock app without feedback.
     - Feedback message - define only with previous parameter. If user tries to open app, this messege shows in Nitro messanger. But only one time.
-- tmpunlockapp
-    
+??? note "tmpunlockapp"
+
     Unlock previously locked app (see tmplockapp command). Has only one argument - app name.
     
-- setfileatt
-    
+??? note "setfileatt"
+
     Set file attribute. Arguments:
     
     - Mode - 0 to clear all attributes list, 1 - to append new attribute.
     - Device name where file is located.
     - Full file path
     - Number of attribute in attributes enum. Set it only with *1* mode argument.
-- runapp
-    
+??? note "runapp"
+
     Run the “fake” app, which user could see in the *netstat* list. **Example:
     
     ```jsx
     runapp calc
     ```
     
-- rememberhash
-    
+??? note "rememberhash"
+
     Add some strings (most often passwords) to the hashes library. Uses for *john* command. Here is the syntax:
     
     ```jsx
@@ -361,8 +361,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     Where 0 is using john wordlists to decode the hash (normal behavior), but 1 - wordlists will be ignored and *string_to_hash* can be received without wordlist. New line symbol is divider for many strings, which can be decoded by john, so if you have spaces or new lines - use url encoded string_to_hash. 
     
-- unlockapplist
-    
+??? note "unlockapplist"
+
     ```json
     unlockapplist ENCODED_LIST MISSION_INDEX
     ```
@@ -373,35 +373,35 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     MISSION_INDEX - Index of the mission, which should be completed to unlock these commands. Set it as -1 to unlock commands without this check.
     
-- clear
-    
+??? note "clear"
+
     This command doesn’t have arguments. It clears the terminal history and prints welcome text.
     
 
 ### Commands Feedbacks
 
-- skip
-    
+??? note "skip"
+
     Very specific feedback. When the step, which contains this command in the "waited" list, starts, StoryManager waits for only one frame (a couple of milliseconds) and goes to the next step. A usage example is an initialization step or when you need to create a goal when the player needs to complete several actions, like removing 3 files. Then you will create a block of goals, but all goals are hidden and not optional. After this block of goals, you will create an empty Required Goal step, set the goal name "Remove 3 files" and add "skip" to the "waited from user" commands list. So just after the user removes these 3 files, the goal will be set as completed, because StoryManager moves to this "skip" step and almost instantly move to the next step. When StoryManager moves to the next step from the previous, if the previous has a non-empty Goal Name field, it marks this Goal as completed.
     
-- nitrocaption
-    
+??? note "nitrocaption"
+
     There is **no device** is returned. Possible feedback arguments
     
     1 - user invokes “Next Message” action.
     
     2 - user invokes “Complete Mission” action. (isn’t used in the game)
     
-- cat
-    
+??? note "cat"
+
     Invokes only if the requested file exists. Returns device name, which is user logged in.
     
     Arguments list:
     
     - Full path to requested file.
     - fb=true - if file is opened via File Explorer; fb=false - via Terminal.
-- john
-    
+??? note "john"
+
     Returns current logged device name. Successful arguments:
     
     - Full requested file path.
@@ -435,13 +435,13 @@ These phrases can be used in Nitro messages, text file contents, or internal web
           ]
     ```
     
-- exit
-    
+??? note "exit"
+
     Returns only the name of the device, which is the new current device.
     If the player has exited root mode (sudo), the argument is `root`.
     
-- cd, cd.., cd ~, cd /
-    
+??? note "cd, cd.., cd ~, cd /"
+
     Returns the current device name and has only one argument - current full path of new place **with** slash in the end, where user is.
     
     Example:
@@ -486,74 +486,74 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     Argument `root` if command is launched by root-user (sudo), otherwise - `not_root`
     
-- ssh
-    
+??? note "ssh"
+
     Invokes only if command usage was successful. Returns the new device name. Has no arguments.
     
-- zion
-    
+??? note "zion"
+
     Invokes only in case of successful usage of command. Device name is the name of current logged in device. Has only one argument - absolute path of horsemen virus file.
     
-- man
-    
+??? note "man"
+
     It is for terminal version of manual. Feedback values:
     
     - name of requested app
     - locked=false or locked=true - is app locked to use when it is requested?
-- appopen
-    
+??? note "appopen"
+
     Invokes when user opens *windowed* or toolbar application (file explorer, for example). There is no returned device name. Possible parameters: File Editor, Explorer, Manual, Nitro, Notes, App *(for settings)*, Skill Tree, Terminal, Web Browser
     
-- ls
-    
+??? note "ls"
+
     Same feedback as cd, but for some reason path **doesn’t contain** ending slash.
     
-- pwd
-    
+??? note "pwd"
+
     Same as cd
     
-- whoami
-    
+??? note "whoami"
+
     Returns current device name and current user name as feedback.
     
-- onsshstart
-    
+??? note "onsshstart"
+
     Invokes when user starts ssh to device and set only ip of device, but not the password. Device name will be returned.
     
-- hydra
-    
+??? note "hydra"
+
     Returns the device name, username as first argument, password as second.
     
     If hydra was failed, it returns attacked device name and “failed” string as argument.
     
-- echo
-    
+??? note "echo"
+
     Returns device name, first argument is file content, second - absolute file path. Argument `root` if command is launched by root-user (sudo), otherwise - `not_root`
     
-- ping
-    
+??? note "ping"
+
     Returns device name which is being pinged. If user terminate command by ctrl+c, will be returned “stop” as feedback argument.
     
-- curl
-    
+??? note "curl"
+
     Returns device name, which is host of requested resource. Argument is a full path of requested resource, example: “/.www/index.html”.
     
-- ifconfig
-    
+??? note "ifconfig"
+
     Returns the current logged-in device name. Has no arguments if version without arguments is used.
     
     If correct interface name and up/down status was set as arguments, it returns one argument with such format: `<interface_name>_<status>`.  Example: `eth0_up` or `eth0_down`
     
-- nmap or nmap/
-    
+??? note "nmap or nmap/"
+
     Returns device which was nmap’ed. For nmap/ there is a feedback argument - bitmask digit after slash.
     
-- loic
-    
+??? note "loic"
+
     If user invokes loic to certain device and it was successful, will be returned device name only. If user stops loic (via Ctrl+C), will be returned only argument “stop” without device.
     
-- loichelp
-    
+??? note "loichelp"
+
     User requests help of loic. Has no arguments or device as feedback. Instance of usage: 
     
     ```jsx
@@ -562,31 +562,31 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     loic -h
     ```
     
-- failroninnitro
-    
+??? note "failroninnitro"
+
     Returns when user started roninnitro without arguments. Has no device and arguments.
     
-- roninnitro
-    
+??? note "roninnitro"
+
     Returned when roninnitro was successfull. Returns only device name.
     
-- onsshstart
-    
+??? note "onsshstart"
+
     Invokes when a player starts to ssh some device, but doesn't type username or password yet.
     
-- rm
-    
+??? note "rm"
+
     Returns when user deletes file successfully. Has device name and such arguments:
     
     - Full path to just removed file **without** slash in the end.
     - fb=True if file was removed via file explorer or fb=False for terminal.
     - `root` if command is launched by root-user (sudo), otherwise - `not_root`
-- netstat
-    
+??? note "netstat"
+
     Returns when netstat was successfull. Returns only device name.
     
-- helpiptables
-    
+??? note "helpiptables"
+
     Returns when user invokes:
     
     ```jsx
@@ -597,8 +597,8 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     Has no device and arguments.
     
-- param_iptables
-    
+??? note "param_iptables"
+
     Returns when user successfully invokes iptables commands. Returns device name and list of requested arguments:
     
     ```jsx
@@ -620,32 +620,32 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     --dport
     ```
     
-- kill
-    
+??? note "kill"
+
     Returns if user successfully kills virtual app (see *runapp* command for more context). Returns the name of just killed app. Doesn’t return the device name.
     
-- webbrowser_page
-    
+??? note "webbrowser_page"
+
     A player successfully opens a certain page by Web Browser. Returns the device name, which has the requested page and full path of this page in the device file system.
     
-- webbrowser_fail
-    
+??? note "webbrowser_fail"
+
     Returns only user input in the Web Browser URL field, if the requested device wasn't found. It means, there is no device with the requested hostname or IP.
     
-- webbrowser_404
-    
+??? note "webbrowser_404"
+
     Returns the device name and the user input (value of the URL field), when the device with such hostname or IP was found but the requested file on this device is missing.
     
-- sshfail
-    
+??? note "sshfail"
+
     Returns requested device, username, and password from the user input if these credentials are incorrect. Is invoked only if a requested IP is valid and exists in the network.
     
-- cat_fail
-    
+??? note "cat_fail"
+
     Is invoked when a player tries to read a protected file, it means, the player isn't logged in with credentials, which are set in the UsersAccessList of this file. Returns the device, that contains this file, and the full path of the requested file.
     
-- sudo
-    
+??? note "sudo"
+
     When sudo mode is correctly enabled, the device is returned as well. However, this feedback is not provided if sudo mode is enabled only for a single command, such as `sudo cat file`.
     
 
@@ -665,8 +665,8 @@ However, read/write permissions can still be restricted even in sudo mode. If a 
 
 In this example, if the player is logged in as "user," they cannot open or delete the "protected" directory, even with sudo mode enabled.
 
-![image.png](service-commands-and-feedbacks/image%201.png)
+![image.png](service-commands-and-feedbacks/image-1.png)
 
 In this case, if the player is still logged in as "user" without root mode enabled, they **cannot** read or write to this file. However, if the user enables sudo mode, they **can** perform any actions on the file, as it does not have the Immutable attribute.
 
-![image.png](service-commands-and-feedbacks/image%202.png)
+![image.png](service-commands-and-feedbacks/image-2.png)

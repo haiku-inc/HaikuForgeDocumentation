@@ -38,6 +38,7 @@ nav:
   - Kusto Query Language: kusto-query-language.md
   - Multiplayer: multiplayer.md
   - Story Creation with Miniscript: story-creation-with-miniscript.md
+  - Service Commands & Feedbacks: service-commands-and-feedbacks.md
   - Web Sites Creation:
       - Overview: web-sites-creation.md
       - Miniscript for Web Browser: web-sites-creation/miniscript-for-web-browser.md
