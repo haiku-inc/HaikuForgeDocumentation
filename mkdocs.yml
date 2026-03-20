@@ -22,12 +22,15 @@ theme:
 
 markdown_extensions:
   - tables
-  - fenced_code
-  - codehilite
   - toc:
       permalink: true
   - attr_list
   - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
 
 nav:
   - Home: index.md

@@ -29,8 +29,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
 
 ### Functions
 
-- setGoalAsCompleted
-    
+??? note "setGoalAsCompleted"
+
     Define and set the goal as completed. The place of invocation isn't important to define the goal. The script will be read, and all goals will be defined automatically at the start of the mission.
     
     **Arguments**
@@ -44,8 +44,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     setGoalAsCompleted("Open the file using ""cat"" command")
     ```
     
-- nitroApp
-    
+??? note "nitroApp"
+
     Show the message in the Nitro messenger. This function isn't asynchronous, so the next function will be invoked immediately after this. If you need to wait until the message is written, use the *wait* function.
     
     **Returns** the delay value (set in the `delay` parameter or calculated automatically). This value is often used together with the `wait()` and `nitroCaption()` functions (see [examples](story-creation-with-miniscript.md)).
@@ -57,8 +57,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     | message | string, URL-encoded message. You can use any URL encoding tool, for example this one - [https://www.urlencoder.org](https://www.urlencoder.org/) |
     | *time* | *string, optional, the time will be displayed. The default value is '_', which means the current player's time.* |
     | *delay* | *float, optional. Time in seconds to simulate the 'writing' of the message. Default value is -1, which means the time will be calculated automatically.* |
-    - Available characters
-        
+    ??? note "Available characters"
+
         Rascal
         
         Gungnir
@@ -142,8 +142,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     nitroApp("Rascal", "Open%20the%20%22personalData.txt%22%20file", "_", 0.5)
     ```
     
-- autoConnect
-    
+??? note "autoConnect"
+
     Connect to the device (with an open SSH port) without credentials.
     
     **Arguments**
@@ -157,8 +157,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     autoConnect("test_mission_network_workstation_1")
     ```
     
-- nitroCaption
-    
+??? note "nitroCaption"
+
     Show or hide the "Next Message" caption in the Nitro Messenger. This function is not asynchronous, so it doesn't wait until the player presses the "next message" button.
     
     **Arguments**
@@ -173,8 +173,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     nitroCaption(1) //show the "Next Message" button
     ```
     
-- startTimer
-    
+??? note "startTimer"
+
     Start the timer based on the current difficulty level. Set the value to '0' to skip the timer for a specific difficulty. If the timer is already running, the function returns 0.
     
     **Arguments**
@@ -192,8 +192,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     startTimer(0, 300, 120) 
     ```
     
-- downloadFile
-    
+??? note "downloadFile"
+
     Create a file on any device.
     
     **Arguments**
@@ -217,16 +217,16 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     downloadFile("This%20file%20contains%0ANew%20line%20character%0AAnd%20%22special%20characters%22%20%26%20%5E%20%40%20%24", "Home System", "/Downloads/readProtected", [ "Normal" ], { "{PlayerName}" : "false" }, { "{PlayerName}" : "false" })
     ```
     
-- updateNotepad
-    
+??? note "updateNotepad"
+
     Add the text to the story-character notes in the notepad. You can select 'story-character' in the General Info tab. Please note that these notes won't be saved after mission completion, unlike user-created notes.
     
     **Arguments**
     
     | noteContent | string, URL-encoded note content. You can use any URL encoding tool, for example this one - [https://www.urlencoder.org](https://www.urlencoder.org/) |
     | --- | --- |
-- unlockApp
-    
+??? note "unlockApp"
+
     Some terminal commands are locked by default or can be locked by a mission creator using the '*lockApp*' function. This function is used to prevent undesired actions, such as invoking the 'rm' command. The 'unlockApp' function unlocks these commands.
     
     **Arguments**
@@ -240,8 +240,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     unlockApp("ls")
     ```
     
-- lockApp
-    
+??? note "lockApp"
+
     Lock the terminal command. When the user tries to use this command, they receive a 'Command Locked' message in the terminal.
     
     **Arguments**
@@ -255,8 +255,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     unlockApp("ls")
     ```
     
-- unlockToolbarApp
-    
+??? note "unlockToolbarApp"
+
     Unlock a window application that can be opened by a button in the Toolbar. You can set which applications are accessible by default in the Mission General Info tab in the Forge.
     
     **Arguments**
@@ -278,8 +278,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     unlockToolbarApp("OpenWebBrowser", 0)
     ```
     
-- lockToolbarAppTemporarily
-    
+??? note "lockToolbarAppTemporarily"
+
     Lock a toolbar application for one device or for the entire network. This command gives the ability to display a Nitro message when a user tries to open a locked application.
     
     **Arguments**
@@ -299,8 +299,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     lockToolbarAppTemporarily("explorer", "Home System", "Rascal", "File%20Explorer%20is%20not%20installed%20on%20this%20workstation.")
     ```
     
-- unlockToolbarAppTemporarily
-    
+??? note "unlockToolbarAppTemporarily"
+
     Unlock a previously locked toolbar application using the '*lockToolbarAppTemporarily*' function. Please note that if the app was locked for several devices, this function will unlock the app for the entire network.
     
     **Arguments**
@@ -314,8 +314,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     unlockToolbarAppTemporarily("file editor")
     ```
     
-- addFileAttribute
-    
+??? note "addFileAttribute"
+
     Append a new attribute to the file.
     
     **Arguments**
@@ -332,8 +332,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     addFileAttribute("miniscript_mission_device", "/Documents/Edtitable File", "Immutable")
     ```
     
-- clearFileAttributes
-    
+??? note "clearFileAttributes"
+
     Clear all attributes of the file. This command is intended to revert changes made by 'addFileAttribute' or to clear its initial setup. For example, a hidden file will become visible after invoking the command.
     
     **Arguments**
@@ -349,8 +349,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     clearFileAttributes("miniscript_mission_device", "/Documents/Edtitable File")
     ```
     
-- runSimulatedApplication
-    
+??? note "runSimulatedApplication"
+
     Add a running process to the operating system. This process can be displayed by the '*ps*', *‘netstat’* commands or stopped by the '*kill*' command.
     
     **Arguments**
@@ -374,8 +374,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     runSimulatedApplication("deviceApp", "test network_test network_4_Workstation_3", 0, "udp", 342, "test network_test network_4_Workstation_3")
     ```
     
-- extendDirbWordlist
-    
+??? note "extendDirbWordlist"
+
     Add new file names to the default wordlist used by the '*dirb*' command.
     
     **Arguments**
@@ -389,8 +389,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     extendDirbWordlist([ "dirb_hide_1.html", "dirb_hide_2.html" ])
     ```
     
-- rememberHash
-    
+??? note "rememberHash"
+
     Convert the original value to SHA256 and append it to the hashes list used by the '*john*' command. This functionality is essential if you intend to utilize '*john*' for your mission. Also, it may enable decoding of the value without relying on a wordlist.
     
     **Arguments**
@@ -415,8 +415,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     ![Untitled](story-creation-with-miniscript/untitled-2.png)
     
-- playSfx
-    
+??? note "playSfx"
+
     Play a one-time sound effect from the list of built-in sounds.
     
     **Arguments**
@@ -459,8 +459,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     playSfx("fbi")
     ```
     
-- lmsSetBookmark
-    
+??? note "lmsSetBookmark"
+
     The mediator for *Rustici API.SetBookmark(val)* function.
     
     [https://docs.rusticisoftware.com/crossdomain/3.x/API.html](https://docs.rusticisoftware.com/crossdomain/3.x/API.html)
@@ -471,8 +471,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     lmsSetBookmark("bookmark")
     ```
     
-- lmsSetSuspendData
-    
+??? note "lmsSetSuspendData"
+
     The mediator for *Rustici API.SetSuspendData(val)* function.
     
     [https://docs.rusticisoftware.com/crossdomain/3.x/API.html](https://docs.rusticisoftware.com/crossdomain/3.x/API.html)
@@ -483,8 +483,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     lmsSetSuspendData("suspend data")
     ```
     
-- lmsSetStatus
-    
+??? note "lmsSetStatus"
+
     The mediator for Rustici API *SetReachedEnd(), SetPassed(), SetFailed(), ResetStatus()* functions.
     
     [https://docs.rusticisoftware.com/crossdomain/3.x/API.html](https://docs.rusticisoftware.com/crossdomain/3.x/API.html)
@@ -502,8 +502,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     | passed | SetPassed() |
     | failed | SetFailed() |
     | reset | ResetStatus() |
-- lmsSetScore
-    
+??? note "lmsSetScore"
+
     The mediator for *Rustici API.SetScore(*score, max, min*)* function.
     
     [https://docs.rusticisoftware.com/crossdomain/3.x/API.html](https://docs.rusticisoftware.com/crossdomain/3.x/API.html)
@@ -514,8 +514,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     lmsSetScore(100, 500, 0)
     ```
     
-- lmsRecordInteraction
-    
+??? note "lmsRecordInteraction"
+
     The mediator for *Rustici Interactions* functions.
     
     [https://docs.rusticisoftware.com/crossdomain/3.x/API.html](https://docs.rusticisoftware.com/crossdomain/3.x/API.html)
@@ -552,8 +552,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     lmsRecordInteraction("RecordMultipleChoiceInteraction", "alpha-mc-1", "a", 1, "a", "Which letter is first in the alphabet?", 1, 750, "alphabet1")
     ```
     
-- getPendingFeedbacks
-    
+??? note "getPendingFeedbacks"
+
     It returns the list with unhandled actions of the player.  If there are unhandled actions (data about the last performed commands by a player), a non-empty `list` with maps will be returned. The format of the `map`:
     
     ```jsx
@@ -572,8 +572,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     end for
     ```
     
-- checkCommandFeedback
-    
+??? note "checkCommandFeedback"
+
     Verify received feedback. Returns 1 if feedback fulfills the conditions.
     
     **Arguments**
@@ -596,8 +596,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     end for
     ```
     
-- clearPendingFeedbacks
-    
+??? note "clearPendingFeedbacks"
+
     Clear all pending command feedback list. After invocation of this method, `getPendingFeedbacks()` returns an empty list until a player performs some new action. Usually, it is called after successfully handling some feedback.
     
     **Example**
@@ -613,8 +613,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     end for
     ```
     
-- getMissionTimer
-    
+??? note "getMissionTimer"
+
     It returns the time in seconds from the start of the mission. The timer stops when a user opens the pause menu.
     
     **Example**
@@ -625,8 +625,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     end if
     ```
     
-- showHintNotification
-    
+??? note "showHintNotification"
+
     It shows the in-built notification from the Fez character with a proposal of help. If the user accepts the proposal, the `encodedValue` appears in the Nitro Messenger as a message from Fez.
     
     **Arguments**
@@ -640,8 +640,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     showHintNotification("Type ""cat /documents/toRead"" in the terminal and press Enter")
     ```
     
-- getHintsDifficultyLevel
-    
+??? note "getHintsDifficultyLevel"
+
     Returns the hint difficulty (which can be set by a player in the settings popup).
     
     **Results**
@@ -659,8 +659,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     end if
     ```
     
-- fail_mission
-    
+??? note "fail_mission"
+
     Immediately shows the restart mission popup. The mission won't be marked as completed. If the timer is launched, it will stop. **Pay attention**: this function doesn't break the code flow. If it is called somewhere in the middle of your script, you should ensure that the story functions below won't be invoked.
     
     **Example**
@@ -676,8 +676,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     end while
     ```
     
-- remove_file
-    
+??? note "remove_file"
+
     Remove a file or directory on a specified device using the global path. If the file doesn't exist, it does nothing.
     
     **Example**
@@ -686,16 +686,16 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     remove_file("Workstation_5", "/Downloads/log.txt")
     ```
     
-- device_name_to_ip_address
-    
+??? note "device_name_to_ip_address"
+
     Returns the IP address by the device name (the device name is set in the Forge Network Editor). If there is no device with such a name, an error will be raised, and the script will stop.
     
-- ip_address_to_device_name
-    
+??? note "ip_address_to_device_name"
+
     Returns the device name by IP address. IP addresses are generated randomly, but device names are stable and set in Forge. Returns `null` if there is no device with the given IP.
     
-- open_file_from_file_system
-    
+??? note "open_file_from_file_system"
+
     Asynchronous function. Opens the file selection dialog (or the upload file window for the Web version) and reads the text from the selected file. If the file wasn't opened or can't be read (e.g., if it's binary or access restrictions), returns `null`. Otherwise, returns a `string`.
     
     **Example:**
@@ -708,8 +708,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     println(fileContent)
     ```
     
-- wait_for_device_click
-    
+??? note "wait_for_device_click"
+
     Returns 0 if the user doesn't click on the specified device. Returns 1 if the user clicks on the device and sets the signal to 0 again (this means that the method will return 0 on the next frame, until the user clicks on the device again).
     
     Please note, the default action (copying the device name to the buffer) **won't be executed** if this function is invoked and until it returns a 1 signal.
@@ -724,12 +724,12 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     println("The user clicked on the device with IP " + device_name_to_ip_address(deviceName))
     ```
     
-- set_kql_database
-    
+??? note "set_kql_database"
+
     Set the database for viewing in the Data Explorer application. Receives a string that is the asset name in the Network Asset Storage. Set an empty string to reset the database. Returns 1 if the database was set correctly.
     
-- add_network_interface
-    
+??? note "add_network_interface"
+
     Add the network interface to the specified device. This interface will be visible in the ifconfig command output.
     
     | device_name | string |
@@ -758,19 +758,19 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     "Link%20encap%3AEthernet%0A%09BROADCAST%20MULTICAST%20%20MTU%3A1500%20%20Metric%3A1")
     ```
     
-- remove_network_interface
-    
+??? note "remove_network_interface"
+
     Remove the existing interface from the specified device. This interface will not be visible in the ifconfig command output anymore.
     
     | device_name | string |
     | --- | --- |
     | interface_name | string, the name of the existing interface |
-- stop_timer
-    
+??? note "stop_timer"
+
     Stops the fail timer, which was previously run by the `startTimer` function.
     
-- dispatch_successful_command
-    
+??? note "dispatch_successful_command"
+
     This function is primarily used in [custom applications](story-creation-with-miniscript.md) and [web browser](web-sites-creation/miniscript-for-web-browser.md) scripts. It is generally not intended for use in the main mission script. However, there are rare scenarios where its usage in the main mission script might be justified.
     
     The arguments of the function are validated using special objects. Refer to the [examples](story-creation-with-miniscript.md) for clarification.
@@ -788,16 +788,16 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     dispatch_successful_command("sysman", get_current_device(), "date")
     ```
     
-- get_current_device
-    
+??? note "get_current_device"
+
     Returns the name (as set in the Forge Network Device Properties) of the currently connected device. For the default home device, it will always be "`Home System`"
     
-- get_current_username
-    
+??? note "get_current_username"
+
     Returns the username of the currently logged-in user.
     
-- get_device_users
-    
+??? note "get_device_users"
+
     Returns a list of maps containing information about the users on the specified device.
     
     | device_name | string |
@@ -818,8 +818,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     Note that an array (list) is returned. To navigate through the array, you should use [special functions](miniscript-anvil-scripting-language.md).
     
-- set_device_users
-    
+??? note "set_device_users"
+
     Sets the user list for the specified device. The result from [get_device_users](story-creation-with-miniscript.md) can also be used.
     
     **Arguments**
@@ -840,16 +840,16 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     Note that an array (list) is used in the argument. To navigate through the array, you should use [special functions](miniscript-anvil-scripting-language.md).
     
-- get_device_sudo_password
-    
+??? note "get_device_sudo_password"
+
     Returns the superuser ([root](https://www.notion.so/Service-commands-text-substitution-and-feedbacks-of-commands-9296cb9fadc44eff953923f212831242?pvs=21)) password of the specified device. An empty string indicates that the superuser is not configured for this device.
     
     **Arguments**
     
     | device_name | string |
     | --- | --- |
-- set_device_sudo_password
-    
+??? note "set_device_sudo_password"
+
     Sets the superuser ([root](https://www.notion.so/Service-commands-text-substitution-and-feedbacks-of-commands-9296cb9fadc44eff953923f212831242?pvs=21)) password for the specified device.
     
     **Arguments**
@@ -858,36 +858,36 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     | --- | --- |
     | sudo_password | string, new password. Set an empty string if you want the superuser to be unavailable for this device. |
     
-- get_device_os
-    
+??? note "get_device_os"
+
     Returns the name of the device's operating system. Players can see the device's OS name in the output of the `nmap` command.
     
     **Arguments**
     
     | device_name | string |
     | --- | --- |
-- set_device_os
-    
+??? note "set_device_os"
+
     Sets the device's operating system. Please note that Windows devices have different behavior. Different command names will be used, some commands may not be available, and the terminal view will differ.
     
     | device_name | string |
     | --- | --- |
     | os_name | string, `Windows` value is a special setting that alters the device's behavior as described above. Other values will be recognized as Linux common distributive. |
-- get_device_os_version
-    
+??? note "get_device_os_version"
+
     Returns the device's OS version. This value may be visible to players in the output of the `nmap` command.
     
     | device_name | string |
     | --- | --- |
-- set_device_os_version
-    
+??? note "set_device_os_version"
+
     Sets the device's OS version. This value may be visible to players in the output of the `nmap` command.
     
     | device_name | string |
     | --- | --- |
     | os_version | string |
-- get_device_port_list
-    
+??? note "get_device_port_list"
+
     Returns a list of the maps that are configured on the device.
     
     **Map Format**
@@ -904,8 +904,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     Note that an array (list) is returned. To navigate through the array, you should use [special functions](miniscript-anvil-scripting-language.md).
     
-- set_device_port_list
-    
+??? note "set_device_port_list"
+
     Sets the device ports from the list of maps. See the map description [here](story-creation-with-miniscript.md).
     
     **Arguments**
@@ -927,16 +927,16 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     Note that an array (list) is used in the argument. To navigate through the array, you should use [special functions](miniscript-anvil-scripting-language.md).
     
-- get_device_computer_name
-    
+??? note "get_device_computer_name"
+
     Returns the device's computer name. Players can see this name in the output of the `nmap` command.
     
     **Arguments**
     
     | device_name | string |
     | --- | --- |
-- set_device_computer_name
-    
+??? note "set_device_computer_name"
+
     Sets the device's computer name. Players can see this name in the output of the `nmap` command.
     
     **Arguments**
@@ -944,8 +944,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     | device_name | string |
     | --- | --- |
     | os_name | string |
-- get_device_host_name
-    
+??? note "get_device_host_name"
+
     Returns the device's host name. This name is used as a substitution for the IP address.
     
     **Arguments**
@@ -953,8 +953,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     | device_name | string |
     | --- | --- |
     
-- set_device_host_name
-    
+??? note "set_device_host_name"
+
     Sets the device's host name. This name is used as a substitution for the IP address.
     
     **Arguments**
@@ -962,20 +962,20 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     | device_name | string |
     | --- | --- |
     | host_name | string |
-- is_goal_completed
-    
+??? note "is_goal_completed"
+
     Returns 1 if the goal has already been completed.
     
     | goalName | string, a value in the brackets of `setGoalAsCompleted` if a Miniscript mission is used. If story steps are used, there should be a step ID |
     | --- | --- |
-- set_device_discovered
-    
+??? note "set_device_discovered"
+
     Discover the device with animation if it is hidden.
     
     | device_name | string, unique device name, can be copied from Forge Device Properties |
     | --- | --- |
-- setCommandActiveInManual
-    
+??? note "setCommandActiveInManual"
+
     Activate a command entry in the Manual application. This makes the specified command visible and accessible in the in-game manual.
     
     **Arguments**
@@ -989,8 +989,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     setCommandActiveInManual("nmap")
     ```
     
-- get_serialized_command_state
-    
+??? note "get_serialized_command_state"
+
     Retrieve a value from the mission dictionary by key. The mission dictionary is a key-value store that persists during mission gameplay, useful for tracking custom state across different scripts or save points.
     
     **Arguments**
@@ -1009,8 +1009,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     end if
     ```
     
-- set_serialized_command_state
-    
+??? note "set_serialized_command_state"
+
     Store a key-value pair in the mission dictionary. The value persists during mission gameplay and can be retrieved later with `get_serialized_command_state`.
     
     **Arguments**
@@ -1025,8 +1025,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     set_serialized_command_state("puzzle_step", "3")
     ```
     
-- check_pending_command_name
-    
+??? note "check_pending_command_name"
+
     Check if a pending command name is valid and prepare it for processing. Currently used in multiplayer contexts. If the command name matches the Nitro caption feedback, the caption type is set to "Next Message."
     
     **Arguments**
@@ -1036,8 +1036,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     **Returns** 1 if the check succeeded, 0 otherwise.
     
-- ping_highlight_device
-    
+??? note "ping_highlight_device"
+
     Play a visual ping/highlight effect on a device in the network map. Useful for drawing the player's attention to a specific device.
     
     **Arguments**
@@ -1054,8 +1054,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
 
 ### Classes
 
-- CommandWaiting
-    
+??? note "CommandWaiting"
+
     Use this class to wait for a player to perform a single command. 
     
     **Members**
@@ -1102,8 +1102,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     getCommandWaiting("cat", "Home System", [ "/Documents/toRead" ])
     ```
     
-- Sequence
-    
+??? note "Sequence"
+
     `Sequence` is an object designed to manage a sequence of steps, where only the latest step is required. This implies that a player can skip all preceding steps and execute only the latest one, after which the sequence will be marked as completed. 
     
     Each step can optionally include an action (function) that will be invoked if the step is performed.
@@ -1159,8 +1159,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     In this example, there is only one required action from the user: reading the "*toRead*" file via the "*cat*" command. All previous steps can be skipped. Pay attention: there is no `action` after performing the "*ls*" in the "*Documents*" folder. It is not a mistake; it is an example that we can skip this if we don't need any action after a step.
     
-- Hint
-    
+??? note "Hint"
+
     This class is used to attempt to show hints. Hints are notifications with proposals to display some help related to the current mission stage.
     
     The expected behavior is that if a player gets stuck on a stage, some time later they receive a notification with additional information about that stage. Additionally, hint content can differ based on the level of difficulty. You can use the `if` construction with the [`getHintsDifficultyLevel()`](story-creation-with-miniscript.md) function to set different text for the hint.
@@ -1178,8 +1178,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
 
 ### Examples
 
-- A linear mission with handling the “next message” action
-    
+??? note "A linear mission with handling the “next message” action"
+
     **Description**
     
     The player should read the "*/Documents/toRead*" file via the "*cat*" command. This is the only mandatory step of the mission; all other step instructions can be skipped.
@@ -1275,8 +1275,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     wait(2)
     ```
     
-- 1A mission
-    
+??? note "1A mission"
+
     [forge export 17.04.2024 1340 (1713361259,0013).zip](story-creation-with-miniscript/forge_export_17.04.2024_1340_(17133612590013).zip)
     
     **Description**
@@ -1635,8 +1635,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     wait(nitroApp("Gungnir", "Excellent work. Now you have the tools to navigate the Grid. I’m sending our A.I. assistant, “RASCAL,” to work with you. I’m investigating new data that's come in, but I've given instructions to RASCAL to guide you on your first reconnaissance job. Good luck on the Grid.") + 1)
     ```
     
-- 1B mission (modified, added one optional goals, removed intermediate steps)
-    
+??? note "1B mission (modified, added one optional goals, removed intermediate steps)"
+
     [forge export 17.04.2024 1338 (1713361101,94546).zip](story-creation-with-miniscript/forge_export_17.04.2024_1338_(171336110194546).zip)
     
     **Description**
@@ -1665,8 +1665,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     So, the user can open the 'Domain Registration Invoice' first, after that the 'Contact Email'.
     
-    - Code
-        
+    ??? note "Code"
+
         ```lua
         updateNotepad("System%20Creds%3A%20Your%20homesystem%20credentials%3A%0AUsername%3A%20%7BPlayerName%7D%0AIP%20address%20is%20192.168.1.2%0APassword%20is%20secure2043")
         
@@ -1967,8 +1967,8 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
     [forge export 17.04.2024 1338 (1713361101,94546).zip](story-creation-with-miniscript/forge_export_17.04.2024_1338_(171336110194546).zip)
     
-- Hints
-    
+??? note "Hints"
+
     The simple example of three hints. Please note that only one 'hint' variable is used. This is because the 'start()' function completely cleans the previous values.
     
     The algorithm is: 
@@ -2062,8 +2062,8 @@ The manual is a rich-text guide for your application. It can be accessed using t
 
 Your application can be launched from the terminal with arguments, which are stored in the built-in `arguments` array (do not overwrite this variable). The `arguments` array **always contains** at least one element, indicating whether the application was run with superuser rights ([sudo](https://www.notion.so/Service-commands-text-substitution-and-feedbacks-of-commands-9296cb9fadc44eff953923f212831242?pvs=21)). This element is always the first in the array.
 
-- Example
-    
+??? note "Example"
+
     ```lua
     if arguments[0] == "sudo=1" then
     	println("super user rights")
@@ -2088,8 +2088,8 @@ Here’s an example of a Miniscript custom application: a "system manager." This
 - If run with the `-u` argument, it also shows the current user name.
 - If granted superuser rights (sudo), it can display and modify the root password.
 - Communicate with the main story script using the `dispatch_successful_command` function.
-- Code
-    
+??? note "Code"
+
     ```lua
     supportUsername = arguments.indexOf("-u") >= 0
     supportRootPassword = arguments[0] == "sudo=1"

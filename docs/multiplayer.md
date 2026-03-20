@@ -8,8 +8,8 @@ Multiplayer is a special game mode that allows several players to complete dojo-
 
 To create a room, you will need a prepared network and story script (more on that later). The room can be created from the Main Menu → Multiplayer → Create Room panel.
 
-- Screeshot
-    
+??? note "Screeshot"
+
     ![image.png](multiplayer/image.png)
     
 - **Name** – The room name displayed in the room list, up to 12 characters.
@@ -27,8 +27,8 @@ The author has to enter the room immediately after creation; however, this proce
 
 Some properties that do not affect gameplay can be modified. Altering the room is available only to its author. Also, this popup is used for **sharing the room** via URL and creating a room duplicate. The most common scenario for **duplicating a room** is when the mission is completed, but the author wants to replay it.
 
-- Screenshots
-    
+??? note "Screenshots"
+
     ![image.png](multiplayer/image-1.png)
     
     ![image.png](multiplayer/image-2.png)
@@ -171,8 +171,8 @@ If more time passes than set in [`multiplayer_start_countdown](multiplayer.md)(1
 
 # Miniscript Functions
 
-- set_session_data_value
-    
+??? note "set_session_data_value"
+
     Saves the value with the specified key. The source is shared between players, so if player A sets this value, player B can retrieve it if they know the key.
     
     **Arguments:**
@@ -180,53 +180,53 @@ If more time passes than set in [`multiplayer_start_countdown](multiplayer.md)(1
     | key | string |
     | --- | --- |
     | value | string |
-- get_session_data_value
-    
+??? note "get_session_data_value"
+
     Returns the value by key. If the key is unknown, it returns `null`. The source is shared between players, so if player A sets this value, player B can retrieve it if they know the key.
     
     **Arguments:**
     
     | key | string |
     | --- | --- |
-- set_multiplayer_mission_complete
-    
+??? note "set_multiplayer_mission_complete"
+
     Sends the event to everyone that the mission is completed. The winner is the player who first calls this function. It doesn't perform any actions if the `Shared Goals` checkbox was selected when the room was created.
     
-- set_flag_details
-    
+??? note "set_flag_details"
+
     Set additional information for the goal in the `flags` command output.
     
     | goalId | string, goal name, exact the same value as set in [setGoalAsCompleted](story-creation-with-miniscript.md) |
     | --- | --- |
     | value | string, flag description |
-- multiplayer_start_countdown
-    
+??? note "multiplayer_start_countdown"
+
     Starts the mission failure countdown. It checks if the countdown has already started, so a second invocation does nothing.
     
     | for_everyone | boolean, 0 or 1. [See the difference](multiplayer.md) |
     | --- | --- |
     | time | number, seconds left before failure. |
-- multiplayer_stop_countdown
-    
+??? note "multiplayer_stop_countdown"
+
     Stops any previously started countdown.
     
-- multiplayer_fail_mission
-    
+??? note "multiplayer_fail_mission"
+
     Sets the mission as failed.
     
     | for_everyone | boolean, 0 or 1. [See the difference](multiplayer.md) |
     | --- | --- |
     | fail_reason | string |
     
-- get_mission_dictionary_value
-    
+??? note "get_mission_dictionary_value"
+
     Returns the value by key. If the key is unknown, it returns `null`. The source is unique for each player.
     
     | key | string |
     | --- | --- |
     | value | string |
-- set_mission_dictionary_value
-    
+??? note "set_mission_dictionary_value"
+
     Saves the value with the specified unique key. The source is unique for each player.
     
     | key | string |

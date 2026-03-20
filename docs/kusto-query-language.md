@@ -4,8 +4,8 @@
 
 ## Importing Example database
 
-- Sources
-    
+??? note "Sources"
+
     [Stores.csv](kusto-query-language/stores.csv)
     
     [Employees.csv](kusto-query-language/employees.csv)
@@ -59,8 +59,8 @@ If the query is processed against a single table (as the second element in the p
 search "Davis"
 ```
 
-- Output
-    
+??? note "Output"
+
     ```
     +----+----------+
     | Id | LastName |
@@ -74,8 +74,8 @@ search "Davis"
 Employees | search "Davis"
 ```
 
-- Output
-    
+??? note "Output"
+
     ```
     +----+------------------+-------------+-----------+----------+
     | Id | HireDate         | SalaryMonth | FirstName | LastName |
@@ -191,8 +191,8 @@ Employees | extend AnnualSalary = SalaryMonth * 12
 CarSales_2022 | where (StoreId == 1 or StoreId == 3) and Brand == "Toyota"
 ```
 
-- Output
-    
+??? note "Output"
+
     ```
     +----+------------------+--------+------------------+---------+------------+
     | Id | SaleDate         | Brand  | VinCode          | StoreId | EmployeeId |
@@ -255,8 +255,8 @@ Returns true if current EntityName column cell contains a string, defined in the
 CarSales_2022 | where VinCode contains "jtd" or VinCode contains "2017"
 ```
 
-- Output
-    
+??? note "Output"
+
     ```
     +----+------------------+--------+------------------+---------+------------+
     | Id | SaleDate         | Brand  | VinCode          | StoreId | EmployeeId |
