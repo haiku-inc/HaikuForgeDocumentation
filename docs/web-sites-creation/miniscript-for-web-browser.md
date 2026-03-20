@@ -103,7 +103,7 @@ Here is a list of possible attribute names and their values. Please note that th
 But jsons contains invalid characters, so you have to use [encoded](https://www.urlencoder.org) version. Example:
 `browser_alter_absolute_div("button_login", "formData", "%7B%0A%20%20%22data%22%3A%20%0A%20%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22formId%22%3A%20%22input_username%22%2C%0A%20%20%20%20%20%20%22requiredFormValue%22%3A%20%22admin%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22formId%22%3A%20%22input_password%22%2C%0A%20%20%20%20%20%20%22requiredFormValue%22%3A%20%22123456%22%0A%20%20%20%20%7D%2C%0A%20%20%5D%0A%7D")`  |
 
-Please note that when you change the `text` property, [IP address substitution and device discover](https://www.notion.so/Service-commands-text-substitution-and-feedbacks-of-commands-9296cb9fadc44eff953923f212831242?pvs=21)y will be invoked automatically.
+Please note that when you change the `text` property, [IP address substitution and device discovery](../service-commands-and-feedbacks.md) will be invoked automatically.
 
 ## browser_get_absolute_div
 

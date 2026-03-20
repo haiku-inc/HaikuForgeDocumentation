@@ -842,7 +842,7 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     
 ??? note "get_device_sudo_password"
 
-    Returns the superuser ([root](https://www.notion.so/Service-commands-text-substitution-and-feedbacks-of-commands-9296cb9fadc44eff953923f212831242?pvs=21)) password of the specified device. An empty string indicates that the superuser is not configured for this device.
+    Returns the superuser ([root](service-commands-and-feedbacks.md)) password of the specified device. An empty string indicates that the superuser is not configured for this device.
     
     **Arguments**
     
@@ -850,7 +850,7 @@ You can always explore [examples](story-creation-with-miniscript.md). Let's star
     | --- | --- |
 ??? note "set_device_sudo_password"
 
-    Sets the superuser ([root](https://www.notion.so/Service-commands-text-substitution-and-feedbacks-of-commands-9296cb9fadc44eff953923f212831242?pvs=21)) password for the specified device.
+    Sets the superuser ([root](service-commands-and-feedbacks.md)) password for the specified device.
     
     **Arguments**
     
@@ -2060,7 +2060,7 @@ The manual is a rich-text guide for your application. It can be accessed using t
 
 **Arguments**
 
-Your application can be launched from the terminal with arguments, which are stored in the built-in `arguments` array (do not overwrite this variable). The `arguments` array **always contains** at least one element, indicating whether the application was run with superuser rights ([sudo](https://www.notion.so/Service-commands-text-substitution-and-feedbacks-of-commands-9296cb9fadc44eff953923f212831242?pvs=21)). This element is always the first in the array.
+Your application can be launched from the terminal with arguments, which are stored in the built-in `arguments` array (do not overwrite this variable). The `arguments` array **always contains** at least one element, indicating whether the application was run with superuser rights ([sudo](service-commands-and-feedbacks.md)). This element is always the first in the array.
 
 ??? note "Example"
 
