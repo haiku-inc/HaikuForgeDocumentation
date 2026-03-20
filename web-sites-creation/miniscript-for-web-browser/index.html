@@ -1,0 +1,975 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://haiku-inc.github.io/HaikuForgeDocumentation/web-sites-creation/miniscript-for-web-browser/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/haiku-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Miniscript for Web Browser - Haiku Forge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cairo:300,300i,400,400i,700,700i%7CInconsolata:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Cairo";--md-code-font:"Inconsolata"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/haiku.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#miniscript-for-web-browser" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Haiku Forge Documentation" class="md-header__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haiku Forge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Miniscript for Web Browser
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Haiku Forge Documentation" class="md-nav__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    Haiku Forge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../haiku-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haiku Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kusto-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kusto Query Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../story-creation-with-miniscript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Story Creation with Miniscript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../service-commands-and-feedbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Commands & Feedbacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Sites Creation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web Sites Creation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miniscript for Web Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="miniscript-for-web-browser">Miniscript for Web Browser<a class="headerlink" href="#miniscript-for-web-browser" title="Permanent link">&para;</a></h1>
+<p>The web browser can also run <a href="../../miniscript-anvil-scripting-language/">Miniscript</a> code for web pages. Each web page created in the Web Page Editor in the Forge can have its own script. The main purpose of the script is to manipulate the <code>absoluteDiv</code> elements.</p>
+<p>You can manually add the <code>&lt;script&gt;</code> tag to the <code>metadata</code> section in the Forge:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&lt;</span><span class="nv">script</span><span class="w"> </span><span class="nv">rel</span><span class="o">=</span><span class="s2">&quot;/scripts/script1&quot;</span><span class="w"> </span><span class="o">/&gt;</span>
+</code></pre></div>
+<p>However, the recommended way to set the script path is by using the Web Page Editor:</p>
+<p><img alt="Untitled" src="untitled.png" /></p>
+<p>If the script is set, it will be launched when a page is opened. If the script is already running and another page is opened, the script will be automatically stopped. However, if the browser window is closed, the script <strong>will not</strong> be stopped in order to preserve the current page state in case the user opens the browser again.</p>
+<h1 id="miniscript-functions-for-browser">Miniscript Functions for Browser<a class="headerlink" href="#miniscript-functions-for-browser" title="Permanent link">&para;</a></h1>
+<p>There are a bunch of miniscript functions to change the content page and interact with user. These functions are for invocation <strong>only in the scripts for the web browser</strong>.</p>
+<h2 id="browser_alert">browser_alert<a class="headerlink" href="#browser_alert" title="Permanent link">&para;</a></h2>
+<p>The function displays text to the user. It has only one button (close the popup) and this button cannot be hidden. This function is not awaitable, so the next action will be performed immediately after the function is invoked, without waiting for the user to close the popup.</p>
+<p>When the message is displayed, the user cannot navigate to another page or use the browser's navigation bar.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>content</th>
+<th>text or localization key for message body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>title</em></td>
+<td><em>optional, text or localization key for window title</em></td>
+</tr>
+<tr>
+<td><em>ok</em></td>
+<td><em>optional, text or localization key for close button</em></td>
+</tr>
+</tbody>
+</table>
+<p><img alt="Untitled" src="untitled-1.png" /></p>
+<h2 id="browser_alert_dialog">browser_alert_dialog<a class="headerlink" href="#browser_alert_dialog" title="Permanent link">&para;</a></h2>
+<p>Awaitable version of an alert with dialog options (two options). This function waits for user input and returns 0 if the user clicks "Cancel" or 1 if the user clicks "OK." Additionally, the "OK" and "Cancel" buttons can be hidden.</p>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>content</th>
+<th>text or localization key for message body</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>title</em></td>
+<td><em>optional, text or localization key for window title</em></td>
+</tr>
+<tr>
+<td><em>ok</em></td>
+<td><em>optional, text or localization key for OK (1) option. Set empty string to hide the button.</em></td>
+</tr>
+<tr>
+<td><em>cancel</em></td>
+<td><em>optional, text or localization key for CANCEL (0) option. Set empty string to hide the button.</em></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">browser_alert_dialog</span><span class="p">(</span><span class="s2">&quot;make your choice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;CHOICE&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">choice_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;red&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="kr">if</span><span class="w"> </span><span class="nv">choice</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nv">choice_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;blue&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="kr">end</span><span class="w"> </span><span class="kr">if</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="nf">browser_alert</span><span class="p">(</span><span class="s2">&quot;User&#39;s choice is: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">choice_text</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="browser_alter_absolute_div">browser_alter_absolute_div<a class="headerlink" href="#browser_alter_absolute_div" title="Permanent link">&para;</a></h2>
+<p>The function changes the properties of an existing absolute <code>div</code>. It takes three mandatory parameters: <code>id</code>, <code>attributeName</code>, and <code>value</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">browser_alter_absolute_div</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;attributeName&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>The <code>id</code> parameter must be unique for each absolute div on the page. You can view or set it in the Web Page Editor here:</p>
+<p><img alt="Untitled" src="untitled-2.png" /></p>
+<p>Here is a list of possible attribute names and their values. Please note that the <em>value</em> is <strong>always</strong> a string, so it should be enclosed in quotes, even if it is a number. An example is provided where needed:</p>
+<table>
+<thead>
+<tr>
+<th><strong>attributeName</strong></th>
+<th><strong>value</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>posX</td>
+<td>number, X position from left top corner of the page</td>
+</tr>
+<tr>
+<td>posY</td>
+<td>number, Y position from left top corner of the page, multiplied by -1</td>
+</tr>
+<tr>
+<td>width</td>
+<td>number, width of the block</td>
+</tr>
+<tr>
+<td>height</td>
+<td>number, height of the block</td>
+</tr>
+<tr>
+<td>isForm</td>
+<td>is current div a form (ability to type a text). Possible values: 0 (not a form), 1 (is a form)</td>
+</tr>
+<tr>
+<td>backColor</td>
+<td>background color in a <a href="https://www.w3schools.com/html/html_colors_hex.asp#:~:text=A%20hexadecimal%20color%20is%20specified,the%20components%20of%20the%20color.">hex</a> format, if alpha section is not set, the block will be absolutelly opaque.</td>
+</tr>
+<tr>
+<td>color</td>
+<td>text color in a <a href="https://www.w3schools.com/html/html_colors_hex.asp#:~:text=A%20hexadecimal%20color%20is%20specified,the%20components%20of%20the%20color.">hex</a> format, if alpha section is not set, the block will be absolutelly opaque.</td>
+</tr>
+<tr>
+<td>alignment</td>
+<td>text alignment, possible values: <code>Left</code> , <code>Center</code> , <code>Right</code> , <code>Justified</code> , <code>Flush</code> , <code>Geometry</code></td>
+</tr>
+<tr>
+<td>fontSize</td>
+<td>number</td>
+</tr>
+<tr>
+<td>text</td>
+<td>content of the div (raw text or localization key), can be <a href="https://www.w3schools.com/tags/ref_urlencode.ASP">encoded</a></td>
+</tr>
+<tr>
+<td>fontStyle</td>
+<td>possible options: <code>Regular</code> , <code>Bold</code> , <code>Mono</code></td>
+</tr>
+<tr>
+<td>href</td>
+<td>string, link address for the link or form button. Also can be # (block raycast option in the visual editor)</td>
+</tr>
+<tr>
+<td>imageFileId</td>
+<td>string, image name in the network file storage</td>
+</tr>
+<tr>
+<td>formData</td>
+<td>Usually it’s username and password for login forms. It’s encoded json:</td>
+</tr>
+<tr>
+<td>`{</td>
+<td></td>
+</tr>
+<tr>
+<td>"data":</td>
+<td></td>
+</tr>
+<tr>
+<td>[</td>
+<td></td>
+</tr>
+<tr>
+<td>{</td>
+<td></td>
+</tr>
+<tr>
+<td>"formId": "input_username",</td>
+<td></td>
+</tr>
+<tr>
+<td>"requiredFormValue": "admin"</td>
+<td></td>
+</tr>
+<tr>
+<td>},</td>
+<td></td>
+</tr>
+<tr>
+<td>{</td>
+<td></td>
+</tr>
+<tr>
+<td>"formId": "input_password",</td>
+<td></td>
+</tr>
+<tr>
+<td>"requiredFormValue": "123456"</td>
+<td></td>
+</tr>
+<tr>
+<td>},</td>
+<td></td>
+</tr>
+<tr>
+<td>]</td>
+<td></td>
+</tr>
+<tr>
+<td>}`</td>
+<td></td>
+</tr>
+<tr>
+<td>But jsons contains invalid characters, so you have to use <a href="https://www.urlencoder.org">encoded</a> version. Example:</td>
+<td></td>
+</tr>
+<tr>
+<td><code>browser_alter_absolute_div("button_login", "formData", "%7B%0A%20%20%22data%22%3A%20%0A%20%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22formId%22%3A%20%22input_username%22%2C%0A%20%20%20%20%20%20%22requiredFormValue%22%3A%20%22admin%22%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22formId%22%3A%20%22input_password%22%2C%0A%20%20%20%20%20%20%22requiredFormValue%22%3A%20%22123456%22%0A%20%20%20%20%7D%2C%0A%20%20%5D%0A%7D")</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Please note that when you change the <code>text</code> property, <a href="../../service-commands-and-feedbacks/">IP address substitution and device discovery</a> will be invoked automatically.</p>
+<h2 id="browser_get_absolute_div">browser_get_absolute_div<a class="headerlink" href="#browser_get_absolute_div" title="Permanent link">&para;</a></h2>
+<p>The function retrieves the value of a <code>div</code> property. If the property does not exist, it returns <code>null</code>. It always returns a string value, which you can convert using the <code>to_number</code> function or parse automatically.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nf">browser_get_absolute_div</span><span class="p">(</span><span class="s2">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;attributeName&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Possible attributes:</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>attributeName</strong></th>
+<th><strong>result</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>posX</td>
+<td>number, X position from left top corner of the page</td>
+</tr>
+<tr>
+<td>posY</td>
+<td>number, Y position from left top corner of the page, multiplied by -1</td>
+</tr>
+<tr>
+<td>width</td>
+<td>number, width of the block</td>
+</tr>
+<tr>
+<td>height</td>
+<td>number, height of the block</td>
+</tr>
+<tr>
+<td>isForm</td>
+<td>is current div a form (ability to type a text). Possible values: 0 (not a form), 1 (is a form)</td>
+</tr>
+<tr>
+<td>backColor</td>
+<td>background color in a RGBA bytes format. Example: <code>255255255050</code> - this is white color with approximately 20 % alpha. You can <a href="../../miniscript-anvil-scripting-language/">parse the string</a> if you need.</td>
+</tr>
+<tr>
+<td>color</td>
+<td>text color in a RGBA bytes format. Example: <code>255255255050</code> - this is white color with approximately 20 % alpha. You can <a href="../../miniscript-anvil-scripting-language/">parse the string</a> if you need.</td>
+</tr>
+<tr>
+<td>alignment</td>
+<td>text alignment, possible values: <code>Left</code> , <code>Center</code> , <code>Right</code> , <code>Justified</code> , <code>Flush</code> , <code>Geometry</code></td>
+</tr>
+<tr>
+<td>fontSize</td>
+<td>number</td>
+</tr>
+<tr>
+<td>text</td>
+<td>current content of the div (the text, that a user sees)</td>
+</tr>
+<tr>
+<td>fontStyle</td>
+<td>possible options: <code>Regular</code> , <code>Bold</code> , <code>Mono</code></td>
+</tr>
+<tr>
+<td>href</td>
+<td>string, link address for the link or form button. Also can be # (block raycast option in the visual editor)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="browser_create_absolute_div">browser_create_absolute_div<a class="headerlink" href="#browser_create_absolute_div" title="Permanent link">&para;</a></h2>
+<p>Creates a new absolute div with a unique ID. Returns 1 if the div was created, and 0 if it was not. Please note that the function will not create a div if another div with the same ID already exists.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nf">browser_create_absolute_div</span><span class="p">(</span><span class="s2">&quot;new_unique_id&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="browser_delete_absolute_div">browser_delete_absolute_div<a class="headerlink" href="#browser_delete_absolute_div" title="Permanent link">&para;</a></h2>
+<p>Deletes the absolute div with the unique ID. Returns 1 if the deletion was successful, and 0 if it was not (i.e., if a div with such an ID was not found).</p>
+<h2 id="browser_dispatch_successful_command">browser_dispatch_successful_command<a class="headerlink" href="#browser_dispatch_successful_command" title="Permanent link">&para;</a></h2>
+<p>The function to send a message that can be handled by the story runner (steps or story Minicript).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">browser_dispatch_successful_command</span><span class="p">(</span><span class="s2">&quot;command&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;device_name&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;argument&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Parameters</strong></p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>string, command name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>device_name</td>
+<td><em>optional, device name</em></td>
+</tr>
+<tr>
+<td>argument</td>
+<td><em>optional, argument</em></td>
+</tr>
+</tbody>
+</table>
+<p>In preview mode, you will see the sent message immediately after calling this function in the debug console. However, there is one drawback: you can only send a single argument, while handling user actions supports an array of arguments.</p>
+<h2 id="browser_get_fake_cookie_value">browser_get_fake_cookie_value<a class="headerlink" href="#browser_get_fake_cookie_value" title="Permanent link">&para;</a></h2>
+<p>Get the value from global storage, which allows you to share data between sites. The data is preserved during mission gameplay. The behavior in the Forge scene differs from the real mission behavior, so you should test it in the mission preview. 
+If the value isn't set yet, it returns <code>null</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nf">browser_get_fake_cookie_value</span><span class="p">(</span><span class="s2">&quot;previous_user_choice&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="browser_set_fake_cookie_value">browser_set_fake_cookie_value<a class="headerlink" href="#browser_set_fake_cookie_value" title="Permanent link">&para;</a></h2>
+<p>Sets the value in the global data storage. The data is preserved during mission gameplay. The behavior in the Forge scene differs from the real mission behavior, so you should test it in the mission preview.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nf">browser_set_fake_cookie_value</span><span class="p">(</span><span class="s2">&quot;previous_user_choice&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;A&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="browser_get_url">browser_get_url<a class="headerlink" href="#browser_get_url" title="Permanent link">&para;</a></h2>
+<p>Get detailed, structured information about the current page address. It returns a map with the following fields:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">address</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">browser_get_url</span><span class="p">()</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nf">println</span><span class="p">(</span><span class="nv">address</span><span class="p">.</span><span class="py">url</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="nv">the</span><span class="w"> </span><span class="nv">original</span><span class="w"> </span><span class="nv">URL</span><span class="w"> </span><span class="nv">of</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">page</span><span class="p">,</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">shown</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">address</span><span class="w"> </span><span class="nv">bar</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nf">println</span><span class="p">(</span><span class="nv">address</span><span class="p">.</span><span class="py">protocol</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="nv">http</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">https</span><span class="p">,</span><span class="w"> </span><span class="kr">for</span><span class="w"> </span><span class="nv">instance</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nf">println</span><span class="p">(</span><span class="nv">address</span><span class="p">.</span><span class="py">host</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="nv">domain</span><span class="w"> </span><span class="nf">name</span><span class="w"> </span><span class="p">(</span><span class="nv">site</span><span class="p">.</span><span class="py">com</span><span class="p">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nf">println</span><span class="p">(</span><span class="nv">address</span><span class="p">.</span><span class="py">port</span><span class="p">)</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nf">println</span><span class="p">(</span><span class="nv">address</span><span class="p">.</span><span class="py">path</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="nv">the</span><span class="w"> </span><span class="nv">path</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">current</span><span class="w"> </span><span class="nf">page</span><span class="w"> </span><span class="p">(</span><span class="o">/</span><span class="nv">index</span><span class="p">.</span><span class="py">html</span><span class="p">)</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="kr">for</span><span class="w"> </span><span class="nv">parameter</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nv">address</span><span class="p">.</span><span class="py">query</span><span class="w"> </span><span class="o">//</span><span class="nv">array</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">get</span><span class="w"> </span><span class="nf">parameters</span><span class="w"> </span><span class="p">(</span><span class="err">?</span><span class="nv">param1</span><span class="o">=</span><span class="nv">a</span><span class="o">&amp;</span><span class="nv">param2</span><span class="o">=</span><span class="nv">b</span><span class="p">)</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="nf">println</span><span class="p">(</span><span class="nv">parameter</span><span class="p">)</span><span class="w"> </span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="kr">end</span><span class="w"> </span><span class="kr">for</span>
+</code></pre></div>
+<h2 id="browser_open_url">browser_open_url<a class="headerlink" href="#browser_open_url" title="Permanent link">&para;</a></h2>
+<p>Opens the URL in the in-game web browser. Please note that this function will stop the currently running script and close any open alerts.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nf">browser_open_url</span><span class="p">(</span><span class="s2">&quot;https://scripts.io/2.html&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="browser_was_button_click">browser_was_button_click<a class="headerlink" href="#browser_was_button_click" title="Permanent link">&para;</a></h2>
+<p>Returns 1 if a user clicks on the absolute div. Works only if the <code>href</code> (link) value is set to <code>#</code> (<em>Block Raycast</em> checkbox in the visual web editor) and it is not a form. The value is reset to 0 after it is called.</p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="kr">while</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="kr">if</span><span class="w"> </span><span class="nf">browser_was_button_click</span><span class="p">(</span><span class="s2">&quot;button_choice_1&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="nv">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="kr">break</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="kr">end</span><span class="w"> </span><span class="kr">if</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="kr">if</span><span class="w"> </span><span class="nf">browser_was_button_click</span><span class="p">(</span><span class="s2">&quot;button_choice_2&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">  </span><span class="nv">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">  </span><span class="kr">break</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="kr">end</span><span class="w"> </span><span class="kr">if</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="kr">if</span><span class="w"> </span><span class="nf">browser_was_button_click</span><span class="p">(</span><span class="s2">&quot;button_choice_3&quot;</span><span class="p">)</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="w">  </span><span class="nv">choice</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="w">  </span><span class="kr">break</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="kr">end</span><span class="w"> </span><span class="kr">if</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="nf">wait</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="kr">end</span><span class="w"> </span><span class="kr">while</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="nf">browser_alert</span><span class="p">(</span><span class="s2">&quot;User choice is: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">choice</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="browser_clear_all_fake_cookies">browser_clear_all_fake_cookies<a class="headerlink" href="#browser_clear_all_fake_cookies" title="Permanent link">&para;</a></h2>
+<p>Clears all values stored via <code>browser_set_fake_cookie_value</code>. After calling this function, all subsequent calls to <code>browser_get_fake_cookie_value</code> will return <code>null</code> until new values are set.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nf">browser_clear_all_fake_cookies</span><span class="p">()</span>
+</code></pre></div>
+<h2 id="browser_get_form_value">browser_get_form_value<a class="headerlink" href="#browser_get_form_value" title="Permanent link">&para;</a></h2>
+<p>Gets the user input (string) from the absolute div that is set as an input form. </p>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&quot;</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="kr">while</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="kr">if</span><span class="w"> </span><span class="nf">browser_was_button_click</span><span class="p">(</span><span class="s2">&quot;button_submit&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="w">  </span><span class="nv">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">browser_get_form_value</span><span class="p">(</span><span class="s2">&quot;input_field&quot;</span><span class="p">)</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="w">  </span><span class="nf">browser_alert</span><span class="p">(</span><span class="s2">&quot;User input: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">input</span><span class="p">)</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="kr">end</span><span class="w"> </span><span class="kr">if</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="nf">wait</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="kr">end</span><span class="w"> </span><span class="kr">while</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

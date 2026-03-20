@@ -1,0 +1,1286 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://haiku-inc.github.io/HaikuForgeDocumentation/service-commands-and-feedbacks/">
+      
+      
+        <link rel="prev" href="../story-creation-with-miniscript/">
+      
+      
+        <link rel="next" href="../web-sites-creation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/haiku-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Service Commands & Feedbacks - Haiku Forge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cairo:300,300i,400,400i,700,700i%7CInconsolata:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Cairo";--md-code-font:"Inconsolata"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/haiku.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#service-commands-text-substitution-and-feedbacks-of-commands" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Haiku Forge Documentation" class="md-header__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haiku Forge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Service Commands & Feedbacks
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Haiku Forge Documentation" class="md-nav__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    Haiku Forge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../haiku-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haiku Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kusto-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kusto Query Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../story-creation-with-miniscript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Story Creation with Miniscript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Commands & Feedbacks
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Commands & Feedbacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#text-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text Substitution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-commands-that-commands-are-not-allowed-to-print-in-the-in-game-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service commands (that commands are not allowed to print in the in-game terminal)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands-feedbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands Feedbacks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sudo-root-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sudo (root) mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Sites Creation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web Sites Creation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-sites-creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-sites-creation/miniscript-for-web-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miniscript for Web Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#text-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text Substitution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#service-commands-that-commands-are-not-allowed-to-print-in-the-in-game-terminal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service commands (that commands are not allowed to print in the in-game terminal)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands-feedbacks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commands Feedbacks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sudo-root-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sudo (root) mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="service-commands-text-substitution-and-feedbacks-of-commands">Service commands, text substitution, and feedbacks of commands<a class="headerlink" href="#service-commands-text-substitution-and-feedbacks-of-commands" title="Permanent link">&para;</a></h1>
+<p>Note. <em>Encoded</em> string means that you need to url-encode string before using in json. Service for encoding - <a href="https://www.urlencoder.org">https://www.urlencoder.org</a></p>
+<h3 id="text-substitution">Text Substitution<a class="headerlink" href="#text-substitution" title="Permanent link">&para;</a></h3>
+<p>Text substitution phrases are used to show text that is unknown to the mission author. For instance, a username of a player or a device IP address that is regenerated every mission launch. </p>
+<p>These phrases can be used in Nitro messages, text file contents, or internal web browser pages.</p>
+<details class="note">
+<summary>LocalizationKey</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="nv">LocalizationKey</span><span class="p">:</span><span class="py">PASTE_KEY_HERE</span><span class="p">}</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>PlayerName</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span><span class="nx">PlayerName</span><span class="p">}</span>
+</code></pre></div>
+<p>Replaces with a username that was set by the player when the game was first launched or a Haiku Pro account was created. </p>
+<p><em>If the LMS mode is active, the phrase will be replaced with "Student Name."</em></p>
+</details>
+<details class="note">
+<summary>DeviceIP</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="nx">DeviceIP</span><span class="o">:</span><span class="nx">DEVICE_NAME</span><span class="p">}</span>
+</code></pre></div>
+<p>Replaces with the actual device IP address by device name. The device name is a stable value that you can get or set in the Device Properties in the Forge Network Builder.</p>
+<p>Please note, reading this IP address by a player reveals the device on the map if it was not discovered initially.</p>
+</details>
+<details class="note">
+<summary>Hash</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="nx">Hash</span><span class="o">:</span><span class="nx">ORIGINAL_VALUE</span><span class="p">}</span>
+</code></pre></div>
+<p>Converts the original value to a SHA256 hash and saves it, allowing it to be decoded by the John tool later.</p>
+</details>
+<details class="note">
+<summary>LMS Phrases</summary>
+<p>These phrases are only available if LMS mode is active.</p>
+<p><a href="https://docs.rusticisoftware.com/crossdomain/3.x/API.html">https://docs.rusticisoftware.com/crossdomain/3.x/API.html</a></p>
+<details class="note">
+<summary>StudentName</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="p">{</span><span class="nx">StudentName</span><span class="p">}</span>
+</code></pre></div>
+<p>Replaces with a student's name, which was set when a lesson was started.</p>
+<p>Gets the value from <strong>GetStudentName()</strong> function.</p>
+</details>
+<details class="note">
+<summary>LMS_Bookmark</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span><span class="nx">LMS_Bookmark</span><span class="p">}</span>
+</code></pre></div>
+<p>Is replaced with the result of the <em>GetBookmark()</em> function.</p>
+</details>
+<details class="note">
+<summary>LMS_SuspendData</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">{</span><span class="nx">LMS_SuspendData</span><span class="p">}</span>
+</code></pre></div>
+<p>Is replaced with the result of the <em>GetSuspendData()</em> function.</p>
+</details>
+<details class="note">
+<summary>LMS_Status</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">{</span><span class="nx">LMS_Status</span><span class="p">}</span>
+</code></pre></div>
+<p>Is replaced with the result of the <em>GetStatus()</em> function.</p>
+</details>
+<details class="note">
+<summary>LMS_Score</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">{</span><span class="nx">LMS_Score</span><span class="p">}</span>
+</code></pre></div>
+<p>Is replaced with the result of the <em>GetScore()</em> function.</p>
+</details>
+</details>
+<h3 id="service-commands-that-commands-are-not-allowed-to-print-in-the-in-game-terminal">Service commands (that commands are not allowed to print in the in-game terminal)<a class="headerlink" href="#service-commands-that-commands-are-not-allowed-to-print-in-the-in-game-terminal" title="Permanent link">&para;</a></h3>
+<details class="note">
+<summary>nitroapp</summary>
+<p><strong>nitroapp</strong> "CHARACTER_NAME" "ENCODED MESSAGE" "TIME" "DELAY" "BOOL-BY USER INPUT"</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">nitroapp</span><span class="w"> </span><span class="nx">Rascal</span><span class="w"> </span><span class="err">\&quot;</span><span class="nx">Look</span><span class="o">%</span><span class="mf">2</span><span class="nx">C</span><span class="o">%</span><span class="mf">20</span><span class="nx">there</span><span class="o">%</span><span class="nx">E2</span><span class="o">%</span><span class="mf">80</span><span class="o">%</span><span class="mf">99</span><span class="nx">s</span><span class="o">%</span><span class="mf">20</span><span class="nx">the</span><span class="o">%</span><span class="mf">20</span><span class="nx">Operations</span><span class="o">%</span><span class="mf">20</span><span class="nx">server</span><span class="o">%</span><span class="mf">21</span><span class="err">\&quot;</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="kc">true</span>
+</code></pre></div>
+<p><em>"CHARACTER_NAME"</em> - name of character, who will send a message. Available names list:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">Rascal</span><span class="p">,</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nx">Gungnir</span><span class="p">,</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nx">Talaria</span><span class="p">,</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nx">Eos</span><span class="p">,</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nx">Sorceress</span><span class="p">,</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nx">Dekkar</span><span class="p">,</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nx">DojoCharacter</span><span class="p">,</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="nx">Lugh</span><span class="p">,</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="nx">Spyder</span><span class="p">,</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="nx">Saga</span><span class="p">,</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="nx">Fez</span><span class="p">,</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="nx">DrParks</span><span class="p">,</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="nx">Orel</span><span class="p">,</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="nx">Kona</span><span class="p">,</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a><span class="nx">Acan</span><span class="p">,</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a><span class="nx">Kunwu</span><span class="p">,</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a><span class="nx">BusinessAbaddon</span><span class="p">,</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a><span class="nx">BusinessAcan</span><span class="p">,</span>
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a><span class="nx">BusinessCerberus</span><span class="p">,</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a><span class="nx">BusinessDekkar</span><span class="p">,</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a><span class="nx">BusinessEos</span><span class="p">,</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a><span class="nx">BusinessGungnir</span><span class="p">,</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23" href="#__codelineno-10-23"></a><span class="nx">BusinessKunwu</span><span class="p">,</span>
+<a id="__codelineno-10-24" name="__codelineno-10-24" href="#__codelineno-10-24"></a><span class="nx">BusinessRASCAL</span><span class="p">,</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25" href="#__codelineno-10-25"></a><span class="nx">BusinessSorceress</span><span class="p">,</span>
+<a id="__codelineno-10-26" name="__codelineno-10-26" href="#__codelineno-10-26"></a><span class="nx">BusinessSpyder</span><span class="p">,</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27" href="#__codelineno-10-27"></a><span class="nx">OnlyCutsceneBusinessAgenda</span><span class="p">,</span>
+<a id="__codelineno-10-28" name="__codelineno-10-28" href="#__codelineno-10-28"></a><span class="nx">OnlyCutsceneBusinessCybermancer</span><span class="p">,</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29" href="#__codelineno-10-29"></a><span class="nx">OnlyCutsceneBusinessDealer</span><span class="p">,</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30" href="#__codelineno-10-30"></a><span class="nx">OnlyCutsceneBusinessDrOmen</span><span class="p">,</span>
+<a id="__codelineno-10-31" name="__codelineno-10-31" href="#__codelineno-10-31"></a><span class="nx">OnlyCutsceneBusinessKacha</span><span class="p">,</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32" href="#__codelineno-10-32"></a><span class="nx">OnlyCutsceneBusinessRonin</span><span class="p">,</span>
+<a id="__codelineno-10-33" name="__codelineno-10-33" href="#__codelineno-10-33"></a><span class="nx">OnlyCutsceneBusinessDealerFemale</span><span class="p">,</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34" href="#__codelineno-10-34"></a><span class="nx">OnlyCutsceneBusinessRoninFemale</span><span class="p">,</span>
+<a id="__codelineno-10-35" name="__codelineno-10-35" href="#__codelineno-10-35"></a><span class="nx">PrivateSato</span><span class="p">,</span>
+<a id="__codelineno-10-36" name="__codelineno-10-36" href="#__codelineno-10-36"></a><span class="nx">StaffSergeantVazquez</span><span class="p">,</span>
+<a id="__codelineno-10-37" name="__codelineno-10-37" href="#__codelineno-10-37"></a><span class="nx">SergeantMajorRiya</span><span class="p">,</span>
+<a id="__codelineno-10-38" name="__codelineno-10-38" href="#__codelineno-10-38"></a><span class="nx">MasterSergeantMoore</span><span class="p">,</span>
+<a id="__codelineno-10-39" name="__codelineno-10-39" href="#__codelineno-10-39"></a><span class="nx">SergeantAbernathy</span><span class="p">,</span>
+<a id="__codelineno-10-40" name="__codelineno-10-40" href="#__codelineno-10-40"></a><span class="nx">SpecialistSoroka</span><span class="p">,</span>
+<a id="__codelineno-10-41" name="__codelineno-10-41" href="#__codelineno-10-41"></a><span class="nx">CorporalCarter</span><span class="p">,</span>
+<a id="__codelineno-10-42" name="__codelineno-10-42" href="#__codelineno-10-42"></a><span class="nx">SpecialistDelaCruz</span><span class="p">,</span>
+<a id="__codelineno-10-43" name="__codelineno-10-43" href="#__codelineno-10-43"></a><span class="nx">Vikram</span><span class="p">,</span>
+<a id="__codelineno-10-44" name="__codelineno-10-44" href="#__codelineno-10-44"></a><span class="nx">StaffSergeantCollins</span><span class="p">,</span>
+<a id="__codelineno-10-45" name="__codelineno-10-45" href="#__codelineno-10-45"></a><span class="nx">ColonelWilliams</span><span class="p">,</span>
+<a id="__codelineno-10-46" name="__codelineno-10-46" href="#__codelineno-10-46"></a><span class="nx">AirmanDavisJr</span><span class="p">,</span>
+<a id="__codelineno-10-47" name="__codelineno-10-47" href="#__codelineno-10-47"></a><span class="nx">FirstLieutenantThakral</span>
+</code></pre></div>
+<p><em>"ENCODED MESSAGE"</em>  - message that will be written.</p>
+<p><em>"TIME"</em> - time in format "12:15" to emulate writing messages from the past. Set _ symbol to write a current time.</p>
+<p><em>"DELAY"</em> - used to emulate writing message effects. Set a value less than zero to auto calculate delay time, but you can’t get this calculated delay time.</p>
+<p><em>"BOOL-BY USER INPUT"</em> - legacy feature, set it true</p>
+</details>
+<details class="note">
+<summary>smdelay</summary>
+<p><strong>smdelay</strong> NUMBER</p>
+<p>This command pauses the commands execution list for some seconds, which you set in arguments. Mostly used together with nitroapp command to wait while message is printing.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">nitroapp</span><span class="w"> </span><span class="nx">Rascal</span><span class="w"> </span><span class="err">\&quot;</span><span class="nx">Look</span><span class="o">%</span><span class="mf">2</span><span class="nx">C</span><span class="o">%</span><span class="mf">20</span><span class="nx">there</span><span class="o">%</span><span class="nx">E2</span><span class="o">%</span><span class="mf">80</span><span class="o">%</span><span class="mf">99</span><span class="nx">s</span><span class="o">%</span><span class="mf">20</span><span class="nx">the</span><span class="o">%</span><span class="mf">20</span><span class="nx">Operations</span><span class="o">%</span><span class="mf">20</span><span class="nx">server</span><span class="o">%</span><span class="mf">21</span><span class="err">\&quot;</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">smdelay</span><span class="w"> </span><span class="mf">0.7</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>autoconnect</summary>
+<p><strong>autoconnect</strong> "DEVICE_UNIQUE_NAME"</p>
+<p>This command emulates ssh command, it means it connects to a specific device, but you do not need to know device ip and credentials.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">autoconnect</span><span class="w"> </span><span class="nx">N_5_Workstation_01</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>nitrocaption</summary>
+<p><strong>nitrocaption</strong> OPTION</p>
+<p>Shows or hides specific captions in the nitro window. List of options:</p>
+<p>0 - hide caption</p>
+<p>1 - show “Next Message” caption</p>
+<p>2 - show “Complete Mission” caption</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nx">nitrocaption</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nx">nitroapp</span><span class="w"> </span><span class="nx">Rascal</span><span class="w"> </span><span class="err">\&quot;</span><span class="nx">Look</span><span class="o">%</span><span class="mf">2</span><span class="nx">C</span><span class="o">%</span><span class="mf">20</span><span class="nx">there</span><span class="o">%</span><span class="nx">E2</span><span class="o">%</span><span class="mf">80</span><span class="o">%</span><span class="mf">99</span><span class="nx">s</span><span class="o">%</span><span class="mf">20</span><span class="nx">the</span><span class="o">%</span><span class="mf">20</span><span class="nx">Operations</span><span class="o">%</span><span class="mf">20</span><span class="nx">server</span><span class="o">%</span><span class="mf">21</span><span class="err">\&quot;</span><span class="w"> </span><span class="nx">_</span><span class="w"> </span><span class="mf">0.5</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nx">smdelay</span><span class="w"> </span><span class="mf">0.5</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nx">nitrocaption</span><span class="w"> </span><span class="mf">1</span>
+</code></pre></div>
+<p>Note. You don’t need to show the “Complete Mission” caption, it will be automatically when the last step is reached. It exists only as an option.</p>
+</details>
+<details class="note">
+<summary>starttimer</summary>
+<p><strong>starttimer</strong> TIME_FOR_EASY TIME_FOR_MEDIUM TIME_FOR_HARD</p>
+<p>Starts the game timer. When this timer is finished, the mission will fail. You should set time in seconds. If you do not want to set a timer for a specific difficulty level, set it as zero.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">!</span><span class="nx">starttimer</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">1800</span><span class="w"> </span><span class="mf">900</span>
+</code></pre></div>
+<p>Note. This command is strictly recommended to use with “!” mark to be sure the timer will be started if the user skips this step.</p>
+</details>
+<details class="note">
+<summary>downloadfile</summary>
+<p><strong>downloadfile</strong> "ENCODED_JSON" DEVICE_NAME "ENCODED_DESTINATION"</p>
+<p>This command creates a single file or directory (overwrite it if this file already exists) in a specific device and destination.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nx">downloadfile</span><span class="w"> </span><span class="err">\&quot;</span><span class="o">%</span><span class="mf">7</span><span class="nx">B</span><span class="o">%</span><span class="mf">22</span><span class="nx">Attributes</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">3</span><span class="nx">A</span><span class="o">%</span><span class="mf">5</span><span class="nx">B</span><span class="o">%</span><span class="mf">22</span><span class="nx">Normal</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">5</span><span class="nx">D</span><span class="o">%</span><span class="mf">2</span><span class="nx">C</span><span class="o">%</span><span class="mf">22</span><span class="nx">Name</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">3</span><span class="nx">A</span><span class="o">%</span><span class="mf">22</span><span class="nx">readme</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">2</span><span class="nx">C</span><span class="o">%</span><span class="mf">22</span><span class="nx">Path</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">3</span><span class="nx">A</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">2</span><span class="nx">Freadme</span><span class="p">.</span><span class="nx">txt</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">2</span><span class="nx">C</span><span class="o">%</span><span class="mf">22</span><span class="nx">Extension</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">3</span><span class="nx">A</span><span class="o">%</span><span class="mf">22.</span><span class="nx">txt</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">2</span><span class="nx">C</span><span class="o">%</span><span class="mf">22</span><span class="nx">Data</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">3</span><span class="nx">A</span><span class="o">%</span><span class="mf">7</span><span class="nx">B</span><span class="o">%</span><span class="mf">22</span><span class="nx">Guid</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">3</span><span class="nx">A</span><span class="o">%</span><span class="mf">22</span><span class="nx">ca0f4603</span><span class="o">-</span><span class="mf">0</span><span class="nx">dc4</span><span class="o">-</span><span class="mf">4746</span><span class="o">-</span><span class="nx">bed2</span><span class="o">-</span><span class="mf">1</span><span class="nx">b7dcf478d5e</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">7</span><span class="nx">D</span><span class="o">%</span><span class="mf">2</span><span class="nx">C</span><span class="o">%</span><span class="mf">22</span><span class="nx">Created</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">3</span><span class="nx">Anull</span><span class="o">%</span><span class="mf">2</span><span class="nx">C</span><span class="o">%</span><span class="mf">22</span><span class="nx">UserAccessList</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">3</span><span class="nx">A</span><span class="o">%</span><span class="mf">7</span><span class="nx">B</span><span class="o">%</span><span class="mf">7</span><span class="nx">D</span><span class="o">%</span><span class="mf">2</span><span class="nx">C</span><span class="o">%</span><span class="mf">22</span><span class="nx">Children</span><span class="o">%</span><span class="mf">22</span><span class="o">%</span><span class="mf">3</span><span class="nx">A</span><span class="o">%</span><span class="mf">5</span><span class="nx">B</span><span class="o">%</span><span class="mf">5</span><span class="nx">D</span><span class="o">%</span><span class="mf">7</span><span class="nx">D</span><span class="err">\&quot;</span><span class="w"> </span><span class="err">\&quot;</span><span class="nx">Home</span><span class="w"> </span><span class="nx">System</span><span class="err">\&quot;</span><span class="w"> </span><span class="err">\&quot;</span><span class="o">%</span><span class="mf">2</span><span class="nx">FDocuments</span><span class="o">%</span><span class="mf">2</span><span class="nx">F</span><span class="err">\&quot;</span>
+</code></pre></div>
+<p>The file json has a specific structure. Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="p">{</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="w">      </span><span class="s2">&quot;Attributes&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="w">        </span><span class="s2">&quot;Normal&quot;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="w">    </span><span class="p">],</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="w">        </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rockyou.txt&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="w">    </span><span class="s2">&quot;Path&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;/Documents/rockyou.txt&quot;</span><span class="p">,</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="w">    </span><span class="s2">&quot;Data&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="w">        </span><span class="s2">&quot;SkipCheckGuid&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="w">                </span><span class="s2">&quot;Data&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Hello world!&quot;</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="w">    </span><span class="s2">&quot;UserAccessList&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{},</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a><span class="w">    </span><span class="s2">&quot;Children&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[]</span>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="p">}</span>
+</code></pre></div>
+<p><em>Attributes</em> list is available on the main documentation page.</p>
+<p><em>Name</em> <strong>MUST</strong> repeat the file name from global <em>Path</em> field.</p>
+<p>“<em>Data</em>” - text content of the file. For complex content please use url-encoded value.</p>
+<p>“<em>UserAccessList” -</em> username and read-write enabled value. Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">&quot;UserAccessList&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="w">    </span><span class="nt">&quot;sorceress&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">]</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="p">}</span>
+</code></pre></div>
+<p>“<em>Children</em>” - list of children file jsons, actual if common json is directory. </p>
+<p>ENCODED_DESTINATION must have the same value as <em>Path</em> in the json.</p>
+</details>
+<details class="note">
+<summary>updntp</summary>
+<p><strong>updntp</strong> MISSION_INDEX ****"ENCODED_TEXT"</p>
+<p>Adds mission and message and text from argument if it doesn’t exist in the Rascal notepad section.</p>
+<p>Note. It's recommended to launch this command in an initial step. There are no story notes history, each mission should define which notes will be available. For instance, mission 2 should define notes for missions 1 and 2, mission 3 should for 1, 2, and 3.</p>
+<p>Use -1 <em>MISSION_INDEX</em> value to create note for current running mission (actual for all Forge missions).</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nx">updntp</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span><span class="w"> </span><span class="err">\&quot;</span><span class="o">%</span><span class="mf">3</span><span class="nx">Cb</span><span class="o">%</span><span class="mf">3</span><span class="nx">EAZS</span><span class="o">%</span><span class="mf">20</span><span class="nx">Security</span><span class="o">%</span><span class="mf">20</span><span class="nx">Username</span><span class="o">%</span><span class="mf">3</span><span class="nx">A</span><span class="o">%</span><span class="mf">3</span><span class="nx">C</span><span class="o">%</span><span class="mf">2</span><span class="nx">Fb</span><span class="o">%</span><span class="mf">3</span><span class="nx">E</span><span class="o">%</span><span class="mf">20</span><span class="nx">kunwu</span><span class="err">\&quot;</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>unlockapp</summary>
+<p>unlockapp COMMAND_NAME</p>
+<p>Unlock the terminal application. Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">!</span><span class="nx">unlockapp</span><span class="w"> </span><span class="nx">ssh</span>
+</code></pre></div>
+<p>Strongly recommended to use together “!” symbol.</p>
+</details>
+<details class="note">
+<summary>mnlsetactive</summary>
+<p><strong>mnlsetactive</strong> COMMAND_NAME</p>
+<p>Set active the section of defined command in Manual application. Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="o">!</span><span class="nx">mnlsetactive</span><span class="w"> </span><span class="nx">ls</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>appbtnunlock</summary>
+<p><strong>appbtnunlock</strong> BUTTON_NAME NOTIFICATION</p>
+<p>Set as active and highlight the application button in the toolbar. Possible options: OpenManual, OpenExplorer, OpenNotes, OpenSkillTree, OpenWebBrowser. Second argument: 0 - do not show the notification (good for set the list of command at mission start), 1 - show APP UNLOCKED notification.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="o">!</span><span class="nx">appbtnunlock</span><span class="w"> </span><span class="nx">OpenExplorer</span><span class="w"> </span><span class="mf">1</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>tmplockapp</summary>
+<p>Temporarily lock window app (only for current mission) with optional nitro feedback. Arguments:</p>
+<ul>
+<li>Application Name - name of app. Possible parameters: File Editor, Explorer, Manual, Nitro, Notes, App <em>(for settings)</em>, Skill Tree, Terminal</li>
+<li>Device Name - lock app if user is only logged in defined device. Set it “-” to ignore device. Then this app will be locked for every device in the current mission.</li>
+<li>NPC Name to provide feedback. This is optional parameter, do not set it to lock app without feedback.</li>
+<li>Feedback message - define only with previous parameter. If user tries to open app, this messege shows in Nitro messanger. But only one time.</li>
+</ul>
+</details>
+<details class="note">
+<summary>tmpunlockapp</summary>
+<p>Unlock previously locked app (see tmplockapp command). Has only one argument - app name.</p>
+</details>
+<details class="note">
+<summary>setfileatt</summary>
+<p>Set file attribute. Arguments:</p>
+<ul>
+<li>Mode - 0 to clear all attributes list, 1 - to append new attribute.</li>
+<li>Device name where file is located.</li>
+<li>Full file path</li>
+<li>Number of attribute in attributes enum. Set it only with <em>1</em> mode argument.</li>
+</ul>
+</details>
+<details class="note">
+<summary>runapp</summary>
+<p>Run the “fake” app, which user could see in the <em>netstat</em> list. **Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nx">runapp</span><span class="w"> </span><span class="nx">calc</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>rememberhash</summary>
+<p>Add some strings (most often passwords) to the hashes library. Uses for <em>john</em> command. Here is the syntax:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nx">rememberhash</span><span class="w"> </span><span class="o">*</span><span class="nx">encoded_string_to_hash</span><span class="o">*</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">*</span><span class="nx">or</span><span class="o">*</span><span class="w"> </span><span class="mf">1</span>
+</code></pre></div>
+<p>Where 0 is using john wordlists to decode the hash (normal behavior), but 1 - wordlists will be ignored and <em>string_to_hash</em> can be received without wordlist. New line symbol is divider for many strings, which can be decoded by john, so if you have spaces or new lines - use url encoded string_to_hash. </p>
+</details>
+<details class="note">
+<summary>unlockapplist</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="err">u</span><span class="kc">nl</span><span class="err">ockapplis</span><span class="kc">t</span><span class="w"> </span><span class="err">ENCODED_LIST</span><span class="w"> </span><span class="err">MISSION_INDEX</span>
+</code></pre></div>
+<p>Unlocks terminal commands by indices of the completed missions.</p>
+<p>ENCODED_LIST - Command names, such as cd or rm, are divided by a new line symbol. In a mission json url encoded version should be used. In the Mission Editor, you don't need to encode this.</p>
+<p>MISSION_INDEX - Index of the mission, which should be completed to unlock these commands. Set it as -1 to unlock commands without this check.</p>
+</details>
+<details class="note">
+<summary>clear</summary>
+<p>This command doesn’t have arguments. It clears the terminal history and prints welcome text.</p>
+</details>
+<h3 id="commands-feedbacks">Commands Feedbacks<a class="headerlink" href="#commands-feedbacks" title="Permanent link">&para;</a></h3>
+<details class="note">
+<summary>skip</summary>
+<p>Very specific feedback. When the step, which contains this command in the "waited" list, starts, StoryManager waits for only one frame (a couple of milliseconds) and goes to the next step. A usage example is an initialization step or when you need to create a goal when the player needs to complete several actions, like removing 3 files. Then you will create a block of goals, but all goals are hidden and not optional. After this block of goals, you will create an empty Required Goal step, set the goal name "Remove 3 files" and add "skip" to the "waited from user" commands list. So just after the user removes these 3 files, the goal will be set as completed, because StoryManager moves to this "skip" step and almost instantly move to the next step. When StoryManager moves to the next step from the previous, if the previous has a non-empty Goal Name field, it marks this Goal as completed.</p>
+</details>
+<details class="note">
+<summary>nitrocaption</summary>
+<p>There is <strong>no device</strong> is returned. Possible feedback arguments</p>
+<p>1 - user invokes “Next Message” action.</p>
+<p>2 - user invokes “Complete Mission” action. (isn’t used in the game)</p>
+</details>
+<details class="note">
+<summary>cat</summary>
+<p>Invokes only if the requested file exists. Returns device name, which is user logged in.</p>
+<p>Arguments list:</p>
+<ul>
+<li>Full path to requested file.</li>
+<li>fb=true - if file is opened via File Explorer; fb=false - via Terminal.</li>
+</ul>
+</details>
+<details class="note">
+<summary>john</summary>
+<p>Returns current logged device name. Successful arguments:</p>
+<ul>
+<li>Full requested file path.</li>
+<li>Each hash will be returned as a separated argument.</li>
+<li>Original (decoded) values.</li>
+</ul>
+<p>Failed arguments:</p>
+<ul>
+<li>failed as a separated argument</li>
+<li>Content of the file</li>
+</ul>
+<p>Examples:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="s2">&quot;CommandsWaitingFor&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">          </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;john&quot;</span><span class="p">,</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">          </span><span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;N_5_Workstation_05&quot;</span><span class="p">,</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">          </span><span class="s2">&quot;ArgsWaitingFor&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;failed&quot;</span><span class="w"> </span><span class="p">]</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">      </span><span class="p">]</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="s2">&quot;CommandsWaitingFor&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">          </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;john&quot;</span><span class="p">,</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">          </span><span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">          </span><span class="s2">&quot;ArgsWaitingFor&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;ProstoyParol7&quot;</span><span class="w"> </span><span class="p">]</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">      </span><span class="p">]</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>exit</summary>
+<p>Returns only the name of the device, which is the new current device.
+If the player has exited root mode (sudo), the argument is <code>root</code>.</p>
+</details>
+<details class="note">
+<summary>cd, cd.., cd ~, cd /</summary>
+<p>Returns the current device name and has only one argument - current full path of new place <strong>with</strong> slash in the end, where user is.</p>
+<p>Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="s2">&quot;CommandsWaitingFor&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">          </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cd&quot;</span><span class="p">,</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">          </span><span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Home System&quot;</span><span class="p">,</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">          </span><span class="s2">&quot;ArgsWaitingFor&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;/Documents/&quot;</span><span class="w"> </span><span class="p">]</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a><span class="w">      </span><span class="p">]</span>
+</code></pre></div>
+<p>There is argument “fb=True” or “fb=False” if this command is invoked via File Browser or not respectively. Example:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="s2">&quot;CommandsWaitingFor&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">          </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cd&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">          </span><span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Home System&quot;</span><span class="p">,</span>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">              </span><span class="s2">&quot;ArgsWaitingFor&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;/Documents/&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;fb=False&quot;</span><span class="w"> </span><span class="p">]</span>
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="w">      </span><span class="p">]</span>
+</code></pre></div>
+<p>This command has additional feedbacks. If user types [cd ..], [cd] (without args), [cd ~] or [cd /], two completed commands feedbacks will be returned. For example if you need that user must use only cd / syntax, you can use this json:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="s2">&quot;CommandsWaitingFor&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">        </span><span class="p">{</span>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="w">          </span><span class="s2">&quot;Name&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;cd /&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">          </span><span class="s2">&quot;DeviceName&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Home System&quot;</span><span class="p">,</span>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="w">          </span><span class="s2">&quot;ArgsWaitingFor&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">&quot;/&quot;</span><span class="w"> </span><span class="p">]</span>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="w">      </span><span class="p">]</span>
+</code></pre></div>
+<p>But “cd Home System / fb=false” will be returned too.</p>
+<p>Argument <code>root</code> if command is launched by root-user (sudo), otherwise - <code>not_root</code></p>
+</details>
+<details class="note">
+<summary>ssh</summary>
+<p>Invokes only if command usage was successful. Returns the new device name. Has no arguments.</p>
+</details>
+<details class="note">
+<summary>zion</summary>
+<p>Invokes only in case of successful usage of command. Device name is the name of current logged in device. Has only one argument - absolute path of horsemen virus file.</p>
+</details>
+<details class="note">
+<summary>man</summary>
+<p>It is for terminal version of manual. Feedback values:</p>
+<ul>
+<li>name of requested app</li>
+<li>locked=false or locked=true - is app locked to use when it is requested?</li>
+</ul>
+</details>
+<details class="note">
+<summary>appopen</summary>
+<p>Invokes when user opens <em>windowed</em> or toolbar application (file explorer, for example). There is no returned device name. Possible parameters: File Editor, Explorer, Manual, Nitro, Notes, App <em>(for settings)</em>, Skill Tree, Terminal, Web Browser</p>
+</details>
+<details class="note">
+<summary>ls</summary>
+<p>Same feedback as cd, but for some reason path <strong>doesn’t contain</strong> ending slash.</p>
+</details>
+<details class="note">
+<summary>pwd</summary>
+<p>Same as cd</p>
+</details>
+<details class="note">
+<summary>whoami</summary>
+<p>Returns current device name and current user name as feedback.</p>
+</details>
+<details class="note">
+<summary>onsshstart</summary>
+<p>Invokes when user starts ssh to device and set only ip of device, but not the password. Device name will be returned.</p>
+</details>
+<details class="note">
+<summary>hydra</summary>
+<p>Returns the device name, username as first argument, password as second.</p>
+<p>If hydra was failed, it returns attacked device name and “failed” string as argument.</p>
+</details>
+<details class="note">
+<summary>echo</summary>
+<p>Returns device name, first argument is file content, second - absolute file path. Argument <code>root</code> if command is launched by root-user (sudo), otherwise - <code>not_root</code></p>
+</details>
+<details class="note">
+<summary>ping</summary>
+<p>Returns device name which is being pinged. If user terminate command by ctrl+c, will be returned “stop” as feedback argument.</p>
+</details>
+<details class="note">
+<summary>curl</summary>
+<p>Returns device name, which is host of requested resource. Argument is a full path of requested resource, example: “/.www/index.html”.</p>
+</details>
+<details class="note">
+<summary>ifconfig</summary>
+<p>Returns the current logged-in device name. Has no arguments if version without arguments is used.</p>
+<p>If correct interface name and up/down status was set as arguments, it returns one argument with such format: <code>&lt;interface_name&gt;_&lt;status&gt;</code>.  Example: <code>eth0_up</code> or <code>eth0_down</code></p>
+</details>
+<details class="note">
+<summary>nmap or nmap/</summary>
+<p>Returns device which was nmap’ed. For nmap/ there is a feedback argument - bitmask digit after slash.</p>
+</details>
+<details class="note">
+<summary>loic</summary>
+<p>If user invokes loic to certain device and it was successful, will be returned device name only. If user stops loic (via Ctrl+C), will be returned only argument “stop” without device.</p>
+</details>
+<details class="note">
+<summary>loichelp</summary>
+<p>User requests help of loic. Has no arguments or device as feedback. Instance of usage: </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nx">loic</span><span class="w"> </span><span class="o">--</span><span class="nx">help</span>
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nx">OR</span>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="nx">loic</span><span class="w"> </span><span class="o">-</span><span class="nx">h</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>failroninnitro</summary>
+<p>Returns when user started roninnitro without arguments. Has no device and arguments.</p>
+</details>
+<details class="note">
+<summary>roninnitro</summary>
+<p>Returned when roninnitro was successfull. Returns only device name.</p>
+</details>
+<details class="note">
+<summary>onsshstart</summary>
+<p>Invokes when a player starts to ssh some device, but doesn't type username or password yet.</p>
+</details>
+<details class="note">
+<summary>rm</summary>
+<p>Returns when user deletes file successfully. Has device name and such arguments:</p>
+<ul>
+<li>Full path to just removed file <strong>without</strong> slash in the end.</li>
+<li>fb=True if file was removed via file explorer or fb=False for terminal.</li>
+<li><code>root</code> if command is launched by root-user (sudo), otherwise - <code>not_root</code></li>
+</ul>
+</details>
+<details class="note">
+<summary>netstat</summary>
+<p>Returns when netstat was successfull. Returns only device name.</p>
+</details>
+<details class="note">
+<summary>helpiptables</summary>
+<p>Returns when user invokes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nx">iptables</span><span class="w"> </span><span class="o">-</span><span class="nx">h</span>
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nx">OR</span>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="nx">iptables</span><span class="w"> </span><span class="o">--</span><span class="nx">h</span>
+</code></pre></div>
+<p>Has no device and arguments.</p>
+</details>
+<details class="note">
+<summary>param_iptables</summary>
+<p>Returns when user successfully invokes iptables commands. Returns device name and list of requested arguments:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="o">-</span><span class="nx">L</span>
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="o">--</span><span class="nx">list</span>
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="o">-</span><span class="nx">A</span>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="o">--</span><span class="nx">append</span>
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="o">-</span><span class="nx">s</span>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="o">--</span><span class="nx">source</span>
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a><span class="o">-</span><span class="nx">d</span>
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a><span class="o">--</span><span class="nx">destination</span>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a><span class="o">-</span><span class="nx">j</span>
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a><span class="o">--</span><span class="nx">jump</span>
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="o">-</span><span class="nx">p</span>
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a><span class="o">--</span><span class="nx">protocol</span>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a><span class="o">--</span><span class="nx">source</span><span class="o">-</span><span class="nx">port</span>
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a><span class="o">--</span><span class="nx">sport</span>
+<a id="__codelineno-32-15" name="__codelineno-32-15" href="#__codelineno-32-15"></a><span class="o">--</span><span class="nx">destination</span><span class="o">-</span><span class="nx">port</span>
+<a id="__codelineno-32-16" name="__codelineno-32-16" href="#__codelineno-32-16"></a><span class="o">--</span><span class="nx">dport</span>
+</code></pre></div>
+</details>
+<details class="note">
+<summary>kill</summary>
+<p>Returns if user successfully kills virtual app (see <em>runapp</em> command for more context). Returns the name of just killed app. Doesn’t return the device name.</p>
+</details>
+<details class="note">
+<summary>webbrowser_page</summary>
+<p>A player successfully opens a certain page by Web Browser. Returns the device name, which has the requested page and full path of this page in the device file system.</p>
+</details>
+<details class="note">
+<summary>webbrowser_fail</summary>
+<p>Returns only user input in the Web Browser URL field, if the requested device wasn't found. It means, there is no device with the requested hostname or IP.</p>
+</details>
+<details class="note">
+<summary>webbrowser_404</summary>
+<p>Returns the device name and the user input (value of the URL field), when the device with such hostname or IP was found but the requested file on this device is missing.</p>
+</details>
+<details class="note">
+<summary>sshfail</summary>
+<p>Returns requested device, username, and password from the user input if these credentials are incorrect. Is invoked only if a requested IP is valid and exists in the network.</p>
+</details>
+<details class="note">
+<summary>cat_fail</summary>
+<p>Is invoked when a player tries to read a protected file, it means, the player isn't logged in with credentials, which are set in the UsersAccessList of this file. Returns the device, that contains this file, and the full path of the requested file.</p>
+</details>
+<details class="note">
+<summary>sudo</summary>
+<p>When sudo mode is correctly enabled, the device is returned as well. However, this feedback is not provided if sudo mode is enabled only for a single command, such as <code>sudo cat file</code>.</p>
+</details>
+<h3 id="sudo-root-mode">Sudo (root) mode<a class="headerlink" href="#sudo-root-mode" title="Permanent link">&para;</a></h3>
+<p>Sudo (root) mode grants full read/write permissions in the game. This mode is unavailable for Windows OS and cannot be accessed if a root password is not set. To set a password, go to the Device Properties (Forge).</p>
+<p><img alt="image.png" src="image.png" /></p>
+<p>To launch the application with root rights, you can run a single command prefixed with <code>sudo</code> (enabling root mode only for that command). Alternatively, you can enable sudo mode for all subsequent commands, as well as for the File Editor and File Explorer, by entering <code>sudo</code> and providing the correct password. To exit sudo mode, use the <code>exit</code> command.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>sudo rm /documents
+</code></pre></div>
+<p>However, read/write permissions can still be restricted even in sudo mode. If a file or directory has the <strong>Immutable</strong> attribute (<strong>set by default</strong>), general restrictions will apply. This means that if a player is logged in as a user without read/write permissions, they cannot modify the file. If the player has root rights and the file <strong>does not have the Immutable attribute</strong>, they have full control over the file— allowing read, modification, and deletion.</p>
+<p>In this example, if the player is logged in as "user," they cannot open or delete the "protected" directory, even with sudo mode enabled.</p>
+<p><img alt="image.png" src="image-1.png" /></p>
+<p>In this case, if the player is still logged in as "user" without root mode enabled, they <strong>cannot</strong> read or write to this file. However, if the user enables sudo mode, they <strong>can</strong> perform any actions on the file, as it does not have the Immutable attribute.</p>
+<p><img alt="image.png" src="image-2.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

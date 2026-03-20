@@ -1,0 +1,1395 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://haiku-inc.github.io/HaikuForgeDocumentation/miniscript-anvil-scripting-language/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/haiku-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Miniscript Anvil Scripting Language - Haiku Forge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cairo:300,300i,400,400i,700,700i%7CInconsolata:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Cairo";--md-code-font:"Inconsolata"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/haiku.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#miniscript-anvil-scripting-language" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Haiku Forge Documentation" class="md-header__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haiku Forge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Miniscript Anvil Scripting Language
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Haiku Forge Documentation" class="md-nav__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    Haiku Forge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../haiku-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haiku Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kusto-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kusto Query Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../story-creation-with-miniscript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Story Creation with Miniscript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-commands-and-feedbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Commands & Feedbacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Sites Creation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web Sites Creation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-sites-creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-sites-creation/miniscript-for-web-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miniscript for Web Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="miniscript-anvil-scripting-language">Miniscript Anvil Scripting Language<a class="headerlink" href="#miniscript-anvil-scripting-language" title="Permanent link">&para;</a></h1>
+<p>Anvil is a simple scripting language added into the game for players to build their own scripts and exploits. Based on the open-source scripting language by Joe Strout (https://github.com/JoeStrout/miniscript)</p>
+<h1 id="launch-a-script">Launch a Script<a class="headerlink" href="#launch-a-script" title="Permanent link">&para;</a></h1>
+<p>A script can be launched in three ways: as a player-created script via terminal (however, not all methods can be launched)</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">mini</span><span class="w"> </span><span class="nv">FILE_NAME</span>
+</code></pre></div>
+<p>Or as a <a href="../story-creation-with-miniscript/">story script</a> that manages an entire mission, or launched by a story step.</p>
+<h1 id="control-flow">Control Flow<a class="headerlink" href="#control-flow" title="Permanent link">&para;</a></h1>
+<h3 id="if-else-if-else-end-if">if, else if, else, end if<a class="headerlink" href="#if-else-if-else-end-if" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">if</span><span class="w"> </span><span class="mf">2</span><span class="o">+</span><span class="mf">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="nx">then</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;math works!&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nx">pi</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="nx">then</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;pi is tasty&quot;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="s2">&quot;a&quot;</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="s2">&quot;b&quot;</span><span class="w"> </span><span class="nx">then</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;I can sort&quot;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">else</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;last chance&quot;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nx">end</span><span class="w"> </span><span class="k">if</span>
+</code></pre></div>
+<h3 id="while-end-while">while, end while<a class="headerlink" href="#while-end-while" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Spam&quot;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">while</span><span class="w"> </span><span class="nx">s</span><span class="p">.</span><span class="nx">len</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">50</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nx">s</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;, spam&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nx">end</span><span class="w"> </span><span class="k">while</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nx">print</span><span class="w"> </span><span class="nx">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; and spam!&quot;</span>
+</code></pre></div>
+<h3 id="for-end-for">for, end for<a class="headerlink" href="#for-end-for" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">for</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">range</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="p">)</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;...&quot;</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nx">end</span><span class="w"> </span><span class="k">for</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;Liftoff!&quot;</span>
+</code></pre></div>
+<h3 id="break-continue">break &amp; continue<a class="headerlink" href="#break-continue" title="Permanent link">&para;</a></h3>
+<p>The <code>break</code> statement jumps out of a while or for loop. The <code>continue</code> statement jumps to the top of the loop, skipping the rest of the current iteration.</p>
+<h1 id="data-types">Data Types<a class="headerlink" href="#data-types" title="Permanent link">&para;</a></h1>
+<p>All numbers are stored in full-precision format. Numbers also represent true (1) and false (0). Operators:</p>
+<table>
+<thead>
+<tr>
+<th>+, -, *, /</th>
+<th>standard math</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%</td>
+<td>mod (remainder)</td>
+</tr>
+<tr>
+<td>^</td>
+<td>power</td>
+</tr>
+<tr>
+<td>and, or, not</td>
+<td>logical operators</td>
+</tr>
+<tr>
+<td>==, !=, &gt;, &gt;=, &lt;, &lt;=</td>
+<td>comparison</td>
+</tr>
+</tbody>
+</table>
+<h1 id="strings">Strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h1>
+<p>Text is stored in strings of Unicode characters. Write strings by surrounding them with quotes. If you need to include a quotation mark in the string, type it twice. Use println instead of print if you want a line break.</p>
+<table>
+<thead>
+<tr>
+<th>+</th>
+<th>string concatenation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>string subtraction (chop)</td>
+</tr>
+<tr>
+<td>*, /</td>
+<td>replication, division</td>
+</tr>
+<tr>
+<td>==, !=, &gt;, &gt;=, &lt;, &lt;=</td>
+<td>comparison</td>
+</tr>
+<tr>
+<td>[i]</td>
+<td>get character i</td>
+</tr>
+<tr>
+<td>[i:j]</td>
+<td>get slice from i up to j</td>
+</tr>
+</tbody>
+</table>
+<h3 id="escapeurl">escapeURL<a class="headerlink" href="#escapeurl" title="Permanent link">&para;</a></h3>
+<p>A lot of functions require an encoded URL string. But sometimes you need to use values generated at runtime, so you don't know what value you should encode. For this reason, the method <em>escapeURL</em> exists. It returns exactly the same output as <em>UnityWebRequest.EscapeURL()</em> does.</p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>value</th>
+<th>string, original (not encoded)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">//</span><span class="nv">console</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">show</span><span class="w"> </span><span class="s2">&quot;Hello+World&quot;</span><span class="w"> </span><span class="nv">message</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nf">println</span><span class="p">(</span><span class="nf">escapeURL</span><span class="p">(</span><span class="s2">&quot;Hello World&quot;</span><span class="p">))</span>
+</code></pre></div>
+<h3 id="unescapeurl">unescapeURL<a class="headerlink" href="#unescapeurl" title="Permanent link">&para;</a></h3>
+<p>Receives an encoded version of a string (either from the <code>escapeURL</code> function or other tools) and returns a 'normal' string. This is the same as <strong><code>UnityWebRequest.UnEscapeUrl()</code>.</strong></p>
+<p><strong>Arguments</strong></p>
+<table>
+<thead>
+<tr>
+<th>encodedValue</th>
+<th>string, encoded</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nf">println</span><span class="p">(</span><span class="nf">unescapeURL</span><span class="p">(</span><span class="s2">&quot;Hello%20world&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="nv">the</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="s2">&quot;Hello World&quot;</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">shown</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nf">println</span><span class="p">(</span><span class="nf">unescapeURL</span><span class="p">(</span><span class="s2">&quot;Hello+world&quot;</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="nv">exact</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">same</span><span class="w"> </span><span class="nv">line</span><span class="w"> </span><span class="nv">will</span><span class="w"> </span><span class="nv">be</span><span class="w"> </span><span class="nv">show</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">well</span>
+</code></pre></div>
+<h1 id="type-conversion">Type Conversion<a class="headerlink" href="#type-conversion" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>to_number(string)</th>
+<th>Converts the input string to a number data type. If the string can't be converted, returns <code>null</code>.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>conversion from numbers to strings</em></td>
+<td>Conversion from numbers to strings is an automatic process when you add any string to a number. So, to convert a number to a string data type, add an empty string to the number.</td>
+</tr>
+<tr>
+<td>Examples:</td>
+<td></td>
+</tr>
+<tr>
+<td><code>213 + ""</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Or:</td>
+<td></td>
+</tr>
+<tr>
+<td><code>213 + "23"</code></td>
+<td></td>
+</tr>
+<tr>
+<td>The result will be 21323</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="lists">Lists<a class="headerlink" href="#lists" title="Permanent link">&para;</a></h1>
+<p>Write a list in square brackets. Iterate over the list with for, or pull out individual items with a 0-based index in square brackets. A negative index counts from the end. Get a slice (subset) of a list with two indices, separated by a colon.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">6</span><span class="p">,</span><span class="w"> </span><span class="mf">8</span><span class="p">]</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nx">x</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="w"> </span><span class="c1">// 2</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nx">x</span><span class="p">[</span><span class="o">-</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="c1">// 8</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="nx">x</span><span class="p">[</span><span class="mf">1</span><span class="o">:</span><span class="mf">3</span><span class="p">]</span><span class="w"> </span><span class="c1">// [4, 6]</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="nx">x</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="o">=</span><span class="mf">5</span><span class="w"> </span><span class="c1">// x now [2,4,5,8]</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>+</th>
+<th>list concatenation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>*, /</td>
+<td>replication, division</td>
+</tr>
+<tr>
+<td>[i]</td>
+<td>get/set element i</td>
+</tr>
+<tr>
+<td>[i:j]</td>
+<td>get slice from i up to j</td>
+</tr>
+</tbody>
+</table>
+<h1 id="maps">Maps<a class="headerlink" href="#maps" title="Permanent link">&para;</a></h1>
+<p>A map is a set of values associated with unique keys. Create a map with curly braces; get or set a single value with square brackets. Keys and values may be any type.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nx">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mf">1</span><span class="o">:</span><span class="s2">&quot;one&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="o">:</span><span class="s2">&quot;two&quot;</span><span class="p">}</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">m</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="c1">// &quot;one&quot;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">m</span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;dos&quot;</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>+</th>
+<th>map concatenation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[k]</td>
+<td>get/set value with key k</td>
+</tr>
+<tr>
+<td>.indent</td>
+<td>get/set value by identifier</td>
+</tr>
+</tbody>
+</table>
+<h2 id="jsons">JSONs<a class="headerlink" href="#jsons" title="Permanent link">&para;</a></h2>
+<p>JSON is a popular format for serializing data into a string. It is supported by Miniscript, so if you convert any <code>Map</code> or <code>List</code> to a string (print it to the terminal or save it to a file), these data structures will be displayed as JSON.</p>
+<p>To convert strings to <code>Map</code> or <code>List</code>, there is the <code>from_json</code> function. It accepts a string that is a valid JSON and returns a <code>Map</code> or <code>List</code> if the conversion is successful; otherwise, it returns <code>null</code>.</p>
+<p><strong>Character substitutions</strong></p>
+<p>The double quote character is substituted by <code>""</code> or <code>\"</code>. However, the <code>""</code> version is not a valid true JSON combination, and other parsers may fail to parse such JSON (only <code>\"</code> is valid). Therefore, it is highly recommended to use the encoded versions of strings (see <code>escapeURL</code> above).</p>
+<p>Here is an example of setting JSON inside a string and parsing it using the <code>from_json</code> function. Then, some parsed values will be printed to the console.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">json</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;{&quot;&quot;objects&quot;&quot;:[{&quot;&quot;object1&quot;&quot;: &quot;&quot;value1&quot;&quot;},{&quot;&quot;object2&quot;&quot;: &quot;&quot;va&quot;&quot;&quot;&quot;lue2&quot;&quot;},{&quot;&quot;object3&quot;&quot;:3}]}&quot;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nv">parsedJson</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">from_json</span><span class="p">(</span><span class="nv">json</span><span class="p">)</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="nf">println</span><span class="p">(</span><span class="nv">parsedJson</span><span class="p">)</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nf">println</span><span class="p">(</span><span class="nv">parsedJson</span><span class="p">[</span><span class="s2">&quot;objects&quot;</span><span class="p">])</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="nf">println</span><span class="p">(</span><span class="nv">parsedJson</span><span class="p">[</span><span class="s2">&quot;objects&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="nf">println</span><span class="p">(</span><span class="nv">parsedJson</span><span class="p">[</span><span class="s2">&quot;objects&quot;</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;object2&quot;</span><span class="p">])</span>
+</code></pre></div>
+<p><strong>Output</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>{&quot;objects&quot;: [{&quot;object1&quot;: &quot;value1&quot;}, {&quot;object2&quot;: &quot;va&quot;&quot;lue2&quot;}, {&quot;object3&quot;: 3}]}
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>[{&quot;object1&quot;: &quot;value1&quot;}, {&quot;object2&quot;: &quot;va&quot;&quot;lue2&quot;}, {&quot;object3&quot;: 3}]
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>{&quot;object2&quot;: &quot;va&quot;&quot;lue2&quot;}
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>va&quot;lue
+</code></pre></div>
+<p><strong>Special values (values without quotation marks):</strong></p>
+<table>
+<thead>
+<tr>
+<th>null</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>true</td>
+<td>will be converted to number 1</td>
+</tr>
+<tr>
+<td>false</td>
+<td>will be converted to number 0</td>
+</tr>
+</tbody>
+</table>
+<h1 id="functions">Functions<a class="headerlink" href="#functions" title="Permanent link">&para;</a></h1>
+<p>Create a function with function(), including parameters with optional default values. Assign the result to a variable. Invoke by using that variable. User @ to reference a function without invoking.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nx">triple</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="o">=</span><span class="mf">1</span><span class="p">)</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">n</span><span class="o">*</span><span class="mf">3</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nx">end</span><span class="w"> </span><span class="kd">function</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nx">print</span><span class="w"> </span><span class="nx">triple</span><span class="w"> </span><span class="c1">// 3</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nx">print</span><span class="w"> </span><span class="nx">triple</span><span class="p">(</span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="c1">// 15</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nx">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">@</span><span class="nx">triple</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nx">print</span><span class="w"> </span><span class="nx">f</span><span class="p">(</span><span class="mf">5</span><span class="p">)</span><span class="w"> </span><span class="c1">// also 15</span>
+</code></pre></div>
+<h1 id="classes-objects">Classes &amp; Objects<a class="headerlink" href="#classes-objects" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nx">Shape</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="s2">&quot;sides&quot;</span><span class="o">:</span><span class="mf">0</span><span class="p">}</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nx">Square</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Shape</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="nx">Square</span><span class="p">.</span><span class="nx">sides</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="nx">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Square</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="nx">x</span><span class="p">.</span><span class="nx">sides</span><span class="w"> </span><span class="c1">// 4</span>
+</code></pre></div>
+<p>Functions invoked via dot syntax get a self variable that refers to the object they were invoked on.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nx">Shape</span><span class="p">.</span><span class="nx">degrees</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mf">180</span><span class="o">*</span><span class="p">(</span><span class="nx">self</span><span class="p">.</span><span class="nx">sides</span><span class="o">-</span><span class="mf">2</span><span class="p">)</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nx">end</span><span class="w"> </span><span class="kd">function</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="nx">x</span><span class="p">.</span><span class="nx">degrees</span><span class="w"> </span><span class="c1">// 360</span>
+</code></pre></div>
+<h1 id="intrinsic-functions">Intrinsic Functions<a class="headerlink" href="#intrinsic-functions" title="Permanent link">&para;</a></h1>
+<h3 id="haiku-can-be-launched-by-the-mission-editor-only">Haiku (can be launched by the mission editor only)<a class="headerlink" href="#haiku-can-be-launched-by-the-mission-editor-only" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>admin_connect_user(ip_address)</th>
+<th>Connect a user to a device by IP address.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>admin_disconnect_user(ip_address)</td>
+<td>Disconnect a user from a device by IP address.</td>
+</tr>
+<tr>
+<td>save_to_file(content, <em>file_name</em>)</td>
+<td>Opens the save file dialog for the Steam version and the download file window for the Web. Pay attention, this function doesn't stop like wait or waitForTerminal functions during the player's save action. The next action will be invoked just after this function. So, this function DOESN'T wait for user actions. For the Web platform, the file can be saved (downloaded) without a dialog window, in the default download directory. It depends on the user's browser settings. file_name is optional (but very desired) parameter and it can include file extension.</td>
+</tr>
+<tr>
+<td>admin_real_http_get(uri)</td>
+<td>Performs a real HTTP GET request to an external URI. Returns a response object with the result. The URI must include a protocol (e.g., <code>https://</code>).</td>
+</tr>
+<tr>
+<td>admin_real_http_post(uri, post)</td>
+<td>Performs a real HTTP POST request to an external URI. The <code>post</code> argument must be a map (object) containing the POST data. Returns a response object with the result.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="haiku-can-be-launched-from-everywhere">Haiku (can be launched from everywhere)<a class="headerlink" href="#haiku-can-be-launched-from-everywhere" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>focus_device(ip_address)</th>
+<th>Focus a camera on a device with a defined IP address.</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ping(ip_address)</td>
+<td>Simulates a "ping" terminal command. Returns True if the pinging is successful.</td>
+</tr>
+<tr>
+<td>has_port_open(port,ip_address)</td>
+<td>Returns True if the device has a defined port. Example: if the device is able to be accessed by SSH, this method returns True if it receives 22 as a port argument.</td>
+</tr>
+<tr>
+<td>get_open_ports(ip_address)</td>
+<td>Returns an array of all open ports for a defined device.</td>
+</tr>
+<tr>
+<td>wget_device(address or url)</td>
+<td>Simulates the <em>curl</em> command.</td>
+</tr>
+<tr>
+<td>Example:</td>
+<td></td>
+</tr>
+<tr>
+<td><code>println(wget_device("catalyst.com/services.html"))</code></td>
+<td></td>
+</tr>
+<tr>
+<td>The result will be the same as the "curl catalyst.com/services.html" execution.</td>
+<td></td>
+</tr>
+<tr>
+<td>get_known_ips()</td>
+<td>Returns IP addresses of all devices, which are visible on the map.</td>
+</tr>
+<tr>
+<td>browser(url)</td>
+<td>Opens the game web browser. Url is a string, also could be an IP.</td>
+</tr>
+<tr>
+<td>setTerminalSize(size)</td>
+<td>Sets or closes the game terminal. Arguments: 0 - panel view (default), 1 - maximized view, 2 - hidden view. If the terminal is closed (hidden) and the method is invoked with a 0 or 1 argument - the terminal will be open.</td>
+</tr>
+<tr>
+<td>waitForTerminalInput()</td>
+<td>Stops the script (like the "wait" function) until the player inputs something in the terminal. Returns the string that was typed into the terminal. Pay attention: if the player inputs an IP address, the function substitutes it with the device name. Retrieve string value using .val.</td>
+</tr>
+<tr>
+<td>clear</td>
+<td>Clear the terminal</td>
+</tr>
+<tr>
+<td>run(string)</td>
+<td>Executes a terminal command. Returns the exit code (0 = success). Example:</td>
+</tr>
+<tr>
+<td><code>run("cd /Documents")</code></td>
+<td></td>
+</tr>
+<tr>
+<td>move_window(window_name, x, y, <em>x_piv</em>, <em>y_piv</em>)</td>
+<td>Moves a game window to normalized screen coordinates (0..1 range). Pivot defaults to 0.5, 0.5 (center). Example:</td>
+</tr>
+<tr>
+<td><code>move_window("terminal", 0.25, 0.5)</code></td>
+<td></td>
+</tr>
+<tr>
+<td>focus_window(window_name)</td>
+<td>Brings a specified game window to the front. Example:</td>
+</tr>
+<tr>
+<td><code>focus_window("terminal")</code></td>
+<td></td>
+</tr>
+<tr>
+<td>print_default_prompt()</td>
+<td>Prints the default terminal prompt (the <code>user@device:path$</code> line).</td>
+</tr>
+<tr>
+<td>apply_scripting_settings(settings)</td>
+<td>Configures runtime settings for the current script. Accepts a map with the following options:</td>
+</tr>
+<tr>
+<td><code>run_function_is_silent</code> (boolean) - if true, the <code>run()</code> function won't print command output.</td>
+<td></td>
+</tr>
+<tr>
+<td><code>skip_cutscene</code> (boolean) - if true, cutscene sequences will be skipped.</td>
+<td></td>
+</tr>
+<tr>
+<td>Alias: <code>set_scripting_settings(settings)</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>get_date_time</strong></p>
+<p>Returns current date and time. 
+Pay attention: the values are set when <code>get_date_time</code> is invoked, not when its children (hour, minute, etc.) are.</p>
+<table>
+<thead>
+<tr>
+<th>year</th>
+<th>number, returns current year</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>month</td>
+<td>number, returns current month</td>
+</tr>
+<tr>
+<td>day</td>
+<td>number, returns current day</td>
+</tr>
+<tr>
+<td>hour</td>
+<td>number, returns current hour</td>
+</tr>
+<tr>
+<td>minute</td>
+<td>number, returns  current minute</td>
+</tr>
+<tr>
+<td>second</td>
+<td>number, returns current second</td>
+</tr>
+<tr>
+<td>millisecond</td>
+<td>number, returns current millisecond</td>
+</tr>
+<tr>
+<td>unix</td>
+<td>number, get current <a href="https://en.wikipedia.org/wiki/Unix_time">unix time</a> (seconds from 1970)</td>
+</tr>
+<tr>
+<td>date</td>
+<td>string, return current month, day, and year. The format depends on current OS settings</td>
+</tr>
+<tr>
+<td>time</td>
+<td>string, returns current hour and minute in a formatted way</td>
+</tr>
+</tbody>
+</table>
+<p>Example</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nv">startTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">get_date_time</span><span class="p">()</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nf">println</span><span class="p">(</span><span class="s2">&quot;Type answer:&quot;</span><span class="p">)</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nv">answer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">waitForTerminalInput</span><span class="p">()</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nv">endTime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">get_date_time</span><span class="p">()</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nf">println</span><span class="p">(</span><span class="s2">&quot;You spent &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="nv">endTime</span><span class="p">.</span><span class="py">unix</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">startTime</span><span class="p">.</span><span class="py">unix</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; seconds to your answer&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><a href="../story-creation-with-miniscript/">See the list for mission creation on a separate page.</a></p>
+<h3 id="numeric">Numeric<a class="headerlink" href="#numeric" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>abs(x)</th>
+<th>acos(x)</th>
+<th>asin(x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>atan(y,x)</td>
+<td>ceil(x)</td>
+<td>char(i)</td>
+</tr>
+<tr>
+<td>cos(r)</td>
+<td>floor(x)</td>
+<td>log(x,b)</td>
+</tr>
+<tr>
+<td>round(x,d)</td>
+<td>rnd</td>
+<td></td>
+</tr>
+<tr>
+<td><em>Generates a pseudorandom number between 0 and 1</em></td>
+<td>rnd(seed)</td>
+<td></td>
+</tr>
+<tr>
+<td>pi</td>
+<td>sign(x)</td>
+<td></td>
+</tr>
+<tr>
+<td><em>Return -1 for negative numbers, 1 for positive numbers, and 0 for zero.</em></td>
+<td>sin(r)</td>
+<td></td>
+</tr>
+<tr>
+<td>sqrt(x)</td>
+<td>str(x)</td>
+<td></td>
+</tr>
+<tr>
+<td><em>Convert any value to a string</em></td>
+<td>tan(r)</td>
+<td></td>
+</tr>
+<tr>
+<td>bitAnd(i,j)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>Bitwise AND of two integers</em></td>
+<td>bitOr(i,j)</td>
+<td></td>
+</tr>
+<tr>
+<td><em>Bitwise OR of two integers</em></td>
+<td>bitXor(i,j)</td>
+<td></td>
+</tr>
+<tr>
+<td><em>Bitwise XOR of two integers</em></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="string">String<a class="headerlink" href="#string" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>.indexOf(s)</th>
+<th>.insert(i,s)</th>
+<th>.len</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.val</td>
+<td>.code</td>
+<td>.remove(s)</td>
+</tr>
+<tr>
+<td>.lower</td>
+<td>.upper</td>
+<td>.replace(a,b)</td>
+</tr>
+<tr>
+<td>.split(d)</td>
+<td>slice(seq,from,to)</td>
+<td></td>
+</tr>
+<tr>
+<td><em>Get a substring from index <code>from</code> up to <code>to</code></em></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="listmap">List/Map<a class="headerlink" href="#listmap" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>.hasIndex(i)</th>
+<th>.indexOf(x)</th>
+<th>.insert(i,v)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.join(s)</td>
+<td>.push(x)</td>
+<td>.pop</td>
+</tr>
+<tr>
+<td>.pull</td>
+<td>.indexes</td>
+<td>.values</td>
+</tr>
+<tr>
+<td>.len</td>
+<td>.sum</td>
+<td>.sort(<em>byKey</em>, <em>ascending</em>)</td>
+</tr>
+<tr>
+<td><em>Sort in place. <code>byKey</code> sorts maps by a key. <code>ascending</code> defaults to 1.</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>.shuffle</td>
+<td>.remove(i)</td>
+<td>.range(from,to,step)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>print(s)</th>
+<th>println(s)</th>
+<th>time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>wait(sec)</td>
+<td>locals</td>
+<td>globals</td>
+</tr>
+<tr>
+<td>yield</td>
+<td>exit</td>
+<td>hash(obj)</td>
+</tr>
+<tr>
+<td><em>Returns a hash code for any value</em></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>refEquals(a,b)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><em>True if a and b refer to the same object</em></td>
+<td>version</td>
+<td></td>
+</tr>
+<tr>
+<td><em>Returns the MiniScript version string</em></td>
+<td>stackTrace</td>
+<td></td>
+</tr>
+<tr>
+<td><em>Returns the current call stack as a string (useful for debugging)</em></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="forge">Forge<a class="headerlink" href="#forge" title="Permanent link">&para;</a></h1>
+<p>The Forge Mission Editor has a MiniScript integration. You can run the miniscript at the start of a story step or wait for some result from the user as the CommandWaitingFor.</p>
+<h3 id="commands-on-start">Commands On Start<a class="headerlink" href="#commands-on-start" title="Permanent link">&para;</a></h3>
+<p><img alt="Untitled" src="Untitled.png" /></p>
+<p>This command launches a miniscript, that is defined in the script editor. To open the editor, click on the "<em>Edit Script</em>" button. This is the only place to launch "admin" Haiku methods.</p>
+<p>Because of dynamic IP address settings, it doesn't make sense to use direct-IP syntax, like:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="nx">println</span><span class="p">(</span><span class="nx">get_open_ports</span><span class="p">(</span><span class="s2">&quot;192.168.1.17&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p>You should use the <code>{DeviceIP:&lt;Device_Name&gt;}</code> syntax everywhere a device IP is requested. The name of the device you can copy from the Device Properties tab. Example of the script, which will print all ports, which some workstation has:</p>
+<p>Please note that miniscript execution is a blocking command. So, other commands in the Commands On Start block won't be executed until the script is executed.</p>
+<p>Let's imagine a situation. In this example, the script has the <code>wait(5)</code> method. It means that the message from Dekkar will start typing in 5 seconds after the step is launched. The terminal input is also blocked during an execution.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nx">println</span><span class="p">(</span><span class="nx">get_open_ports</span><span class="p">(</span><span class="s2">&quot;{DeviceIP:test_network_2_test_network_2_2_Workstation_1}&quot;</span><span class="p">))</span>
+</code></pre></div>
+<p><img alt="Untitled" src="Untitled%201.png" /></p>
+<h3 id="commands-waiting">Commands Waiting<a class="headerlink" href="#commands-waiting" title="Permanent link">&para;</a></h3>
+<p><img alt="Untitled" src="Untitled%202.png" /></p>
+<p>You can use miniscript output for building your missions. It means you can wait for the execution of a miniscript with a result from a player. Output is a value of the println or print method. Each line is a separate output. In this screenshot, there are two arguments - we are waiting for the list of open ports and device name as a result of the script.</p>
+<p><img alt="Untitled" src="Untitled%203.png" /></p>
+<p>So, the expected script should look like this:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nx">println</span><span class="p">(</span><span class="nx">get_open_ports</span><span class="p">(</span><span class="s2">&quot;192.168.0.12&quot;</span><span class="p">))</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nx">println</span><span class="p">(</span><span class="s2">&quot;192.168.0.12&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p><em>Please note that device IPs are automatically replaced with device names.</em></p>
+<h1 id="script-examples">Script Examples<a class="headerlink" href="#script-examples" title="Permanent link">&para;</a></h1>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">// find which discovered devices have ssh port open</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="k">for</span><span class="w"> </span><span class="nx">known_device</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">get_known_ips</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="w">    </span><span class="nx">ports</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get_open_ports</span><span class="p">(</span><span class="nx">known_device</span><span class="p">)</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">ports</span><span class="p">.</span><span class="nx">indexOf</span><span class="p">(</span><span class="s2">&quot;ssh&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="nx">then</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="w">        </span><span class="nx">println</span><span class="w"> </span><span class="s2">&quot;device &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">known_device</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; has ssh&quot;</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="w">        </span><span class="nx">println</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="w">    </span><span class="nx">end</span><span class="w"> </span><span class="k">if</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="nx">end</span><span class="w"> </span><span class="k">for</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1">// go through all devices, search if they have http port open</span>
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="c1">// if they do, does a get request</span>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="k">for</span><span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">get_known_ips</span>
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="nx">println</span><span class="w"> </span><span class="s2">&quot;device &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;:&quot;</span>
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="c1">// println get_open_ports(ip)</span>
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">has_port_open</span><span class="p">(</span><span class="s2">&quot;http&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ip</span><span class="p">)</span><span class="w"> </span><span class="nx">then</span><span class="w"> </span><span class="k">continue</span>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a><span class="w">    </span><span class="nx">println</span><span class="w"> </span><span class="s2">&quot;has http, doing get request &quot;</span>
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a><span class="w">    </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">http_get</span><span class="p">(</span><span class="nx">ip</span><span class="p">)</span>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a><span class="w">    </span><span class="nx">println</span><span class="w"> </span><span class="s2">&quot;response: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">res</span>
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="nx">end</span><span class="w"> </span><span class="k">for</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1">// focus (asynchronously) all known devices</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="k">for</span><span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">get_known_ips</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">        </span><span class="nx">println</span><span class="w"> </span><span class="s2">&quot;focusing device &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">ip</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">        </span><span class="nx">focus_device</span><span class="w"> </span><span class="nx">ip</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="nx">end</span><span class="w"> </span><span class="k">for</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="c1">// test infinite loop, runs until you cancel it with Ctrl+C</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="k">while</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w"> </span><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;smth&quot;</span><span class="p">;</span><span class="w"> </span><span class="nx">wait</span><span class="w"> </span><span class="mf">0.1</span><span class="p">;</span><span class="w"> </span><span class="nx">println</span><span class="p">;</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nx">end</span><span class="w"> </span><span class="k">while</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="c1">// testing error responses (true/false or 1/0) focus_device returns 1 if device is found, 0 otherwise</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;first ip is &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">get_known_ips</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="nx">device_to_zoom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">get_known_ips</span><span class="p">[</span><span class="mf">0</span><span class="p">];</span>
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a><span class="nx">println</span>
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;trying to zoom ip &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">device_to_zoom</span>
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">focus_device</span><span class="p">(</span><span class="nx">device_to_zoom</span><span class="p">))</span>
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a><span class="nx">println</span>
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a><span class="k">if</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="nx">then</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;TRUE&quot;</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;FALSE&quot;</span>
+<a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;  =&gt; response: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">res</span>
+<a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="nx">println</span>
+<a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>
+<a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a><span class="nx">println</span><span class="w"> </span><span class="s2">&quot;trying to zoom ip 0.0.0.0&quot;</span>
+<a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a><span class="k">if</span><span class="w"> </span><span class="nx">focus_device</span><span class="p">(</span><span class="s2">&quot;0.0.0.0&quot;</span><span class="p">)</span><span class="w"> </span><span class="nx">then</span>
+<a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a><span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;  =&gt; could zoom: TRUE&quot;</span>
+<a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a><span class="k">else</span>
+<a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">    </span><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;  =&gt; could zoom: FALSE&quot;</span>
+<a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a><span class="nx">end</span><span class="w"> </span><span class="k">if</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="c1">// on Network 1, this can break server_basic, workstation 1 and workstation 2</span>
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="c1">// but not workstaion 3 and server web 1, because their user (bhampton, topdog) is too short</span>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="c1">// and username wordlists can only break medium sized usernames ... ?</span>
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a><span class="nx">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;/Documents/&quot;</span><span class="p">;</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;password&quot;</span><span class="p">;</span><span class="w"> </span><span class="nx">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;username&quot;</span>
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a><span class="nx">user_lists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">    </span><span class="nx">u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;Med.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">u</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;TxtMed.txt&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a><span class="p">];</span>
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a><span class="nx">pass_lists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a><span class="w">    </span><span class="nx">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;Short.txt&quot;</span><span class="p">,</span><span class="w">  </span><span class="nx">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;Med.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">p</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot;TxtMed.txt&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rockyou.txt&quot;</span><span class="p">,</span>
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a><span class="p">]</span>
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="nx">clear</span>
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a><span class="k">for</span><span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">get_known_ips</span>
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nx">not</span><span class="w"> </span><span class="nx">has_port_open</span><span class="p">(</span><span class="s2">&quot;ssh&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">ip</span><span class="p">)</span><span class="w"> </span><span class="nx">then</span>
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="w">        </span><span class="k">continue</span>
+<a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a><span class="w">    </span><span class="nx">end</span><span class="w"> </span><span class="k">if</span>
+<a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a>
+<a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="w">    </span><span class="nx">padding</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">21</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">ip</span><span class="p">.</span><span class="nx">len</span>
+<a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="w">    </span><span class="nx">println</span><span class="w"> </span><span class="s2">&quot;#&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">padding</span>
+<a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a><span class="w">    </span><span class="nx">println</span><span class="w"> </span><span class="s2">&quot;#  TRYING TO BREAK &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; #&quot;</span>
+<a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span class="w">    </span><span class="nx">println</span><span class="w"> </span><span class="s2">&quot;#&quot;</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="nx">padding</span>
+<a id="__codelineno-22-24" name="__codelineno-22-24" href="#__codelineno-22-24"></a>
+<a id="__codelineno-22-25" name="__codelineno-22-25" href="#__codelineno-22-25"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">user_lists</span>
+<a id="__codelineno-22-26" name="__codelineno-22-26" href="#__codelineno-22-26"></a><span class="w">        </span><span class="nx">println</span><span class="w"> </span><span class="s2">&quot;=&gt; User wordlist: &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">user</span><span class="p">;</span><span class="w"> </span><span class="nx">println</span>
+<a id="__codelineno-22-27" name="__codelineno-22-27" href="#__codelineno-22-27"></a><span class="w">        </span><span class="nx">has_cracked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<a id="__codelineno-22-28" name="__codelineno-22-28" href="#__codelineno-22-28"></a>
+<a id="__codelineno-22-29" name="__codelineno-22-29" href="#__codelineno-22-29"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="nx">pass</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nx">pass_lists</span>
+<a id="__codelineno-22-30" name="__codelineno-22-30" href="#__codelineno-22-30"></a><span class="w">            </span><span class="nx">print</span><span class="w"> </span><span class="s2">&quot;&gt; hydra -L &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">user</span>
+<a id="__codelineno-22-31" name="__codelineno-22-31" href="#__codelineno-22-31"></a><span class="w">            </span><span class="nx">println</span><span class="w"> </span><span class="s2">&quot; -P &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">pass</span>
+<a id="__codelineno-22-32" name="__codelineno-22-32" href="#__codelineno-22-32"></a>
+<a id="__codelineno-22-33" name="__codelineno-22-33" href="#__codelineno-22-33"></a><span class="w">            </span><span class="nx">cmd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hydra -L &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">docs</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">user</span>
+<a id="__codelineno-22-34" name="__codelineno-22-34" href="#__codelineno-22-34"></a><span class="w">            </span><span class="nx">cmd</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot; -P &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">docs</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">pass</span>
+<a id="__codelineno-22-35" name="__codelineno-22-35" href="#__codelineno-22-35"></a><span class="w">            </span><span class="nx">cmd</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">ip</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s2">&quot; ssh&quot;</span>
+<a id="__codelineno-22-36" name="__codelineno-22-36" href="#__codelineno-22-36"></a>
+<a id="__codelineno-22-37" name="__codelineno-22-37" href="#__codelineno-22-37"></a><span class="w">            </span><span class="nx">op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">run</span><span class="p">(</span><span class="nx">cmd</span><span class="p">)</span>
+<a id="__codelineno-22-38" name="__codelineno-22-38" href="#__codelineno-22-38"></a><span class="w">            </span><span class="nx">wait</span><span class="w"> </span><span class="mf">0.5</span>
+<a id="__codelineno-22-39" name="__codelineno-22-39" href="#__codelineno-22-39"></a><span class="w">            </span><span class="nx">println</span>
+<a id="__codelineno-22-40" name="__codelineno-22-40" href="#__codelineno-22-40"></a>
+<a id="__codelineno-22-41" name="__codelineno-22-41" href="#__codelineno-22-41"></a><span class="w">            </span><span class="nx">success_op</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">op</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">0</span>
+<a id="__codelineno-22-42" name="__codelineno-22-42" href="#__codelineno-22-42"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="nx">success_op</span><span class="w"> </span><span class="nx">then</span>
+<a id="__codelineno-22-43" name="__codelineno-22-43" href="#__codelineno-22-43"></a><span class="w">                </span><span class="nx">has_cracked</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<a id="__codelineno-22-44" name="__codelineno-22-44" href="#__codelineno-22-44"></a><span class="w">                </span><span class="k">break</span>
+<a id="__codelineno-22-45" name="__codelineno-22-45" href="#__codelineno-22-45"></a><span class="w">            </span><span class="nx">end</span><span class="w"> </span><span class="k">if</span>
+<a id="__codelineno-22-46" name="__codelineno-22-46" href="#__codelineno-22-46"></a>
+<a id="__codelineno-22-47" name="__codelineno-22-47" href="#__codelineno-22-47"></a><span class="w">        </span><span class="nx">end</span><span class="w"> </span><span class="k">for</span>
+<a id="__codelineno-22-48" name="__codelineno-22-48" href="#__codelineno-22-48"></a>
+<a id="__codelineno-22-49" name="__codelineno-22-49" href="#__codelineno-22-49"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="nx">has_cracked</span><span class="w"> </span><span class="nx">then</span><span class="w"> </span><span class="k">break</span>
+<a id="__codelineno-22-50" name="__codelineno-22-50" href="#__codelineno-22-50"></a>
+<a id="__codelineno-22-51" name="__codelineno-22-51" href="#__codelineno-22-51"></a><span class="w">    </span><span class="nx">end</span><span class="w"> </span><span class="k">for</span>
+<a id="__codelineno-22-52" name="__codelineno-22-52" href="#__codelineno-22-52"></a><span class="w">    </span><span class="nx">println</span>
+<a id="__codelineno-22-53" name="__codelineno-22-53" href="#__codelineno-22-53"></a>
+<a id="__codelineno-22-54" name="__codelineno-22-54" href="#__codelineno-22-54"></a><span class="nx">end</span><span class="w"> </span><span class="k">for</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

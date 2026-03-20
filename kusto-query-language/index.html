@@ -1,0 +1,2122 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://haiku-inc.github.io/HaikuForgeDocumentation/kusto-query-language/">
+      
+      
+        <link rel="prev" href="../haiku-commands/">
+      
+      
+        <link rel="next" href="../multiplayer/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/haiku-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Kusto Query Language - Haiku Forge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cairo:300,300i,400,400i,700,700i%7CInconsolata:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Cairo";--md-code-font:"Inconsolata"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/haiku.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#kusto-query-language-kql" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Haiku Forge Documentation" class="md-header__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haiku Forge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kusto Query Language
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Haiku Forge Documentation" class="md-nav__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    Haiku Forge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../haiku-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haiku Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kusto Query Language
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kusto Query Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importing-example-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing Example database
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regex-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regex Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#piping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table Name
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        where
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operators and methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators and methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparisons-for-numbers-dates-and-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparisons for numbers, dates, and strings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arithmetic operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-brackets-and-or" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order (brackets), and, or
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ago" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ago
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#todatetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        todatetime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startwith" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        startwith
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endwith" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        endwith
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        strcat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#has" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        has
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        =~
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        order by
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summarize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        summarize
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="summarize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dcount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dcount
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        avg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        min
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        max
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#percentile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        percentile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avg_max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        avg_max
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avg_min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        avg_min
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        limit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        union
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="union">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kindouter-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=outer (default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kindinner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=inner
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        join
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="join">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kindinner_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=inner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kindleftouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=leftouter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kindrightouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=rightouter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kindfullouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=fullouter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../story-creation-with-miniscript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Story Creation with Miniscript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-commands-and-feedbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Commands & Feedbacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Sites Creation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web Sites Creation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-sites-creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-sites-creation/miniscript-for-web-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miniscript for Web Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#importing-example-database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Importing Example database
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        search
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regex-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Regex Search
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#piping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Piping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table-name" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table Name
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        where
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operators-and-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operators and methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Operators and methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparisons-for-numbers-dates-and-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparisons for numbers, dates, and strings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#arithmetic-operators" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arithmetic operators
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#order-brackets-and-or" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Order (brackets), and, or
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ago" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ago
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#todatetime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        todatetime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        contains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#startwith" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        startwith
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endwith" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        endwith
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strcat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        strcat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#has" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        has
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        =~
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        extend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#order-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        order by
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summarize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        summarize
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="summarize">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#count" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        count
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dcount" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dcount
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sum" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sum
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        avg
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        min
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        max
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#percentile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        percentile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avg_max" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        avg_max
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avg_min" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        avg_min
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        limit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        union
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="union">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kindouter-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=outer (default)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kindinner" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=inner
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#join" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        join
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="join">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kindinner_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=inner
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kindleftouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=leftouter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kindrightouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=rightouter
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kindfullouter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kind=fullouter
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="kusto-query-language-kql">Kusto Query Language (KQL)<a class="headerlink" href="#kusto-query-language-kql" title="Permanent link">&para;</a></h1>
+<p><em>(all outputs are based on Example database)</em></p>
+<h2 id="importing-example-database">Importing Example database<a class="headerlink" href="#importing-example-database" title="Permanent link">&para;</a></h2>
+<details class="note">
+<summary>Sources</summary>
+<p><a href="stores.csv">Stores.csv</a></p>
+<p><a href="employees.csv">Employees.csv</a></p>
+<p><a href="carsales_2022.csv">CarSales_2022.csv</a></p>
+<p><a href="carsales_2023.csv">CarSales_2023.csv</a></p>
+<p><a href="kql_example.xlsx">Kql example.xlsx</a></p>
+</details>
+<p>Download the csv sources</p>
+<p>Go to the Forge, open or create the mission with the network.</p>
+<p>Open Data Explorer application</p>
+<p><img alt="image.png" src="image.png" /></p>
+<p>Create a new database with the name <code>Example</code>, set the asset name <code>db_example</code></p>
+<p><img alt="image.png" src="image-1.png" /></p>
+<p>Import the first csv, for example, <code>Stores</code>. Pay attention, the table name must be the same as the file name (without extension). This is important for correct example query outcomes.</p>
+<p><img alt="image.png" src="image-2.png" /></p>
+<p>Your result should look like this. Don't forget to save the database to the network asset storage by clicking <code>Apply Changes</code> button.</p>
+<p><img alt="image.png" src="image-3.png" /></p>
+<h2 id="search">search<a class="headerlink" href="#search" title="Permanent link">&para;</a></h2>
+<p>Add a row to the result table if any cell in this row contains the defined value (case-insensitive search is used). This can be the first element in the pipeline. If it is the first element, all tables will be checked (the query will be executed against the entire database).</p>
+<p>If the query is executed against the entire database, the result table will include the matched column, as well as any column that is present in all tables.</p>
+<p><strong>Example</strong></p>
+<p><em>Table1</em>: columns A, B, C </p>
+<p><em>Table2</em>: columns C, D, E</p>
+<p>If a match is found in column A, the result table will include columns A and C (since C exists in all tables).</p>
+<p>If the query is processed against a single table (as the second element in the pipeline), all columns will be added to the result.</p>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">search</span><span class="w"> </span><span class="s2">&quot;Davis&quot;</span>
+</code></pre></div>
+<details class="note">
+<summary>Output</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>+----+----------+
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>| Id | LastName |
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>+----+----------+
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>| 4  | Davis    |
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>+----+----------+
+</code></pre></div>
+</details>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">Employees</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">search</span><span class="w"> </span><span class="s2">&quot;Davis&quot;</span>
+</code></pre></div>
+<details class="note">
+<summary>Output</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>+----+------------------+-------------+-----------+----------+
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>| Id | HireDate         | SalaryMonth | FirstName | LastName |
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>+----+------------------+-------------+-----------+----------+
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>| 4  | 10/10/2019 00:00 | 5300        | Maria     | Davis    |
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>+----+------------------+-------------+-----------+----------+
+</code></pre></div>
+</details>
+<p>You can also specify which columns you want to search for the value in.</p>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">search</span><span class="w"> </span><span class="kr">in</span><span class="p">(</span><span class="nv">FirstName</span><span class="p">,</span><span class="w"> </span><span class="nv">LastName</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;Davis&quot;</span>
+</code></pre></div>
+<p>Column names support wildcard matching with <code>*</code>. For example, to search only in columns whose names start with "Sale":</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">search</span><span class="w"> </span><span class="kr">in</span><span class="p">(</span><span class="nv">Sale</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;2022&quot;</span>
+</code></pre></div>
+<h3 id="regex-search">Regex Search<a class="headerlink" href="#regex-search" title="Permanent link">&para;</a></h3>
+<p>Instead of a plain string, you can use a regular expression by wrapping the pattern in forward slashes <code>/</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">search</span><span class="w"> </span><span class="s2">&quot;/^J.*son$/&quot;</span>
+</code></pre></div>
+<p>This will match any cell whose value starts with "J" and ends with "son" (e.g., "Johnson", "Jackson").</p>
+<h2 id="piping"><em>Piping</em><a class="headerlink" href="#piping" title="Permanent link">&para;</a></h2>
+<p>Piping is performed using the '|' character. It separates the results of the query. The output of the previous operation will be processed in the next part of the pipeline. This means that the table resulting from the previous pipe action will be passed to the next part.</p>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">search</span><span class="w"> </span><span class="s2">&quot;Toyota&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">search</span><span class="w"> </span><span class="kr">in</span><span class="p">(</span><span class="nv">StoreId</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+</code></pre></div>
+<p>For better understanding, you can split this query into three stages and run each separately. This will give you an example of how the result is refined.</p>
+<p>Stage 1</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nv">CarSales_2022</span><span class="w"> </span>
+</code></pre></div>
+<p>Stage 2</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">search</span><span class="w"> </span><span class="s2">&quot;Toyota&quot;</span>
+</code></pre></div>
+<p>Stage 3</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">search</span><span class="w"> </span><span class="s2">&quot;Toyota&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">search</span><span class="w"> </span><span class="kr">in</span><span class="p">(</span><span class="nv">StoreId</span><span class="p">)</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+</code></pre></div>
+<h2 id="table-name"><em>Table Name</em><a class="headerlink" href="#table-name" title="Permanent link">&para;</a></h2>
+<p>To process a specific table, you should define its name. This action can only be the first in the pipeline.</p>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">search</span><span class="w"> </span><span class="s2">&quot;Toyota&quot;</span>
+</code></pre></div>
+<p><em>(CarSales_2022 is the table name)</em></p>
+<h2 id="where">where<a class="headerlink" href="#where" title="Permanent link">&para;</a></h2>
+<p>Filter the table by a boolean condition. This operation cannot be the first in the pipeline.</p>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">StoreId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span>
+</code></pre></div>
+<p>Expressions can be complex. They can contain brackets (for setting order), methods, and operators (see bellow).</p>
+<h2 id="operators-and-methods">Operators and methods<a class="headerlink" href="#operators-and-methods" title="Permanent link">&para;</a></h2>
+<h3 id="comparisons-for-numbers-dates-and-strings">Comparisons for numbers, dates, and strings<a class="headerlink" href="#comparisons-for-numbers-dates-and-strings" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">==</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;=</span><span class="p">,</span><span class="w"> </span><span class="o">&gt;=</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="p">,</span><span class="w"> </span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="err">!</span><span class="o">=</span>
+</code></pre></div>
+<h3 id="arithmetic-operators">Arithmetic operators<a class="headerlink" href="#arithmetic-operators" title="Permanent link">&para;</a></h3>
+<p>Arithmetic operations can be used in <code>where</code>, <code>extend</code>, and <code>project</code> expressions:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">+</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="o">/</span><span class="p">,</span><span class="w"> </span><span class="o">%</span>
+</code></pre></div>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nv">Employees</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">extend</span><span class="w"> </span><span class="nv">AnnualSalary</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">SalaryMonth</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">12</span>
+</code></pre></div>
+<h3 id="order-brackets-and-or">Order (brackets), and, or<a class="headerlink" href="#order-brackets-and-or" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nf">where</span><span class="w"> </span><span class="p">(</span><span class="nv">StoreId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">StoreId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">Brand</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;Toyota&quot;</span>
+</code></pre></div>
+<details class="note">
+<summary>Output</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>+----+------------------+--------+------------------+---------+------------+
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>| Id | SaleDate         | Brand  | VinCode          | StoreId | EmployeeId |
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>+----+------------------+--------+------------------+---------+------------+
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>| 1  | 05/01/2022 00:00 | Toyota | JTDBL40E79902001 | 1       | 1          |
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>| 16 | 15/12/2022 00:00 | Toyota | JTDBL40E79902016 | 3       | 1          |
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>+----+------------------+--------+------------------+---------+------------+
+</code></pre></div>
+</details>
+<h3 id="ago">ago<a class="headerlink" href="#ago" title="Permanent link">&para;</a></h3>
+<p>Returns a timestamp. This is the current date minus the time defined in the arguments. You can specify days, hours, minutes, and seconds. It is useful only for databases that are constantly being updated with fresh records.</p>
+<p>Possible arguments:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nf">ago</span><span class="p">(</span><span class="mi">1</span><span class="nv">d</span><span class="p">),</span><span class="w"> </span><span class="nf">ago</span><span class="p">(</span><span class="mi">50</span><span class="nv">m</span><span class="p">),</span><span class="w"> </span><span class="nf">ago</span><span class="p">(</span><span class="mi">2</span><span class="nv">h</span><span class="p">),</span><span class="w"> </span><span class="nf">ago</span><span class="p">(</span><span class="mi">300</span><span class="nv">s</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="nv">CarSales_2023</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">SaleDate</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nf">ago</span><span class="p">(</span><span class="mi">30</span><span class="nv">d</span><span class="p">)</span>
+</code></pre></div>
+<p><em>Only records that were created within the last 30 days will be returned. However, this depends on the values in the SaleDate column, so you need to ensure that the dates in that column are set correctly.</em></p>
+<h3 id="todatetime">todatetime<a class="headerlink" href="#todatetime" title="Permanent link">&para;</a></h3>
+<p>Parses a string into a datetime. Useful for exact date and time comparisons and checking intervals. Here are the possible time formats for the arguments:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>yyyy-MM-dd HH:mm:ss
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>yyyy-MM-dd
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>yyyy-MM-ddTHH:mm:ssZ
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>yyyy-MM-ddTHH:mm:ss
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>yyyyMMdd
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>HH:mm:ss - will be used current date and parsed time
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>unix time (number)
+</code></pre></div>
+<p><strong>Checking interval query example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nv">Employees</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">HireDate</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="nf">todatetime</span><span class="p">(</span><span class="s2">&quot;2017-01-01&quot;</span><span class="p">)</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="nv">HireDate</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nf">todatetime</span><span class="p">(</span><span class="s2">&quot;2018-12-31&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="contains">contains<a class="headerlink" href="#contains" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nv">VinCode</span><span class="w"> </span><span class="nv">contains</span><span class="w"> </span><span class="s2">&quot;jtd&quot;</span>
+</code></pre></div>
+<p>Returns true if current EntityName column cell contains a string, defined in the right part (case-insensitive).</p>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">VinCode</span><span class="w"> </span><span class="nv">contains</span><span class="w"> </span><span class="s2">&quot;jtd&quot;</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">VinCode</span><span class="w"> </span><span class="nv">contains</span><span class="w"> </span><span class="s2">&quot;2017&quot;</span>
+</code></pre></div>
+<details class="note">
+<summary>Output</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>+----+------------------+--------+------------------+---------+------------+
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>| Id | SaleDate         | Brand  | VinCode          | StoreId | EmployeeId |
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>+----+------------------+--------+------------------+---------+------------+
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>| 1  | 05/01/2022 00:00 | Toyota | JTDBL40E79902001 | 1       | 1          |
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>| 16 | 15/12/2022 00:00 | Toyota | JTDBL40E79902016 | 3       | 1          |
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>| 17 | 20/12/2022 00:00 | Ford   | 1FTRX17L6VNA2017 | 1       | 2          |
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>+----+------------------+--------+------------------+---------+------------+
+</code></pre></div>
+</details>
+<h3 id="startwith">startwith<a class="headerlink" href="#startwith" title="Permanent link">&para;</a></h3>
+<p>Returns true if the current column value starts with the specified string on the right side (case-insensitive).</p>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nv">Employees</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">FirstName</span><span class="w"> </span><span class="nv">startwith</span><span class="w"> </span><span class="s2">&quot;j&quot;</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">LastName</span><span class="w"> </span><span class="nv">startwith</span><span class="w"> </span><span class="s2">&quot;j&quot;</span>
+</code></pre></div>
+<h3 id="endwith">endwith<a class="headerlink" href="#endwith" title="Permanent link">&para;</a></h3>
+<p>Returns true if the current column value ends with the specified string on the right side (case-insensitive).</p>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nv">CarSales_2023</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">Brand</span><span class="w"> </span><span class="nv">endwith</span><span class="w"> </span><span class="s2">&quot;a&quot;</span>
+</code></pre></div>
+<h3 id="strcat">strcat<a class="headerlink" href="#strcat" title="Permanent link">&para;</a></h3>
+<p>String concatenation <em>(up to 16 parameters)</em>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nf">strcat</span><span class="p">(</span><span class="s2">&quot;Hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;World&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;!&quot;</span><span class="p">)</span>
+</code></pre></div>
+<p>Result:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>&quot;Hello World!&quot;
+</code></pre></div>
+<h3 id="has">has<a class="headerlink" href="#has" title="Permanent link">&para;</a></h3>
+<p>Returns <code>true</code> if the received string contains part of the specified value. Unlike the <code>contains</code> operator, an <a href="https://learn.microsoft.com/en-us/kusto/query/datatypes-string-operators?view=microsoft-fabric#what-is-a-term">indexed term</a> is used. For example, this query will return no results:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nv">Stores</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">Address</span><span class="w"> </span><span class="nv">has</span><span class="w"> </span><span class="s2">&quot;lon&quot;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>+----+---------+---------+----------+-----------+
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>| Id | Country | Address | OpenDate | CloseDate |
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>+----+---------+---------+----------+-----------+
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>+----+---------+---------+----------+-----------+
+</code></pre></div>
+<p>However, this query will return a set of data:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>Stores | where Address has &quot;london&quot;
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>+----+---------+------------------------+------------------+------------------+
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>| Id | Country | Address                | OpenDate         | CloseDate        |
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>+----+---------+------------------------+------------------+------------------+
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>| 3  | UK      | 789 King&#39;s Way, London | 30/09/2018 00:00 | 31/08/2023 00:00 |
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>+----+---------+------------------------+------------------+------------------+
+</code></pre></div>
+<h3 id="_1">=~<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p>The same as == (for string comparison), however, the case will be ignored.</p>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nf">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">Brand</span><span class="w"> </span><span class="err">=</span><span class="o">~</span><span class="w"> </span><span class="s">&quot;toyota&quot;</span>
+</code></pre></div>
+<p><strong>Result:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>+----+------------------+--------+------------------+---------+------------+
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>| Id | SaleDate         | Brand  | VinCode          | StoreId | EmployeeId |
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>+----+------------------+--------+------------------+---------+------------+
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>| 1  | 05/01/2022 00:00 | Toyota | JTDBL40E79902001 | 1       | 1          |
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>| 16 | 15/12/2022 00:00 | Toyota | JTDBL40E79902016 | 3       | 1          |
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a>+----+------------------+--------+------------------+---------+------------+
+</code></pre></div>
+<h2 id="extend">extend<a class="headerlink" href="#extend" title="Permanent link">&para;</a></h2>
+<p>Adds a new column or changes the value of an existing column in the result table.</p>
+<p><strong>Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nv">Employees</span>
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">extend</span><span class="w"> </span><span class="nv">Name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">strcat</span><span class="p">(</span><span class="nv">FirstName</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot; &quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">LastName</span><span class="p">)</span>
+</code></pre></div>
+<p>The result table will include a new column, "Name" with the concatenation of the "FirstName" and "LastName" columns, for example: Alice Johnson.</p>
+<h2 id="order-by">order by<a class="headerlink" href="#order-by" title="Permanent link">&para;</a></h2>
+<p>Changes the table order based on column values. The default sorting order is descending. It supports nested sorting, which means that when a user defines multiple columns separated by commas, all columns will be combined into groups, then sorting will be performed within each group and again for each defined column.</p>
+<p><strong>Explanation of nested sorting:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span><span class="w"> </span><span class="o">//</span><span class="nv">Name</span><span class="p">,</span><span class="w"> </span><span class="nv">Age</span><span class="p">,</span><span class="w"> </span><span class="nv">Score</span>
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="w"> </span><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span>
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w"> </span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">85</span><span class="p">,</span>
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="w"> </span><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span>
+</code></pre></div>
+<p><strong>Result (ascending sorting by name then age):</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span><span class="p">,</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="s2">&quot;Alice&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">90</span><span class="p">,</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">25</span><span class="p">,</span><span class="w"> </span><span class="mi">85</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="s2">&quot;Bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">39</span><span class="p">,</span><span class="w"> </span><span class="mi">95</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">85</span>
+</code></pre></div>
+<p><strong>KQL Query Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="nv">order</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">StoreId</span><span class="w"> </span><span class="nv">asc</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span>
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="nv">order</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">StoreId</span><span class="w"> </span><span class="nv">asc</span><span class="p">,</span><span class="w"> </span><span class="nv">SaleDate</span>
+</code></pre></div>
+<h2 id="summarize">summarize<a class="headerlink" href="#summarize" title="Permanent link">&para;</a></h2>
+<p>Group rows by column values. All rows will be grouped by the values of the column specified after the "by" keyword.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nv">CarSales_2022</span>
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">summarize</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">Brand</span><span class="p">,</span><span class="w"> </span><span class="nv">StoreId</span>
+</code></pre></div>
+<p><strong>Result:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>+------------+---------+
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>| Brand      | StoreId |
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a>+------------+---------+
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a>| Toyota     | 1       |
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>| Ford       | 1       |
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a>| BMW        | 2       |
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>| Honda      | 2       |
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>| Audi       | 3       |
+<a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a>| Mercedes   | 1       |
+<a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a>| Nissan     | 2       |
+<a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a>| Hyundai    | 3       |
+<a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a>| Kia        | 3       |
+<a id="__codelineno-41-13" name="__codelineno-41-13" href="#__codelineno-41-13"></a>| Volkswagen | 1       |
+<a id="__codelineno-41-14" name="__codelineno-41-14" href="#__codelineno-41-14"></a>| Volvo      | 2       |
+<a id="__codelineno-41-15" name="__codelineno-41-15" href="#__codelineno-41-15"></a>| Lexus      | 2       |
+<a id="__codelineno-41-16" name="__codelineno-41-16" href="#__codelineno-41-16"></a>| Subaru     | 3       |
+<a id="__codelineno-41-17" name="__codelineno-41-17" href="#__codelineno-41-17"></a>| Mazda      | 1       |
+<a id="__codelineno-41-18" name="__codelineno-41-18" href="#__codelineno-41-18"></a>| Chevrolet  | 2       |
+<a id="__codelineno-41-19" name="__codelineno-41-19" href="#__codelineno-41-19"></a>| Toyota     | 3       |
+<a id="__codelineno-41-20" name="__codelineno-41-20" href="#__codelineno-41-20"></a>+------------+---------+
+</code></pre></div>
+<p>To retrieve additional data, various aggregation methods can be applied before the "by" keyword.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="nv">CarSales_2022</span>
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">summarize</span><span class="w"> </span><span class="nf">count</span><span class="p">(),</span><span class="w"> </span><span class="nv">brandCount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">dcount</span><span class="p">(</span><span class="nv">Brand</span><span class="p">)</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">StoreId</span>
+</code></pre></div>
+<p><strong>Result:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>+---------+--------+-------------+
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>| StoreId | count_ | brandCount  |
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>+---------+--------+-------------+
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>| 1       | 6      | 5           |
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>| 2       | 8      | 6           |
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>| 3       | 6      | 5           |
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>+---------+--------+-------------+
+</code></pre></div>
+<p>Here is a list of aggregation and filter methods:</p>
+<h3 id="count">count<a class="headerlink" href="#count" title="Permanent link">&para;</a></h3>
+<p>Return count of rows in current group. Can receive argument, where argument is a column name (optional).</p>
+<h3 id="dcount">dcount<a class="headerlink" href="#dcount" title="Permanent link">&para;</a></h3>
+<p>Returns the count of unique records in the specified column for the current group. Requires an argument (column name).</p>
+<h3 id="sum">sum<a class="headerlink" href="#sum" title="Permanent link">&para;</a></h3>
+<p>Sum of all cells in the group. Column name must be set in the arguments. Its type must be a number.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a><span class="nv">Employees</span>
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">summarize</span><span class="w"> </span><span class="nf">sum</span><span class="p">(</span><span class="nv">SalaryMonth</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Result:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>+-----------------+
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>| sum_SalaryMonth |
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>+-----------------+
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>| 26100           |
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>+-----------------+
+</code></pre></div>
+<h3 id="avg">avg<a class="headerlink" href="#avg" title="Permanent link">&para;</a></h3>
+<p>Average of all values in the group. A column name must be provided as an argument, and its data type must be numeric.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a><span class="nv">Employees</span>
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">FireDate</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">null</span><span class="w"> </span>
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a><span class="o">|</span><span class="w"> </span><span class="nv">summarize</span><span class="w"> </span><span class="nf">avg</span><span class="p">(</span><span class="nv">SalaryMonth</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Result:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>+------------------+
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>| avg_SalaryMonth  |
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>+------------------+
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>| 5266.66666666667 |
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>+------------------+
+</code></pre></div>
+<h3 id="min">min<a class="headerlink" href="#min" title="Permanent link">&para;</a></h3>
+<p>Returns the minimum value from all cells in the group. A column name must be provided as an argument, and its data type must be numeric.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a><span class="nv">Employees</span>
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">FireDate</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">null</span><span class="w"> </span>
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a><span class="o">|</span><span class="w"> </span><span class="nv">summarize</span><span class="w"> </span><span class="nf">min</span><span class="p">(</span><span class="nv">SalaryMonth</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Result:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>+-----------------+
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>| min_SalaryMonth |
+<a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>+-----------------+
+<a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>| 5000            |
+<a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>+-----------------+
+</code></pre></div>
+<h3 id="max">max<a class="headerlink" href="#max" title="Permanent link">&para;</a></h3>
+<p>Returns the maximum value from all cells in the group. A column name must be provided as an argument, and its data type must be numeric.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a><span class="nv">Employees</span>
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">FireDate</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">null</span><span class="w"> </span>
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a><span class="o">|</span><span class="w"> </span><span class="nv">summarize</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="nv">SalaryMonth</span><span class="p">)</span>
+</code></pre></div>
+<p><strong>Result:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>+-----------------+
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>| max_SalaryMonth |
+<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>+-----------------+
+<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>| 5500            |
+<a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>+-----------------+
+</code></pre></div>
+<h3 id="percentile">percentile<a class="headerlink" href="#percentile" title="Permanent link">&para;</a></h3>
+<p>Returns a percentile value from all cells in the group. A column name must be provided as the first argument, along with a second parameter specifying the percentile (0...100). The column's data type must be numeric.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a><span class="nv">Employees</span>
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">where</span><span class="w"> </span><span class="nv">FireDate</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">null</span><span class="w"> </span>
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a><span class="o">|</span><span class="w"> </span><span class="nv">summarize</span><span class="w"> </span><span class="nf">percentile</span><span class="p">(</span><span class="nv">SalaryMonth</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="avg_max">avg_max<a class="headerlink" href="#avg_max" title="Permanent link">&para;</a></h3>
+<p>This is a filtering method that returns the row or column with the maximum value in the column specified as the first parameter. The second parameter defines what to return — either the column name or the entire row (*).</p>
+<p>The data type of the first column argument can be any. If it is a number or a date, the highest or latest row will be selected. For strings, alphabetical sorting is applied.</p>
+<p><strong>Example 1:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a><span class="nv">CarSales_2022</span>
+<a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">summarize</span><span class="w"> </span><span class="nf">arg_max</span><span class="p">(</span><span class="nv">SaleDate</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>+----+------------------+-------+-----------------+---------+------------+
+<a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>| Id | SaleDate         | Brand | VinCode         | StoreId | EmployeeId |
+<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a>+----+------------------+-------+-----------------+---------+------------+
+<a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>| 20 | 31/12/2022 00:00 | Audi  | WAULC68E84A5020 | 3       | 5          |
+<a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>+----+------------------+-------+-----------------+---------+------------+
+</code></pre></div>
+<p><strong>Example 2:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a><span class="nv">CarSales_2022</span>
+<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">summarize</span><span class="w"> </span><span class="nf">arg_max</span><span class="p">(</span><span class="nv">SaleDate</span><span class="p">,</span><span class="w"> </span><span class="nv">SaleDate</span><span class="p">)</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">StoreId</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>+---------+------------------+
+<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>| StoreId | SaleDate         |
+<a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>+---------+------------------+
+<a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>| 1       | 20/12/2022 00:00 |
+<a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a>| 2       | 28/12/2022 00:00 |
+<a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a>| 3       | 31/12/2022 00:00 |
+<a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a>+---------+------------------+
+</code></pre></div>
+<h3 id="avg_min">avg_min<a class="headerlink" href="#avg_min" title="Permanent link">&para;</a></h3>
+<p>This is a filtering method that returns the row or column with the minimum value in the column specified as the first parameter. The second parameter defines what to return — either the column name or the entire row (*).</p>
+<p>The data type of the first column argument can be any. If it is a number or a date, the highest or latest row will be selected. For strings, alphabetical sorting is applied.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a><span class="nv">CarSales_2023</span>
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">summarize</span><span class="w"> </span><span class="nv">firstSale</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">arg_min</span><span class="p">(</span><span class="nv">SaleDate</span><span class="p">,</span><span class="w"> </span><span class="nv">SaleDate</span><span class="p">)</span><span class="w"> </span><span class="nv">by</span><span class="w"> </span><span class="nv">StoreId</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>+---------+------------------+
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>| StoreId | firstSale        |
+<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>+---------+------------------+
+<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>| 1       | 10/01/2023 00:00 |
+<a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a>| 2       | 15/01/2023 00:00 |
+<a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a>| 3       | 05/02/2023 00:00 |
+<a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a>+---------+------------------+
+</code></pre></div>
+<h2 id="project">project<a class="headerlink" href="#project" title="Permanent link">&para;</a></h2>
+<p>Adds only the specified columns to the result of the request. It cannot be the first step. The columns can be existing ones with original values, modified columns (name or values), or entirely new columns. This can be used to reduce the number of columns, which improves performance in subsequent pipeline queries.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a><span class="nv">CarSales_2023</span>
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">project</span><span class="w"> </span><span class="nv">SaleDate</span><span class="p">,</span><span class="w"> </span><span class="nv">Car</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">strcat</span><span class="p">(</span><span class="nv">Brand</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;: &quot;</span><span class="p">,</span><span class="w"> </span><span class="nv">VinCode</span><span class="p">),</span><span class="w"> </span><span class="nv">newColumn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="nv">JohnSmith</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">EmployeeId</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span>
+</code></pre></div>
+<p><strong>Result:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a>+------------------+-----------------------------+-----------+-----------+
+<a id="__codelineno-60-2" name="__codelineno-60-2" href="#__codelineno-60-2"></a>| SaleDate         | Car                         | newColumn | JohnSmith |
+<a id="__codelineno-60-3" name="__codelineno-60-3" href="#__codelineno-60-3"></a>+------------------+-----------------------------+-----------+-----------+
+<a id="__codelineno-60-4" name="__codelineno-60-4" href="#__codelineno-60-4"></a>| 10/01/2023 00:00 | Mercedes: WDDGF8AB5DA6021   | 12        | 1         |
+<a id="__codelineno-60-5" name="__codelineno-60-5" href="#__codelineno-60-5"></a>| 15/01/2023 00:00 | Nissan: 1N4AL11D75C7022     | 12        | 0         |
+<a id="__codelineno-60-6" name="__codelineno-60-6" href="#__codelineno-60-6"></a>| 05/02/2023 00:00 | Hyundai: KMHDU46DXAU8023    | 12        | 0         |
+<a id="__codelineno-60-7" name="__codelineno-60-7" href="#__codelineno-60-7"></a>| 18/02/2023 00:00 | Kia: KNDJT2A5XB90024        | 12        | 0         |
+<a id="__codelineno-60-8" name="__codelineno-60-8" href="#__codelineno-60-8"></a>| 20/03/2023 00:00 | Volkswagen: 3VWB17AJ5HM0025 | 12        | 1         |
+<a id="__codelineno-60-9" name="__codelineno-60-9" href="#__codelineno-60-9"></a>| 10/04/2023 00:00 | Volvo: YV1CZ59H64110026     | 12        | 0         |
+<a id="__codelineno-60-10" name="__codelineno-60-10" href="#__codelineno-60-10"></a>| 15/04/2023 00:00 | Lexus: JTHBJ46G29220027     | 12        | 0         |
+<a id="__codelineno-60-11" name="__codelineno-60-11" href="#__codelineno-60-11"></a>| 05/05/2023 00:00 | Subaru: 4S3BL61638730028    | 12        | 0         |
+<a id="__codelineno-60-12" name="__codelineno-60-12" href="#__codelineno-60-12"></a>| 14/05/2023 00:00 | Mazda: JM1BK323X8150029     | 12        | 1         |
+<a id="__codelineno-60-13" name="__codelineno-60-13" href="#__codelineno-60-13"></a>| 01/06/2023 00:00 | Chevrolet: 2G1WT58KX9110030 | 12        | 0         |
+<a id="__codelineno-60-14" name="__codelineno-60-14" href="#__codelineno-60-14"></a>| 10/06/2023 00:00 | Toyota: JTDBL40E79902031    | 12        | 0         |
+<a id="__codelineno-60-15" name="__codelineno-60-15" href="#__codelineno-60-15"></a>| 05/07/2023 00:00 | Ford: 1FTRX17L6VNA2032      | 12        | 1         |
+<a id="__codelineno-60-16" name="__codelineno-60-16" href="#__codelineno-60-16"></a>| 15/07/2023 00:00 | BMW: WBA3B3C56FPD3033       | 12        | 0         |
+<a id="__codelineno-60-17" name="__codelineno-60-17" href="#__codelineno-60-17"></a>| 20/08/2023 00:00 | Honda: 2HGFA16578H4034      | 12        | 0         |
+<a id="__codelineno-60-18" name="__codelineno-60-18" href="#__codelineno-60-18"></a>| 25/08/2023 00:00 | Audi: WAULC68E84A5035       | 12        | 0         |
+<a id="__codelineno-60-19" name="__codelineno-60-19" href="#__codelineno-60-19"></a>+------------------+-----------------------------+-----------+-----------+
+</code></pre></div>
+<h2 id="limit">limit<a class="headerlink" href="#limit" title="Permanent link">&para;</a></h2>
+<p>Reduces the row count in the query result by the number specified in the expression.</p>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="nv">CarSales_2022</span>
+<a id="__codelineno-61-2" name="__codelineno-61-2" href="#__codelineno-61-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">limit</span><span class="w"> </span><span class="mi">5</span>
+</code></pre></div>
+<p><strong>Result:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>+----+------------------+--------+------------------+---------+------------+
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>| Id | SaleDate         | Brand  | VinCode          | StoreId | EmployeeId |
+<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>+----+------------------+--------+------------------+---------+------------+
+<a id="__codelineno-62-4" name="__codelineno-62-4" href="#__codelineno-62-4"></a>| 1  | 05/01/2022 00:00 | Toyota | JTDBL40E79902001 | 1       | 1          |
+<a id="__codelineno-62-5" name="__codelineno-62-5" href="#__codelineno-62-5"></a>| 2  | 15/01/2022 00:00 | Ford   | 1FTRX17L6VNA2002 | 1       | 2          |
+<a id="__codelineno-62-6" name="__codelineno-62-6" href="#__codelineno-62-6"></a>| 3  | 20/02/2022 00:00 | BMW    | WBA3B3C56FPD3003 | 2       | 3          |
+<a id="__codelineno-62-7" name="__codelineno-62-7" href="#__codelineno-62-7"></a>| 4  | 18/03/2022 00:00 | Honda  | 2HGFA16578H4004  | 2       | 4          |
+<a id="__codelineno-62-8" name="__codelineno-62-8" href="#__codelineno-62-8"></a>| 5  | 22/04/2022 00:00 | Audi   | WAULC68E84A5005  | 3       | 5          |
+<a id="__codelineno-62-9" name="__codelineno-62-9" href="#__codelineno-62-9"></a>+----+------------------+--------+------------------+---------+------------+
+</code></pre></div>
+<h2 id="union">union<a class="headerlink" href="#union" title="Permanent link">&para;</a></h2>
+<p>The <code>union</code> operator is used to create a new table from several tables. This query type can be the first in the pipeline, and then the union will be performed using the specified expressions. If this query is not the first in the pipeline, the result of the previous query will be used as the first table to be united with the following expressions.</p>
+<p>This query supports both nested queries (within brackets) and simple table names as expressions. By default (<code>kind=outer</code>), all rows from the tables will be combined into the new table, regardless of whether the schemas of the tables are the same or not. If the schemas differ, all cell values will be "null" in columns that were not present in the original table.</p>
+<h3 id="kindouter-default">kind=outer (default)<a class="headerlink" href="#kindouter-default" title="Permanent link">&para;</a></h3>
+<p>In this example, the first 5 rows from three tables will be combined. The first two tables (<code>CarSales_2022</code> and <code>CarSales_2023</code>) have the same schema, so none of the cells will have null values. However, the schema of the third table differs, which will result in null values in the columns from the <code>CarSales_X</code> tables in the last 5 rows, as well as nulls in the 3 rows for the columns from the third table.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a><span class="nf">union</span><span class="w"> </span>
+<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a><span class="w">    </span><span class="p">(</span><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">limit</span><span class="w"> </span><span class="mi">5</span><span class="p">),</span><span class="w"> </span>
+<a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a><span class="w">    </span><span class="p">(</span><span class="nv">CarSales_2023</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">limit</span><span class="w"> </span><span class="mi">5</span><span class="p">),</span><span class="w"> </span>
+<a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a><span class="w">    </span><span class="p">(</span><span class="nv">Stores</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>+----+------------------+------------+------------------+---------+------------+---------+------------------------+------------------+------------------+
+<a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>| Id | SaleDate         | Brand      | VinCode          | StoreId | EmployeeId | Country | Address                | OpenDate         | CloseDate        |
+<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a>+----+------------------+------------+------------------+---------+------------+---------+------------------------+------------------+------------------+
+<a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>| 1  | 05/01/2022 00:00 | Toyota     | JTDBL40E79902001 | 1       | 1          | null    | null                   | null             | null             |
+<a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a>| 2  | 15/01/2022 00:00 | Ford       | 1FTRX17L6VNA2002 | 1       | 2          | null    | null                   | null             | null             |
+<a id="__codelineno-64-6" name="__codelineno-64-6" href="#__codelineno-64-6"></a>| 3  | 20/02/2022 00:00 | BMW        | WBA3B3C56FPD3003 | 2       | 3          | null    | null                   | null             | null             |
+<a id="__codelineno-64-7" name="__codelineno-64-7" href="#__codelineno-64-7"></a>| 4  | 18/03/2022 00:00 | Honda      | 2HGFA16578H4004  | 2       | 4          | null    | null                   | null             | null             |
+<a id="__codelineno-64-8" name="__codelineno-64-8" href="#__codelineno-64-8"></a>| 5  | 22/04/2022 00:00 | Audi       | WAULC68E84A5005  | 3       | 5          | null    | null                   | null             | null             |
+<a id="__codelineno-64-9" name="__codelineno-64-9" href="#__codelineno-64-9"></a>| 1  | 10/01/2023 00:00 | Mercedes   | WDDGF8AB5DA6021  | 1       | 1          | null    | null                   | null             | null             |
+<a id="__codelineno-64-10" name="__codelineno-64-10" href="#__codelineno-64-10"></a>| 2  | 15/01/2023 00:00 | Nissan     | 1N4AL11D75C7022  | 2       | 2          | null    | null                   | null             | null             |
+<a id="__codelineno-64-11" name="__codelineno-64-11" href="#__codelineno-64-11"></a>| 3  | 05/02/2023 00:00 | Hyundai    | KMHDU46DXAU8023  | 3       | 4          | null    | null                   | null             | null             |
+<a id="__codelineno-64-12" name="__codelineno-64-12" href="#__codelineno-64-12"></a>| 4  | 18/02/2023 00:00 | Kia        | KNDJT2A5XB90024  | 3       | 5          | null    | null                   | null             | null             |
+<a id="__codelineno-64-13" name="__codelineno-64-13" href="#__codelineno-64-13"></a>| 5  | 20/03/2023 00:00 | Volkswagen | 3VWB17AJ5HM0025  | 1       | 1          | null    | null                   | null             | null             |
+<a id="__codelineno-64-14" name="__codelineno-64-14" href="#__codelineno-64-14"></a>| 1  | null             | null       | null             | null    | null       | USA     | 123 Main St, New York  | 01/03/2015 00:00 | null             |
+<a id="__codelineno-64-15" name="__codelineno-64-15" href="#__codelineno-64-15"></a>| 2  | null             | null       | null             | null    | null       | Canada  | 456 Maple Rd, Toronto  | 15/06/2017 00:00 | null             |
+<a id="__codelineno-64-16" name="__codelineno-64-16" href="#__codelineno-64-16"></a>| 3  | null             | null       | null             | null    | null       | UK      | 789 King&#39;s Way, London | 30/09/2018 00:00 | 31/08/2023 00:00 |
+<a id="__codelineno-64-17" name="__codelineno-64-17" href="#__codelineno-64-17"></a>+----+------------------+------------+------------------+---------+------------+---------+------------------------+------------------+------------------+
+</code></pre></div>
+<h3 id="kindinner">kind=inner<a class="headerlink" href="#kindinner" title="Permanent link">&para;</a></h3>
+<p>The <code>kind=inner</code> union type works differently. First, it must be explicitly set. In the result, only the rows that have matching columns and identical values across all tables will be included.</p>
+<p>In this example, two tables with completely different schemas will be combined using the <code>kind=inner</code> union type. Even though these tables have different sets of columns, some values in <code>CarSales_2022.StoreId</code> and <code>Stores.Id</code> are the same. By using the <code>project</code> query, the name of this column can be aligned to perform the union query with some results.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="nv">union</span><span class="w"> </span><span class="nv">kind</span><span class="o">=</span><span class="nf">inner</span><span class="w"> </span>
+<a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a><span class="w">    </span><span class="p">(</span><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">project</span><span class="w"> </span><span class="nv">StoreIdUnion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">StoreId</span><span class="p">,</span><span class="w"> </span><span class="nv">SaleDate</span><span class="p">),</span><span class="w"> </span>
+<a id="__codelineno-65-3" name="__codelineno-65-3" href="#__codelineno-65-3"></a><span class="w">    </span><span class="p">(</span><span class="nv">Stores</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">project</span><span class="w"> </span><span class="nv">StoreIdUnion</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Id</span><span class="p">,</span><span class="w"> </span><span class="nv">Country</span><span class="p">,</span><span class="w"> </span><span class="nv">Address</span><span class="p">)</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>+--------------+------------------+---------+------------------------+
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>| StoreIdUnion | SaleDate         | Country | Address                |
+<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>+--------------+------------------+---------+------------------------+
+<a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a>| 1            | 05/01/2022 00:00 | USA     | 123 Main St, New York  |
+<a id="__codelineno-66-5" name="__codelineno-66-5" href="#__codelineno-66-5"></a>| 1            | 15/01/2022 00:00 | USA     | 123 Main St, New York  |
+<a id="__codelineno-66-6" name="__codelineno-66-6" href="#__codelineno-66-6"></a>| 2            | 20/02/2022 00:00 | Canada  | 456 Maple Rd, Toronto  |
+<a id="__codelineno-66-7" name="__codelineno-66-7" href="#__codelineno-66-7"></a>| 2            | 18/03/2022 00:00 | Canada  | 456 Maple Rd, Toronto  |
+<a id="__codelineno-66-8" name="__codelineno-66-8" href="#__codelineno-66-8"></a>| 3            | 22/04/2022 00:00 | UK      | 789 King&#39;s Way, London |
+<a id="__codelineno-66-9" name="__codelineno-66-9" href="#__codelineno-66-9"></a>| 1            | 30/05/2022 00:00 | USA     | 123 Main St, New York  |
+<a id="__codelineno-66-10" name="__codelineno-66-10" href="#__codelineno-66-10"></a>| 2            | 15/06/2022 00:00 | Canada  | 456 Maple Rd, Toronto  |
+<a id="__codelineno-66-11" name="__codelineno-66-11" href="#__codelineno-66-11"></a>| 3            | 07/07/2022 00:00 | UK      | 789 King&#39;s Way, London |
+<a id="__codelineno-66-12" name="__codelineno-66-12" href="#__codelineno-66-12"></a>| 3            | 20/08/2022 00:00 | UK      | 789 King&#39;s Way, London |
+<a id="__codelineno-66-13" name="__codelineno-66-13" href="#__codelineno-66-13"></a>| 1            | 10/09/2022 00:00 | USA     | 123 Main St, New York  |
+<a id="__codelineno-66-14" name="__codelineno-66-14" href="#__codelineno-66-14"></a>| 2            | 15/09/2022 00:00 | Canada  | 456 Maple Rd, Toronto  |
+<a id="__codelineno-66-15" name="__codelineno-66-15" href="#__codelineno-66-15"></a>| 2            | 05/10/2022 00:00 | Canada  | 456 Maple Rd, Toronto  |
+<a id="__codelineno-66-16" name="__codelineno-66-16" href="#__codelineno-66-16"></a>| 3            | 20/10/2022 00:00 | UK      | 789 King&#39;s Way, London |
+<a id="__codelineno-66-17" name="__codelineno-66-17" href="#__codelineno-66-17"></a>| 1            | 25/11/2022 00:00 | USA     | 123 Main St, New York  |
+<a id="__codelineno-66-18" name="__codelineno-66-18" href="#__codelineno-66-18"></a>| 2            | 10/12/2022 00:00 | Canada  | 456 Maple Rd, Toronto  |
+<a id="__codelineno-66-19" name="__codelineno-66-19" href="#__codelineno-66-19"></a>| 3            | 15/12/2022 00:00 | UK      | 789 King&#39;s Way, London |
+<a id="__codelineno-66-20" name="__codelineno-66-20" href="#__codelineno-66-20"></a>| 1            | 20/12/2022 00:00 | USA     | 123 Main St, New York  |
+<a id="__codelineno-66-21" name="__codelineno-66-21" href="#__codelineno-66-21"></a>| 2            | 25/12/2022 00:00 | Canada  | 456 Maple Rd, Toronto  |
+<a id="__codelineno-66-22" name="__codelineno-66-22" href="#__codelineno-66-22"></a>| 2            | 28/12/2022 00:00 | Canada  | 456 Maple Rd, Toronto  |
+<a id="__codelineno-66-23" name="__codelineno-66-23" href="#__codelineno-66-23"></a>| 3            | 31/12/2022 00:00 | UK      | 789 King&#39;s Way, London |
+<a id="__codelineno-66-24" name="__codelineno-66-24" href="#__codelineno-66-24"></a>+--------------+------------------+---------+------------------------+
+</code></pre></div>
+<h2 id="join">join<a class="headerlink" href="#join" title="Permanent link">&para;</a></h2>
+<p>Joins two tables by common columns. This operation cannot be the first one. The first table is the result of a previous execution, and the second is defined as an expression. There are several types of joins, with the inner join being the default. If there is no column defined as common between the two tables, an error will be returned.</p>
+<p><strong>Syntax:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>T1 | join kind=&lt;kind&gt; (T2) on &lt;column1&gt;, &lt;column2&gt;
+</code></pre></div>
+<p><strong>Example:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-68-1" name="__codelineno-68-1" href="#__codelineno-68-1"></a><span class="nv">Stores</span>
+<a id="__codelineno-68-2" name="__codelineno-68-2" href="#__codelineno-68-2"></a><span class="o">|</span><span class="w"> </span><span class="nv">extend</span><span class="w"> </span><span class="nv">StoreIdJoin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Id</span><span class="w"> </span>
+<a id="__codelineno-68-3" name="__codelineno-68-3" href="#__codelineno-68-3"></a><span class="o">|</span><span class="w"> </span><span class="nf">join</span><span class="w"> </span><span class="p">(</span><span class="nv">CarSales_2022</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">extend</span><span class="w"> </span><span class="nv">StoreIdJoin</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">StoreId</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="nv">extend</span><span class="w"> </span><span class="nv">SaleId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Id</span><span class="p">)</span><span class="w"> </span><span class="nv">on</span><span class="w"> </span><span class="nv">StoreIdJoin</span>
+<a id="__codelineno-68-4" name="__codelineno-68-4" href="#__codelineno-68-4"></a><span class="o">|</span><span class="w"> </span><span class="nv">project</span><span class="w"> </span><span class="nv">SaleId</span><span class="p">,</span><span class="w"> </span><span class="nv">StoreId</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">StoreIdJoin</span><span class="p">,</span><span class="w"> </span><span class="nv">Country</span><span class="p">,</span><span class="w"> </span><span class="nv">Address</span><span class="p">,</span><span class="w"> </span><span class="nv">SaleDate</span>
+</code></pre></div>
+<p><strong>Result:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-69-1" name="__codelineno-69-1" href="#__codelineno-69-1"></a>+--------+---------+---------+------------------------+------------------+
+<a id="__codelineno-69-2" name="__codelineno-69-2" href="#__codelineno-69-2"></a>| SaleId | StoreId | Country | Address                | SaleDate         |
+<a id="__codelineno-69-3" name="__codelineno-69-3" href="#__codelineno-69-3"></a>+--------+---------+---------+------------------------+------------------+
+<a id="__codelineno-69-4" name="__codelineno-69-4" href="#__codelineno-69-4"></a>| 1      | 1       | USA     | 123 Main St, New York  | 05/01/2022 00:00 |
+<a id="__codelineno-69-5" name="__codelineno-69-5" href="#__codelineno-69-5"></a>| 2      | 1       | USA     | 123 Main St, New York  | 15/01/2022 00:00 |
+<a id="__codelineno-69-6" name="__codelineno-69-6" href="#__codelineno-69-6"></a>| 6      | 1       | USA     | 123 Main St, New York  | 30/05/2022 00:00 |
+<a id="__codelineno-69-7" name="__codelineno-69-7" href="#__codelineno-69-7"></a>| 10     | 1       | USA     | 123 Main St, New York  | 10/09/2022 00:00 |
+<a id="__codelineno-69-8" name="__codelineno-69-8" href="#__codelineno-69-8"></a>| 14     | 1       | USA     | 123 Main St, New York  | 25/11/2022 00:00 |
+<a id="__codelineno-69-9" name="__codelineno-69-9" href="#__codelineno-69-9"></a>| 17     | 1       | USA     | 123 Main St, New York  | 20/12/2022 00:00 |
+<a id="__codelineno-69-10" name="__codelineno-69-10" href="#__codelineno-69-10"></a>| 3      | 2       | Canada  | 456 Maple Rd, Toronto  | 20/02/2022 00:00 |
+<a id="__codelineno-69-11" name="__codelineno-69-11" href="#__codelineno-69-11"></a>| 4      | 2       | Canada  | 456 Maple Rd, Toronto  | 18/03/2022 00:00 |
+<a id="__codelineno-69-12" name="__codelineno-69-12" href="#__codelineno-69-12"></a>| 7      | 2       | Canada  | 456 Maple Rd, Toronto  | 15/06/2022 00:00 |
+<a id="__codelineno-69-13" name="__codelineno-69-13" href="#__codelineno-69-13"></a>| 11     | 2       | Canada  | 456 Maple Rd, Toronto  | 15/09/2022 00:00 |
+<a id="__codelineno-69-14" name="__codelineno-69-14" href="#__codelineno-69-14"></a>| 12     | 2       | Canada  | 456 Maple Rd, Toronto  | 05/10/2022 00:00 |
+<a id="__codelineno-69-15" name="__codelineno-69-15" href="#__codelineno-69-15"></a>| 15     | 2       | Canada  | 456 Maple Rd, Toronto  | 10/12/2022 00:00 |
+<a id="__codelineno-69-16" name="__codelineno-69-16" href="#__codelineno-69-16"></a>| 18     | 2       | Canada  | 456 Maple Rd, Toronto  | 25/12/2022 00:00 |
+<a id="__codelineno-69-17" name="__codelineno-69-17" href="#__codelineno-69-17"></a>| 19     | 2       | Canada  | 456 Maple Rd, Toronto  | 28/12/2022 00:00 |
+<a id="__codelineno-69-18" name="__codelineno-69-18" href="#__codelineno-69-18"></a>| 5      | 3       | UK      | 789 King&#39;s Way, London | 22/04/2022 00:00 |
+<a id="__codelineno-69-19" name="__codelineno-69-19" href="#__codelineno-69-19"></a>| 8      | 3       | UK      | 789 King&#39;s Way, London | 07/07/2022 00:00 |
+<a id="__codelineno-69-20" name="__codelineno-69-20" href="#__codelineno-69-20"></a>| 9      | 3       | UK      | 789 King&#39;s Way, London | 20/08/2022 00:00 |
+<a id="__codelineno-69-21" name="__codelineno-69-21" href="#__codelineno-69-21"></a>| 13     | 3       | UK      | 789 King&#39;s Way, London | 20/10/2022 00:00 |
+<a id="__codelineno-69-22" name="__codelineno-69-22" href="#__codelineno-69-22"></a>| 16     | 3       | UK      | 789 King&#39;s Way, London | 15/12/2022 00:00 |
+<a id="__codelineno-69-23" name="__codelineno-69-23" href="#__codelineno-69-23"></a>| 20     | 3       | UK      | 789 King&#39;s Way, London | 31/12/2022 00:00 |
+<a id="__codelineno-69-24" name="__codelineno-69-24" href="#__codelineno-69-24"></a>+--------+---------+---------+------------------------+------------------+
+</code></pre></div>
+<p><strong>Supported Kinds</strong></p>
+<h3 id="kindinner_1">kind=inner<a class="headerlink" href="#kindinner_1" title="Permanent link">&para;</a></h3>
+<p><img alt="image.png" src="image-4.png" /></p>
+<h3 id="kindleftouter">kind=leftouter<a class="headerlink" href="#kindleftouter" title="Permanent link">&para;</a></h3>
+<p><img alt="image.png" src="image-5.png" /></p>
+<h3 id="kindrightouter">kind=rightouter<a class="headerlink" href="#kindrightouter" title="Permanent link">&para;</a></h3>
+<p><img alt="image.png" src="image-6.png" /></p>
+<h3 id="kindfullouter">kind=fullouter<a class="headerlink" href="#kindfullouter" title="Permanent link">&para;</a></h3>
+<p><img alt="image.png" src="image-7.png" /></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

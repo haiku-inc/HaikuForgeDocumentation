@@ -1,0 +1,3392 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://haiku-inc.github.io/HaikuForgeDocumentation/haiku-commands/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../kusto-query-language/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/haiku-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Haiku Commands - Haiku Forge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cairo:300,300i,400,400i,700,700i%7CInconsolata:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Cairo";--md-code-font:"Inconsolata"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/haiku.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#haiku-commands" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Haiku Forge Documentation" class="md-header__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haiku Forge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Haiku Commands
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Haiku Forge Documentation" class="md-nav__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    Haiku Forge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haiku Commands
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haiku Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwdchdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pwd/chdir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cattype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cat/type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls/dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmdel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rm/del
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpcopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cp/copy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvmove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mv/move
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdirmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mkdir/md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dudust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        du/dust
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        touch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsblk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lsblk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        strings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        realpath
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        grep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headmore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        head/more
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        less
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkhacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network/Hacking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network/Hacking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        curl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ssh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hydra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hydra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dirb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sqlmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tshark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tshark
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iptables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iptables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aircrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        aircrack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aireplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        aireplay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#airodump" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        airodump
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nmcli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nmcli
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localhacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local/Hacking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local/Hacking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ifconfigipconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ifconfig/ipconfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iwconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iwconfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netstat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        netstat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#john" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        john
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pstasklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ps/tasklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sudo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kill
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        telnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whoami" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        whoami
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unzip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unzip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        echo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#md5sumcertutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        md5sum/certutil
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#man" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        man/ /?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cowsay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cowsay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movewindow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        movewindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#focuswindow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        focuswindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mini
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#world-of-haiku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        World of Haiku
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-windows-openers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Windows Openers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aliases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal Behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminal Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pathname-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pathname Expansion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brace-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brace Expansion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter Expansion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-redirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Redirection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quoting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quoting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kusto-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kusto Query Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../story-creation-with-miniscript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Story Creation with Miniscript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-commands-and-feedbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Commands & Feedbacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Sites Creation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web Sites Creation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-sites-creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-sites-creation/miniscript-for-web-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miniscript for Web Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="File System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pwdchdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pwd/chdir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cattype" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cat/type
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsdir" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ls/dir
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rmdel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rm/del
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cpcopy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cp/copy
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mvmove" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mv/move
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdirmd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mkdir/md
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dudust" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        du/dust
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        touch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lsblk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lsblk
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        strings
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#realpath" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        realpath
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        grep
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#headmore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        head/more
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#less" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        less
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#networkhacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Network/Hacking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Network/Hacking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ping
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        curl
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ssh
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        scp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hydra" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        hydra
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dirb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dirb
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sqlmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sqlmap
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tshark" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tshark
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iptables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iptables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aircrack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        aircrack
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#aireplay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        aireplay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#airodump" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        airodump
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nmcli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nmcli
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localhacking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Local/Hacking
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Local/Hacking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ifconfigipconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ifconfig/ipconfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#iwconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        iwconfig
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#netstat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        netstat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#john" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        john
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pstasklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ps/tasklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sudo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sudo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kill" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        kill
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#telnet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        telnet
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Utility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Utility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#whoami" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        whoami
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unzip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        unzip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clear" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        exit
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        echo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#md5sumcertutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        md5sum/certutil
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#man" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        man/ /?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cowsay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cowsay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#movewindow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        movewindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#focuswindow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        focuswindow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scripting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scripting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Scripting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mini" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mini
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#world-of-haiku" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        World of Haiku
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-windows-openers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Windows Openers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aliases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Aliases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminal-behavior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Terminal Behavior
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminal Behavior">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pattern-matching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pattern Matching
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pathname-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pathname Expansion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brace-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brace Expansion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parameter-expansion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parameter Expansion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#output-redirection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Output Redirection
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quoting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quoting
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="haiku-commands">Haiku Commands<a class="headerlink" href="#haiku-commands" title="Permanent link">&para;</a></h1>
+<h2 id="file-system"><strong>File System</strong><a class="headerlink" href="#file-system" title="Permanent link">&para;</a></h2>
+<h3 id="cd">cd<a class="headerlink" href="#cd" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>cd</p>
+<p>✅ Windows</p>
+<p>cd</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Change the directory
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Parameters:
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>cd /
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Go to root directory.
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>cd ..
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Go up a directory (parent directory).
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>cd directory path
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>Navigate to specified directory.
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>Example:
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>cd docs/users
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>cd &quot;my folder&quot;
+</code></pre></div>
+<h3 id="pwdchdir">pwd/chdir<a class="headerlink" href="#pwdchdir" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>pwd</p>
+<p>✅ Windows</p>
+<p>chdir</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>(print working directory) - Display the current directory path
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Example:
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>pwd
+</code></pre></div>
+<h3 id="cattype">cat/type<a class="headerlink" href="#cattype" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>cat</p>
+<p>✅ Windows</p>
+<p>type</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Short for &quot;concatenate&quot;, this command displays file contents in the terminal.
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Usage:
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>cat [option]... file...
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>Example:
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>cat myDocument.txt
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>cat &quot;my document.txt&quot; - quotes must be used when the filename contains a space.
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>cat file1 file2 file3
+</code></pre></div>
+<h3 id="lsdir">ls/dir<a class="headerlink" href="#lsdir" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>ls</p>
+<p>✅ Windows</p>
+<p>dir</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>List all the current files and folders in the current working directory or a specified path.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Options:
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>-l
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    use a long listing format 
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>-h, --human-readable
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    with -l, print file sizes like 1K, 234M, 2G, etc
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>-a, --all
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>    do not ignore entries starting with .
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>Example:
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>ls
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>ls path
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>ls -lah path
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>ls -a -l path
+</code></pre></div>
+<h3 id="rmdel">rm/del<a class="headerlink" href="#rmdel" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>rm</p>
+<p>✅ Windows</p>
+<p>del</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Short for &#39;remove&#39;. Deletes a file or directory.
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Parameters
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>-r
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Delete a directory and all its contents.
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Usage:
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>rm -r directory name
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>rm file name
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>rm file… 
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>Example:
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>rm -r myDirectory
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>rm myFile.txt
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>rm myFile.txt myfile2.txt
+</code></pre></div>
+<h3 id="cpcopy">cp/copy<a class="headerlink" href="#cpcopy" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>cp</p>
+<p>✅ Windows</p>
+<p>copy</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Copy a file or directory to another destination file or destination directory.
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Usage:
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>cp source_file dest_file | dest_directory
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>cp -r source_directory target_directory
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Example:
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>cp passwords.txt docs/myPasswords.txt
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>cp pass.txt pass2.txt
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>cp -r myFiles docs
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>cp &quot;my password.txt&quot; mypass.txt*
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>*Note if a file or path has spaces in the name it must be surrounded in quotes.
+</code></pre></div>
+<h3 id="mvmove">mv/move<a class="headerlink" href="#mvmove" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>mv</p>
+<p>✅ Windows</p>
+<p>move</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Move a file or folder to a new path location or change the name of a file or directory. 
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Usage: <span class="sb">`mv file newfile`</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>e.g.
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Changing a file name:
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="sb">`mv file.txt newfile.txt`</span> 
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>Moving a file to a new location:
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="sb">`mv file1.txt /home/user1`</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>Moving a directory
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>`mv /home/users/files/ /home/users/user1/files/
+</code></pre></div>
+<h3 id="file">file<a class="headerlink" href="#file" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>file</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Used to determine file type. Multiple files can be passed to file at once including the * wildcard symbol to run against all files in the current directory.
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Parameters
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>-z or -Z attempts to look inside an archive or compressed file, if successful returns file type and compression details
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>Usage
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>file &quot;file_name&quot;
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>file &quot;file1&quot; &quot;file2&quot; &quot;file3&quot;
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>file *
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>Examples
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>file myDocument.txt
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a>file &quot;my application.bin&quot;
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a>file *
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a>Notes
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a>Quotes must be used for filenames containing spaces. File does not look at the file extension to determine file type but instead looks at the actual file attributes to see what it is.
+</code></pre></div>
+<h3 id="mkdirmd">mkdir/md<a class="headerlink" href="#mkdirmd" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>mkdir</p>
+<p>✅ Windows</p>
+<p>md</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Short for &#39;make directory&#39;. Makes the directory(ies) if they do not already exist.
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Usage:
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>mkdir [option]... directory...
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>Example:
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>mkdir newDirectory1 newDirectory2
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>mkdir existingDirectory/newDirectory
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>mkdir -p hierarchy/of/new/directories
+</code></pre></div>
+<h3 id="dudust">du/dust<a class="headerlink" href="#dudust" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>du/dust</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>du is a gnu utility that measures disk usage of a single directory or file. 
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Inspired by the dust program (du written in rust), the app aggregates the size,
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>or disk usage, of all file system objects found underneath its entry point based
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>on our disk usage metrics.
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>disk usage metrics for different types of game files:
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>text files: the raw content of the file is read, every character counts as 1 byte of text, we pretend they are all UTF8 ASCII.
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>binary files: we hash the file name and generate a random number with that as a
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>seed, then use it to create a deterministic random disk usage between 1KB and 8KB.
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>zipped archives: it shows the archive as a single file which has a disk usage of 
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>all of the files it contains (recursively, allowing for zip inception) reduced by 75%, which is more or less the average compression of real-world 7-zip 
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>(nested zip files don&#39;t reduce it further).
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>wordlists: depending on the relative size of the passwords it&#39;s supposed to
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>contain, the wordlist size is either 100%, 40%, 27.5%, 17.5%, or 10% of the real-world rockyou wordlist, which has a storage size of 139 MB.
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>Usage:
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>dust [-d number] [folder] 
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>-d Specify a custom depth to the recursive algorithm.
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>Example:
+<a id="__codelineno-9-25" name="__codelineno-9-25" href="#__codelineno-9-25"></a>dust
+<a id="__codelineno-9-26" name="__codelineno-9-26" href="#__codelineno-9-26"></a>dust my-folder/ -d 4
+<a id="__codelineno-9-27" name="__codelineno-9-27" href="#__codelineno-9-27"></a>du
+<a id="__codelineno-9-28" name="__codelineno-9-28" href="#__codelineno-9-28"></a>du my-folder/ -d 4
+</code></pre></div>
+<h3 id="touch">touch<a class="headerlink" href="#touch" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>touch</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Create a file if none exists.
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Usage:
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>touch [file]
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>Example:
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>touch myFile
+</code></pre></div>
+<h3 id="lsblk">lsblk<a class="headerlink" href="#lsblk" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>lsblk</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>List information about block devices.
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Usage:
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>lsblk
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>Example:
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>lsblk
+</code></pre></div>
+<h3 id="strings">strings<a class="headerlink" href="#strings" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>strings</p>
+<p>✅ Windows</p>
+<p>strings</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Find the printable strings in an object or other binary file.
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Usage:
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>strings [options] [file]
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>-n [number]
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>Specify the minimum string length where the number argument is a positive decimal integer. The default is 4.
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>Example:
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>strings -n 3 myFile.txt
+</code></pre></div>
+<h3 id="realpath">realpath<a class="headerlink" href="#realpath" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>realpath</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Usage: realpath [OPTION]... FILE...&quot;
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>Print the resolved absolute file name all but the last component must exist
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>-e, --canonicalize-existing all components of the path must exist
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>-m, --canonicalize-missing no path components need exist or be a directory
+</code></pre></div>
+<h3 id="grep">grep<a class="headerlink" href="#grep" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>grep</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>grep - print lines matching a pattern
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>grep [OPTIONS] PATTERN [FILE...]
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>grep searches the named input FILEs for lines containing a match to the given PATTERN.
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>Currently implemented characters:
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>^ matches the start of the line
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>$ matches the end of the line
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a>. matches any character
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a><span class="k">*</span><span class="w"> </span>extends the match of the previous character to be none or any amount of them
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>abcde and every other text character matches itself
+</code></pre></div>
+<h3 id="headmore">head/more<a class="headerlink" href="#headmore" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>head</p>
+<p>✅ Windows</p>
+<p>more</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Shows first N lines of the text file. 
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>Arguments: -n &lt;number_of_lines&gt; (optional, default value is 10).
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Examples:
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>head /test.txt
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>head -n 5 /test.txt
+</code></pre></div>
+<h3 id="tail">tail<a class="headerlink" href="#tail" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>tail</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Shows last N lines of the text file. 
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>Arguments: -n &lt;number_of_lines&gt; (optional, default value is 10).
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Examples:
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>tail /test.txt
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>tail -n 5 /test.txt
+</code></pre></div>
+<h3 id="less">less<a class="headerlink" href="#less" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>less</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Shows a file content page by page, where the page length is 15 lines.
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>Example:
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    less &lt;filename.txt&gt;
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>Control Keys:
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    Close the file: Ctrl+C
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    Go to the next page: Space or Enter (return)
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a>    Go to the previous page: Up arrow
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a>Arguments:
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>    -N - line numbering
+</code></pre></div>
+<h2 id="networkhacking"><strong>Network/Hacking</strong><a class="headerlink" href="#networkhacking" title="Permanent link">&para;</a></h2>
+<h3 id="ping">ping<a class="headerlink" href="#ping" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>ping</p>
+<p>✅ Windows</p>
+<p>ping</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>Transmits and receives Internet Control Message Protocol (ICMP) packets, issuing a statistical summary on cancellation (press CTRL+C).
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>Statistical Summary:
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="w">    </span><span class="k">*</span><span class="w"> </span>Packet loss
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="w">    </span><span class="k">*</span><span class="w"> </span>Avg/Min/Max/Standard Deviation of message response time
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>Usage:
+<a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>ping hostname/IP
+<a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>
+<a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>Example:
+<a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a>ping gcorp.com
+<a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a>ping 192.168.1.2
+</code></pre></div>
+<h3 id="curl">curl<a class="headerlink" href="#curl" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>curl</p>
+<p>✅ Windows</p>
+<p>curl</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Transfer data from a URL. Returns data as a string in the terminal.
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Usage:
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>curl [options] [URL]
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>
+<a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>Example:
+<a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>curl gcorp.com
+<a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>curl http://gcorp.com
+<a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a>
+<a id="__codelineno-19-10" name="__codelineno-19-10" href="#__codelineno-19-10"></a>-O
+<a id="__codelineno-19-11" name="__codelineno-19-11" href="#__codelineno-19-11"></a>Download file to current directory.
+<a id="__codelineno-19-12" name="__codelineno-19-12" href="#__codelineno-19-12"></a>
+<a id="__codelineno-19-13" name="__codelineno-19-13" href="#__codelineno-19-13"></a>Example:
+<a id="__codelineno-19-14" name="__codelineno-19-14" href="#__codelineno-19-14"></a>curl -O http://gcorp.com
+</code></pre></div>
+<h3 id="nmap">nmap<a class="headerlink" href="#nmap" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>nmap</p>
+<p>✅ Windows</p>
+<p>nmap</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Scans a device or hostname for ports. You can add parameters to change how the tool discovers the ports, and what information it will return.
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Parameters:
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>-sV
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>Attempts to discover the software version a service is running.
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>-Pn
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>Skip host discovery (no ping). Nmap will ping a range of IPs, a method called ping sweeps, to determine what devices are active; this is the “host discovery” phase, and it is initiated first. Some firewalls might prevent ping sweeps; the -Pn parameter will tell Nmap to skip the host discovery phase and treat all IPs as active.
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+<a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a>-O
+<a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>Attempts to discover the operating system a service is running on.
+<a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a>
+<a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a>-p
+<a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a>Only scan specified ports. Nmap -p port numbers hostname/IP
+<a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>
+<a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a>Port States:
+<a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a>open
+<a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a>Port is both accessible and accepting connections.
+<a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a>
+<a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>closed
+<a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a>Port is accessible, but no device is actively listening on it.
+<a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a>
+<a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a>filtered
+<a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a>The port filters packets, likely from a firewall, or router rules. SMTP (Simple Mail Transfer Protocol), or a mail server, are usually filtered, as accessing them might require credentials or whitelisted IPs.
+<a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a>
+<a id="__codelineno-20-26" name="__codelineno-20-26" href="#__codelineno-20-26"></a>Example:
+<a id="__codelineno-20-27" name="__codelineno-20-27" href="#__codelineno-20-27"></a>Nmap -sV -O -Pn -p 22 hostname.com
+</code></pre></div>
+<h3 id="ssh">ssh<a class="headerlink" href="#ssh" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>ssh</p>
+<p>✅ Windows</p>
+<p>ssh</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>Remotely tunnel into a machine. A username of the target machine and its password are required.
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>Usage:
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>ssh [-p [port]] [[user@]host]
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>Example:
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>ssh -p 22 topdog@gcorp.com
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>ssh topdog@gcorp.com
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>ssh topdog@192.168.1.2
+<a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>ssh gcorp.com -p 22
+</code></pre></div>
+<h3 id="scp">scp<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>scp</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>Copy the specified file or directory to a target directory on another machine.
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>Usage:
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>scp [source file] [target computer’s username]@[target system’s IP]/[target directory]/
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>scp source file target computer’s username@target system’s IP/target directory
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>Example:
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>scp passwordfile root@192.168.1.2/docs/stolenContent
+</code></pre></div>
+<h3 id="hydra">hydra<a class="headerlink" href="#hydra" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>hydra</p>
+<p>✅ Windows</p>
+<p>hydra</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>A very fast network logon brute-forcer, supporting multiple service protocols. Currently World of Haiku only supports SSH brute forcing. 
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>Usage:
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>hydra [[  [-l USERNAME | -L /path/to/username_file] [-p password | -P /path/to/pass_FILE ] ]] service
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>
+<a id="__codelineno-23-6" name="__codelineno-23-6" href="#__codelineno-23-6"></a>Parameters:
+<a id="__codelineno-23-7" name="__codelineno-23-7" href="#__codelineno-23-7"></a>-l
+<a id="__codelineno-23-8" name="__codelineno-23-8" href="#__codelineno-23-8"></a>Provide a specific single username to use
+<a id="__codelineno-23-9" name="__codelineno-23-9" href="#__codelineno-23-9"></a>Example - hydra 10.1.2.4 -l admin 
+<a id="__codelineno-23-10" name="__codelineno-23-10" href="#__codelineno-23-10"></a>
+<a id="__codelineno-23-11" name="__codelineno-23-11" href="#__codelineno-23-11"></a>-L
+<a id="__codelineno-23-12" name="__codelineno-23-12" href="#__codelineno-23-12"></a>Provide a file path to a username wordlist
+<a id="__codelineno-23-13" name="__codelineno-23-13" href="#__codelineno-23-13"></a>Example - hydra 10.1.2.4 -L /home/userlist.txt
+<a id="__codelineno-23-14" name="__codelineno-23-14" href="#__codelineno-23-14"></a>
+<a id="__codelineno-23-15" name="__codelineno-23-15" href="#__codelineno-23-15"></a>-p
+<a id="__codelineno-23-16" name="__codelineno-23-16" href="#__codelineno-23-16"></a>Provide a specific single password to use
+<a id="__codelineno-23-17" name="__codelineno-23-17" href="#__codelineno-23-17"></a>Example - hydra 10.1.2.4 -l admin -p password
+<a id="__codelineno-23-18" name="__codelineno-23-18" href="#__codelineno-23-18"></a>
+<a id="__codelineno-23-19" name="__codelineno-23-19" href="#__codelineno-23-19"></a>-P
+<a id="__codelineno-23-20" name="__codelineno-23-20" href="#__codelineno-23-20"></a>Provide a file path to a password wordlist
+<a id="__codelineno-23-21" name="__codelineno-23-21" href="#__codelineno-23-21"></a>Example - hydra 10.1.2.4 -l admin -P /home/passlist.txt
+<a id="__codelineno-23-22" name="__codelineno-23-22" href="#__codelineno-23-22"></a>
+<a id="__codelineno-23-23" name="__codelineno-23-23" href="#__codelineno-23-23"></a>service
+<a id="__codelineno-23-24" name="__codelineno-23-24" href="#__codelineno-23-24"></a>non-optional service input to hydra. Must be used to tell hydra what service protocol we are brute forcing against. 
+<a id="__codelineno-23-25" name="__codelineno-23-25" href="#__codelineno-23-25"></a>Example - we’re brute forcing against ssh on the standard port of 22
+<a id="__codelineno-23-26" name="__codelineno-23-26" href="#__codelineno-23-26"></a>hydra 10.1.6.3 -l admin -p pass ssh
+<a id="__codelineno-23-27" name="__codelineno-23-27" href="#__codelineno-23-27"></a>
+<a id="__codelineno-23-28" name="__codelineno-23-28" href="#__codelineno-23-28"></a>Examples:
+<a id="__codelineno-23-29" name="__codelineno-23-29" href="#__codelineno-23-29"></a>hydra ssh://192.168.1.1 -L /path/to/users.txt -P /path/to/pass.txt
+<a id="__codelineno-23-30" name="__codelineno-23-30" href="#__codelineno-23-30"></a>hydra 10.1.2.4 -l root -P path/to/pass.txt ssh
+</code></pre></div>
+<h3 id="dirb">dirb<a class="headerlink" href="#dirb" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>dirb</p>
+<p>✅ Windows</p>
+<p>dirb</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>DIRB is a Web Content Scanner. It looks for
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>existing (and/or hidden) Web Objects. It works by
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>launching a dictionary-based attack against a web
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>server and analyzing the response.
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a>Synopsis:
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>    dirb &lt;url_base&gt; &lt;url_base&gt; [&lt;wordlist_file(s)&gt;] [options]
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a>Parameters:
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a>-v
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a>    Show Also Not Existent Pages.
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>-x &lt;extensions_file&gt;
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a>    Amplify search with the extensions on this file.
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a>-X &lt;extensions&gt;
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a>    Amplify search with this extensions.
+</code></pre></div>
+<h3 id="sqlmap">sqlmap<a class="headerlink" href="#sqlmap" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>sqlmap</p>
+<p>✅ Windows</p>
+<p>sqlmap</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Usage:sqlmap [options]
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>Options:
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>    -h                  Show help message and exit
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>    --version           Show program&#39;s version number and exit
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>Target:
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a>    At least one of these options has to be provided to define the
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a>    target(s)
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a>    -u URL              Target URL (e.g. &quot;&quot;http://www.site.com/vuln.php?id=1&quot;&quot;)
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a>    -d DIRECT           Connection string for direct database connection
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a>                        Example:
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a>                        &quot;&quot;S=IP/HostName;DB=DBName;CR=UserName:password&quot;&quot;
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a>    -c CONFIGFILE       Load command parameters from file
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a>Request:
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a>    These options can be used to specify how to connect to the target URL
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a>    --cookie=COOKIE     HTTP Cookie header value (e.g. &quot;&quot;PHPSESSID=a8d127e..;SOME=fd32k&quot;&quot;)
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a>    --auth-cred=AUTH..  HTTP authentication credentials (name:password name:password)
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a>
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a>Enumeration:
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a>    These options can be used to enumerate the back-end database management system information, structure and data contained in the tables
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a>
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a>    -a, --all           Retrieve everything
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a>    --current-user      Retrieve DBMS current user
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a>    --current-db        Retrieve DBMS current database
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a>    --hostname          Retrieve DBMS server hostname
+<a id="__codelineno-25-29" name="__codelineno-25-29" href="#__codelineno-25-29"></a>    --users             Enumerate DBMS users
+<a id="__codelineno-25-30" name="__codelineno-25-30" href="#__codelineno-25-30"></a>    --passwords         Enumerate DBMS users password hashes
+<a id="__codelineno-25-31" name="__codelineno-25-31" href="#__codelineno-25-31"></a>    --dbs               Enumerate DBMS databases
+<a id="__codelineno-25-32" name="__codelineno-25-32" href="#__codelineno-25-32"></a>    --tables            Enumerate DBMS database tables
+<a id="__codelineno-25-33" name="__codelineno-25-33" href="#__codelineno-25-33"></a>    --columns           Enumerate DBMS database table columns
+<a id="__codelineno-25-34" name="__codelineno-25-34" href="#__codelineno-25-34"></a>    --dump              Dump DBMS database table entries
+<a id="__codelineno-25-35" name="__codelineno-25-35" href="#__codelineno-25-35"></a>    --search            Search column(s), table(s) and/or database name(s)
+<a id="__codelineno-25-36" name="__codelineno-25-36" href="#__codelineno-25-36"></a>    -D DB               DBMS database to enumerate
+<a id="__codelineno-25-37" name="__codelineno-25-37" href="#__codelineno-25-37"></a>    -T TBL              DBMS database table(s) to enumerate
+<a id="__codelineno-25-38" name="__codelineno-25-38" href="#__codelineno-25-38"></a>    -C COL              DBMS database table column(s) to enumerate
+</code></pre></div>
+<h3 id="tshark">tshark<a class="headerlink" href="#tshark" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>tshark</p>
+<p>✅ Windows</p>
+<p>tshark</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Network protocol analyzer and packet capture tool (terminal-based Wireshark).
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>Parameters:
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>-i
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>    Network interface to capture on (default: eth0).
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a>-w
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a>    Write captured packets to a dump file.
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a>-r
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a>    Read packets from a dump file.
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a>-z
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a>    Display the contents of a TCP stream between two nodes.
+<a id="__codelineno-26-15" name="__codelineno-26-15" href="#__codelineno-26-15"></a>
+<a id="__codelineno-26-16" name="__codelineno-26-16" href="#__codelineno-26-16"></a>Capture is stopped by pressing Ctrl+C.
+<a id="__codelineno-26-17" name="__codelineno-26-17" href="#__codelineno-26-17"></a>
+<a id="__codelineno-26-18" name="__codelineno-26-18" href="#__codelineno-26-18"></a>Usage:
+<a id="__codelineno-26-19" name="__codelineno-26-19" href="#__codelineno-26-19"></a>tshark [-i interface] [-w file] [-r file] [-z]
+<a id="__codelineno-26-20" name="__codelineno-26-20" href="#__codelineno-26-20"></a>
+<a id="__codelineno-26-21" name="__codelineno-26-21" href="#__codelineno-26-21"></a>Example:
+<a id="__codelineno-26-22" name="__codelineno-26-22" href="#__codelineno-26-22"></a>tshark
+<a id="__codelineno-26-23" name="__codelineno-26-23" href="#__codelineno-26-23"></a>tshark -i eth0
+<a id="__codelineno-26-24" name="__codelineno-26-24" href="#__codelineno-26-24"></a>tshark -r /tmp/capture.pcapng
+<a id="__codelineno-26-25" name="__codelineno-26-25" href="#__codelineno-26-25"></a>tshark -r /tmp/capture.pcapng -z
+</code></pre></div>
+<h3 id="iptables">iptables<a class="headerlink" href="#iptables" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>iptables</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>The Linux firewall command performing IPv4 packet filtering and NAT rules. Used to set up, maintain, and inspect the IP packet filter rules on a Linux computer. 
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>Firewall rules contain either built-in or user-defined chains, a list of firewall rules specifying what to do with a packet that matches a given criteria. If the packet does not match the criteria, the next rule in the chain is examined; if it does match, the action taken on the packet can be either:
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>ACCEPT - let the packet through
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>DROP - block processing of packet
+<a id="__codelineno-27-7" name="__codelineno-27-7" href="#__codelineno-27-7"></a>
+<a id="__codelineno-27-8" name="__codelineno-27-8" href="#__codelineno-27-8"></a>Three default Firewall Chains:
+<a id="__codelineno-27-9" name="__codelineno-27-9" href="#__codelineno-27-9"></a>INPUT
+<a id="__codelineno-27-10" name="__codelineno-27-10" href="#__codelineno-27-10"></a>OUTPUT
+<a id="__codelineno-27-11" name="__codelineno-27-11" href="#__codelineno-27-11"></a>FORWARD
+<a id="__codelineno-27-12" name="__codelineno-27-12" href="#__codelineno-27-12"></a>
+<a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>The order of firewall rules matters in that as 
+<a id="__codelineno-27-14" name="__codelineno-27-14" href="#__codelineno-27-14"></a>
+<a id="__codelineno-27-15" name="__codelineno-27-15" href="#__codelineno-27-15"></a>Parameters:
+<a id="__codelineno-27-16" name="__codelineno-27-16" href="#__codelineno-27-16"></a>-L
+<a id="__codelineno-27-17" name="__codelineno-27-17" href="#__codelineno-27-17"></a>List all the iptables rules. 
+<a id="__codelineno-27-18" name="__codelineno-27-18" href="#__codelineno-27-18"></a>-L [Chain]
+<a id="__codelineno-27-19" name="__codelineno-27-19" href="#__codelineno-27-19"></a>optional to filter on a specific chain. 
+<a id="__codelineno-27-20" name="__codelineno-27-20" href="#__codelineno-27-20"></a>-A [CHAIN_name] 
+<a id="__codelineno-27-21" name="__codelineno-27-21" href="#__codelineno-27-21"></a>add a firewall rule to a specific chain (INPUT, OUTPUT, FORWARD)
+<a id="__codelineno-27-22" name="__codelineno-27-22" href="#__codelineno-27-22"></a>-s [IP Address]
+<a id="__codelineno-27-23" name="__codelineno-27-23" href="#__codelineno-27-23"></a>add a specific ip address to block for the chain rule. 
+<a id="__codelineno-27-24" name="__codelineno-27-24" href="#__codelineno-27-24"></a>iptables -A INPUT -s 22.22.22.22
+<a id="__codelineno-27-25" name="__codelineno-27-25" href="#__codelineno-27-25"></a>-j [ACTION]
+<a id="__codelineno-27-26" name="__codelineno-27-26" href="#__codelineno-27-26"></a>DROP or ACCEPT
+<a id="__codelineno-27-27" name="__codelineno-27-27" href="#__codelineno-27-27"></a>
+<a id="__codelineno-27-28" name="__codelineno-27-28" href="#__codelineno-27-28"></a>iptables -A  INPUT -s 22.22.22.22 -j DROP
+</code></pre></div>
+<h3 id="aircrack">aircrack<a class="headerlink" href="#aircrack" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>aircrack</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>aircrack-ng is a 802.11 WEP / WPA-PSK key cracker. It implements the so-called Fluhrer - Mantin - Shamir (FMS) attack, along with some new attacks by a talented hacker named KoreK.
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>  usage: aircrack-ng [options] &lt;input file(s)&gt;
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>  WEP and WPA-PSK cracking options:
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>      -w &lt;words&gt; : path to wordlist filename
+<a id="__codelineno-28-8" name="__codelineno-28-8" href="#__codelineno-28-8"></a>
+<a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>  Other options:
+<a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a>
+<a id="__codelineno-28-11" name="__codelineno-28-11" href="#__codelineno-28-11"></a>      --help     : Displays this usage screen
+</code></pre></div>
+<h3 id="aireplay">aireplay<a class="headerlink" href="#aireplay" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>aireplay</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>aireplay-ng is used to inject frames.
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>  usage: aireplay-ng &lt;options&gt; &lt;replay interface&gt;
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>  Replay options:
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>      -a bssid  : set Access Point MAC address
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>      -c dmac   : set Destination  MAC address
+<a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a>
+<a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a>  Attack modes (numbers can still be used):
+<a id="__codelineno-29-10" name="__codelineno-29-10" href="#__codelineno-29-10"></a>
+<a id="__codelineno-29-11" name="__codelineno-29-11" href="#__codelineno-29-11"></a>      --deauth      count : deauthenticate station (-0)
+<a id="__codelineno-29-12" name="__codelineno-29-12" href="#__codelineno-29-12"></a>
+<a id="__codelineno-29-13" name="__codelineno-29-13" href="#__codelineno-29-13"></a>      --help              : Displays this usage screen
+</code></pre></div>
+<h3 id="airodump">airodump<a class="headerlink" href="#airodump" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>airodump</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>airodump-ng is a packet capture tool for aircrack-ng. It allows dumping packets directly from WLAN interface and saving them to a pcap or IVs file.
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>  usage: airodump-ng &lt;options&gt; &lt;interface&gt;
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>  Options:
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>      --write      &lt;prefix&gt; : Dump file prefix
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>      -w                    : Same as --write
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>      --endwrite            : Stop write dump file
+<a id="__codelineno-30-9" name="__codelineno-30-9" href="#__codelineno-30-9"></a>      -e                    : Same as --endwrite
+<a id="__codelineno-30-10" name="__codelineno-30-10" href="#__codelineno-30-10"></a>
+<a id="__codelineno-30-11" name="__codelineno-30-11" href="#__codelineno-30-11"></a>  Filter options:
+<a id="__codelineno-30-12" name="__codelineno-30-12" href="#__codelineno-30-12"></a>      --bssid     &lt;bssid&gt;   : Filter APs by BSSID
+<a id="__codelineno-30-13" name="__codelineno-30-13" href="#__codelineno-30-13"></a>      -d          &lt;bssid&gt;   : Same as --bssid
+<a id="__codelineno-30-14" name="__codelineno-30-14" href="#__codelineno-30-14"></a>      --essid     &lt;essid&gt;   : Filter APs by ESSID
+<a id="__codelineno-30-15" name="__codelineno-30-15" href="#__codelineno-30-15"></a>      -a                    : Filter clients
+<a id="__codelineno-30-16" name="__codelineno-30-16" href="#__codelineno-30-16"></a>
+<a id="__codelineno-30-17" name="__codelineno-30-17" href="#__codelineno-30-17"></a>  By default, airodump-ng hops on 2.4GHz channels.
+<a id="__codelineno-30-18" name="__codelineno-30-18" href="#__codelineno-30-18"></a>  You can make it capture on other/specific channel(s)
+<a id="__codelineno-30-19" name="__codelineno-30-19" href="#__codelineno-30-19"></a>  by using:
+<a id="__codelineno-30-20" name="__codelineno-30-20" href="#__codelineno-30-20"></a>      --channel &lt;channels&gt;  : Capture on specific channels
+<a id="__codelineno-30-21" name="__codelineno-30-21" href="#__codelineno-30-21"></a>      -c        &lt;channels&gt;  : Same as --channel
+<a id="__codelineno-30-22" name="__codelineno-30-22" href="#__codelineno-30-22"></a>
+<a id="__codelineno-30-23" name="__codelineno-30-23" href="#__codelineno-30-23"></a>      --help                : Displays this usage screen
+</code></pre></div>
+<h3 id="nmcli">nmcli<a class="headerlink" href="#nmcli" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>nmcli</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>Can connect to and disconnect from WiFi networks
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>  Usage:
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>  nmcli OBJECT { COMMAND }
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>
+<a id="__codelineno-31-6" name="__codelineno-31-6" href="#__codelineno-31-6"></a>  device     : Device object (dev or d)
+<a id="__codelineno-31-7" name="__codelineno-31-7" href="#__codelineno-31-7"></a>  connection : Connections object (con or c)
+<a id="__codelineno-31-8" name="__codelineno-31-8" href="#__codelineno-31-8"></a>
+<a id="__codelineno-31-9" name="__codelineno-31-9" href="#__codelineno-31-9"></a>  Device object
+<a id="__codelineno-31-10" name="__codelineno-31-10" href="#__codelineno-31-10"></a>  Use for device configuration
+<a id="__codelineno-31-11" name="__codelineno-31-11" href="#__codelineno-31-11"></a>
+<a id="__codelineno-31-12" name="__codelineno-31-12" href="#__codelineno-31-12"></a>  List available WiFi access points:
+<a id="__codelineno-31-13" name="__codelineno-31-13" href="#__codelineno-31-13"></a>  wifi list
+<a id="__codelineno-31-14" name="__codelineno-31-14" href="#__codelineno-31-14"></a>
+<a id="__codelineno-31-15" name="__codelineno-31-15" href="#__codelineno-31-15"></a>  Establish connection with access point: 
+<a id="__codelineno-31-16" name="__codelineno-31-16" href="#__codelineno-31-16"></a>  wifi connect network-ssid [password &quot; + &quot;\&quot;network-password\&quot;]&quot;+
+<a id="__codelineno-31-17" name="__codelineno-31-17" href="#__codelineno-31-17"></a>  @&quot;
+<a id="__codelineno-31-18" name="__codelineno-31-18" href="#__codelineno-31-18"></a>  password is optional
+<a id="__codelineno-31-19" name="__codelineno-31-19" href="#__codelineno-31-19"></a>
+<a id="__codelineno-31-20" name="__codelineno-31-20" href="#__codelineno-31-20"></a>
+<a id="__codelineno-31-21" name="__codelineno-31-21" href="#__codelineno-31-21"></a>  Connection object
+<a id="__codelineno-31-22" name="__codelineno-31-22" href="#__codelineno-31-22"></a>
+<a id="__codelineno-31-23" name="__codelineno-31-23" href="#__codelineno-31-23"></a>  Disconnect:
+<a id="__codelineno-31-24" name="__codelineno-31-24" href="#__codelineno-31-24"></a>  nmcli c/con/connection down
+</code></pre></div>
+<h2 id="localhacking"><strong>Local/Hacking</strong><a class="headerlink" href="#localhacking" title="Permanent link">&para;</a></h2>
+<h3 id="ifconfigipconfig">ifconfig/ipconfig<a class="headerlink" href="#ifconfigipconfig" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>ifconfig</p>
+<p>✅ Windows</p>
+<p>ipconfig</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>Description:
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>Display and manage network interface configurations. Sho
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>ws the user the IP address, subnet mask, gateway(router)
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a> ip address and mac address. 
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>
+<a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a>Example:
+<a id="__codelineno-32-7" name="__codelineno-32-7" href="#__codelineno-32-7"></a>ifconfig
+<a id="__codelineno-32-8" name="__codelineno-32-8" href="#__codelineno-32-8"></a>
+<a id="__codelineno-32-9" name="__codelineno-32-9" href="#__codelineno-32-9"></a>To enable or disable network interfaces by name, use:
+<a id="__codelineno-32-10" name="__codelineno-32-10" href="#__codelineno-32-10"></a>ifconfig &lt;interface_name&gt; up
+<a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a>ifconfig &lt;interface_name&gt; down
+<a id="__codelineno-32-12" name="__codelineno-32-12" href="#__codelineno-32-12"></a>
+<a id="__codelineno-32-13" name="__codelineno-32-13" href="#__codelineno-32-13"></a>Example:
+<a id="__codelineno-32-14" name="__codelineno-32-14" href="#__codelineno-32-14"></a>ifconfig eth0 up
+</code></pre></div>
+<h3 id="iwconfig">iwconfig<a class="headerlink" href="#iwconfig" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>iwconfig</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>Show and configure a wireless network interface
+</code></pre></div>
+<h3 id="netstat">netstat<a class="headerlink" href="#netstat" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>netstat</p>
+<p>✅ Windows</p>
+<p>netstat</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Provides information about network interfaces, connections, listening ports, and network usage statistics. When used in defense, it identifies ports that are open and listening or network connections that have been established which might represent suspicious activity.&quot;;
+</code></pre></div>
+<h3 id="john">john<a class="headerlink" href="#john" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>john</p>
+<p>✅ Windows</p>
+<p>john</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>Crack passwords using wordlists.
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>The most basic operation of John The Ripper is called single crack mode; it takes information from the files and applies mangling rules to them.
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>Usage:
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>john file name
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>john --wordlist=myWordlist.lst myHash.txt
+<a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
+<a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a>Example:
+<a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a>john myHash.txt
+</code></pre></div>
+<h3 id="pstasklist">ps/tasklist<a class="headerlink" href="#pstasklist" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>ps</p>
+<p>✅ Windows</p>
+<p>tasklist</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>Displays all information about running processes.
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>Usage:
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>ps
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>Example:
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>ps
+</code></pre></div>
+<h3 id="sudo">sudo<a class="headerlink" href="#sudo" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>sudo</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>Run any command as admin (if you have access).
+</code></pre></div>
+<h3 id="kill">kill<a class="headerlink" href="#kill" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>kill</p>
+<p>✅ Windows</p>
+<p>taskkill</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>kill: kill [sig] [pid | name]
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>Ends a process by sending it a signal.The default signal is SIGTERM (-15) (ask politely for program termination). There&#39;s also SIGKILL (-9) (force program termination)
+</code></pre></div>
+<h3 id="telnet">telnet<a class="headerlink" href="#telnet" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>telnet</p>
+<p>✅ Windows</p>
+<p>telnet</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>Usage: telnet[OPTION...][HOST[PORT]]
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>Login to remote system HOST(optionally, on service port PORT)
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a> General options:
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a> -l, --user     attempt automatic login as USER
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>Other options:
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>  -?, --help, or no options  give this help list
+</code></pre></div>
+<h2 id="utility"><strong>Utility</strong><a class="headerlink" href="#utility" title="Permanent link">&para;</a></h2>
+<h3 id="whoami">whoami<a class="headerlink" href="#whoami" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>whoami</p>
+<p>✅ Windows</p>
+<p>whoami</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>Whoami literally means &#39;Who am I?&#39; This command returns the username of the current user.
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>Example:
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>whoami
+</code></pre></div>
+<h3 id="dd">dd<a class="headerlink" href="#dd" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>dd</p>
+<p>❌ Windows</p>
+<p>dd</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>Creates and restores dumps of hard drive devices.
+<a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a>
+<a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="gs">**To create the dump:**</span>
+<a id="__codelineno-41-4" name="__codelineno-41-4" href="#__codelineno-41-4"></a><span class="ge">*dd if=DEVICE_NAME of=/PATH_TO_NEW_DUMP*</span>
+<a id="__codelineno-41-5" name="__codelineno-41-5" href="#__codelineno-41-5"></a>Example:
+<a id="__codelineno-41-6" name="__codelineno-41-6" href="#__codelineno-41-6"></a><span class="ge">*dd if=/dev/sdd of=/dump.dd*</span>
+<a id="__codelineno-41-7" name="__codelineno-41-7" href="#__codelineno-41-7"></a>
+<a id="__codelineno-41-8" name="__codelineno-41-8" href="#__codelineno-41-8"></a>Arguments:
+<a id="__codelineno-41-9" name="__codelineno-41-9" href="#__codelineno-41-9"></a><span class="ge">*conv=noerror*</span> - ignore read errors during the dump creation.
+<a id="__codelineno-41-10" name="__codelineno-41-10" href="#__codelineno-41-10"></a><span class="ge">*-b*</span> copy the dump to the system copy buffer (for mission development purposes).
+<a id="__codelineno-41-11" name="__codelineno-41-11" href="#__codelineno-41-11"></a><span class="ge">*bs=*</span> block size (example: 1M for 1 megabyte).
+<a id="__codelineno-41-12" name="__codelineno-41-12" href="#__codelineno-41-12"></a>
+<a id="__codelineno-41-13" name="__codelineno-41-13" href="#__codelineno-41-13"></a><span class="gs">**To restore the dump:**</span>
+<a id="__codelineno-41-14" name="__codelineno-41-14" href="#__codelineno-41-14"></a><span class="ge">*dd if=/PATH_TO_DUMP of=DEVICE_NAME*</span>
+<a id="__codelineno-41-15" name="__codelineno-41-15" href="#__codelineno-41-15"></a>Example:
+<a id="__codelineno-41-16" name="__codelineno-41-16" href="#__codelineno-41-16"></a><span class="ge">*dd if=/dump.dd of=/dev/sdd*</span>
+</code></pre></div>
+<h3 id="unzip">unzip<a class="headerlink" href="#unzip" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>unzip</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>List and extract compressed files in a ZIP archive
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="ge">*unzip*</span> will list or extract files from a ZIP archive, commonly found on MS-DOS systems. The default behavior (with no options) is to extract all files from the specified ZIP archive into the current directory (and subdirectories below it). A companion program, <span class="gs">**zip**</span>, creates ZIP archives.
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>Options
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>-l
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>list archive files (short format).
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>-d
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>unzip archive to given directory. If directory doesn&#39;t exist, unzip will create it.
+<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>
+<a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>Examples
+<a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a>unzip -d archive archive.zip
+<a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a>unzip /Documents/Archive.zip
+</code></pre></div>
+<h3 id="clear">clear<a class="headerlink" href="#clear" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>clear</p>
+<p>✅ Windows</p>
+<p>cls</p>
+<h3 id="exit">exit<a class="headerlink" href="#exit" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>exit</p>
+<p>✅ Windows</p>
+<p>exit</p>
+<h3 id="echo">echo<a class="headerlink" href="#echo" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>echo</p>
+<p>✅ Windows</p>
+<p>echo</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>Displays a string given as an argument. echo hello world will output “hello world” in the terminal. Instead of displaying the given string in the terminal, echo can write it to a file.
+<a id="__codelineno-43-2" name="__codelineno-43-2" href="#__codelineno-43-2"></a>
+<a id="__codelineno-43-3" name="__codelineno-43-3" href="#__codelineno-43-3"></a>Usage:
+<a id="__codelineno-43-4" name="__codelineno-43-4" href="#__codelineno-43-4"></a>echo response
+<a id="__codelineno-43-5" name="__codelineno-43-5" href="#__codelineno-43-5"></a>echo file content &gt; file name
+<a id="__codelineno-43-6" name="__codelineno-43-6" href="#__codelineno-43-6"></a>
+<a id="__codelineno-43-7" name="__codelineno-43-7" href="#__codelineno-43-7"></a>Example:
+<a id="__codelineno-43-8" name="__codelineno-43-8" href="#__codelineno-43-8"></a>echo hello world
+<a id="__codelineno-43-9" name="__codelineno-43-9" href="#__codelineno-43-9"></a>echo hello world &gt; helloWorld.txt
+</code></pre></div>
+<h3 id="md5sumcertutil">md5sum/certutil<a class="headerlink" href="#md5sumcertutil" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>md5sum</p>
+<p>✅ Windows</p>
+<p>certutil</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>Compute and check MD5 message digest
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>Usage:
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>md5sum file...
+<a id="__codelineno-44-5" name="__codelineno-44-5" href="#__codelineno-44-5"></a>
+<a id="__codelineno-44-6" name="__codelineno-44-6" href="#__codelineno-44-6"></a>Example:
+<a id="__codelineno-44-7" name="__codelineno-44-7" href="#__codelineno-44-7"></a>md5sum password.txt
+<a id="__codelineno-44-8" name="__codelineno-44-8" href="#__codelineno-44-8"></a>md5sum p1.lst p2.lst p3.lst
+</code></pre></div>
+<h3 id="man">man/ /?<a class="headerlink" href="#man" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>man</p>
+<p>✅ Windows</p>
+<p>/?</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>Short for “manual,” it displays the help content for an installed command or 
+<a id="__codelineno-45-2" name="__codelineno-45-2" href="#__codelineno-45-2"></a>tool. 
+<a id="__codelineno-45-3" name="__codelineno-45-3" href="#__codelineno-45-3"></a>
+<a id="__codelineno-45-4" name="__codelineno-45-4" href="#__codelineno-45-4"></a>Usage:
+<a id="__codelineno-45-5" name="__codelineno-45-5" href="#__codelineno-45-5"></a>man [command/tool]
+<a id="__codelineno-45-6" name="__codelineno-45-6" href="#__codelineno-45-6"></a>
+<a id="__codelineno-45-7" name="__codelineno-45-7" href="#__codelineno-45-7"></a>Example:
+<a id="__codelineno-45-8" name="__codelineno-45-8" href="#__codelineno-45-8"></a>man ping
+</code></pre></div>
+<h3 id="cowsay">cowsay<a class="headerlink" href="#cowsay" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>cowsay</p>
+<p>❌ Windows</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>cowsay/cowthink - configurable speaking/thinking cow
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>(and a bit more)
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>cowsay [-h] [-l] [-bdgpstwy] [-f cowfile]
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>       [-e eye_string] [-T tongue_string] [-W columns] 
+<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>
+<a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>There are several provided modes which change the
+<a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a>appearance of the cow depending on its particular
+<a id="__codelineno-46-9" name="__codelineno-46-9" href="#__codelineno-46-9"></a>emotional/physical state. The -b option initiates Borg
+<a id="__codelineno-46-10" name="__codelineno-46-10" href="#__codelineno-46-10"></a>mode; -d causes the cow to appear dead; -g invokes
+<a id="__codelineno-46-11" name="__codelineno-46-11" href="#__codelineno-46-11"></a>greedy mode; -p causes a state of paranoia to come over
+<a id="__codelineno-46-12" name="__codelineno-46-12" href="#__codelineno-46-12"></a>the cow; -s makes the cow appear thoroughly stoned; -t
+<a id="__codelineno-46-13" name="__codelineno-46-13" href="#__codelineno-46-13"></a>yields a tired cow; -w is somewhat the opposite of
+<a id="__codelineno-46-14" name="__codelineno-46-14" href="#__codelineno-46-14"></a>-t, and initiates wired mode; -y brings on the cow&#39;s
+<a id="__codelineno-46-15" name="__codelineno-46-15" href="#__codelineno-46-15"></a>youthful appearance.
+<a id="__codelineno-46-16" name="__codelineno-46-16" href="#__codelineno-46-16"></a>
+<a id="__codelineno-46-17" name="__codelineno-46-17" href="#__codelineno-46-17"></a>The user may specify the -e option to select the
+<a id="__codelineno-46-18" name="__codelineno-46-18" href="#__codelineno-46-18"></a>appearance of the cow&#39;s eyes, in which case the first
+<a id="__codelineno-46-19" name="__codelineno-46-19" href="#__codelineno-46-19"></a>one or two characters of the argument string eye_string
+<a id="__codelineno-46-20" name="__codelineno-46-20" href="#__codelineno-46-20"></a>will be used. The default eyes are &#39;oo&#39;. The tongue is
+<a id="__codelineno-46-21" name="__codelineno-46-21" href="#__codelineno-46-21"></a>similarly configurable through -T and tongue_string;
+<a id="__codelineno-46-22" name="__codelineno-46-22" href="#__codelineno-46-22"></a>the tongue does not appear by default.
+<a id="__codelineno-46-23" name="__codelineno-46-23" href="#__codelineno-46-23"></a>However, it does appear in the &#39;dead&#39; and &#39;stoned&#39;
+<a id="__codelineno-46-24" name="__codelineno-46-24" href="#__codelineno-46-24"></a>modes. Any configuration done by -e and -T will be lost
+<a id="__codelineno-46-25" name="__codelineno-46-25" href="#__codelineno-46-25"></a>if one of the provided modes is used.
+<a id="__codelineno-46-26" name="__codelineno-46-26" href="#__codelineno-46-26"></a>
+<a id="__codelineno-46-27" name="__codelineno-46-27" href="#__codelineno-46-27"></a>The -f option specifies a particular cow character to
+<a id="__codelineno-46-28" name="__codelineno-46-28" href="#__codelineno-46-28"></a>be used instead of the default cow.
+<a id="__codelineno-46-29" name="__codelineno-46-29" href="#__codelineno-46-29"></a>To list all available cowfile characters on the current
+<a id="__codelineno-46-30" name="__codelineno-46-30" href="#__codelineno-46-30"></a>machine, invoke cowsay with the -l switch.
+</code></pre></div>
+<h3 id="movewindow">movewindow<a class="headerlink" href="#movewindow" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>movewindow</p>
+<p>✅ Windows</p>
+<p>movewindow</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>Moves a game window to a normalized screen position. Coordinates should be in the 0..1 range.
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>Usage:
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>movewindow windowName x y [pivotX pivotY]
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>
+<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>Example:
+<a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>movewindow terminal 0.5 0.5
+<a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>movewindow terminal 0.25 0.75 0.0 1.0
+</code></pre></div>
+<h3 id="focuswindow">focuswindow<a class="headerlink" href="#focuswindow" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>focuswindow</p>
+<p>✅ Windows</p>
+<p>focuswindow</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>Brings a specified game window to the front.
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>Usage:
+<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>focuswindow windowName
+<a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>
+<a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>Example:
+<a id="__codelineno-48-7" name="__codelineno-48-7" href="#__codelineno-48-7"></a>focuswindow terminal
+</code></pre></div>
+<h2 id="scripting">Scripting<a class="headerlink" href="#scripting" title="Permanent link">&para;</a></h2>
+<h3 id="mini">mini<a class="headerlink" href="#mini" title="Permanent link">&para;</a></h3>
+<p>✅ Linux</p>
+<p>mini</p>
+<p>✅ Windows</p>
+<p>mini</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>Miniscript is a simple scripting language added into the game for players to build their scripts and exploits.
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>
+<a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>Scripting documentation: see Miniscript Anvil Scripting Language page
+<a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>
+<a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>Usage:
+<a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>mini [file]
+</code></pre></div>
+<p><a href="../miniscript-anvil-scripting-language/">Miniscript Anvil Scripting Language</a></p>
+<h2 id="world-of-haiku"><strong>World of Haiku</strong><a class="headerlink" href="#world-of-haiku" title="Permanent link">&para;</a></h2>
+<p>zion
+flag
+flags
+./loic
+./roninnitro
+map
+goals</p>
+<p>flag</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>Capture the flag (singular) for dojo missions. Input without parameters is for flagged files. Example:
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>flag flag_file_name.ext
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>
+<a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>Parameters
+<a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a>-sV
+<a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>Capture the service version. Use quotes if the version contains whitespaces. Example:
+<a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a>flag -sV &quot;&quot;1.0.2 LTS&quot;&quot;
+<a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a>
+<a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a>-u
+<a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a>Capture the user name of device. Use quotes if the user name contains whitespaces. Example:
+<a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a>flag -u &quot;&quot;john_nichols_96&quot;&quot;
+<a id="__codelineno-50-12" name="__codelineno-50-12" href="#__codelineno-50-12"></a>
+<a id="__codelineno-50-13" name="__codelineno-50-13" href="#__codelineno-50-13"></a>-oV
+<a id="__codelineno-50-14" name="__codelineno-50-14" href="#__codelineno-50-14"></a>Capture the operating system version. Use quotes if version contains whitespaces. Example:
+<a id="__codelineno-50-15" name="__codelineno-50-15" href="#__codelineno-50-15"></a>flag -oV &quot;&quot;22.04 LTS&quot;&quot;
+<a id="__codelineno-50-16" name="__codelineno-50-16" href="#__codelineno-50-16"></a>
+<a id="__codelineno-50-17" name="__codelineno-50-17" href="#__codelineno-50-17"></a>-sL
+<a id="__codelineno-50-18" name="__codelineno-50-18" href="#__codelineno-50-18"></a>Capture the services list. Use quotes if service name contains whitespaces. Divide services name by whitespaces. Example:
+<a id="__codelineno-50-19" name="__codelineno-50-19" href="#__codelineno-50-19"></a>flag -sL &quot;&quot;TFTP&quot;&quot; SSH &quot;&quot;DHCP&quot;&quot;
+<a id="__codelineno-50-20" name="__codelineno-50-20" href="#__codelineno-50-20"></a>
+<a id="__codelineno-50-21" name="__codelineno-50-21" href="#__codelineno-50-21"></a>-rS
+<a id="__codelineno-50-22" name="__codelineno-50-22" href="#__codelineno-50-22"></a>Capture the random String flag. Use quotes if the string contains whitespaces. Example:
+<a id="__codelineno-50-23" name="__codelineno-50-23" href="#__codelineno-50-23"></a>flag -rS &quot;&quot;Hello world&quot;&quot;
+<a id="__codelineno-50-24" name="__codelineno-50-24" href="#__codelineno-50-24"></a>flag -rS MyFlag
+</code></pre></div>
+<p>flags</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>Display all mission goals/flags as a checklist with completion status. In multiplayer shared-goals mode, a shared goals header is displayed.
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>
+<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>Usage:
+<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>flags
+<a id="__codelineno-51-5" name="__codelineno-51-5" href="#__codelineno-51-5"></a>
+<a id="__codelineno-51-6" name="__codelineno-51-6" href="#__codelineno-51-6"></a>Example:
+<a id="__codelineno-51-7" name="__codelineno-51-7" href="#__codelineno-51-7"></a>flags
+</code></pre></div>
+<h2 id="user-windows-openers"><strong>User Windows Openers</strong><a class="headerlink" href="#user-windows-openers" title="Permanent link">&para;</a></h2>
+<p>explorer
+editor [file]
+browser [URL]
+nitro
+notes
+manual
+tracing
+tracing</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>Opens the Packet Tracing application. Optionally accepts a file path to open directly in the packet tracer.
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>Usage:
+<a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>tracing [file]
+<a id="__codelineno-52-5" name="__codelineno-52-5" href="#__codelineno-52-5"></a>
+<a id="__codelineno-52-6" name="__codelineno-52-6" href="#__codelineno-52-6"></a>Example:
+<a id="__codelineno-52-7" name="__codelineno-52-7" href="#__codelineno-52-7"></a>tracing
+<a id="__codelineno-52-8" name="__codelineno-52-8" href="#__codelineno-52-8"></a>tracing /tmp/capture.pcapng
+</code></pre></div>
+<p>terminalSize</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>Sets or closes the game terminal. Arguments: 0 - panel view (default), 1 - maximized view, 2 - hidden view. If the terminal is closed (hidden) and the method is invoked with a 0 or 1 argument - the terminal will be open.
+<a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a>
+<a id="__codelineno-53-3" name="__codelineno-53-3" href="#__codelineno-53-3"></a>Usage:
+<a id="__codelineno-53-4" name="__codelineno-53-4" href="#__codelineno-53-4"></a>terminalSize [0 | 1 | 2]
+</code></pre></div>
+<h2 id="aliases">Aliases<a class="headerlink" href="#aliases" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ll</td>
+<td>ls -l</td>
+</tr>
+<tr>
+<td>dir</td>
+<td>ls</td>
+</tr>
+<tr>
+<td>cls</td>
+<td>clear</td>
+</tr>
+<tr>
+<td>printf</td>
+<td>echo</td>
+</tr>
+<tr>
+<td>du</td>
+<td>dust</td>
+</tr>
+<tr>
+<td>logout</td>
+<td>exit</td>
+</tr>
+<tr>
+<td>killall</td>
+<td>kill -15 -1</td>
+</tr>
+<tr>
+<td>nautilus</td>
+<td>explorer</td>
+</tr>
+<tr>
+<td>thunar</td>
+<td>explorer</td>
+</tr>
+<tr>
+<td>ed</td>
+<td>editor</td>
+</tr>
+<tr>
+<td>vi</td>
+<td>editor</td>
+</tr>
+<tr>
+<td>vim</td>
+<td>editor</td>
+</tr>
+<tr>
+<td>emacs</td>
+<td>editor</td>
+</tr>
+<tr>
+<td>nano</td>
+<td>editor</td>
+</tr>
+<tr>
+<td>code</td>
+<td>editor</td>
+</tr>
+<tr>
+<td>notepad</td>
+<td>editor</td>
+</tr>
+<tr>
+<td>cowthink</td>
+<td>cowsay</td>
+</tr>
+</tbody>
+</table>
+<h2 id="terminal-behavior">Terminal Behavior<a class="headerlink" href="#terminal-behavior" title="Permanent link">&para;</a></h2>
+<h3 id="pattern-matching">Pattern Matching<a class="headerlink" href="#pattern-matching" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>txt matches a file named &quot;txt&quot;
+<a id="__codelineno-54-2" name="__codelineno-54-2" href="#__codelineno-54-2"></a>
+<a id="__codelineno-54-3" name="__codelineno-54-3" href="#__codelineno-54-3"></a><span class="k">*</span><span class="w"> </span>matches anything or even nothing
+<a id="__codelineno-54-4" name="__codelineno-54-4" href="#__codelineno-54-4"></a>
+<a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>*txt matches anything followed by &quot;txt&quot; (ends with &quot;txt&quot;)
+<a id="__codelineno-54-6" name="__codelineno-54-6" href="#__codelineno-54-6"></a>
+<a id="__codelineno-54-7" name="__codelineno-54-7" href="#__codelineno-54-7"></a>file* matches &quot;file,&quot; followed by anything (needs to start with &quot;file&quot;)
+<a id="__codelineno-54-8" name="__codelineno-54-8" href="#__codelineno-54-8"></a>
+<a id="__codelineno-54-9" name="__codelineno-54-9" href="#__codelineno-54-9"></a><span class="ge">*some*</span> matches anything, followed by &quot;some&quot;, Followed by anything (needs &#39;some&#39; somewhere in the middle)
+<a id="__codelineno-54-10" name="__codelineno-54-10" href="#__codelineno-54-10"></a>
+<a id="__codelineno-54-11" name="__codelineno-54-11" href="#__codelineno-54-11"></a>? matches a single character (needs a character, any character)
+<a id="__codelineno-54-12" name="__codelineno-54-12" href="#__codelineno-54-12"></a>
+<a id="__codelineno-54-13" name="__codelineno-54-13" href="#__codelineno-54-13"></a>j? matches something that starts with &quot;j&quot; and is followed by any character
+<a id="__codelineno-54-14" name="__codelineno-54-14" href="#__codelineno-54-14"></a>
+<a id="__codelineno-54-15" name="__codelineno-54-15" href="#__codelineno-54-15"></a>*.?s would then match both &quot;index.js&quot;, &quot;main.rs&quot;, &quot;.ps&quot;, but wouldn&#39;t match &quot;gui.jsx&quot;
+<a id="__codelineno-54-16" name="__codelineno-54-16" href="#__codelineno-54-16"></a>
+<a id="__codelineno-54-17" name="__codelineno-54-17" href="#__codelineno-54-17"></a>[abc] matches anything that has one character and it is either a, b or c
+<a id="__codelineno-54-18" name="__codelineno-54-18" href="#__codelineno-54-18"></a>
+<a id="__codelineno-54-19" name="__codelineno-54-19" href="#__codelineno-54-19"></a>*.[jr]s would match anything that ends with &quot;.js&quot; or &quot;.rs&quot;
+<a id="__codelineno-54-20" name="__codelineno-54-20" href="#__codelineno-54-20"></a>
+<a id="__codelineno-54-21" name="__codelineno-54-21" href="#__codelineno-54-21"></a>[a-z] matches a single character, from ASCII &quot;a&quot; to &quot;z&quot; (can include weird characters of ASCII there)
+<a id="__codelineno-54-22" name="__codelineno-54-22" href="#__codelineno-54-22"></a>
+<a id="__codelineno-54-23" name="__codelineno-54-23" href="#__codelineno-54-23"></a>file[0-9] then would match anything that starts with &quot;file&quot; and is followed by a single-digit
+<a id="__codelineno-54-24" name="__codelineno-54-24" href="#__codelineno-54-24"></a>
+<a id="__codelineno-54-25" name="__codelineno-54-25" href="#__codelineno-54-25"></a>file[ab0-9cd] matches &quot;file&quot; followed by a single digit or either a, b, c, d
+<a id="__codelineno-54-26" name="__codelineno-54-26" href="#__codelineno-54-26"></a>
+<a id="__codelineno-54-27" name="__codelineno-54-27" href="#__codelineno-54-27"></a>[!s] or [^s] a &#39;!&#39; or &#39;^&#39; at the start of the brackets negates all inside, so here it matches all except for &quot;s&quot;
+<a id="__codelineno-54-28" name="__codelineno-54-28" href="#__codelineno-54-28"></a>
+<a id="__codelineno-54-29" name="__codelineno-54-29" href="#__codelineno-54-29"></a>*[!s] would then match &quot;anything that does not end in an &quot;s&quot;
+</code></pre></div>
+<h3 id="pathname-expansion">Pathname Expansion<a class="headerlink" href="#pathname-expansion" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>Pattern matching is used for pathname expansion, which expands parts of the path using pattern matching to look for files by their path; this allows for supplying complex hierarchies of directories to a command.
+<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>
+<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>Each part of the path generates a machine that tries matching.
+<a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>For instance, &gt; echo <span class="ge">*/Do*</span>/Fo* will make a machine of <span class="ge">*, then match, then make a machine Do*</span>, match again, and so on.
+<a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>
+<a id="__codelineno-55-6" name="__codelineno-55-6" href="#__codelineno-55-6"></a>If any machines fail, there is no need to go further, and no more machines will be built. The input won&#39;t be expanded at all. In this example, it will remain literally echo.
+<a id="__codelineno-55-7" name="__codelineno-55-7" href="#__codelineno-55-7"></a>
+<a id="__codelineno-55-8" name="__codelineno-55-8" href="#__codelineno-55-8"></a>Hidden files must be matched explicitly by prepending any of the patterns with a dot, for example: <span class="ge">*. Regular *</span> does not grab them.
+<a id="__codelineno-55-9" name="__codelineno-55-9" href="#__codelineno-55-9"></a>
+<a id="__codelineno-55-10" name="__codelineno-55-10" href="#__codelineno-55-10"></a>EXAMPLE
+<a id="__codelineno-55-11" name="__codelineno-55-11" href="#__codelineno-55-11"></a>mkdir test
+<a id="__codelineno-55-12" name="__codelineno-55-12" href="#__codelineno-55-12"></a>cd test
+<a id="__codelineno-55-13" name="__codelineno-55-13" href="#__codelineno-55-13"></a>mkdir -p .hidden-fol/../Docs/folder/inner/../../folders/fo{1,2}
+<a id="__codelineno-55-14" name="__codelineno-55-14" href="#__codelineno-55-14"></a>touch .hidden .hidden-fol/inner Docs/folder/{aa,ab,bb,inner/cc} Docs/file
+</code></pre></div>
+<p><img alt="Untitled" src="untitled.png" /></p>
+<p><img alt="Untitled" src="untitled-1.png" /></p>
+<h3 id="brace-expansion">Brace Expansion<a class="headerlink" href="#brace-expansion" title="Permanent link">&para;</a></h3>
+<p>Brace expansion generates multiple text strings from a pattern containing braces. Items inside curly braces are separated by commas.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>echo {a,b,c}
+<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>expands to: echo a b c
+<a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>
+<a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>mkdir dir{1,2,3}
+<a id="__codelineno-56-5" name="__codelineno-56-5" href="#__codelineno-56-5"></a>expands to: mkdir dir1 dir2 dir3
+<a id="__codelineno-56-6" name="__codelineno-56-6" href="#__codelineno-56-6"></a>
+<a id="__codelineno-56-7" name="__codelineno-56-7" href="#__codelineno-56-7"></a>touch file_{alpha,beta,gamma}.txt
+<a id="__codelineno-56-8" name="__codelineno-56-8" href="#__codelineno-56-8"></a>expands to: touch file_alpha.txt file_beta.txt file_gamma.txt
+<a id="__codelineno-56-9" name="__codelineno-56-9" href="#__codelineno-56-9"></a>
+<a id="__codelineno-56-10" name="__codelineno-56-10" href="#__codelineno-56-10"></a>mkdir -p .hidden-fol/../Docs/folder/inner/../../folders/fo{1,2}
+<a id="__codelineno-56-11" name="__codelineno-56-11" href="#__codelineno-56-11"></a>expands to two paths: folders/fo1 and folders/fo2
+</code></pre></div>
+<h3 id="parameter-expansion">Parameter Expansion<a class="headerlink" href="#parameter-expansion" title="Permanent link">&para;</a></h3>
+<p>The shell expands <code>$VARIABLE</code> by substituting its value. This works in unquoted and double-quoted contexts. Available environment variables:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>$PWD     - current working directory path
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>$OLDPWD  - previous working directory path
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>$COLUMNS - terminal column width
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>$?       - exit status of the last command (0 = success)
+<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>
+<a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>Example:
+<a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a>echo $PWD
+<a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a>echo &quot;Current dir: $PWD&quot;
+<a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a>echo $?
+</code></pre></div>
+<h3 id="output-redirection">Output Redirection<a class="headerlink" href="#output-redirection" title="Permanent link">&para;</a></h3>
+<p>You can redirect the output of any command to a file using <code>&gt;</code> (overwrite) or <code>&gt;&gt;</code> (append).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="k">&gt; </span><span class="ge">overwrites the file (creates it if it doesn&#39;t exist)</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>&gt;&gt; appends to the file (creates it if it doesn&#39;t exist)
+<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>
+<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>Example:
+<a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a>echo hello &gt; greeting.txt
+<a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a>echo world &gt;&gt; greeting.txt
+<a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a>ls &gt; filelist.txt
+</code></pre></div>
+<h3 id="quoting">Quoting<a class="headerlink" href="#quoting" title="Permanent link">&para;</a></h3>
+<p>These are three of the most well-known forms of quoting.</p>
+<ul>
+<li>Backslash quoting<ul>
+<li>Escapes the next character after a unquoted <code>\</code>, for instance, <code>\$var</code> translates 
+literally to <code>$var,</code> making <code>$</code> lose its meaning</li>
+</ul>
+</li>
+<li>Single quoting<ul>
+<li>Escapes every character inside of <code>'..'</code>, including backslashes</li>
+</ul>
+</li>
+<li>
+<p>Double quoting</p>
+<ul>
+<li>Escapes every character inside of <code>".."</code>, with the exception of <code>$,</code> <code>``,</code>` and <code>"</code> </li>
+</ul>
+<p>It makes so characters inside double quotes are not word split, this is useful when we want to read a multi-word variable without breaking it into different arguments.</p>
+<p>Example <code>&gt; echo "$PWD"</code> won't split the result of $PWD variable if there's a space in the path, <code>&gt; echo $PWD</code> will</p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

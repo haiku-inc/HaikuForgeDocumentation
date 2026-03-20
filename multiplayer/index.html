@@ -1,0 +1,872 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://haiku-inc.github.io/HaikuForgeDocumentation/multiplayer/">
+      
+      
+        <link rel="prev" href="../kusto-query-language/">
+      
+      
+        <link rel="next" href="../story-creation-with-miniscript/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/haiku-logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Multiplayer - Haiku Forge Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cairo:300,300i,400,400i,700,700i%7CInconsolata:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Cairo";--md-code-font:"Inconsolata"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/haiku.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#multiplayer" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Haiku Forge Documentation" class="md-header__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Haiku Forge Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Multiplayer
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Haiku Forge Documentation" class="md-nav__button md-logo" aria-label="Haiku Forge Documentation" data-md-component="logo">
+      
+  <img src="../assets/haiku-logo.png" alt="logo">
+
+    </a>
+    Haiku Forge Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../haiku-commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Haiku Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kusto-query-language/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Kusto Query Language
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multiplayer
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../story-creation-with-miniscript/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Story Creation with Miniscript
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../service-commands-and-feedbacks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Service Commands & Feedbacks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Sites Creation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web Sites Creation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-sites-creation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-sites-creation/miniscript-for-web-browser/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Miniscript for Web Browser
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="multiplayer">Multiplayer<a class="headerlink" href="#multiplayer" title="Permanent link">&para;</a></h1>
+<p>Multiplayer is a special game mode that allows several players to complete dojo-like missions simultaneously. This mode is implemented with the REST API, so it isn't 100% real-time. New file states and player actions are synchronized with a delay of approximately 5 seconds. Keep this in mind when creating a mission for multiplayer. <strong>You should set important story files as Immutable and create them in the network or during room initialization to avoid gameplay from getting stuck.</strong></p>
+<h1 id="creating-and-modifying-a-room">Creating and Modifying a Room<a class="headerlink" href="#creating-and-modifying-a-room" title="Permanent link">&para;</a></h1>
+<h2 id="creating">Creating<a class="headerlink" href="#creating" title="Permanent link">&para;</a></h2>
+<p>To create a room, you will need a prepared network and story script (more on that later). The room can be created from the Main Menu → Multiplayer → Create Room panel.</p>
+<details class="note">
+<summary>Screeshot</summary>
+<p><img alt="image.png" src="image.png" /></p>
+</details>
+<ul>
+<li><strong>Name</strong> – The room name displayed in the room list, up to 12 characters.</li>
+<li><strong>Description</strong> – Displayed in the game toolbar, as well as in complete and restart popups as the mission objective, up to 255 characters.</li>
+<li><strong>Development Mode</strong> – The Forge Preview console will be shown, used for story script creation. Such rooms are visible only to their author but can be accessed with a URL.</li>
+<li><strong>Password</strong> – Required when any player tries to enter the room. Leave it empty to skip this step.</li>
+<li><strong>Secret Room</strong> – This room is displayed in the list only for its author but can be accessed with a URL.</li>
+<li><strong>Custom Application</strong> – A room can contain <a href="../story-creation-with-miniscript/">custom applications created with Miniscript</a>. To add them, you need to create a mission in the Forge where these applications are stored. Select this mission in the popup that appears after clicking the CUSTOM APPS button. These applications will be added to the room.
+<em>Pay attention</em>: sometimes apps require assets stored in the Network, so ensure that the room's network also contains these resources.</li>
+<li><strong>Shared Goals</strong> – If enabled, each goal can be completed by only one player. The game ends when all goals are completed, and the winner is the player who completed the most goals (<strong>a tie is possible</strong>). If disabled (default), goal states aren't shared between players, and the winner is the player who completes all their goals first (<strong>a tie is not possible</strong>).</li>
+</ul>
+<p>The author has to enter the room immediately after creation; however, this process is automatic. When the author is connected to the room, initial synchronization happens – the key point of this step is explained in the <a href="./">Mission Lifecycle</a> section.</p>
+<h2 id="modification">Modification<a class="headerlink" href="#modification" title="Permanent link">&para;</a></h2>
+<p>Some properties that do not affect gameplay can be modified. Altering the room is available only to its author. Also, this popup is used for <strong>sharing the room</strong> via URL and creating a room duplicate. The most common scenario for <strong>duplicating a room</strong> is when the mission is completed, but the author wants to replay it.</p>
+<details class="note">
+<summary>Screenshots</summary>
+<p><img alt="image.png" src="image-1.png" /></p>
+<p><img alt="image.png" src="image-2.png" /></p>
+</details>
+<h1 id="network-and-mission-script-for-the-room">Network and Mission Script for the Room<a class="headerlink" href="#network-and-mission-script-for-the-room" title="Permanent link">&para;</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<p>All assets for multiplayer rooms are created in the Forge. So, you should be familiar with <a href="../story-creation-with-miniscript/">creating custom missions</a> before creating your multiplayer missions. The main difference between single-player and multiplayer missions is room state saving and restoring. Currently, regular missions do not support this, and there are no external events, like capturing the goal by another player. Also, story step-based missions can't be used for multiplayer. There are no differences between networks for single-player and networks for rooms.</p>
+<p>Networks can be selected from your Forge assets or imported from a file previously exported from the Forge. Miniscript code can only be pasted in the appropriate popup, so it's recommended to store your script in a file on your PC.</p>
+<h2 id="mission-lifecycle">Mission Lifecycle<a class="headerlink" href="#mission-lifecycle" title="Permanent link">&para;</a></h2>
+<p>The mission script can be separated into three parts:</p>
+<ul>
+<li>network/room initialization</li>
+<li>gameplay sequences setup</li>
+<li>checking the completion of the sequences</li>
+</ul>
+<p>The descriptions below use the code from the Nmap Dojo Short Example. You can also create the room and see how it works in the real world.</p>
+<h3 id="networkroom-initialzation">Network/Room Initialzation<a class="headerlink" href="#networkroom-initialzation" title="Permanent link">&para;</a></h3>
+<p>Sometimes you need to set a port list for some devices, create story files, or perform other actions related to network changes (device properties or file system modifications). <strong>These actions must be invoked only once.</strong> Therefore, these steps are located at the top of the script and are performed only by the room author. This is the reason why the Initial Sync waiting screen appears when entering the room for the first time.</p>
+<p>To ensure an action is performed only once, the pair of functions <a href="./">get_session_data_value</a> and <a href="./">set_session_data_value</a> is used. These functions give you access to a set of data that is shared between all users. Here is the code that will be executed only by the author during the Initial Synchronization step (if this code is placed at the top of the script):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kr">if</span><span class="w"> </span><span class="nf">get_session_data_value</span><span class="p">(</span><span class="s2">&quot;network_init&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">null</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nf">println</span><span class="p">(</span><span class="s2">&quot;This message will be seen only by the author during the very first entry to the room&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nf">set_session_data_value</span><span class="p">(</span><span class="s2">&quot;network_init&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="kr">end</span><span class="w"> </span><span class="kr">if</span>
+</code></pre></div>
+<p>What is happening here is this: if the <code>network_init</code> key has not been set yet, the message is shown and the value <code>1</code> is immediately set. When the author or other players enter the room next time, this code will not be executed because the check for <code>if “network_init” == null</code> will not pass.</p>
+<p>A real usage example can be seen in the <a href="./">example</a>.</p>
+<h3 id="gameplay-sequences-setup">Gameplay sequences setup<a class="headerlink" href="#gameplay-sequences-setup" title="Permanent link">&para;</a></h3>
+<p>Here, the commands should be unlocked, the set_flag_details function should be called (if your mission is dojo-like), and the <a href="../story-creation-with-miniscript/">SequenceStep</a> should be configured. However, sometimes you need to perform an action <strong>only once for this player</strong>. A very common scenario, which exists in almost every mission, is showing the start nitro message. So, a similar check as in the Network Initialization step is used.</p>
+<p>Unlike <a href="./">get_session_data_value</a>, <a href="./">get_mission_dictionary_value</a> returns values by key only for this player, not for all players. This means that if the player leaves the room and returns, the values in this storage will be saved, but only for this player. Other players have their own storages. Here is an example where the message is shown once <strong>for every player</strong> who just connected to the room.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kr">if</span><span class="w"> </span><span class="nf">get_mission_dictionary_value</span><span class="p">(</span><span class="s2">&quot;first_inky_message&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">null</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nf">set_mission_dictionary_value</span><span class="p">(</span><span class="s2">&quot;first_inky_message&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nf">nitroApp</span><span class="p">(</span><span class="s2">&quot;DojoCharacter&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="kr">end</span><span class="w"> </span><span class="kr">if</span>
+</code></pre></div>
+<p><strong>Saving the progress in the middle of the sequence</strong></p>
+<p>Sometimes more complicated behavior is required. For instance, when you need to have a long chain of messages, and the player can leave the room in the middle of this chain without completing the sequence. For this, the <code>serializedId</code> member of <a href="../story-creation-with-miniscript/">CommandWaiting</a> exists.</p>
+<p>If the value is set, the game will remember if the command has been performed. This means that the next time the player enters the room, the game will skip all previously completed <code>CommandWaiting</code> steps in the sequence and will wait for the completion of the unfinished step, as if the player hadn't left the room.</p>
+<p>Remember that <strong>only</strong> the last <code>CommandWaiting</code> in the sequence needs to be performed; other commands could be skipped. So, if there is a sequence with steps <code>A</code>, <code>B</code>, <code>C</code>, <code>D</code>, <code>E</code>, the user can skip completing any step except <code>E</code>. They can complete step <code>E</code>, and the sequence will be counted as completed, or complete <code>C</code>  first (<code>A</code>, <code>B</code> automatically mark as completed) and then <code>E</code>. In this case, the game will save all previous steps as completed as well.</p>
+<p>In short, you need to set a <strong>unique</strong> <code>serializedId</code> value for every command in the sequence to avoid duplicating messages and actions if a player exits the room and returns after some time. <a href="./">Here is an example</a> with the implementation of the full Nmap Dojo (tutorial sequence):</p>
+<h3 id="checking-the-completion-of-the-sequences">Checking the completion of the sequences<a class="headerlink" href="#checking-the-completion-of-the-sequences" title="Permanent link">&para;</a></h3>
+<p>The main component here is the <code>while</code> loop, which checks if the sequences have been performed. Everything here is almost the same as in single-player missions, but some additional checks are needed – checking if the sequences weren't completed during the previous entry to the room (if the player left the room).</p>
+<p>If your sequence is not important to the story (optional goal), you do not need any additional checks to see if <a href="./">serializedId</a> was used during sequence setup. Otherwise, you need to add the <a href="./">get_mission_dictionary_value</a> – <a href="./">set_mission_dictionary_value</a> pair, where <a href="./">set_mission_dictionary_value</a> is invoked in the last <code>SequenceStep</code> of the sequence, and the isPerformed function is invoked only if the unique key value hasn't been set yet.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nv">sequence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">new</span><span class="w"> </span><span class="nv">Sequence</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">sequence</span><span class="p">.</span><span class="py">steps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nv">sequenceStep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">new</span><span class="w"> </span><span class="nv">SequenceStep</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">sequenceStep</span><span class="p">.</span><span class="py">commandWaiting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">getCommandWaiting</span><span class="p">(</span><span class="s2">&quot;cd&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/Home&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nv">sequenceStep</span><span class="p">.</span><span class="py">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">    </span><span class="nf">set_mission_dictionary_value</span><span class="p">(</span><span class="s2">&quot;not_important_step&quot;</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="kr">end</span><span class="w"> </span><span class="kr">function</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="nc">sequence</span><span class="p">.</span><span class="nc">steps</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nv">sequenceStep</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="kr">while</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nf">get_mission_dictionary_value</span><span class="p">(</span><span class="s2">&quot;not_important_step&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">null</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">        </span><span class="nv">sequence</span><span class="p">.</span><span class="nf">isPerformed</span><span class="p">()</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">    </span><span class="kr">end</span><span class="w"> </span><span class="kr">if</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w">    </span><span class="nf">wait</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="kr">end</span><span class="w"> </span><span class="kr">while</span>
+</code></pre></div>
+<p>You should always check the result of <a href="../story-creation-with-miniscript/">is_goal_completed</a> before calling <code>isPerformed</code> for the sequence or command that invokes <a href="../story-creation-with-miniscript/">setGoalAsCompleted</a>. Otherwise, the game may return <code>0</code> for such steps, and the while loop will get stuck, even though the goal is shown as completed.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">goalSequence</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">new</span><span class="w"> </span><span class="nv">Sequence</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nv">goalSequence</span><span class="p">.</span><span class="py">steps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">]</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nv">sequenceStep</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">new</span><span class="w"> </span><span class="nv">SequenceStep</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nv">sequenceStep</span><span class="p">.</span><span class="py">commandWaiting</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">getCommandWaiting</span><span class="p">(</span><span class="s2">&quot;cd&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/Home&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nv">sequenceStep</span><span class="p">.</span><span class="py">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="nf">setGoalAsCompleted</span><span class="p">(</span><span class="s2">&quot;Visit Home Directory&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="kr">end</span><span class="w"> </span><span class="kr">function</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="nc">goalSequence</span><span class="p">.</span><span class="nc">steps</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="nv">sequenceStep</span><span class="p">)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a><span class="kr">while</span><span class="w"> </span><span class="mi">1</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a><span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nf">is_goal_completed</span><span class="p">(</span><span class="s2">&quot;Visit Home Directory&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="nv">goalSequence</span><span class="p">.</span><span class="nf">isPerformed</span><span class="p">()</span><span class="w"> </span><span class="kr">then</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a><span class="w">        </span><span class="kr">break</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a><span class="w">    </span><span class="kr">end</span><span class="w"> </span><span class="kr">if</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a><span class="w">    </span><span class="nf">wait</span><span class="p">(</span><span class="mf">0.1</span><span class="p">)</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a><span class="kr">end</span><span class="w"> </span><span class="kr">while</span>
+</code></pre></div>
+<h2 id="mission-finishing">Mission Finishing<a class="headerlink" href="#mission-finishing" title="Permanent link">&para;</a></h2>
+<p>There are several ways a mission can finish. It depends on the game mode and additional conditions.</p>
+<h3 id="non-shared-goals">Non-Shared Goals<a class="headerlink" href="#non-shared-goals" title="Permanent link">&para;</a></h3>
+<p>The mission is finished when the <a href="./">set_multiplayer_mission_complete</a> function is invoked. It is common to place this function at the very end of the mission; however, other scenarios are possible. The winner is the first player who invokes this function (more precisely, the one who performs the action that calls this function).</p>
+<h3 id="shared-goals">Shared Goals<a class="headerlink" href="#shared-goals" title="Permanent link">&para;</a></h3>
+<p>If a player completes a goal, it can no longer be completed by other players. The mission is completed when all goals are captured. The winner is the player who captured the most goals. A tie is possible if the first place is shared between two or more players.</p>
+<h3 id="failure-by-event-personal-fail">Failure by Event (Personal Fail)<a class="headerlink" href="#failure-by-event-personal-fail" title="Permanent link">&para;</a></h3>
+<p>When a player performs an action that invokes the <code>[multiplayer_fail_mission](multiplayer.md)(0)</code> function, the mission is failed for that player. All players receive a notification about this player's failure. This player can no longer enter the room.</p>
+<h3 id="failure-by-event-entire-room-fail">Failure by Event (Entire Room Fail)<a class="headerlink" href="#failure-by-event-entire-room-fail" title="Permanent link">&para;</a></h3>
+<p>When one of the players performs an action that invokes [<code>multiplayer_fail_mission](multiplayer.md)(1)</code>, all players receive a mission failed event, and no one is allowed to enter the room anymore.</p>
+<h3 id="failure-by-countdown-personal-fail">Failure by Countdown (Personal Fail)<a class="headerlink" href="#failure-by-countdown-personal-fail" title="Permanent link">&para;</a></h3>
+<p>If more time passes than set in [<code>multiplayer_start_countdown](multiplayer.md)(0)</code> before <a href="./"><code>multiplayer_stop_countdown</code></a> is invoked, the mission is failed for this player. All players receive a notification about this action, and this player can no longer enter the room.</p>
+<h3 id="failure-by-countdown-entire-room-fail">Failure by Countdown (Entire Room Fail)<a class="headerlink" href="#failure-by-countdown-entire-room-fail" title="Permanent link">&para;</a></h3>
+<p>If more time passes than set in [<code>multiplayer_start_countdown](multiplayer.md)(1)</code> before at least one player invokes <a href="./"><code>multiplayer_stop_countdown</code></a>, the mission fails for everyone. All players are no longer allowed to enter the room.</p>
+<h1 id="miniscript-functions">Miniscript Functions<a class="headerlink" href="#miniscript-functions" title="Permanent link">&para;</a></h1>
+<details class="note">
+<summary>set_session_data_value</summary>
+<p>Saves the value with the specified key. The source is shared between players, so if player A sets this value, player B can retrieve it if they know the key.</p>
+<p><strong>Arguments:</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary>get_session_data_value</summary>
+<p>Returns the value by key. If the key is unknown, it returns <code>null</code>. The source is shared between players, so if player A sets this value, player B can retrieve it if they know the key.</p>
+<p><strong>Arguments:</strong></p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary>set_multiplayer_mission_complete</summary>
+<p>Sends the event to everyone that the mission is completed. The winner is the player who first calls this function. It doesn't perform any actions if the <code>Shared Goals</code> checkbox was selected when the room was created.</p>
+</details>
+<details class="note">
+<summary>set_flag_details</summary>
+<p>Set additional information for the goal in the <code>flags</code> command output.</p>
+<table>
+<thead>
+<tr>
+<th>goalId</th>
+<th>string, goal name, exact the same value as set in <a href="../story-creation-with-miniscript/">setGoalAsCompleted</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>string, flag description</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary>multiplayer_start_countdown</summary>
+<p>Starts the mission failure countdown. It checks if the countdown has already started, so a second invocation does nothing.</p>
+<table>
+<thead>
+<tr>
+<th>for_everyone</th>
+<th>boolean, 0 or 1. <a href="./">See the difference</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td>number, seconds left before failure.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary>multiplayer_stop_countdown</summary>
+<p>Stops any previously started countdown.</p>
+</details>
+<details class="note">
+<summary>multiplayer_fail_mission</summary>
+<p>Sets the mission as failed.</p>
+<table>
+<thead>
+<tr>
+<th>for_everyone</th>
+<th>boolean, 0 or 1. <a href="./">See the difference</a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fail_reason</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary>get_mission_dictionary_value</summary>
+<p>Returns the value by key. If the key is unknown, it returns <code>null</code>. The source is unique for each player.</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td>string</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="note">
+<summary>set_mission_dictionary_value</summary>
+<p>Saves the value with the specified unique key. The source is unique for each player.</p>
+<table>
+<thead>
+<tr>
+<th>key</th>
+<th>string</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details>
+<h1 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h1>
+<h2 id="simplified-nmap-dojo-without-tutorial-states">Simplified Nmap Dojo without tutorial states<a class="headerlink" href="#simplified-nmap-dojo-without-tutorial-states" title="Permanent link">&para;</a></h2>
+<p><a href="nmap_4c_dojo_short.zip">Nmap 4C dojo short.zip</a></p>
+<h2 id="full-copy-of-nmap-dojo-with-tutorial-states">Full copy of Nmap Dojo with tutorial states<a class="headerlink" href="#full-copy-of-nmap-dojo-with-tutorial-states" title="Permanent link">&para;</a></h2>
+<p><a href="nmap_dojo_full.zip">Nmap Dojo Full.zip</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "search.suggest", "search.highlight", "content.code.copy", "navigation.top"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
