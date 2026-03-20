@@ -1,0 +1,40 @@
+site_name: Haiku Forge Documentation
+site_url: https://haiku-inc.github.io/HaikuForgeDocumentation/
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.expand
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - navigation.top
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+markdown_extensions:
+  - tables
+  - fenced_code
+  - codehilite
+  - toc:
+      permalink: true
+  - attr_list
+  - admonition
+
+nav:
+  - Home: index.md
+  - Haiku Commands: haiku-commands.md
+  - Kusto Query Language: kusto-query-language.md
+  - Multiplayer: multiplayer.md
+  - Story Creation with Miniscript: story-creation-with-miniscript.md
+  - Web Sites Creation:
+      - Overview: web-sites-creation.md
+      - Miniscript for Web Browser: web-sites-creation/miniscript-for-web-browser.md

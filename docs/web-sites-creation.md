@@ -1,24 +1,24 @@
 # Web Sites Creation
 
-[Miniscript for Web Browser](Web%20Sites%20Creation/Miniscript%20for%20Web%20Browser%20b60a69ded14b4b009277428f66bf4d47.md)
+[Miniscript for Web Browser](web-sites-creation/miniscript-for-web-browser.md)
 
 # Configure the Device
 
 Websites are stored on a special device, which has ports HTTP and HTTPS opens a hostname (very likely).
 
-![Untitled](Web%20Sites%20Creation/Untitled.png)
+![Untitled](web-sites-creation/untitled.png)
 
 All web pages should be placed in the folder, which has WebRoot attribute. This folder should be the only one on the device. Such folders won't be visible in the address of pages.
 
-![Untitled](Web%20Sites%20Creation/Untitled%201.png)
+![Untitled](web-sites-creation/untitled-1.png)
 
 The start page, which will be open by default, when a user types "[http://hostname](http://hostname/)", should have MainWebPage attributes. Very often such pages have an "index.html" name.
 
-![Untitled](Web%20Sites%20Creation/Untitled%202.png)
+![Untitled](web-sites-creation/untitled-2.png)
 
 Also, the letter case is important. "AdminPanleLogin.html" and "adminpanellogin.html" are different paths.
 
-![Untitled](Web%20Sites%20Creation/Untitled%203.png)
+![Untitled](web-sites-creation/untitled-3.png)
 
 # The Page Structure
 
@@ -87,7 +87,7 @@ Now let's examine the Hello World caption from the example (the index.html).
 
 Return to the positioning. The value is the indent from the left top corner, but Y is **reversed**, which means a minus before its value. This is the figure explaining how positioning works:
 
-![Untitled](Web%20Sites%20Creation/Untitled%204.png)
+![Untitled](web-sites-creation/untitled-4.png)
 
 **fontSize** is the pixel size of the text. Respectively, **color** is the color of the text. Set the color value the same as it was with the background color.
 

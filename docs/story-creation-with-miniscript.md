@@ -4,11 +4,11 @@
 
 There are two ways to create missions in the Forge: via the Step Editor and Miniscript. The Step Editor is an easier, visual way; it's recommended to start your Forge journey with this tool and create a couple of missions. However, it has restrictions: you can't create non-linear missions or include hints if you use it.
 
-The Miniscript approach uses the [in-built scripting system](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21). That gives you a boost of flexibility; however, it requires basic coding skills. But don't worry, everything you need to know is the concepts of "`if`" and "`while`". All complicated computations are hidden in the in-built [`CommandWaiting`](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) and [`Sequence`](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) objects.
+The Miniscript approach uses the [in-built scripting system](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21). That gives you a boost of flexibility; however, it requires basic coding skills. But don't worry, everything you need to know is the concepts of "`if`" and "`while`". All complicated computations are hidden in the in-built [`CommandWaiting`](story-creation-with-miniscript.md) and [`Sequence`](story-creation-with-miniscript.md) objects.
 
 To use the Miniscript approach instead of steps, go to the "General Info" tab in the Forge, scroll down, and make sure the "is Miniscript-driven mission" toggle is turned on.
 
-![Untitled](Story%20Creation%20with%20Miniscript/Untitled.png)
+![Untitled](story-creation-with-miniscript/untitled.png)
 
 The "*Edit Script*" button opens the in-built text editor. Here you can write a small script; however, it's better to use an external text editor and use the in-game editor only for copy/pasting the script. The developer's recommendation is [Notepad++](https://notepad-plus-plus.org/downloads/) with Lua syntax highlighting (*Language > L > Lua*).
 
@@ -25,7 +25,7 @@ end while
 //next actions or end of the mission
 ```
 
-You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md). Let's start with a very simple mission that requires only a couple of actions from a player and has only one goal.
+You can always explore [examples](story-creation-with-miniscript.md). Let's start with a very simple mission that requires only a couple of actions from a player and has only one goal.
 
 ### Functions
 
@@ -48,7 +48,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
     Show the message in the Nitro messenger. This function isn't asynchronous, so the next function will be invoked immediately after this. If you need to wait until the message is written, use the *wait* function.
     
-    **Returns** the delay value (set in the `delay` parameter or calculated automatically). This value is often used together with the `wait()` and `nitroCaption()` functions (see [examples](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md)).
+    **Returns** the delay value (set in the `delay` parameter or calculated automatically). This value is often used together with the `wait()` and `nitroCaption()` functions (see [examples](story-creation-with-miniscript.md)).
     
     **Arguments**
     
@@ -287,7 +287,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     | appName | string, the name of the app. Possible values: File Editor, Explorer, Manual, Notes, Skill Tree or custom windowed application name. |
     | --- | --- |
     | *device* | *string, optional, the name of the device where the application won't be able to open. The default value is '_', which means the application will be locked for the entire mission.* |
-    | *nitroCharacter* | *string, optional, a character name who will send a message if the user tries to open a locked app. Do not set it if you do not need any feedback. [Here is](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) the list of characters.* |
+    | *nitroCharacter* | *string, optional, a character name who will send a message if the user tries to open a locked app. Do not set it if you do not need any feedback. [Here is](story-creation-with-miniscript.md) the list of characters.* |
     | *nitroMessage* | *encoded string, optional, this message will be shown in the Nitro if the user tries to open a locked app. You can use any URL encoding tool, for example this one - [https://www.urlencoder.org](https://www.urlencoder.org/)* |
     
     **Example**
@@ -409,11 +409,11 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
     *Tip.* You need to create wordlist files for the '*john*' and '*hydra*' tools. Different hashes require different file attributes for decoding. These attributes specify what type of wordlist the hashes can decode from. Try running '*john*' in the forge preview mode (without a wordlist), and in the console, you'll see the required wordlist argument.
     
-    ![Untitled](Story%20Creation%20with%20Miniscript/Untitled%201.png)
+    ![Untitled](story-creation-with-miniscript/untitled-1.png)
     
     Therefore, the correct wordlist file will have this list of attributes:
     
-    ![Untitled](Story%20Creation%20with%20Miniscript/Untitled%202.png)
+    ![Untitled](story-creation-with-miniscript/untitled-2.png)
     
 - playSfx
     
@@ -578,7 +578,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
     **Arguments**
     
-    | mapToCheck | map, an item of a list, returned by [getPendingFeedbacks](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) |
+    | mapToCheck | map, an item of a list, returned by [getPendingFeedbacks](story-creation-with-miniscript.md) |
     | --- | --- |
     | commandName | string, the desired command name |
     | *deviceName* | *string, optional, the name of the device where the command was performed. If the device doesn't matter, do not specify a value or set an empty string `""`.* |
@@ -771,9 +771,9 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
 - dispatch_successful_command
     
-    This function is primarily used in [custom applications](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) and [web browser](Web%20Sites%20Creation/Miniscript%20for%20Web%20Browser%20b60a69ded14b4b009277428f66bf4d47.md) scripts. It is generally not intended for use in the main mission script. However, there are rare scenarios where its usage in the main mission script might be justified.
+    This function is primarily used in [custom applications](story-creation-with-miniscript.md) and [web browser](web-sites-creation/miniscript-for-web-browser.md) scripts. It is generally not intended for use in the main mission script. However, there are rare scenarios where its usage in the main mission script might be justified.
     
-    The arguments of the function are validated using special objects. Refer to the [examples](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) for clarification.
+    The arguments of the function are validated using special objects. Refer to the [examples](story-creation-with-miniscript.md) for clarification.
     
     **Arguments**
     
@@ -820,7 +820,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
 - set_device_users
     
-    Sets the user list for the specified device. The result from [get_device_users](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) can also be used.
+    Sets the user list for the specified device. The result from [get_device_users](story-creation-with-miniscript.md) can also be used.
     
     **Arguments**
     
@@ -906,7 +906,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
 - set_device_port_list
     
-    Sets the device ports from the list of maps. See the map description [here](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md).
+    Sets the device ports from the list of maps. See the map description [here](story-creation-with-miniscript.md).
     
     **Arguments**
     
@@ -1062,7 +1062,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
     | command | input, string, a command name, that is excepted from a player |
     | --- | --- |
-    | *device* | *optional, input, string, an expected value of the `device` field in the [feedback map](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md).* |
+    | *device* | *optional, input, string, an expected value of the `device` field in the [feedback map](story-creation-with-miniscript.md).* |
     | *arguments* | optional, input, *list with string arguments, that is returned by performed command. Pay attention: all arguments from the list should be executed; otherwise, the command is not fulfilled.* |
     | isPerformed() | function, returns 0 if a command isn’t performed, otherwise - returns 1. Pay attention, the `CommandWaiting` class invokes `clearPendingFeedbacks` function after fullfilling the conditions. |
     
@@ -1119,7 +1119,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
     **Members (`SequenceStep`)**
     
-    | commandWaiting | the [CommandWaiting](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) object. |
+    | commandWaiting | the [CommandWaiting](story-creation-with-miniscript.md) object. |
     | --- | --- |
     | action | optional, the reference to the function, that will be invoked after performing `commandWaiting` step. The default value is `null`. |
     
@@ -1163,7 +1163,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
     This class is used to attempt to show hints. Hints are notifications with proposals to display some help related to the current mission stage.
     
-    The expected behavior is that if a player gets stuck on a stage, some time later they receive a notification with additional information about that stage. Additionally, hint content can differ based on the level of difficulty. You can use the `if` construction with the [`getHintsDifficultyLevel()`](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) function to set different text for the hint.
+    The expected behavior is that if a player gets stuck on a stage, some time later they receive a notification with additional information about that stage. Additionally, hint content can differ based on the level of difficulty. You can use the `if` construction with the [`getHintsDifficultyLevel()`](story-creation-with-miniscript.md) function to set different text for the hint.
     
     **Members**
     
@@ -1173,7 +1173,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     | tryShowHint() | function, shows the notification once if the time has come |
     | cancel() | function, stops the timer. After calling this function, invokation of `tryShowHint()` doesn’t make sense. |
     
-    [**Examples**](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md)
+    [**Examples**](story-creation-with-miniscript.md)
     
 
 ### Examples
@@ -1277,7 +1277,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
 - 1A mission
     
-    [forge export 17.04.2024 1340 (1713361259,0013).zip](Story%20Creation%20with%20Miniscript/forge_export_17.04.2024_1340_(17133612590013).zip)
+    [forge export 17.04.2024 1340 (1713361259,0013).zip](story-creation-with-miniscript/forge_export_17.04.2024_1340_(17133612590013).zip)
     
     **Description**
     
@@ -1637,7 +1637,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
 - 1B mission (modified, added one optional goals, removed intermediate steps)
     
-    [forge export 17.04.2024 1338 (1713361101,94546).zip](Story%20Creation%20with%20Miniscript/forge_export_17.04.2024_1338_(171336110194546).zip)
+    [forge export 17.04.2024 1338 (1713361101,94546).zip](story-creation-with-miniscript/forge_export_17.04.2024_1338_(171336110194546).zip)
     
     **Description**
     
@@ -1933,7 +1933,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
     Let's look at the second multi-step. The construction of these steps and the code are the same:
     
-    ![Untitled](Story%20Creation%20with%20Miniscript/Untitled%203.png)
+    ![Untitled](story-creation-with-miniscript/untitled-3.png)
     
     ```lua
     while true
@@ -1965,7 +1965,7 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
     
     The optional sequence (`sequence2`) is referred to as '*Optional Goal*' in the step-approach. In our example, it isn't important to open the '*RE-Seal-the-Deal.eml*' file; however, this goal exists in the goal list. Pay attention, we don't check if the sequence was performed in the `if` construction, but **it is crucial to invoke** the `isPerformed()` function (some internal logic happens in this function).
     
-    [forge export 17.04.2024 1338 (1713361101,94546).zip](Story%20Creation%20with%20Miniscript/forge_export_17.04.2024_1338_(171336110194546).zip)
+    [forge export 17.04.2024 1338 (1713361101,94546).zip](story-creation-with-miniscript/forge_export_17.04.2024_1338_(171336110194546).zip)
     
 - Hints
     
@@ -2040,9 +2040,9 @@ You can always explore [examples](Story%20Creation%20with%20Miniscript%20fe056bb
 
 You can create your own console applications using Miniscript. These applications can be set up in the **General Info** tab (**Forge** -> **Mission**) under the "**Miniscript Console Application**" list. You can configure the command name, its code, and the manual page.
 
-![image.png](Story%20Creation%20with%20Miniscript/image.png)
+![image.png](story-creation-with-miniscript/image.png)
 
-![image.png](Story%20Creation%20with%20Miniscript/image%201.png)
+![image.png](story-creation-with-miniscript/image-1.png)
 
 **Command Name**
 
@@ -2052,7 +2052,7 @@ The command name specifies the name of the application, or the command that will
 
 This section contains the Miniscript code for your application. The script can include all administrative functions listed above. This is where all the action takes place. Typically, you'll use [println](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21) and [waitForTerminalInput](https://www.notion.so/Miniscript-Anvil-Scripting-Language-1724ecf8fd794900b0edaa8df834afca?pvs=21) to interact with the user, modify device properties, or create/delete files.
 
-An essential aspect of the script is connecting your application with the main mission script. This can be achieved using [dispatch_successful_command](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md).
+An essential aspect of the script is connecting your application with the main mission script. This can be achieved using [dispatch_successful_command](story-creation-with-miniscript.md).
 
 **Manual**
 
@@ -2077,7 +2077,7 @@ Arguments provided by the user (following the application name in the terminal p
 
 **Locking/Unlocking the Application**
 
-By default, all custom applications are **unlocked**. You can lock or unlock them later using the [lockApp](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) and [unlockApp](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) functions.
+By default, all custom applications are **unlocked**. You can lock or unlock them later using the [lockApp](story-creation-with-miniscript.md) and [unlockApp](story-creation-with-miniscript.md) functions.
 
 **Example**
 
@@ -2195,22 +2195,22 @@ Here’s an example of a Miniscript custom application: a "system manager." This
 
 ### Custom Windowed Applications
 
-Also, custom windowed applications can be created using the in-game web browser editor and MiniScript. All [admin functions](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) are supported, similar to those in custom console applications.
+Also, custom windowed applications can be created using the in-game web browser editor and MiniScript. All [admin functions](story-creation-with-miniscript.md) are supported, similar to those in custom console applications.
 
 These applications can be added in the **General Info** tab (**Forge** -> **Mission**) under the Custom Windowed Applications list.
 
 There are two input fields: the first is for the application name. This name cannot match the names of standard applications, such as *File Editor, Explorer, Manual, Notes,* or *Skill Tree*. The name will appear in the application window header and toolbar tooltip.
 
-The second input field is for the terminal command name that opens the application. This field is optional and can be left empty. However, it is the only way to pass parameters to the application code. For more information about custom application parameters, read [here](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md).
+The second input field is for the terminal command name that opens the application. This field is optional and can be left empty. However, it is the only way to pass parameters to the application code. For more information about custom application parameters, read [here](story-creation-with-miniscript.md).
 
 The application icon can be set from network storage. If the icon is not set or cannot be loaded from the network, the application button will not be visible in the top-right toolbar. However, the application can still be launched using the terminal command.
 
-All custom windowed applications can be locked or unlocked. By default, all custom applications are unlocked. However, you can lock or unlock your windowed application using the [lockToolbarAppTemporarily](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) and [unlockToolbarAppTemporarily](Story%20Creation%20with%20Miniscript%20fe056bb1c7d94b0ba14478cda66fa467.md) MiniScript functions in the main mission script.
+All custom windowed applications can be locked or unlocked. By default, all custom applications are unlocked. However, you can lock or unlock your windowed application using the [lockToolbarAppTemporarily](story-creation-with-miniscript.md) and [unlockToolbarAppTemporarily](story-creation-with-miniscript.md) MiniScript functions in the main mission script.
 
-Creating and editing applications is done in the Visual Web Editor. The visual part is edited like a regular web page, and all [web page script functions](Web%20Sites%20Creation/Miniscript%20for%20Web%20Browser%20b60a69ded14b4b009277428f66bf4d47.md) can be applied. If a background block is not created, the default window background will be used (unlike Web Browser pages, which use a white background). The application script can be edited here:
+Creating and editing applications is done in the Visual Web Editor. The visual part is edited like a regular web page, and all [web page script functions](web-sites-creation/miniscript-for-web-browser.md) can be applied. If a background block is not created, the default window background will be used (unlike Web Browser pages, which use a white background). The application script can be edited here:
 
-![image.png](Story%20Creation%20with%20Miniscript/image%202.png)
+![image.png](story-creation-with-miniscript/image-2.png)
 
 An example of importing in Forge with two applications: one launched from the toolbar and the other by a terminal command.
 
-[forge export 18122024 1334 (1734528857.29077).zip](Story%20Creation%20with%20Miniscript/forge_export_18122024_1334_(1734528857.29077).zip)
+[forge export 18122024 1334 (1734528857.29077).zip](story-creation-with-miniscript/forge_export_18122024_1334_(1734528857.29077).zip)

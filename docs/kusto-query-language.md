@@ -6,15 +6,15 @@
 
 - Sources
     
-    [Stores.csv](Kusto%20Query%20Language%20(KQL)/Stores.csv)
+    [Stores.csv](kusto-query-language/stores.csv)
     
-    [Employees.csv](Kusto%20Query%20Language%20(KQL)/Employees.csv)
+    [Employees.csv](kusto-query-language/employees.csv)
     
-    [CarSales_2022.csv](Kusto%20Query%20Language%20(KQL)/CarSales_2022.csv)
+    [CarSales_2022.csv](kusto-query-language/carsales_2022.csv)
     
-    [CarSales_2023.csv](Kusto%20Query%20Language%20(KQL)/CarSales_2023.csv)
+    [CarSales_2023.csv](kusto-query-language/carsales_2023.csv)
     
-    [Kql example.xlsx](Kusto%20Query%20Language%20(KQL)/Kql_example.xlsx)
+    [Kql example.xlsx](kusto-query-language/kql_example.xlsx)
     
 
 Download the csv sources
@@ -23,19 +23,19 @@ Go to the Forge, open or create the mission with the network.
 
 Open Data Explorer application
 
-![image.png](Kusto%20Query%20Language%20(KQL)/image.png)
+![image.png](kusto-query-language/image.png)
 
 Create a new database with the name `Example`, set the asset name `db_example`
 
-![image.png](Kusto%20Query%20Language%20(KQL)/image%201.png)
+![image.png](kusto-query-language/image-1.png)
 
 Import the first csv, for example, `Stores`. Pay attention, the table name must be the same as the file name (without extension). This is important for correct example query outcomes.
 
-![image.png](Kusto%20Query%20Language%20(KQL)/image%202.png)
+![image.png](kusto-query-language/image-2.png)
 
 Your result should look like this. Don't forget to save the database to the network asset storage by clicking `Apply Changes` button.
 
-![image.png](Kusto%20Query%20Language%20(KQL)/image%203.png)
+![image.png](kusto-query-language/image-3.png)
 
 ## search
 
@@ -800,16 +800,16 @@ Stores
 
 ### kind=inner
 
-![image.png](Kusto%20Query%20Language%20(KQL)/image%204.png)
+![image.png](kusto-query-language/image-4.png)
 
 ### kind=leftouter
 
-![image.png](Kusto%20Query%20Language%20(KQL)/image%205.png)
+![image.png](kusto-query-language/image-5.png)
 
 ### kind=rightouter
 
-![image.png](Kusto%20Query%20Language%20(KQL)/image%206.png)
+![image.png](kusto-query-language/image-6.png)
 
 ### kind=fullouter
 
-![image.png](Kusto%20Query%20Language%20(KQL)/image%207.png)
+![image.png](kusto-query-language/image-7.png)

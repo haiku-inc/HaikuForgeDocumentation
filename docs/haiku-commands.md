@@ -1441,9 +1441,9 @@ mkdir -p .hidden-fol/../Docs/folder/inner/../../folders/fo{1,2}
 touch .hidden .hidden-fol/inner Docs/folder/{aa,ab,bb,inner/cc} Docs/file
 ```
 
-![Untitled](Haiku%20Commands/Untitled.png)
+![Untitled](haiku-commands/untitled.png)
 
-![Untitled](Haiku%20Commands/Untitled%201.png)
+![Untitled](haiku-commands/untitled-1.png)
 
 ### Brace Expansion
 

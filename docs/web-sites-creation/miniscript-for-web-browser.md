@@ -10,7 +10,7 @@ You can manually add the `<script>` tag to the `metadata` section in the Forge:
 
 However, the recommended way to set the script path is by using the Web Page Editor:
 
-![Untitled](Miniscript%20for%20Web%20Browser/Untitled.png)
+![Untitled](miniscript-for-web-browser/untitled.png)
 
 If the script is set, it will be launched when a page is opened. If the script is already running and another page is opened, the script will be automatically stopped. However, if the browser window is closed, the script **will not** be stopped in order to preserve the current page state in case the user opens the browser again.
 
@@ -31,7 +31,7 @@ When the message is displayed, the user cannot navigate to another page or use t
 | *title* | *optional, text or localization key for window title* |
 | *ok* | *optional, text or localization key for close button* |
 
-![Untitled](Miniscript%20for%20Web%20Browser/Untitled%201.png)
+![Untitled](miniscript-for-web-browser/untitled-1.png)
 
 ## browser_alert_dialog
 
@@ -67,7 +67,7 @@ browser_alter_absolute_div("id", "attributeName", "value")
 
 The `id` parameter must be unique for each absolute div on the page. You can view or set it in the Web Page Editor here:
 
-![Untitled](Miniscript%20for%20Web%20Browser/Untitled%202.png)
+![Untitled](miniscript-for-web-browser/untitled-2.png)
 
 Here is a list of possible attribute names and their values. Please note that the *value* is **always** a string, so it should be enclosed in quotes, even if it is a number. An example is provided where needed:
 
