@@ -1,31 +1,95 @@
 # Story Creation with Miniscript
 
-### Overview
+## Overview
 
-There are two ways to create missions in the Forge: via the Step Editor and Miniscript. The Step Editor is an easier, visual way; it's recommended to start your Forge journey with this tool and create a couple of missions. However, it has restrictions: you can't create non-linear missions or include hints if you use it.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Forge missions and labs are (usually) made with the [Miniscript scripting language](miniscript-anvil-scripting-language.md), a mission's lifecycle is tied to its mission script, which executes when the missions starts. Once the script finishes executing - either normally or due to an error - the mission ends.
 
-The Miniscript approach uses the [in-built scripting system](miniscript-anvil-scripting-language.md). That gives you a boost of flexibility; however, it requires basic coding skills. But don't worry, everything you need to know is the concepts of "`if`" and "`while`". All complicated computations are hidden in the in-built [`CommandWaiting`](story-creation-with-miniscript.md#CommandWaiting) and [`Sequence`](story-creation-with-miniscript.md#Sequence) objects.
+!!! warning "Exception"
+    Missions were previously created using a step-based editor that is now deprecated. Some missions still use this format and are in the process of being rewritten.
 
-To use the Miniscript approach instead of steps, go to the "General Info" tab in the Forge, scroll down, and make sure the "is Miniscript-driven mission" toggle is turned on.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The Miniscript approach uses the [in-built miniscript scripting system](miniscript-anvil-scripting-language.md). That provides significant flexibility, although it does require basic programming knowledge. In practice, the only essential concepts are the "`if`" and "`while`" statements. More complex logic can be avoided by relying on the the built-in [`CommandWaiting`](story-creation-with-miniscript.md#CommandWaiting) and [`Sequence`](story-creation-with-miniscript.md#Sequence) objects.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+An alternative approach is to use the raw _command_queue interface, a list populated by the engine with the raw commands entered by the player. With this pipeline, the script effectively becomes a listener for story events.
+
+### Raw story events
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+If `_command_queue` is declared, the engine will push raw story events into it. `_command_queue` must be declared as a list, and the script must be alive for events to be received.
+
+This implies the need of pulling command events from `_command_queue`, probably inside a loop.
+
+??? info "Raw story events with _command_queue example"
+    ```jsx
+    mission = {}
+    mission.running = true
+    // calling mission.running = false anywhere ends the mission
+
+    wait(nitroApp("Rascal", "Please type 'echo complete' to complete the mission"))
+
+    on_story_event = function(command, device, arguments)
+        if command == "echo" then
+            if arguments[0] == "complete" then
+                setGoalAsCompleted("Complete the mission")
+
+                mission.running = false
+                wait(nitroApp("Rascal", "Congratulations, you have completed the mission"))
+            end if
+        end if
+    end function
+
+    _command_queue = []
+    while mission.running
+
+        if _command_queue.len > 0 then
+            _next_event = _command_queue.pull
+            on_story_event(_next_event.command, _next_event.device, _next_event.arguments)
+        end if
+
+        yield
+    end while
+
+    println "mission complete!"
+    print_default_prompt
+    ```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+This approach provides the highest level of flexibility, but it also requires the developer to manually implement all mission logic, including step definitions, completion criteria, and command matching.
+
+### Sequence and CommandWaiting
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Sequences and CommandWaiting rely on hardcoded MiniScript code that is automatically prepended to all mission scripts and executed before the mission script itself runs. Modifying this code requires changes to the Unity engine project. A copy of the current implementation is available below:
+
+[Download StoryMiniscriptInclude.ms](story-creation-with-miniscript/StoryMiniscriptInclude.ms)
+
+??? info "Using prebuilt CommandWaiting and Sequence example"
+    ```jsx
+    // sequence setup
+
+    while sequence.isPerformed() == 0 // The loop ends when a player performs an early setup step.
+        wait(0.1) //It's checking 10 times per second (100 ms delay), can be replaced with just yield()
+    end while	
+
+    // next actions or end of the mission
+    ```
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+To allow writing a mission with any of the Miniscript approaches, go to the "General Info" tab in the Forge, scroll down, and make sure the "is Miniscript-driven mission" toggle is turned on.
 
 ![Untitled](story-creation-with-miniscript/untitled.png)
 
-The "*Edit Script*" button opens the in-built text editor. Here you can write a small script; however, it's better to use an external text editor and use the in-game editor only for copy/pasting the script. The developer's recommendation is [Notepad++](https://notepad-plus-plus.org/downloads/) with Lua syntax highlighting (*Language > L > Lua*).
 
-Missions are built based on a `while` loop and asynchronous `wait` method. This means we have a loop that constantly checks if some action (or actions) is performed by a player. Inside the loop body, a `wait` method exists to prevent the game from freezing. It's recommended to use a 0.1 delay value.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The "*Edit Script*" button opens the in-built text editor. Here you can write a small script; however, it's better to use an external text editor and use the in-game editor only for copy/pasting the script. The developer's recommendation is [VsCode](https://code.visualstudio.com/) or a simpler [Notepad++](https://notepad-plus-plus.org/downloads/) with Lua syntax highlighting (*Language > L > Lua*).
 
-```jsx
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Since the mission lifecycle is tied to the script, missions are generally structured around yielding script execution by using statements like `yield` or `wait` which pause execution temporarily. This is usually done in a `while` loop that continuously checks whether a player has performed a required action or set of actions.
+When using a loop for checking performed commands, the loop body must contain a yielding function (`yield`, `wait` or similar) to prevent the game from freezing. When using the `wait` function, it's recommended to use a 0.1 delay value (100 milliseconds).
 
-//sequnce setup
-
-while sequence.isPerformed() == 0 // The loop ends when a player performs an early setup step.
-    wait(0.1) //It's checking 10 times per second (100 ms delay).
-end while	
-
-//next actions or end of the mission
-```
-
-You can always explore [examples](story-creation-with-miniscript.md). Let's start with a very simple mission that requires only a couple of actions from a player and has only one goal.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+You can always explore [examples](story-creation-with-miniscript.md#Examples). Let's start with a very simple mission that requires only a couple of actions from a player and has only one goal.
 
 ## Functions
 
@@ -1248,14 +1312,14 @@ Mostly used internally
 
 
     
-
+<div id="Examples"></div>
 ## Examples
 
-??? note "A linear mission with handling the “next message” action"
+??? note "A linear mission handling the “next message” action"
 
     **Description**
     
-    The player should read the "*/Documents/toRead*" file via the "*cat*" command. This is the only mandatory step of the mission; all other step instructions can be skipped.
+    The player should read the "`/Documents/toRead`" file via the "`cat`" command. This is the only mandatory step of the mission; all other step instructions can be skipped.
     
     ```jsx
     unlockApp("cat")
