@@ -25,19 +25,26 @@ This implies the need of pulling command events from `_command_queue`, probably 
     ```jsx
     mission = {}
     mission.running = true
-    // calling mission.running = false anywhere ends the mission
+    // calling `mission.running = false` anywhere ends the mission
 
     wait(nitroApp("Rascal", "Please type 'echo complete' to complete the mission"))
 
     on_story_event = function(command, device, arguments)
-        if command == "echo" then
-            if arguments[0] == "complete" then
+        // check for mission progress and steps here
+
+        if command == "echo" and arguments.len > 0 then
+            first_arg = arguments[0]
+            if first_arg == "complete" then
                 setGoalAsCompleted("Complete the mission")
 
                 mission.running = false
                 wait(nitroApp("Rascal", "Congratulations, you have completed the mission"))
+                return
             end if
         end if
+
+        wait(nitroApp("Rascal", "Wrong... you should have written ""echo complete"", not " + command + " " + arguments))
+
     end function
 
     _command_queue = []
@@ -70,7 +77,7 @@ Sequences and CommandWaiting rely on hardcoded MiniScript code that is automatic
 
     while sequence.isPerformed() == 0 // The loop ends when a player performs an early setup step.
         wait(0.1) //It's checking 10 times per second (100 ms delay), can be replaced with just yield()
-    end while	
+    end while
 
     // next actions or end of the mission
     ```
@@ -92,6 +99,9 @@ When using a loop for checking performed commands, the loop body must contain a 
 You can always explore [examples](story-creation-with-miniscript.md#Examples). Let's start with a very simple mission that requires only a couple of actions from a player and has only one goal.
 
 ## Functions
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Most of these functions are *Bindings*, code that binds the unity implementation to miniscript, calling a binding directly calls some C# code written in the engine, bindings and other functions are called *Intrinsics* internally.
 
 ### Commands and Apps
 
@@ -237,6 +247,47 @@ You can always explore [examples](story-creation-with-miniscript.md#Examples). L
     
     ```lua
     setCommandActiveInManual("nmap")
+    ```
+### Debugging
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The mission runner has an in-game Debug Console, by default it's only active in Preview mission mode (using forge) but that can be overridden to true or false using a miniscript binding: [`force_debug_console_enabled`](story-creation-with-miniscript.md#force_debug_console_enabled)
+![in-game-console.png](story-creation-with-miniscript/cons.png)
+
+<div id="force_debug_console_enabled"></div>
+??? note "force_debug_console_enabled"
+    Enables or disables the in-game debug console, by default it's turned on for preview missions and off for published and base missions
+
+    **Examples**
+    ```jsx
+    // enables in-game console in a published mission
+    force_debug_console_enabled()
+    // or
+    force_debug_console_enabled(true)
+    ```
+
+    ```jsx
+    // disables in-game console in a preview mission
+    force_debug_console_enabled(false)
+    ```
+
+Logging into the console:
+
+??? note "dbglog"
+    Logs an "info" message into the in-game debug console
+    ```jsx
+    dbglog("hey, this happened (LOG)")
+    ```
+
+??? note "dbgwarn"
+    Logs a "warning" message into the in-game debug console
+    ```jsx
+    dbgwarn("caution, this happened (WARNING)")
+    ```
+
+??? note "dbgerror"
+    Logs an "error" message into the in-game debug console
+    ```jsx
+    dbgerror("this should not have happened (ERROR)")
     ```
 
 ### Nitro
@@ -789,6 +840,8 @@ You can always explore [examples](story-creation-with-miniscript.md#Examples). L
 
 
 ### Mission Building
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+These are all implemented in miniscript, prepended to all mission scripts before they run (link here) (StoryMiniscriptInclude.ms),
 
 #### Classes
 
