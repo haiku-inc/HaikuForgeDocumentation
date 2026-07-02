@@ -1,6 +1,6 @@
 # Miniscript Anvil Scripting Language
 
-Anvil is a simple scripting language added into the game for players to build their own scripts and exploits. Based on the open-source scripting language by Joe Strout (https://github.com/JoeStrout/miniscript)
+Miniscript is a simple scripting language added into the game for forge developers to build their own scripts and exploits, by Joe Strout (https://github.com/JoeStrout/miniscript)
 
 # Launch a Script
 
@@ -221,7 +221,9 @@ end function
 x.degrees // 360
 ```
 
-# Intrinsic Functions
+# Function Bindings
+*Bindings* are functions that bind the unity implementation to a miniscript call, directly calls C# code
+For the full list, see [Story Creation With Miniscript](story-creation-with-miniscript.md)
 
 ### Haiku (can be launched by the mission editor only)
 

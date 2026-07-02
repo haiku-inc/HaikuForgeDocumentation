@@ -19,6 +19,7 @@ An alternative approach is to use the raw _command_queue interface, a list popul
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 If `_command_queue` is declared, the engine will push raw story events into it. `_command_queue` must be declared as a list, and the script must be alive for events to be received.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 This implies the need of pulling command events from `_command_queue`, probably inside a loop.
 
 ??? info "Raw story events with _command_queue example"
@@ -64,6 +65,9 @@ This implies the need of pulling command events from `_command_queue`, probably 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 This approach provides the highest level of flexibility, but it also requires the developer to manually implement all mission logic, including step definitions, completion criteria, and command matching.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+It is recommended to start by copying one of the graph mission [examples](#examples)
 
 ### Sequence and CommandWaiting
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -869,8 +873,8 @@ Logging into the console:
 
 ### Mission Building
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-These are all implemented in miniscript, prepended to all mission scripts before they run (link here) (StoryMiniscriptInclude.ms),
-
+These are all implemented in miniscript, prepended to all mission scripts before they run
+[Download StoryMiniscriptInclude.ms](story-creation-with-miniscript/StoryMiniscriptInclude.ms)
 #### Classes
 
 <div id="CommandWaiting"></div>
@@ -1208,7 +1212,6 @@ Mostly used internally
     ```
 
 
-
 ### Misc
 
 ??? note "startTimer"
@@ -1230,7 +1233,11 @@ Mostly used internally
     startTimer(0, 300, 120) 
     ```
 
-    
+??? note "stop_timer"
+
+    Stops the fail timer, which was previously run by the `startTimer` function.
+
+
 ??? note "updateNotepad"
 
     Add the text to the story-character notes in the notepad. You can select 'story-character' in the General Info tab. Please note that these notes won't be saved after mission completion, unlike user-created notes.
@@ -1385,10 +1392,6 @@ Mostly used internally
 
     Set the database for viewing in the Data Explorer application. Receives a string that is the asset name in the Network Asset Storage. Set an empty string to reset the database. Returns 1 if the database was set correctly.
     
-
-??? note "stop_timer"
-
-    Stops the fail timer, which was previously run by the `startTimer` function.
 
 
 ## Miniscript Console Applications
@@ -1574,18 +1577,8 @@ An example of importing in Forge with two applications: one launched from the to
 <div id="Examples"></div>
 ## Examples
 
-### Generic Command Usage Example 
-??? note "get_all_devices(), autoConnect() Lab"
-    Has custom miniscript commands:
-    - dump-devices
-    - dump-users
-    - set-sudo-pass
-    - ssh-as
-    - System Manager
-    [Download devices-and-users.zip](devices-and-users.zip)
-
 ### Using a Graph implemented in Miniscript
-This is the default for reimplemented base game missions
+This is the default for reimplemented base game missions.<br>
 Missions built in this format are able to be exported to a graph format (Graphviz) for easier visualization, debugging and auditing.
 ??? note "Graph Version 1A, Linear lab"
     [Download graph-1a.zip](graph-1a.zip)
@@ -2453,4 +2446,13 @@ Missions built in this format are able to be exported to a graph format (Graphvi
     
     wait(1)
     ```
-    
+
+### Generic Command Usages Examples
+??? note "get_all_devices(), autoConnect() example lab"
+    Has custom miniscript commands:
+    - dump-devices
+    - dump-users
+    - set-sudo-pass
+    - ssh-as
+    - System Manager
+    [Download devices-and-users.zip](devices-and-users.zip)
