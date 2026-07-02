@@ -411,20 +411,41 @@ Logging into the console:
 
 ??? note "autoConnect"
 
-    Connect to the device (with an open SSH port) without credentials.
-    
+    Connects to a device, by default uses the first found user credentials there
+    If the device has no users, it will not work, logs an error
+
     **Arguments**
     
-    | deviceName | string, you can see this value in the Device Properties tab (Forge) |
+    | device_name | string, you can see this value in the Device Properties tab (Forge) |
     | --- | --- |
+
+    **Optional Arguments**
+    | user_name | string, specify which user to autoConnect, if omitted, will connect with the found user |
+    | should_print_connect_text | bool, (True or False, or numbers 0 or 1)  |
     
     **Example:**
     
     ```jsx
     autoConnect("test_mission_network_workstation_1")
+    autoConnect("test_mission_network_workstation_1", "user1")
+    autoConnect("test_mission_network_workstation_1", "user1", false) // does not print welcome text
+    autoConnect("test_mission_network_workstation_1", "user1", true)  // prints welcome text
     ```
 
+??? note "get_all_devices"
+
+    Returns a list of all devices in the current network, in the following format:
+    { name: string, ip: string }
+
+    **Example:**
     
+    ```jsx
+    // prints the name and IP of all devices
+    for device in get_all_devices()
+        println("  device """ + device.name + """ ip """ + device.ip + """")
+    end for
+    ```
+
 ??? note "get_current_device"
 
     Returns the name (as set in the Forge Network Device Properties) of the currently connected device. For the default home device, it will always be "`Home System`"
