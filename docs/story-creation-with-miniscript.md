@@ -12,7 +12,7 @@ Forge missions and labs are (usually) made with the [Miniscript scripting langua
 The Miniscript approach uses the [in-built miniscript scripting system](miniscript-anvil-scripting-language.md). That provides significant flexibility, although it does require basic programming knowledge. In practice, the only essential concepts are the "`if`" and "`while`" statements. More complex logic can be avoided by relying on the the built-in [`CommandWaiting`](story-creation-with-miniscript.md#CommandWaiting) and [`Sequence`](story-creation-with-miniscript.md#Sequence) objects.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-An alternative approach is to use the raw _command_queue interface, a list populated by the engine with the raw commands entered by the player. With this pipeline, the script effectively becomes a listener for story events.
+An alternative approach is to use the raw `_command_queue` interface, a list populated by the engine with the raw commands entered by the player. With this pipeline, the script effectively becomes a listener for story events.
 
 ### Raw story events
 
@@ -45,7 +45,6 @@ This implies the need of pulling command events from `_command_queue`, probably 
         end if
 
         wait(nitroApp("Rascal", "Wrong... you should have written ""echo complete"", not " + command + " " + arguments))
-
     end function
 
     _command_queue = []
@@ -1576,6 +1575,7 @@ An example of importing in Forge with two applications: one launched from the to
 
 <div id="Examples"></div>
 ## Examples
+Zip missions (contain the mission file and the network json) can be imported to forge using the forge assets import button.
 
 ### Using a Graph implemented in Miniscript
 This is the default for reimplemented base game missions.<br>
