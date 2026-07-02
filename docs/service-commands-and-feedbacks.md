@@ -90,6 +90,38 @@ These phrases can be used in Nitro messages, text file contents, or internal web
         
         Is replaced with the result of the *GetScore()* function.
         
+### RichText Tags
+Tags are implemented through the Unity text rendering library TextMeshPro
+
+All supported tags will work:<br>
+[docs.unity3d.com/Packages/com.unity.textmeshpro@3.2/manual/RichTextSupportedTags](https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.2/manual/RichTextSupportedTags.html)
+
+More on rich text tags:<br>
+[https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.2/manual/RichText.html](docs.unity3d.com/Packages/com.unity.textmeshpro@3.2/manual/RichText)
+
+Conventions adopted for tags used in nitro messages of missions and labs:
+
+| Asset Name                                                                                       | Code                                                                                                                                    |
+| ------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------- |
+| Color: PURPLE / Image files                                                                      | `<color=#7B61FF>`                                                                                                                       |
+| Color: RASCAL TEAL / Directory Name                                                              | `<color=#00B7AC>`                                                                                                                       |
+| Color: RED / Wrong MCQ answer OR IP Address                                                      | `<color=#E82629>`                                                                                                                       |
+| Color: YELLOW / FileNAME                                                                         | `<color=#D0F83E>`                                                                                                                       |
+| Color HOT PINK / Currently Unassigned                                                            | `<color=#D30C7B>`                                                                                                                       |
+| Color: BLUE / KEYwords                                                                           | `<color=#66DDFB>`                                                                                                                       |
+| Color: GREEN / Correct MCQ Answer Affirmation (YES!) OR executables & binaries OR DID YOU KNOW?! | `<color=#46FF33>`                                                                                                                       |
+| Color: ORANGE / Glossary entry                                                                   | `<color=#EEAE1E>`                                                                                                                       |
+| CODE WRAP + Completed                                                                            | `<font="SpaceMono-Regular SDF"><mark=#00b7acaa>`<br><br>**URL Encoded Quotes:**<br>`<font=%22SpaceMono-Regular SDF%22><mark=#00b7acaa>` |
+| App: Achievements                                                                                | `<sprite="AppIcons_Sprite_sheet" name="Achievements">`                                                                                  |
+| App: Manual                                                                                      | `<sprite="AppIcons_Sprite_sheet" name="Manual">`                                                                                        |
+| App: Map                                                                                         | `<sprite="AppIcons_Sprite_sheet" name="Map">`                                                                                           |
+| App: Nitro                                                                                       | `<sprite="AppIcons_Sprite_sheet" name="Nitro">`                                                                                         |
+| App: Notes                                                                                       | `<sprite="AppIcons_Sprite_sheet" name="Notes">`                                                                                         |
+| App: Skill Tree                                                                                  | `<sprite="AppIcons_Sprite_sheet" name="Skill">`                                                                                         |
+| App: Web Browser                                                                                 | `<sprite="AppIcons_Sprite_sheet" name="Web Browser">`                                                                                   |
+| App: File Explorer                                                                               | `<sprite="AppIcons_Sprite_sheet" name="Explorer">`                                                                                      |
+| EMAIL TEMPLATE                                                                                   | `<size=110%><b><u>CredSet A</u></b></size><br><br><b>DrOmenParks@Subatomail.com</b><br><i>To: KachaSilverhands@Gcorpmail.com</i>`       |
+
 
 ### Service commands (that commands are not allowed to print in the in-game terminal)
 
@@ -241,14 +273,14 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     ```jsx
     {
-    	  "Attributes": [
+          "Attributes": [
             "Normal"
         ],
-    		"Name": "rockyou.txt",
+            "Name": "rockyou.txt",
         "Path": "/Documents/rockyou.txt",
         "Data": {
             "SkipCheckGuid": true,
-    				"Data": "Hello world!"
+                    "Data": "Hello world!"
         },
         "UserAccessList": {},
         "Children": []
@@ -265,7 +297,7 @@ These phrases can be used in Nitro messages, text file contents, or internal web
     
     ```json
     "UserAccessList": {
-    	"sorceress": [ true, true ]
+        "sorceress": [ true, true ]
     }
     ```
     
@@ -463,7 +495,7 @@ These phrases can be used in Nitro messages, text file contents, or internal web
             {
               "Name": "cd",
               "DeviceName": "Home System",
-    	          "ArgsWaitingFor": [ "/Documents/", "fb=False" ]
+                  "ArgsWaitingFor": [ "/Documents/", "fb=False" ]
             }
           ]
     ```

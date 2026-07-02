@@ -295,6 +295,9 @@ Logging into the console:
 ??? note "nitroApp"
 
     Show the message in the Nitro messenger. This function isn't asynchronous, so the next function will be invoked immediately after this. If you need to wait until the message is written, use the *wait* function.
+
+    Text provided in the *message* argument can have RichText tags and text substitution, more on that:<br>
+    [Service Commands & Feedbacks](service-commands-and-feedbacks.md)
     
     **Returns** the delay value (set in the `delay` parameter or calculated automatically). This value is often used together with the `wait()` and `nitroCaption()` functions (see [examples](story-creation-with-miniscript.md)).
     
@@ -416,20 +419,24 @@ Logging into the console:
 
     **Arguments**
     
+    | Name | Description |
+    |---|---|
     | device_name | string, you can see this value in the Device Properties tab (Forge) |
-    | --- | --- |
 
     **Optional Arguments**
-    | user_name | string, specify which user to autoConnect, if omitted, will connect with the found user |
-    | should_print_connect_text | bool, (True or False, or numbers 0 or 1)  |
+
+    | Name | Description |
+    |---|---|
+    | user_name | String. Specify which user name to connect with. If omitted, the first found user will be used. |
+    | should_print_connect_text | Boolean (`true`/`false`) or numeric (`0`/`1`). |
     
-    **Example:**
+    **Examples:**
     
     ```jsx
     autoConnect("test_mission_network_workstation_1")
     autoConnect("test_mission_network_workstation_1", "user1")
-    autoConnect("test_mission_network_workstation_1", "user1", false) // does not print welcome text
-    autoConnect("test_mission_network_workstation_1", "user1", true)  // prints welcome text
+    autoConnect("test_mission_network_workstation_1", "user1", false) // does not print the welcome text
+    autoConnect("test_mission_network_workstation_1", "user1", true)  // does print the welcome text
     ```
 
 ??? note "get_all_devices"
@@ -2401,7 +2408,7 @@ Here’s an example of a Miniscript custom application: a "system manager." This
     end while
     
     ```
-    
+
 
 ### Custom Windowed Applications
 
