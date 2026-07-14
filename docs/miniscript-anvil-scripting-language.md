@@ -233,7 +233,9 @@ x.degrees // 360
 
 # Function Bindings
 *Bindings* are functions that bind the unity implementation to a miniscript call, directly calls C# code
-For the full list, see [Story Creation With Miniscript](story-creation-with-miniscript.md)
+
+!!! warning "Outdated"
+    This page may be a little outdated, for the full list, see [Story Creation With Miniscript](story-creation-with-miniscript.md)
 
 ### Haiku (can be launched by the mission editor only)
 

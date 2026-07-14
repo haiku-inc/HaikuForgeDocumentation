@@ -97,7 +97,7 @@ All supported tags will work:<br>
 [docs.unity3d.com/Packages/com.unity.textmeshpro@3.2/manual/RichTextSupportedTags](https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.2/manual/RichTextSupportedTags.html)
 
 More on rich text tags:<br>
-[https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.2/manual/RichText.html](docs.unity3d.com/Packages/com.unity.textmeshpro@3.2/manual/RichText)
+[docs.unity3d.com/Packages/com.unity.textmeshpro@3.2/manual/RichText](https://docs.unity3d.com/Packages/com.unity.textmeshpro@3.2/manual/RichText.html)
 
 Conventions adopted for tags used in nitro messages of missions and labs:
 
@@ -123,7 +123,7 @@ Conventions adopted for tags used in nitro messages of missions and labs:
 | EMAIL TEMPLATE                                                                                   | `<size=110%><b><u>CredSet A</u></b></size><br><br><b>DrOmenParks@Subatomail.com</b><br><i>To: KachaSilverhands@Gcorpmail.com</i>`       |
 
 
-### Service commands (that commands are not allowed to print in the in-game terminal)
+### Service commands (commands that are not allowed to print in the in-game terminal)
 
 ??? note "nitroapp"
 
