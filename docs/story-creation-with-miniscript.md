@@ -12,32 +12,39 @@ Forge missions and labs are (usually) made with the [Miniscript scripting langua
 The Miniscript approach uses the [in-built miniscript scripting system](miniscript-anvil-scripting-language.md). That provides significant flexibility, although it does require basic programming knowledge. In practice, the only essential concepts are the "`if`" and "`while`" statements. More complex logic can be avoided by relying on the the built-in [`CommandWaiting`](story-creation-with-miniscript.md#CommandWaiting) and [`Sequence`](story-creation-with-miniscript.md#Sequence) objects.
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-An alternative approach is to use the raw _command_queue interface, a list populated by the engine with the raw commands entered by the player. With this pipeline, the script effectively becomes a listener for story events.
+An alternative approach is to use the raw `_command_queue` interface, a list populated by the engine with the raw commands entered by the player. With this pipeline, the script effectively becomes a listener for story events.
 
 ### Raw story events
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 If `_command_queue` is declared, the engine will push raw story events into it. `_command_queue` must be declared as a list, and the script must be alive for events to be received.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 This implies the need of pulling command events from `_command_queue`, probably inside a loop.
 
 ??? info "Raw story events with _command_queue example"
     ```jsx
     mission = {}
     mission.running = true
-    // calling mission.running = false anywhere ends the mission
+    // calling `mission.running = false` anywhere ends the mission
 
     wait(nitroApp("Rascal", "Please type 'echo complete' to complete the mission"))
 
     on_story_event = function(command, device, arguments)
-        if command == "echo" then
-            if arguments[0] == "complete" then
+        // check for mission progress and steps here
+
+        if command == "echo" and arguments.len > 0 then
+            first_arg = arguments[0]
+            if first_arg == "complete" then
                 setGoalAsCompleted("Complete the mission")
 
                 mission.running = false
                 wait(nitroApp("Rascal", "Congratulations, you have completed the mission"))
+                return
             end if
         end if
+
+        wait(nitroApp("Rascal", "Wrong... you should have written ""echo complete"", not " + command + " " + arguments))
     end function
 
     _command_queue = []
@@ -58,6 +65,9 @@ This implies the need of pulling command events from `_command_queue`, probably 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 This approach provides the highest level of flexibility, but it also requires the developer to manually implement all mission logic, including step definitions, completion criteria, and command matching.
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+It is recommended to start by copying one of the graph mission [examples](#examples)
+
 ### Sequence and CommandWaiting
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 Sequences and CommandWaiting rely on hardcoded MiniScript code that is automatically prepended to all mission scripts and executed before the mission script itself runs. Modifying this code requires changes to the Unity engine project. A copy of the current implementation is available below:
@@ -70,7 +80,7 @@ Sequences and CommandWaiting rely on hardcoded MiniScript code that is automatic
 
     while sequence.isPerformed() == 0 // The loop ends when a player performs an early setup step.
         wait(0.1) //It's checking 10 times per second (100 ms delay), can be replaced with just yield()
-    end while	
+    end while
 
     // next actions or end of the mission
     ```
@@ -92,6 +102,9 @@ When using a loop for checking performed commands, the loop body must contain a 
 You can always explore [examples](story-creation-with-miniscript.md#Examples). Let's start with a very simple mission that requires only a couple of actions from a player and has only one goal.
 
 ## Functions
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Most of these functions are *Bindings*, code that binds the unity implementation to miniscript, calling a binding directly calls some C# code written in the engine, bindings and other functions are called *Intrinsics* internally.
 
 ### Commands and Apps
 
@@ -238,12 +251,56 @@ You can always explore [examples](story-creation-with-miniscript.md#Examples). L
     ```lua
     setCommandActiveInManual("nmap")
     ```
+### Debugging
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+The mission runner has an in-game Debug Console, by default it's only active in Preview mission mode (using forge) but that can be overridden to true or false using a miniscript binding: [`force_debug_console_enabled`](story-creation-with-miniscript.md#force_debug_console_enabled)
+![in-game-console.png](story-creation-with-miniscript/cons.png)
+
+<div id="force_debug_console_enabled"></div>
+??? note "force_debug_console_enabled"
+    Enables or disables the in-game debug console, by default it's turned on for preview missions and off for published and base missions
+
+    **Examples**
+    ```jsx
+    // enables in-game console in a published mission
+    force_debug_console_enabled()
+    // or
+    force_debug_console_enabled(true)
+    ```
+
+    ```jsx
+    // disables in-game console in a preview mission
+    force_debug_console_enabled(false)
+    ```
+
+Logging into the console:
+
+??? note "dbglog"
+    Logs an "info" message into the in-game debug console
+    ```jsx
+    dbglog("hey, this happened (LOG)")
+    ```
+
+??? note "dbgwarn"
+    Logs a "warning" message into the in-game debug console
+    ```jsx
+    dbgwarn("caution, this happened (WARNING)")
+    ```
+
+??? note "dbgerror"
+    Logs an "error" message into the in-game debug console
+    ```jsx
+    dbgerror("this should not have happened (ERROR)")
+    ```
 
 ### Nitro
 
 ??? note "nitroApp"
 
     Show the message in the Nitro messenger. This function isn't asynchronous, so the next function will be invoked immediately after this. If you need to wait until the message is written, use the *wait* function.
+
+    Text provided in the *message* argument can have RichText tags and text substitution, more on that:<br>
+    [Service Commands & Feedbacks](service-commands-and-feedbacks.md)
     
     **Returns** the delay value (set in the `delay` parameter or calculated automatically). This value is often used together with the `wait()` and `nitroCaption()` functions (see [examples](story-creation-with-miniscript.md)).
     
@@ -360,20 +417,45 @@ You can always explore [examples](story-creation-with-miniscript.md#Examples). L
 
 ??? note "autoConnect"
 
-    Connect to the device (with an open SSH port) without credentials.
-    
+    Connects to a device, by default uses the first found user credentials there
+    If the device has no users, it will not work, logs an error
+
     **Arguments**
     
-    | deviceName | string, you can see this value in the Device Properties tab (Forge) |
-    | --- | --- |
+    | Name | Description |
+    |---|---|
+    | device_name | string, you can see this value in the Device Properties tab (Forge) |
+
+    **Optional Arguments**
+
+    | Name | Description |
+    |---|---|
+    | user_name | String. Specify which user name to connect with. If omitted, the first found user will be used. |
+    | should_print_connect_text | Boolean (`true`/`false`) or numeric (`0`/`1`). |
     
-    **Example:**
+    **Examples:**
     
     ```jsx
     autoConnect("test_mission_network_workstation_1")
+    autoConnect("test_mission_network_workstation_1", "user1")
+    autoConnect("test_mission_network_workstation_1", "user1", false) // does not print the welcome text
+    autoConnect("test_mission_network_workstation_1", "user1", true)  // does print the welcome text
     ```
 
+??? note "get_all_devices"
+
+    Returns a list of all devices in the current network, in the following format:
+    { name: string, ip: string }
+
+    **Example:**
     
+    ```jsx
+    // prints the name and IP of all devices
+    for device in get_all_devices()
+        println("  device """ + device.name + """ ip """ + device.ip + """")
+    end for
+    ```
+
 ??? note "get_current_device"
 
     Returns the name (as set in the Forge Network Device Properties) of the currently connected device. For the default home device, it will always be "`Home System`"
@@ -789,7 +871,9 @@ You can always explore [examples](story-creation-with-miniscript.md#Examples). L
 
 
 ### Mission Building
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+These are all implemented in miniscript, prepended to all mission scripts before they run
+[Download StoryMiniscriptInclude.ms](story-creation-with-miniscript/StoryMiniscriptInclude.ms)
 #### Classes
 
 <div id="CommandWaiting"></div>
@@ -1127,7 +1211,6 @@ Mostly used internally
     ```
 
 
-
 ### Misc
 
 ??? note "startTimer"
@@ -1149,7 +1232,11 @@ Mostly used internally
     startTimer(0, 300, 120) 
     ```
 
-    
+??? note "stop_timer"
+
+    Stops the fail timer, which was previously run by the `startTimer` function.
+
+
 ??? note "updateNotepad"
 
     Add the text to the story-character notes in the notepad. You can select 'story-character' in the General Info tab. Please note that these notes won't be saved after mission completion, unlike user-created notes.
@@ -1305,16 +1392,205 @@ Mostly used internally
     Set the database for viewing in the Data Explorer application. Receives a string that is the asset name in the Network Asset Storage. Set an empty string to reset the database. Returns 1 if the database was set correctly.
     
 
-??? note "stop_timer"
 
-    Stops the fail timer, which was previously run by the `startTimer` function.
+## Miniscript Console Applications
 
+You can create your own console applications using Miniscript. These applications can be set up in the **General Info** tab (**Forge** -> **Mission**) under the "**Miniscript Console Application**" list. You can configure the command name, its code, and the manual page.
 
+![image.png](story-creation-with-miniscript/image.png)
 
+![image.png](story-creation-with-miniscript/image-1.png)
+
+**Command Name**
+
+The command name specifies the name of the application, or the command that will launch the application from the terminal prompt. This name must not contain spaces. If the name is invalid, the command will not be added when the mission is launched.
+
+**Script**
+
+This section contains the Miniscript code for your application. The script can include all administrative functions listed above. This is where all the action takes place. Typically, you'll use [println](miniscript-anvil-scripting-language.md) and [waitForTerminalInput](miniscript-anvil-scripting-language.md) to interact with the user, modify device properties, or create/delete files.
+
+An essential aspect of the script is connecting your application with the main mission script. This can be achieved using [dispatch_successful_command](story-creation-with-miniscript.md).
+
+**Manual**
+
+The manual is a rich-text guide for your application. It can be accessed using the command `man <your_application_name>` (following Linux syntax) in the terminal or from the Manual application on the toolbar (if the application is unlocked).
+
+**Arguments**
+
+Your application can be launched from the terminal with arguments, which are stored in the built-in `arguments` array (do not overwrite this variable). The `arguments` array **always contains** at least one element, indicating whether the application was run with superuser rights ([sudo](service-commands-and-feedbacks.md)). This element is always the first in the array.
+
+??? note "Example"
+
+    ```lua
+    if arguments[0] == "sudo=1" then
+        println("super user rights")
+    else
+        println("usual user rights")
+    end if
+    ```
     
+
+Arguments provided by the user (following the application name in the terminal prompt) can be handled as shown in the example below.
+
+**Locking/Unlocking the Application**
+
+By default, all custom applications are **unlocked**. You can lock or unlock them later using the [lockApp](story-creation-with-miniscript.md#LockApp) and [unlockApp](story-creation-with-miniscript.md#UnlockApp) functions.
+
+**Example**
+
+Here’s an example of a Miniscript custom application: a "system manager." This application can:
+
+- Show the current date and time.
+- Display the device's IP address.
+- If run with the `-u` argument, it also shows the current user name.
+- If granted superuser rights (sudo), it can display and modify the root password.
+- Communicate with the main story script using the `dispatch_successful_command` function.
+??? note "Code"
+
+    ```lua
+    supportUsername = arguments.indexOf("-u") >= 0
+    supportRootPassword = arguments[0] == "sudo=1"
+    
+    userChoice = function()
+    
+    println("    1 - get current time")
+    println("    2 - get current date")
+    println("    3 - get current device name")
+    println("    4 - get current device IP")
+    
+    if supportUsername == 1 then
+        println("    5 - get current username")
+    end if
+    if supportRootPassword == 1 then
+        println("    6 - show sudo password")
+        println("    7 - change sudo password")
+    end if
+    
+    println("")
+    println("    0 - exit")
+    
+    return waitForTerminalInput()
+    
+    end function
+    
+    clear()
+    
+    println("System Manager")
+    println("(Test Miniscript Application)")
+    
+    while 1
+    
+    choice = userChoice()
+    
+    clear()
+    
+    if choice == "1" or choice == "2" then
+        dateTime = get_date_time()
+        if choice == "1" then
+            println(dateTime.hour + ":" + dateTime.minute)
+            dispatch_successful_command("sysman", "", "time")
+        end if
+        if choice == "2" then
+            println(dateTime.year + "-" + dateTime.month + "-" + dateTime.day)
+            dispatch_successful_command("sysman", "", "date")
+        end if
+        println()
+    end if
+    
+    if choice == "3" or choice == "4" then
+        currentDevice = get_current_device()
+        
+        if choice == "3" then
+            println(currentDevice)
+            dispatch_successful_command("sysman", "", "device_name")
+        end if
+        if choice == "4" then
+            println(device_name_to_ip_address(currentDevice))
+            dispatch_successful_command("sysman", "", "device_ip")
+        end if
+            
+        println()
+    end if
+    
+    if supportUsername == 1 and choice == "5" then
+        println(get_current_username())
+        dispatch_successful_command("sysman", "", "username")
+        println()
+    end if
+    
+    if supportRootPassword == 1 then
+        if choice == "6" then
+            sudoPassword = get_device_sudo_password(get_current_device())
+            
+            if sudoPassword == null then
+                println("Super User is not set up")
+            else
+                println(sudoPassword)
+            end if
+    
+            dispatch_successful_command("sysman", "", "show_sudo")
+            println()
+        end if
+        if choice == "7" then
+            println("Type new password:")
+            newPassword = waitForTerminalInput()
+            set_device_sudo_password(get_current_device(), newPassword)
+            dispatch_successful_command("sysman", "", "change_sudo")
+            println()
+        end if
+    end if
+    
+    if choice == "0" then
+        dispatch_successful_command("sysman", "", "exit")
+        break
+    end if
+    
+    end while
+    
+    ```
+
+
+## Custom Windowed Applications
+
+Also, custom windowed applications can be created using the in-game web browser editor and MiniScript. All [admin functions](story-creation-with-miniscript.md) are supported, similar to those in custom console applications.
+
+These applications can be added in the **General Info** tab (**Forge** -> **Mission**) under the Custom Windowed Applications list.
+
+There are two input fields: the first is for the application name. This name cannot match the names of standard applications, such as *File Editor, Explorer, Manual, Notes,* or *Skill Tree*. The name will appear in the application window header and toolbar tooltip.
+
+The second input field is for the terminal command name that opens the application. This field is optional and can be left empty. However, it is the only way to pass parameters to the application code. For more information about custom application parameters, read [here](story-creation-with-miniscript.md).
+
+The application icon can be set from network storage. If the icon is not set or cannot be loaded from the network, the application button will not be visible in the top-right toolbar. However, the application can still be launched using the terminal command.
+
+All custom windowed applications can be locked or unlocked. By default, all custom applications are unlocked. However, you can lock or unlock your windowed application using the [lockToolbarAppTemporarily](story-creation-with-miniscript.md) and [unlockToolbarAppTemporarily](story-creation-with-miniscript.md) MiniScript functions in the main mission script.
+
+Creating and editing applications is done in the Visual Web Editor. The visual part is edited like a regular web page, and all [web page script functions](web-sites-creation/miniscript-for-web-browser.md) can be applied. If a background block is not created, the default window background will be used (unlike Web Browser pages, which use a white background). The application script can be edited here:
+
+![image.png](story-creation-with-miniscript/image-2.png)
+
+An example of importing in Forge with two applications: one launched from the toolbar and the other by a terminal command.
+
+[Download forge-custom-apps.zip](story-creation-with-miniscript/forge-custom-apps.zip)
+
+
 <div id="Examples"></div>
 ## Examples
+Zip missions (contain the mission file and the network json) can be imported to forge using the forge assets import button.
 
+### Using a Graph implemented in Miniscript
+This is the default for reimplemented base game missions.<br>
+Missions built in this format are able to be exported to a graph format (Graphviz) for easier visualization, debugging and auditing.
+??? note "Graph Version 1A, Linear lab"
+    [Download graph-1a.zip](graph-1a.zip)
+
+    ![Graph 1A](graph-1a.svg)
+
+??? note "Graph Version 1B, Complex branching lab"
+    [Download graph-1b.zip](graph-1b.zip)
+
+    ![Graph 1B](graph-1b.svg)
+
+### Using Sequence, SequenceSteps and CommandWaiting
 ??? note "A linear mission handling the “next message” action"
 
     **Description**
@@ -2170,183 +2446,13 @@ Mostly used internally
     
     wait(1)
     ```
-    
 
-### Miniscript Console Applications
-
-You can create your own console applications using Miniscript. These applications can be set up in the **General Info** tab (**Forge** -> **Mission**) under the "**Miniscript Console Application**" list. You can configure the command name, its code, and the manual page.
-
-![image.png](story-creation-with-miniscript/image.png)
-
-![image.png](story-creation-with-miniscript/image-1.png)
-
-**Command Name**
-
-The command name specifies the name of the application, or the command that will launch the application from the terminal prompt. This name must not contain spaces. If the name is invalid, the command will not be added when the mission is launched.
-
-**Script**
-
-This section contains the Miniscript code for your application. The script can include all administrative functions listed above. This is where all the action takes place. Typically, you'll use [println](miniscript-anvil-scripting-language.md) and [waitForTerminalInput](miniscript-anvil-scripting-language.md) to interact with the user, modify device properties, or create/delete files.
-
-An essential aspect of the script is connecting your application with the main mission script. This can be achieved using [dispatch_successful_command](story-creation-with-miniscript.md).
-
-**Manual**
-
-The manual is a rich-text guide for your application. It can be accessed using the command `man <your_application_name>` (following Linux syntax) in the terminal or from the Manual application on the toolbar (if the application is unlocked).
-
-**Arguments**
-
-Your application can be launched from the terminal with arguments, which are stored in the built-in `arguments` array (do not overwrite this variable). The `arguments` array **always contains** at least one element, indicating whether the application was run with superuser rights ([sudo](service-commands-and-feedbacks.md)). This element is always the first in the array.
-
-??? note "Example"
-
-    ```lua
-    if arguments[0] == "sudo=1" then
-        println("super user rights")
-    else
-        println("usual user rights")
-    end if
-    ```
-    
-
-Arguments provided by the user (following the application name in the terminal prompt) can be handled as shown in the example below.
-
-**Locking/Unlocking the Application**
-
-By default, all custom applications are **unlocked**. You can lock or unlock them later using the [lockApp](story-creation-with-miniscript.md#LockApp) and [unlockApp](story-creation-with-miniscript.md#UnlockApp) functions.
-
-**Example**
-
-Here’s an example of a Miniscript custom application: a "system manager." This application can:
-
-- Show the current date and time.
-- Display the device's IP address.
-- If run with the `-u` argument, it also shows the current user name.
-- If granted superuser rights (sudo), it can display and modify the root password.
-- Communicate with the main story script using the `dispatch_successful_command` function.
-??? note "Code"
-
-    ```lua
-    supportUsername = arguments.indexOf("-u") >= 0
-    supportRootPassword = arguments[0] == "sudo=1"
-    
-    userChoice = function()
-    
-    println("    1 - get current time")
-    println("    2 - get current date")
-    println("    3 - get current device name")
-    println("    4 - get current device IP")
-    
-    if supportUsername == 1 then
-        println("    5 - get current username")
-    end if
-    if supportRootPassword == 1 then
-        println("    6 - show sudo password")
-        println("    7 - change sudo password")
-    end if
-    
-    println("")
-    println("    0 - exit")
-    
-    return waitForTerminalInput()
-    
-    end function
-    
-    clear()
-    
-    println("System Manager")
-    println("(Test Miniscript Application)")
-    
-    while 1
-    
-    choice = userChoice()
-    
-    clear()
-    
-    if choice == "1" or choice == "2" then
-        dateTime = get_date_time()
-        if choice == "1" then
-            println(dateTime.hour + ":" + dateTime.minute)
-            dispatch_successful_command("sysman", "", "time")
-        end if
-        if choice == "2" then
-            println(dateTime.year + "-" + dateTime.month + "-" + dateTime.day)
-            dispatch_successful_command("sysman", "", "date")
-        end if
-        println()
-    end if
-    
-    if choice == "3" or choice == "4" then
-        currentDevice = get_current_device()
-        
-        if choice == "3" then
-            println(currentDevice)
-            dispatch_successful_command("sysman", "", "device_name")
-        end if
-        if choice == "4" then
-            println(device_name_to_ip_address(currentDevice))
-            dispatch_successful_command("sysman", "", "device_ip")
-        end if
-            
-        println()
-    end if
-    
-    if supportUsername == 1 and choice == "5" then
-        println(get_current_username())
-        dispatch_successful_command("sysman", "", "username")
-        println()
-    end if
-    
-    if supportRootPassword == 1 then
-        if choice == "6" then
-            sudoPassword = get_device_sudo_password(get_current_device())
-            
-            if sudoPassword == null then
-                println("Super User is not set up")
-            else
-                println(sudoPassword)
-            end if
-    
-            dispatch_successful_command("sysman", "", "show_sudo")
-            println()
-        end if
-        if choice == "7" then
-            println("Type new password:")
-            newPassword = waitForTerminalInput()
-            set_device_sudo_password(get_current_device(), newPassword)
-            dispatch_successful_command("sysman", "", "change_sudo")
-            println()
-        end if
-    end if
-    
-    if choice == "0" then
-        dispatch_successful_command("sysman", "", "exit")
-        break
-    end if
-    
-    end while
-    
-    ```
-    
-
-### Custom Windowed Applications
-
-Also, custom windowed applications can be created using the in-game web browser editor and MiniScript. All [admin functions](story-creation-with-miniscript.md) are supported, similar to those in custom console applications.
-
-These applications can be added in the **General Info** tab (**Forge** -> **Mission**) under the Custom Windowed Applications list.
-
-There are two input fields: the first is for the application name. This name cannot match the names of standard applications, such as *File Editor, Explorer, Manual, Notes,* or *Skill Tree*. The name will appear in the application window header and toolbar tooltip.
-
-The second input field is for the terminal command name that opens the application. This field is optional and can be left empty. However, it is the only way to pass parameters to the application code. For more information about custom application parameters, read [here](story-creation-with-miniscript.md).
-
-The application icon can be set from network storage. If the icon is not set or cannot be loaded from the network, the application button will not be visible in the top-right toolbar. However, the application can still be launched using the terminal command.
-
-All custom windowed applications can be locked or unlocked. By default, all custom applications are unlocked. However, you can lock or unlock your windowed application using the [lockToolbarAppTemporarily](story-creation-with-miniscript.md) and [unlockToolbarAppTemporarily](story-creation-with-miniscript.md) MiniScript functions in the main mission script.
-
-Creating and editing applications is done in the Visual Web Editor. The visual part is edited like a regular web page, and all [web page script functions](web-sites-creation/miniscript-for-web-browser.md) can be applied. If a background block is not created, the default window background will be used (unlike Web Browser pages, which use a white background). The application script can be edited here:
-
-![image.png](story-creation-with-miniscript/image-2.png)
-
-An example of importing in Forge with two applications: one launched from the toolbar and the other by a terminal command.
-
-[Download forge-custom-apps.zip](story-creation-with-miniscript/forge-custom-apps.zip)
+### Generic Command Usages Examples
+??? note "get_all_devices(), autoConnect() example lab"
+    Has custom miniscript commands:
+    - dump-devices
+    - dump-users
+    - set-sudo-pass
+    - ssh-as
+    - System Manager
+    [Download devices-and-users.zip](devices-and-users.zip)

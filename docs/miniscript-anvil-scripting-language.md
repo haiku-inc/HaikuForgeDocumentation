@@ -1,16 +1,26 @@
 # Miniscript Anvil Scripting Language
 
-Anvil is a simple scripting language added into the game for players to build their own scripts and exploits. Based on the open-source scripting language by Joe Strout (https://github.com/JoeStrout/miniscript)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Miniscript is a simple scripting language added into the game for forge developers to build their own scripts and exploits, by Joe Strout [github.com/JoeStrout/miniscript](https://github.com/JoeStrout/miniscript)
+
+The official miniscript home page can be found at [miniscript.org](https://miniscript.org/)<br>
+The official menu can be found at [miniscript.org/files/MiniScript-Manual](https://miniscript.org/files/MiniScript-Manual.pdf)
 
 # Launch a Script
 
-A script can be launched in three ways: as a player-created script via terminal (however, not all methods can be launched)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Launching a mission launches its mission script. By default, a mission uses a miniscript script's lifetime as source of truth for its own lifetime, when the script ends, the mission ends.<br>
+For mission-related scripting, see [Story Creation with Miniscript](story-creation-with-miniscript.md).
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Custom commands can be made by a forge developer, they run their own miniscript script when called, see [Custom Console Applications](story-creation-with-miniscript.md/#miniscript-console-applications)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+A script can also be launched as a player-created script in an in-game file, via terminal, using the `mini` command (however, not all functions can be called)
 
 ```lua
 mini FILE_NAME
 ```
-
-Or as a [story script](story-creation-with-miniscript.md) that manages an entire mission, or launched by a story step.
 
 # Control Flow
 
@@ -221,7 +231,11 @@ end function
 x.degrees // 360
 ```
 
-# Intrinsic Functions
+# Function Bindings
+*Bindings* are functions that bind the unity implementation to a miniscript call, directly calls C# code
+
+!!! warning "Outdated"
+    This page may be a little outdated, for the full list, see [Story Creation With Miniscript](story-creation-with-miniscript.md)
 
 ### Haiku (can be launched by the mission editor only)
 
