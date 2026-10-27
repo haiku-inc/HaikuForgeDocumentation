@@ -116,6 +116,25 @@ println(unescapeURL("Hello%20world")) //the line "Hello World" will be shown
 println(unescapeURL("Hello+world")) //exact the same line will be show as well
 ```
 
+### open_external_url
+
+Opens a web page in the player's own browser (not the in-game web browser). The player first sees a confirmation popup showing the full URL, and the page only opens if they accept. Only `http` and `https` URLs are allowed.
+
+The function doesn't wait for the player's choice. It returns `1` if the popup was shown, or `0` if the URL is missing or invalid (an error is also printed to the terminal).
+
+**Arguments**
+
+| url | string, a full `http://` or `https://` address |
+| --- | --- |
+
+**Example**
+
+```lua
+if not open_external_url("https://haikuinc.io") then
+    println("Couldn't open the link")
+end if
+```
+
 # Type Conversion
 
 | to_number(string) | Converts the input string to a number data type. If the string can't be converted, returns `null`. |
