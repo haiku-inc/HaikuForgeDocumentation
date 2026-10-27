@@ -1211,6 +1211,84 @@ Mostly used internally
     ```
 
 
+### Lesson Data Collection
+
+Use these functions to collect data such as survey answers from players of your Forge lesson. Each call saves one response (a "data packet") on Haiku's servers. Lesson authors and their organization's admins can view and export the responses in the admin panel under **Lesson data**.
+
+- The player must be signed in to a Haiku account. They do not need to belong to your organization, so you can publish the lesson as **Unlisted** and share its link.
+- Every response is saved with a timestamp, a **respondent ID** and a **session ID**. The respondent ID is the same for every response a player sends in this lesson, and the session ID is the same for every response sent during one play-through. Restarting the lesson starts a new session.
+- Responses are **anonymous by default**. An anonymous response stores only the respondent ID, which can't be traced back to the player by the lesson author. Pass `anonymous` as `0` to also record the player's username.
+- These functions only work while a Forge lesson is running, from the mission script, [custom applications](#miniscript-console-applications) and [custom windowed applications](#custom-windowed-applications).
+
+??? note "record_lesson_data"
+
+    Saves one data packet for the current lesson. The script waits until the server responds, then the function returns a result map.
+    
+    **Arguments**
+    
+    | data | map, list or string. A map or list is sent as JSON. A string is sent as text, or as the format given in `format`. Max 32 KB. |
+    | --- | --- |
+    | *anonymous* | *number, optional. 1 (default) to send anonymously, 0 to include the player's username.* |
+    | *label* | *string, optional. A tag to help you sort responses, for example "survey_q1". Max 100 characters.* |
+    | *format* | *string, optional. "text", "csv" or "json". Only used when `data` is a string. Default: "text".* |
+    
+    **Limits**
+    
+    - At most **5** responses per session. Further calls return the error `session_limit_reached`.
+    - At most 1000 responses per player per lesson per day.
+    
+    **Returns**
+    
+    | ok | number, 1 if the response was saved, otherwise 0 |
+    | --- | --- |
+    | has_error | number, 1 if something went wrong, otherwise 0 |
+    | error | string, an error code (see below), or "" on success |
+    | id | number, the ID of the saved response |
+    | session | string, the session ID for this play-through |
+    
+    **Error codes**
+    
+    | not_logged_in | The player isn't signed in. |
+    | --- | --- |
+    | not_in_forge_lesson | The function was called outside a running Forge lesson. |
+    | not_allowed | The function was called from a script that can't use it, such as the player's own terminal. |
+    | invalid_format | `format` isn't "text", "csv" or "json", or was combined with a map or list. |
+    | invalid_data | `data` isn't a map, list, string or number. |
+    | invalid_json / invalid_csv | `data` doesn't match the format you chose. |
+    | empty_payload | `data` is empty. |
+    | payload_too_large | `data` is larger than 32 KB. |
+    | session_limit_reached | This session already sent 5 responses. |
+    | daily_limit_reached | The player reached the daily limit for this lesson. |
+    | mission_not_found | The lesson doesn't exist or is private. |
+    | request_failed | The request couldn't reach the server. Try again. |
+    
+    **Example**
+    
+    ```jsx
+    // Anonymous survey answer, sent as JSON
+    answers = {"q1": "yes", "q2": 4, "comment": "Great lesson"}
+    result = record_lesson_data(answers, 1, "end_survey")
+    if result.ok then
+        println("Thanks! Your answers were saved.")
+    else
+        println("Couldn't save your answers: " + result.error)
+    end if
+    
+    // Named response, sent as CSV text
+    record_lesson_data("q1,q2" + char(10) + "yes,4", 0, "raw_csv", "csv")
+    ```
+    
+??? note "get_lesson_session_id"
+
+    Returns the session ID of the current play-through, as given by the server after the first successful `record_lesson_data` call. Returns "" if nothing has been saved yet in this session. You can show it to players as a receipt code.
+    
+    **Example**
+    
+    ```jsx
+    println("Your receipt code: " + get_lesson_session_id()[:8])
+    ```
+
+
 ### Misc
 
 ??? note "startTimer"
