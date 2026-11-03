@@ -1,0 +1,835 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1569pt" height="2278pt" viewBox="0.00 0.00 1569.47 2278.40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 2274.4)">
+<title>%0</title>
+<polygon fill="#ffffff" stroke="transparent" points="-4,4 -4,-2274.4 1565.4664,-2274.4 1565.4664,4 -4,4"/>
+<!-- step_0 -->
+<g id="node1" class="node">
+<title>step_0</title>
+<polygon fill="none" stroke="#000000" points="158.3499,-2240.9442 158.3499,-2255.8558 136.8334,-2266.4 106.4044,-2266.4 84.8879,-2255.8558 84.8879,-2240.9442 106.4044,-2230.4 136.8334,-2230.4 158.3499,-2240.9442"/>
+<polygon fill="none" stroke="#000000" points="162.3618,-2238.4532 162.3618,-2258.3468 137.7661,-2270.4 105.4717,-2270.4 80.876,-2258.3468 80.876,-2238.4532 105.4717,-2226.4 137.7661,-2226.4 162.3618,-2238.4532"/>
+<text text-anchor="middle" x="121.6189" y="-2244.2" font-family="Times,serif" font-size="14.00" fill="#000000">step 0</text>
+</g>
+<!-- step_1 -->
+<g id="node2" class="node">
+<title>step_1</title>
+<ellipse fill="none" stroke="#000000" cx="121.6189" cy="-2168.4" rx="33.6681" ry="18"/>
+<text text-anchor="middle" x="121.6189" y="-2164.2" font-family="Times,serif" font-size="14.00" fill="#000000">step 1</text>
+</g>
+<!-- step_0&#45;&gt;step_1 -->
+<g id="edge64" class="edge">
+<title>step_0-&gt;step_1</title>
+<path fill="none" stroke="#000000" d="M121.6189,-2226.1155C121.6189,-2216.9484 121.6189,-2206.2255 121.6189,-2196.5268"/>
+<polygon fill="#000000" stroke="#000000" points="125.119,-2196.5266 121.6189,-2186.5267 118.119,-2196.5267 125.119,-2196.5266"/>
+</g>
+<!-- label_1 -->
+<g id="node3" class="node">
+<title>label_1</title>
+<polygon fill="none" stroke="#000000" points="116.2718,-2110.4 32.966,-2110.4 32.966,-2074.4 116.2718,-2074.4 116.2718,-2110.4"/>
+<text text-anchor="middle" x="74.6189" y="-2088.2" font-family="Times,serif" font-size="14.00" fill="#000000">nitrocaption</text>
+</g>
+<!-- step_1&#45;&gt;label_1 -->
+<g id="edge1" class="edge">
+<title>step_1-&gt;label_1</title>
+<path fill="none" stroke="#000000" d="M110.9539,-2151.1544C105.1139,-2141.7111 97.7484,-2129.801 91.1782,-2119.1767"/>
+<polygon fill="#000000" stroke="#000000" points="94.1336,-2117.3013 85.8971,-2110.6371 88.1801,-2120.9831 94.1336,-2117.3013"/>
+</g>
+<!-- step_2 -->
+<g id="node4" class="node">
+<title>step_2</title>
+<ellipse fill="none" stroke="#000000" cx="168.6189" cy="-2092.4" rx="33.6681" ry="18"/>
+<text text-anchor="middle" x="168.6189" y="-2088.2" font-family="Times,serif" font-size="14.00" fill="#000000">step 2</text>
+</g>
+<!-- step_1&#45;&gt;step_2 -->
+<g id="edge63" class="edge">
+<title>step_1-&gt;step_2</title>
+<path fill="none" stroke="#000000" d="M132.2839,-2151.1544C138.2932,-2141.4373 145.9176,-2129.1084 152.6289,-2118.2562"/>
+<polygon fill="#000000" stroke="#000000" points="155.7131,-2119.9233 157.9961,-2109.5773 149.7596,-2116.2415 155.7131,-2119.9233"/>
+</g>
+<!-- label_2 -->
+<g id="node5" class="node">
+<title>label_2</title>
+<polygon fill="#add8e6" stroke="#000000" points="181.3569,-2038.2019 -.1191,-2038.2019 -.1191,-1996.9981 181.3569,-1996.9981 181.3569,-2038.2019"/>
+<text text-anchor="middle" x="90.6189" y="-2021.8" font-family="Times,serif" font-size="14.00" fill="#000000">whoami</text>
+<text text-anchor="middle" x="90.6189" y="-2005" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Workstation_01</text>
+</g>
+<!-- step_2&#45;&gt;label_2 -->
+<g id="edge2" class="edge">
+<title>step_2-&gt;label_2</title>
+<path fill="none" stroke="#000000" d="M152.0771,-2076.5368C142.6302,-2067.4775 130.5164,-2055.8607 119.5446,-2045.339"/>
+<polygon fill="#000000" stroke="#000000" points="121.8181,-2042.67 112.178,-2038.2746 116.9731,-2047.7223 121.8181,-2042.67"/>
+</g>
+<!-- step_3 -->
+<g id="node6" class="node">
+<title>step_3</title>
+<ellipse fill="none" stroke="#000000" cx="246.6189" cy="-2017.6" rx="47.4937" ry="18"/>
+<text text-anchor="middle" x="246.6189" y="-2013.4" font-family="Times,serif" font-size="14.00" fill="#000000">steps 3..9</text>
+</g>
+<!-- step_2&#45;&gt;step_3 -->
+<g id="edge62" class="edge">
+<title>step_2-&gt;step_3</title>
+<path fill="none" stroke="#000000" d="M185.1607,-2076.5368C195.7256,-2066.4054 209.626,-2053.0753 221.5342,-2041.6556"/>
+<polygon fill="#000000" stroke="#000000" points="224.2218,-2043.9275 229.0169,-2034.4798 219.3768,-2038.8752 224.2218,-2043.9275"/>
+</g>
+<!-- label_3 -->
+<g id="node7" class="node">
+<title>label_3</title>
+<polygon fill="none" stroke="#000000" points="243.2165,-1960.8 144.0213,-1960.8 144.0213,-1924.8 243.2165,-1924.8 243.2165,-1960.8"/>
+<text text-anchor="middle" x="193.6189" y="-1938.6" font-family="Times,serif" font-size="14.00" fill="#000000">7 nitrocaptions</text>
+</g>
+<!-- step_3&#45;&gt;label_3 -->
+<g id="edge3" class="edge">
+<title>step_3-&gt;label_3</title>
+<path fill="none" stroke="#000000" d="M234.0586,-1999.8734C227.5538,-1990.693 219.4824,-1979.3018 212.2654,-1969.1162"/>
+<polygon fill="#000000" stroke="#000000" points="215.0944,-1967.0548 206.4572,-1960.9189 209.3828,-1971.1018 215.0944,-1967.0548"/>
+</g>
+<!-- step_10 -->
+<g id="node8" class="node">
+<title>step_10</title>
+<ellipse fill="none" stroke="#000000" cx="299.6189" cy="-1942.8" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="299.6189" y="-1938.6" font-family="Times,serif" font-size="14.00" fill="#000000">step 10</text>
+</g>
+<!-- step_3&#45;&gt;step_10 -->
+<g id="edge61" class="edge">
+<title>step_3-&gt;step_10</title>
+<path fill="none" stroke="#000000" d="M259.1792,-1999.8734C265.8275,-1990.4905 274.1122,-1978.7981 281.4487,-1968.444"/>
+<polygon fill="#000000" stroke="#000000" points="284.406,-1970.3242 287.3316,-1960.1413 278.6944,-1966.2772 284.406,-1970.3242"/>
+</g>
+<!-- label_10 -->
+<g id="node9" class="node">
+<title>label_10</title>
+<polygon fill="#add8e6" stroke="#000000" points="317.3569,-1889.0014 135.8809,-1889.0014 135.8809,-1830.1986 317.3569,-1830.1986 317.3569,-1889.0014"/>
+<text text-anchor="middle" x="226.6189" y="-1872.2" font-family="Times,serif" font-size="14.00" fill="#000000">cd</text>
+<text text-anchor="middle" x="226.6189" y="-1855.4" font-family="Times,serif" font-size="14.00" fill="#000000">/documents/</text>
+<text text-anchor="middle" x="226.6189" y="-1838.6" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Workstation_01</text>
+</g>
+<!-- step_10&#45;&gt;label_10 -->
+<g id="edge4" class="edge">
+<title>step_10-&gt;label_10</title>
+<path fill="none" stroke="#000000" d="M284.8463,-1925.9632C277.4096,-1917.4875 268.0811,-1906.8555 259.0837,-1896.6009"/>
+<polygon fill="#000000" stroke="#000000" points="261.5308,-1894.0832 252.3046,-1888.8747 256.2691,-1898.6999 261.5308,-1894.0832"/>
+</g>
+<!-- step_11 -->
+<g id="node10" class="node">
+<title>step_11</title>
+<ellipse fill="none" stroke="#000000" cx="373.6189" cy="-1859.6" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="373.6189" y="-1855.4" font-family="Times,serif" font-size="14.00" fill="#000000">step 11</text>
+</g>
+<!-- step_10&#45;&gt;step_11 -->
+<g id="edge60" class="edge">
+<title>step_10-&gt;step_11</title>
+<path fill="none" stroke="#000000" d="M314.5939,-1925.9632C325.3262,-1913.8966 339.9457,-1897.4596 351.9498,-1883.9631"/>
+<polygon fill="#000000" stroke="#000000" points="354.6355,-1886.2099 358.6662,-1876.4117 349.405,-1881.5578 354.6355,-1886.2099"/>
+</g>
+<!-- label_11 -->
+<g id="node11" class="node">
+<title>label_11</title>
+<polygon fill="#add8e6" stroke="#000000" points="391.3569,-1794.6014 209.8809,-1794.6014 209.8809,-1735.7986 391.3569,-1735.7986 391.3569,-1794.6014"/>
+<text text-anchor="middle" x="300.6189" y="-1777.8" font-family="Times,serif" font-size="14.00" fill="#000000">ls</text>
+<text text-anchor="middle" x="300.6189" y="-1761" font-family="Times,serif" font-size="14.00" fill="#000000">/documents</text>
+<text text-anchor="middle" x="300.6189" y="-1744.2" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Workstation_01</text>
+</g>
+<!-- step_11&#45;&gt;label_11 -->
+<g id="edge5" class="edge">
+<title>step_11-&gt;label_11</title>
+<path fill="none" stroke="#000000" d="M360.2296,-1842.2856C351.7079,-1831.2658 340.3312,-1816.554 329.8017,-1802.9378"/>
+<polygon fill="#000000" stroke="#000000" points="332.2743,-1800.4137 323.3882,-1794.6441 326.7368,-1804.6958 332.2743,-1800.4137"/>
+</g>
+<!-- step_12 -->
+<g id="node12" class="node">
+<title>step_12</title>
+<ellipse fill="none" stroke="#000000" cx="447.6189" cy="-1765.2" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="447.6189" y="-1761" font-family="Times,serif" font-size="14.00" fill="#000000">step 12</text>
+</g>
+<!-- step_11&#45;&gt;step_12 -->
+<g id="edge59" class="edge">
+<title>step_11-&gt;step_12</title>
+<path fill="none" stroke="#000000" d="M387.1916,-1842.2856C398.5617,-1827.7811 414.9458,-1806.8803 427.786,-1790.5004"/>
+<polygon fill="#000000" stroke="#000000" points="430.7173,-1792.4341 434.1322,-1782.4046 425.2082,-1788.1155 430.7173,-1792.4341"/>
+</g>
+<!-- label_12 -->
+<g id="node13" class="node">
+<title>label_12</title>
+<polygon fill="none" stroke="#000000" points="440.2718,-1700 356.966,-1700 356.966,-1664 440.2718,-1664 440.2718,-1700"/>
+<text text-anchor="middle" x="398.6189" y="-1677.8" font-family="Times,serif" font-size="14.00" fill="#000000">nitrocaption</text>
+</g>
+<!-- step_12&#45;&gt;label_12 -->
+<g id="edge6" class="edge">
+<title>step_12-&gt;label_12</title>
+<path fill="none" stroke="#000000" d="M437.2273,-1747.5554C430.6263,-1736.3473 421.9527,-1721.6199 414.499,-1708.9638"/>
+<polygon fill="#000000" stroke="#000000" points="417.4249,-1707.0348 409.3343,-1700.1943 411.3932,-1710.5872 417.4249,-1707.0348"/>
+</g>
+<!-- step_13 -->
+<g id="node14" class="node">
+<title>step_13</title>
+<ellipse fill="none" stroke="#000000" cx="496.6189" cy="-1682" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="496.6189" y="-1677.8" font-family="Times,serif" font-size="14.00" fill="#000000">step 13</text>
+</g>
+<!-- step_12&#45;&gt;step_13 -->
+<g id="edge58" class="edge">
+<title>step_12-&gt;step_13</title>
+<path fill="none" stroke="#000000" d="M458.0105,-1747.5554C464.7019,-1736.1938 473.5231,-1721.2157 481.0444,-1708.4449"/>
+<polygon fill="#000000" stroke="#000000" points="484.1833,-1710.012 486.2422,-1699.6191 478.1516,-1706.4597 484.1833,-1710.012"/>
+</g>
+<!-- label_13 -->
+<g id="node15" class="node">
+<title>label_13</title>
+<polygon fill="#add8e6" stroke="#000000" points="514.2589,-1628.2014 332.9789,-1628.2014 332.9789,-1569.3986 514.2589,-1569.3986 514.2589,-1628.2014"/>
+<text text-anchor="middle" x="423.6189" y="-1611.4" font-family="Times,serif" font-size="14.00" fill="#000000">cat</text>
+<text text-anchor="middle" x="423.6189" y="-1594.6" font-family="Times,serif" font-size="14.00" fill="#000000">/documents/House Tasks.xml</text>
+<text text-anchor="middle" x="423.6189" y="-1577.8" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Workstation_01</text>
+</g>
+<!-- step_13&#45;&gt;label_13 -->
+<g id="edge7" class="edge">
+<title>step_13-&gt;label_13</title>
+<path fill="none" stroke="#000000" d="M481.8463,-1665.1632C474.4096,-1656.6875 465.0811,-1646.0555 456.0837,-1635.8009"/>
+<polygon fill="#000000" stroke="#000000" points="458.5308,-1633.2832 449.3046,-1628.0747 453.2691,-1637.8999 458.5308,-1633.2832"/>
+</g>
+<!-- step_14 -->
+<g id="node16" class="node">
+<title>step_14</title>
+<ellipse fill="none" stroke="#000000" cx="570.6189" cy="-1598.8" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="570.6189" y="-1594.6" font-family="Times,serif" font-size="14.00" fill="#000000">step 14</text>
+</g>
+<!-- step_13&#45;&gt;step_14 -->
+<g id="edge57" class="edge">
+<title>step_13-&gt;step_14</title>
+<path fill="none" stroke="#000000" d="M511.5939,-1665.1632C522.3262,-1653.0966 536.9457,-1636.6596 548.9498,-1623.1631"/>
+<polygon fill="#000000" stroke="#000000" points="551.6355,-1625.4099 555.6662,-1615.6117 546.405,-1620.7578 551.6355,-1625.4099"/>
+</g>
+<!-- label_14 -->
+<g id="node17" class="node">
+<title>label_14</title>
+<polygon fill="none" stroke="#000000" points="514.2718,-1533.6 430.966,-1533.6 430.966,-1497.6 514.2718,-1497.6 514.2718,-1533.6"/>
+<text text-anchor="middle" x="472.6189" y="-1511.4" font-family="Times,serif" font-size="14.00" fill="#000000">nitrocaption</text>
+</g>
+<!-- step_14&#45;&gt;label_14 -->
+<g id="edge8" class="edge">
+<title>step_14-&gt;label_14</title>
+<path fill="none" stroke="#000000" d="M551.7235,-1582.7582C537.4795,-1570.6653 517.694,-1553.8679 501.4743,-1540.0976"/>
+<polygon fill="#000000" stroke="#000000" points="503.7266,-1537.4186 493.8382,-1533.6147 499.1962,-1542.7549 503.7266,-1537.4186"/>
+</g>
+<!-- step_15 -->
+<g id="node18" class="node">
+<title>step_15</title>
+<ellipse fill="none" stroke="#000000" cx="570.6189" cy="-1515.6" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="570.6189" y="-1511.4" font-family="Times,serif" font-size="14.00" fill="#000000">step 15</text>
+</g>
+<!-- step_14&#45;&gt;step_15 -->
+<g id="edge53" class="edge">
+<title>step_14-&gt;step_15</title>
+<path fill="none" stroke="#000000" d="M570.6189,-1580.7468C570.6189,-1569.9532 570.6189,-1556.0061 570.6189,-1543.7876"/>
+<polygon fill="#000000" stroke="#000000" points="574.119,-1543.6179 570.6189,-1533.6179 567.119,-1543.618 574.119,-1543.6179"/>
+</g>
+<!-- step_16 -->
+<g id="node60" class="node">
+<title>step_16</title>
+<ellipse fill="none" stroke="#000000" cx="665.6189" cy="-1515.6" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="665.6189" y="-1511.4" font-family="Times,serif" font-size="14.00" fill="#000000">step 16</text>
+</g>
+<!-- step_14&#45;&gt;step_16 -->
+<g id="edge56" class="edge">
+<title>step_14-&gt;step_16</title>
+<path fill="none" stroke="#000000" d="M588.9359,-1582.7582C603.2611,-1570.2123 623.3682,-1552.6028 639.3989,-1538.5632"/>
+<polygon fill="#000000" stroke="#000000" points="642.1413,-1540.814 647.3582,-1531.5925 637.5294,-1535.548 642.1413,-1540.814"/>
+</g>
+<!-- label_15 -->
+<g id="node19" class="node">
+<title>label_15</title>
+<polygon fill="#add8e6" stroke="#000000" points="562.3224,-1461.8014 378.9154,-1461.8014 378.9154,-1402.9986 562.3224,-1402.9986 562.3224,-1461.8014"/>
+<text text-anchor="middle" x="470.6189" y="-1445" font-family="Times,serif" font-size="14.00" fill="#000000">cat</text>
+<text text-anchor="middle" x="470.6189" y="-1428.2" font-family="Times,serif" font-size="14.00" fill="#000000">/documents/Contact Email.txt</text>
+<text text-anchor="middle" x="470.6189" y="-1411.4" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Workstation_01</text>
+</g>
+<!-- step_15&#45;&gt;label_15 -->
+<g id="edge9" class="edge">
+<title>step_15-&gt;label_15</title>
+<path fill="none" stroke="#000000" d="M551.3379,-1499.5582C540.7157,-1490.7206 527.0736,-1479.3703 514.0387,-1468.5253"/>
+<polygon fill="#000000" stroke="#000000" points="515.9593,-1465.5702 506.0335,-1461.8649 511.4822,-1470.9513 515.9593,-1465.5702"/>
+</g>
+<!-- step_17 -->
+<g id="node20" class="node">
+<title>step_17</title>
+<ellipse fill="none" stroke="#000000" cx="618.6189" cy="-1432.4" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="618.6189" y="-1428.2" font-family="Times,serif" font-size="14.00" fill="#000000">step 17</text>
+</g>
+<!-- step_15&#45;&gt;step_17 -->
+<g id="edge52" class="edge">
+<title>step_15-&gt;step_17</title>
+<path fill="none" stroke="#000000" d="M580.7985,-1497.9554C587.3533,-1486.5938 595.9945,-1471.6157 603.3622,-1458.8449"/>
+<polygon fill="#000000" stroke="#000000" points="606.4884,-1460.4301 608.454,-1450.0191 600.4251,-1456.932 606.4884,-1460.4301"/>
+</g>
+<!-- label_17 -->
+<g id="node21" class="node">
+<title>label_17</title>
+<polygon fill="#add8e6" stroke="#000000" points="634.889,-1367.0019 422.3488,-1367.0019 422.3488,-1325.7981 634.889,-1325.7981 634.889,-1367.0019"/>
+<text text-anchor="middle" x="528.6189" y="-1350.6" font-family="Times,serif" font-size="14.00" fill="#000000">BRANCH_STEPS_COMPLETED</text>
+<text text-anchor="middle" x="528.6189" y="-1333.8" font-family="Times,serif" font-size="14.00" fill="#000000">[ 15, 16 ]</text>
+</g>
+<!-- step_17&#45;&gt;label_17 -->
+<g id="edge10" class="edge">
+<title>step_17-&gt;label_17</title>
+<path fill="none" stroke="#000000" d="M601.266,-1415.8183C588.9126,-1404.014 572.0208,-1387.8729 557.6343,-1374.1258"/>
+<polygon fill="#000000" stroke="#000000" points="560.0246,-1371.5689 550.3767,-1367.1908 555.1886,-1376.6299 560.0246,-1371.5689"/>
+</g>
+<!-- step_18 -->
+<g id="node22" class="node">
+<title>step_18</title>
+<ellipse fill="none" stroke="#000000" cx="709.6189" cy="-1346.4" rx="56.8064" ry="18"/>
+<text text-anchor="middle" x="709.6189" y="-1342.2" font-family="Times,serif" font-size="14.00" fill="#000000">steps 18..19</text>
+</g>
+<!-- step_17&#45;&gt;step_18 -->
+<g id="edge51" class="edge">
+<title>step_17-&gt;step_18</title>
+<path fill="none" stroke="#000000" d="M635.7353,-1416.2241C649.2389,-1403.4624 668.296,-1385.4524 683.6733,-1370.92"/>
+<polygon fill="#000000" stroke="#000000" points="686.4663,-1373.0962 691.3302,-1363.6838 681.6583,-1368.0086 686.4663,-1373.0962"/>
+</g>
+<!-- label_18 -->
+<g id="node23" class="node">
+<title>label_18</title>
+<polygon fill="none" stroke="#000000" points="706.2165,-1289.6 607.0213,-1289.6 607.0213,-1253.6 706.2165,-1253.6 706.2165,-1289.6"/>
+<text text-anchor="middle" x="656.6189" y="-1267.4" font-family="Times,serif" font-size="14.00" fill="#000000">2 nitrocaptions</text>
+</g>
+<!-- step_18&#45;&gt;label_18 -->
+<g id="edge11" class="edge">
+<title>step_18-&gt;label_18</title>
+<path fill="none" stroke="#000000" d="M697.0586,-1328.6734C690.5538,-1319.493 682.4824,-1308.1018 675.2654,-1297.9162"/>
+<polygon fill="#000000" stroke="#000000" points="678.0944,-1295.8548 669.4572,-1289.7189 672.3828,-1299.9018 678.0944,-1295.8548"/>
+</g>
+<!-- step_20 -->
+<g id="node24" class="node">
+<title>step_20</title>
+<ellipse fill="none" stroke="#000000" cx="762.6189" cy="-1271.6" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="762.6189" y="-1267.4" font-family="Times,serif" font-size="14.00" fill="#000000">step 20</text>
+</g>
+<!-- step_18&#45;&gt;step_20 -->
+<g id="edge50" class="edge">
+<title>step_18-&gt;step_20</title>
+<path fill="none" stroke="#000000" d="M722.1792,-1328.6734C728.8275,-1319.2905 737.1122,-1307.5981 744.4487,-1297.244"/>
+<polygon fill="#000000" stroke="#000000" points="747.406,-1299.1242 750.3316,-1288.9413 741.6944,-1295.0772 747.406,-1299.1242"/>
+</g>
+<!-- label_20 -->
+<g id="node25" class="node">
+<title>label_20</title>
+<polygon fill="#add8e6" stroke="#000000" points="780.5229,-1217.8014 594.7149,-1217.8014 594.7149,-1158.9986 780.5229,-1158.9986 780.5229,-1217.8014"/>
+<text text-anchor="middle" x="687.6189" y="-1201" font-family="Times,serif" font-size="14.00" fill="#000000">cat</text>
+<text text-anchor="middle" x="687.6189" y="-1184.2" font-family="Times,serif" font-size="14.00" fill="#000000">/downloads/Server_Details.txt</text>
+<text text-anchor="middle" x="687.6189" y="-1167.4" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Workstation_03</text>
+</g>
+<!-- step_20&#45;&gt;label_20 -->
+<g id="edge12" class="edge">
+<title>step_20-&gt;label_20</title>
+<path fill="none" stroke="#000000" d="M747.4415,-1254.7632C739.8012,-1246.2875 730.217,-1235.6555 720.9731,-1225.4009"/>
+<polygon fill="#000000" stroke="#000000" points="723.3036,-1222.7589 714.0084,-1217.6747 718.1043,-1227.4458 723.3036,-1222.7589"/>
+</g>
+<!-- step_21 -->
+<g id="node26" class="node">
+<title>step_21</title>
+<ellipse fill="none" stroke="#000000" cx="837.6189" cy="-1188.4" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="837.6189" y="-1184.2" font-family="Times,serif" font-size="14.00" fill="#000000">step 21</text>
+</g>
+<!-- step_20&#45;&gt;step_21 -->
+<g id="edge49" class="edge">
+<title>step_20-&gt;step_21</title>
+<path fill="none" stroke="#000000" d="M777.7963,-1254.7632C788.6736,-1242.6966 803.4907,-1226.2596 815.6569,-1212.7631"/>
+<polygon fill="#000000" stroke="#000000" points="818.3682,-1214.9828 822.4641,-1205.2117 813.1688,-1210.2959 818.3682,-1214.9828"/>
+</g>
+<!-- label_21 -->
+<g id="node27" class="node">
+<title>label_21</title>
+<polygon fill="none" stroke="#000000" points="781.2718,-1123.2 697.966,-1123.2 697.966,-1087.2 781.2718,-1087.2 781.2718,-1123.2"/>
+<text text-anchor="middle" x="739.6189" y="-1101" font-family="Times,serif" font-size="14.00" fill="#000000">nitrocaption</text>
+</g>
+<!-- step_21&#45;&gt;label_21 -->
+<g id="edge13" class="edge">
+<title>step_21-&gt;label_21</title>
+<path fill="none" stroke="#000000" d="M818.7235,-1172.3582C804.4795,-1160.2653 784.694,-1143.4679 768.4743,-1129.6976"/>
+<polygon fill="#000000" stroke="#000000" points="770.7266,-1127.0186 760.8382,-1123.2147 766.1962,-1132.3549 770.7266,-1127.0186"/>
+</g>
+<!-- step_22 -->
+<g id="node28" class="node">
+<title>step_22</title>
+<ellipse fill="none" stroke="#000000" cx="837.6189" cy="-1105.2" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="837.6189" y="-1101" font-family="Times,serif" font-size="14.00" fill="#000000">step 22</text>
+</g>
+<!-- step_21&#45;&gt;step_22 -->
+<g id="edge45" class="edge">
+<title>step_21-&gt;step_22</title>
+<path fill="none" stroke="#000000" d="M837.6189,-1170.3468C837.6189,-1159.5532 837.6189,-1145.6061 837.6189,-1133.3876"/>
+<polygon fill="#000000" stroke="#000000" points="841.119,-1133.2179 837.6189,-1123.2179 834.119,-1133.218 841.119,-1133.2179"/>
+</g>
+<!-- step_23 -->
+<g id="node58" class="node">
+<title>step_23</title>
+<ellipse fill="none" stroke="#000000" cx="932.6189" cy="-1105.2" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="932.6189" y="-1101" font-family="Times,serif" font-size="14.00" fill="#000000">step 23</text>
+</g>
+<!-- step_21&#45;&gt;step_23 -->
+<g id="edge48" class="edge">
+<title>step_21-&gt;step_23</title>
+<path fill="none" stroke="#000000" d="M855.9359,-1172.3582C870.2611,-1159.8123 890.3682,-1142.2028 906.3989,-1128.1632"/>
+<polygon fill="#000000" stroke="#000000" points="909.1413,-1130.414 914.3582,-1121.1925 904.5294,-1125.148 909.1413,-1130.414"/>
+</g>
+<!-- label_22 -->
+<g id="node29" class="node">
+<title>label_22</title>
+<polygon fill="#add8e6" stroke="#000000" points="829.1461,-1051.4014 576.0917,-1051.4014 576.0917,-992.5986 829.1461,-992.5986 829.1461,-1051.4014"/>
+<text text-anchor="middle" x="702.6189" y="-1034.6" font-family="Times,serif" font-size="14.00" fill="#000000">cat</text>
+<text text-anchor="middle" x="702.6189" y="-1017.8" font-family="Times,serif" font-size="14.00" fill="#000000">/documents/Declaration-Of-Ownership.txt</text>
+<text text-anchor="middle" x="702.6189" y="-1001" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Workstation_02</text>
+</g>
+<!-- step_22&#45;&gt;label_22 -->
+<g id="edge14" class="edge">
+<title>step_22-&gt;label_22</title>
+<path fill="none" stroke="#000000" d="M814.1037,-1090.7077C798.8397,-1081.3005 778.2607,-1068.6178 758.9388,-1056.7098"/>
+<polygon fill="#000000" stroke="#000000" points="760.5228,-1053.5747 750.1733,-1051.3076 756.8501,-1059.5339 760.5228,-1053.5747"/>
+</g>
+<!-- step_24 -->
+<g id="node30" class="node">
+<title>step_24</title>
+<ellipse fill="none" stroke="#000000" cx="885.6189" cy="-1022" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="885.6189" y="-1017.8" font-family="Times,serif" font-size="14.00" fill="#000000">step 24</text>
+</g>
+<!-- step_22&#45;&gt;step_24 -->
+<g id="edge44" class="edge">
+<title>step_22-&gt;step_24</title>
+<path fill="none" stroke="#000000" d="M847.7985,-1087.5554C854.3533,-1076.1938 862.9945,-1061.2157 870.3622,-1048.4449"/>
+<polygon fill="#000000" stroke="#000000" points="873.4884,-1050.0301 875.454,-1039.6191 867.4251,-1046.532 873.4884,-1050.0301"/>
+</g>
+<!-- label_24 -->
+<g id="node31" class="node">
+<title>label_24</title>
+<polygon fill="#add8e6" stroke="#000000" points="901.889,-956.6019 689.3488,-956.6019 689.3488,-915.3981 901.889,-915.3981 901.889,-956.6019"/>
+<text text-anchor="middle" x="795.6189" y="-940.2" font-family="Times,serif" font-size="14.00" fill="#000000">BRANCH_STEPS_COMPLETED</text>
+<text text-anchor="middle" x="795.6189" y="-923.4" font-family="Times,serif" font-size="14.00" fill="#000000">[ 22, 23 ]</text>
+</g>
+<!-- step_24&#45;&gt;label_24 -->
+<g id="edge15" class="edge">
+<title>step_24-&gt;label_24</title>
+<path fill="none" stroke="#000000" d="M868.266,-1005.4183C855.9126,-993.614 839.0208,-977.4729 824.6343,-963.7258"/>
+<polygon fill="#000000" stroke="#000000" points="827.0246,-961.1689 817.3767,-956.7908 822.1886,-966.2299 827.0246,-961.1689"/>
+</g>
+<!-- step_25 -->
+<g id="node32" class="node">
+<title>step_25</title>
+<ellipse fill="none" stroke="#000000" cx="976.6189" cy="-936" rx="56.8064" ry="18"/>
+<text text-anchor="middle" x="976.6189" y="-931.8" font-family="Times,serif" font-size="14.00" fill="#000000">steps 25..33</text>
+</g>
+<!-- step_24&#45;&gt;step_25 -->
+<g id="edge43" class="edge">
+<title>step_24-&gt;step_25</title>
+<path fill="none" stroke="#000000" d="M902.7353,-1005.8241C916.2389,-993.0624 935.296,-975.0524 950.6733,-960.52"/>
+<polygon fill="#000000" stroke="#000000" points="953.4663,-962.6962 958.3302,-953.2838 948.6583,-957.6086 953.4663,-962.6962"/>
+</g>
+<!-- label_25 -->
+<g id="node33" class="node">
+<title>label_25</title>
+<polygon fill="none" stroke="#000000" points="854.2165,-879.2 755.0213,-879.2 755.0213,-843.2 854.2165,-843.2 854.2165,-879.2"/>
+<text text-anchor="middle" x="804.6189" y="-857" font-family="Times,serif" font-size="14.00" fill="#000000">9 nitrocaptions</text>
+</g>
+<!-- step_25&#45;&gt;label_25 -->
+<g id="edge16" class="edge">
+<title>step_25-&gt;label_25</title>
+<path fill="none" stroke="#000000" d="M943.0473,-921.4002C918.19,-910.5902 883.8832,-895.6707 855.6421,-883.3891"/>
+<polygon fill="#000000" stroke="#000000" points="856.8858,-880.1134 846.3196,-879.335 854.0941,-886.5327 856.8858,-880.1134"/>
+</g>
+<!-- step_34 -->
+<g id="node34" class="node">
+<title>step_34</title>
+<ellipse fill="none" stroke="#000000" cx="910.6189" cy="-861.2" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="910.6189" y="-857" font-family="Times,serif" font-size="14.00" fill="#000000">step 34</text>
+</g>
+<!-- step_25&#45;&gt;step_34 -->
+<g id="edge22" class="edge">
+<title>step_25-&gt;step_34</title>
+<path fill="none" stroke="#000000" d="M961.3113,-918.6514C952.6088,-908.7885 941.5756,-896.2843 932.0262,-885.4616"/>
+<polygon fill="#000000" stroke="#000000" points="934.6302,-883.1227 925.3895,-877.94 929.3813,-887.7541 934.6302,-883.1227"/>
+</g>
+<!-- step_35 -->
+<g id="node40" class="node">
+<title>step_35</title>
+<ellipse fill="none" stroke="#000000" cx="1231.6189" cy="-861.2" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="1231.6189" y="-857" font-family="Times,serif" font-size="14.00" fill="#000000">step 35</text>
+</g>
+<!-- step_25&#45;&gt;step_35 -->
+<g id="edge39" class="edge">
+<title>step_25-&gt;step_35</title>
+<path fill="none" stroke="#000000" d="M1018.4414,-923.7321C1065.5339,-909.9183 1141.65,-887.5909 1189.0475,-873.6876"/>
+<polygon fill="#000000" stroke="#000000" points="1190.0945,-877.028 1198.705,-870.8547 1188.1241,-870.3111 1190.0945,-877.028"/>
+</g>
+<!-- step_ZION KEY -->
+<g id="node56" class="node">
+<title>step_ZION KEY</title>
+<ellipse fill="none" stroke="#000000" cx="1041.6189" cy="-861.2" rx="74.1374" ry="18"/>
+<text text-anchor="middle" x="1041.6189" y="-857" font-family="Times,serif" font-size="14.00" fill="#000000">step ZION KEY</text>
+</g>
+<!-- step_25&#45;&gt;step_ZION KEY -->
+<g id="edge42" class="edge">
+<title>step_25-&gt;step_ZION KEY</title>
+<path fill="none" stroke="#000000" d="M992.023,-918.2734C1000.22,-908.8406 1010.4453,-897.0736 1019.4783,-886.6787"/>
+<polygon fill="#000000" stroke="#000000" points="1022.1827,-888.9025 1026.1001,-879.0585 1016.8989,-884.311 1022.1827,-888.9025"/>
+</g>
+<!-- label_34 -->
+<g id="node35" class="node">
+<title>label_34</title>
+<polygon fill="#add8e6" stroke="#000000" points="882.5581,-807.4014 560.6797,-807.4014 560.6797,-748.5986 882.5581,-748.5986 882.5581,-807.4014"/>
+<text text-anchor="middle" x="721.6189" y="-790.6" font-family="Times,serif" font-size="14.00" fill="#000000">cat</text>
+<text text-anchor="middle" x="721.6189" y="-773.8" font-family="Times,serif" font-size="14.00" fill="#000000">/Documents/Intercepted-Emails/RE-Seal-the-Deal.eml</text>
+<text text-anchor="middle" x="721.6189" y="-757" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Server_Basic</text>
+</g>
+<!-- step_34&#45;&gt;label_34 -->
+<g id="edge17" class="edge">
+<title>step_34-&gt;label_34</title>
+<path fill="none" stroke="#000000" d="M882.3237,-848.7441C859.8327,-838.8433 827.2871,-824.5164 797.3575,-811.341"/>
+<polygon fill="#000000" stroke="#000000" points="798.7297,-808.121 788.167,-807.2953 795.9093,-814.5277 798.7297,-808.121"/>
+</g>
+<!-- step_44 -->
+<g id="node36" class="node">
+<title>step_44</title>
+<ellipse fill="none" stroke="#000000" cx="948.6189" cy="-178.8" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="948.6189" y="-174.6" font-family="Times,serif" font-size="14.00" fill="#000000">step 44</text>
+</g>
+<!-- step_34&#45;&gt;step_44 -->
+<g id="edge21" class="edge">
+<title>step_34-&gt;step_44</title>
+<path fill="none" stroke="#000000" d="M910.6189,-843.1704C910.6189,-812.2414 910.6189,-747.0781 910.6189,-692 910.6189,-692 910.6189,-692 910.6189,-345.2 910.6189,-295.4658 926.9522,-239.4214 938.2023,-206.7178"/>
+<polygon fill="#000000" stroke="#000000" points="941.6194,-207.5522 941.6491,-196.9574 935.0188,-205.2212 941.6194,-207.5522"/>
+</g>
+<!-- label_44 -->
+<g id="node37" class="node">
+<title>label_44</title>
+<polygon fill="#add8e6" stroke="#000000" points="964.889,-113.4019 752.3488,-113.4019 752.3488,-72.1981 964.889,-72.1981 964.889,-113.4019"/>
+<text text-anchor="middle" x="858.6189" y="-97" font-family="Times,serif" font-size="14.00" fill="#000000">BRANCH_STEPS_COMPLETED</text>
+<text text-anchor="middle" x="858.6189" y="-80.2" font-family="Times,serif" font-size="14.00" fill="#000000">[ 34, 42, ZION KEY ]</text>
+</g>
+<!-- step_44&#45;&gt;label_44 -->
+<g id="edge18" class="edge">
+<title>step_44-&gt;label_44</title>
+<path fill="none" stroke="#000000" d="M931.266,-162.2183C918.9126,-150.414 902.0208,-134.2729 887.6343,-120.5258"/>
+<polygon fill="#000000" stroke="#000000" points="890.0246,-117.9689 880.3767,-113.5908 885.1886,-123.0299 890.0246,-117.9689"/>
+</g>
+<!-- step_45 -->
+<g id="node38" class="node">
+<title>step_45</title>
+<ellipse fill="none" stroke="#000000" cx="1039.6189" cy="-92.8" rx="56.8064" ry="18"/>
+<text text-anchor="middle" x="1039.6189" y="-88.6" font-family="Times,serif" font-size="14.00" fill="#000000">steps 45..46</text>
+</g>
+<!-- step_44&#45;&gt;step_45 -->
+<g id="edge20" class="edge">
+<title>step_44-&gt;step_45</title>
+<path fill="none" stroke="#000000" d="M965.7353,-162.6241C979.2389,-149.8624 998.296,-131.8524 1013.6733,-117.32"/>
+<polygon fill="#000000" stroke="#000000" points="1016.4663,-119.4962 1021.3302,-110.0838 1011.6583,-114.4086 1016.4663,-119.4962"/>
+</g>
+<!-- label_45 -->
+<g id="node39" class="node">
+<title>label_45</title>
+<polygon fill="none" stroke="#000000" points="1089.2165,-36 990.0213,-36 990.0213,0 1089.2165,0 1089.2165,-36"/>
+<text text-anchor="middle" x="1039.6189" y="-13.8" font-family="Times,serif" font-size="14.00" fill="#000000">2 nitrocaptions</text>
+</g>
+<!-- step_45&#45;&gt;label_45 -->
+<g id="edge19" class="edge">
+<title>step_45-&gt;label_45</title>
+<path fill="none" stroke="#000000" d="M1039.6189,-74.693C1039.6189,-66.2112 1039.6189,-55.9062 1039.6189,-46.4204"/>
+<polygon fill="#000000" stroke="#000000" points="1043.119,-46.1995 1039.6189,-36.1995 1036.119,-46.1995 1043.119,-46.1995"/>
+</g>
+<!-- label_35 -->
+<g id="node41" class="node">
+<title>label_35</title>
+<polygon fill="#add8e6" stroke="#000000" points="1302.6105,-798.6019 1160.6273,-798.6019 1160.6273,-757.3981 1302.6105,-757.3981 1302.6105,-798.6019"/>
+<text text-anchor="middle" x="1231.6189" y="-782.2" font-family="Times,serif" font-size="14.00" fill="#000000">ls</text>
+<text text-anchor="middle" x="1231.6189" y="-765.4" font-family="Times,serif" font-size="14.00" fill="#000000">/Systems/Applications</text>
+</g>
+<!-- step_35&#45;&gt;label_35 -->
+<g id="edge23" class="edge">
+<title>step_35-&gt;label_35</title>
+<path fill="none" stroke="#000000" d="M1231.6189,-843.1468C1231.6189,-833.1209 1231.6189,-820.374 1231.6189,-808.8191"/>
+<polygon fill="#000000" stroke="#000000" points="1235.119,-808.6548 1231.6189,-798.6548 1228.119,-808.6548 1235.119,-808.6548"/>
+</g>
+<!-- step_36 -->
+<g id="node42" class="node">
+<title>step_36</title>
+<ellipse fill="none" stroke="#000000" cx="1359.6189" cy="-778" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="1359.6189" y="-773.8" font-family="Times,serif" font-size="14.00" fill="#000000">step 36</text>
+</g>
+<!-- step_35&#45;&gt;step_36 -->
+<g id="edge38" class="edge">
+<title>step_35-&gt;step_36</title>
+<path fill="none" stroke="#000000" d="M1254.2081,-846.517C1274.7366,-833.1735 1305.2266,-813.355 1328.1412,-798.4605"/>
+<polygon fill="#000000" stroke="#000000" points="1330.348,-801.2005 1336.825,-792.816 1326.5331,-795.3314 1330.348,-801.2005"/>
+</g>
+<!-- label_36 -->
+<g id="node43" class="node">
+<title>label_36</title>
+<polygon fill="#add8e6" stroke="#000000" points="1303.0979,-712.6019 1238.1399,-712.6019 1238.1399,-671.3981 1303.0979,-671.3981 1303.0979,-712.6019"/>
+<text text-anchor="middle" x="1270.6189" y="-696.2" font-family="Times,serif" font-size="14.00" fill="#000000">appopen</text>
+<text text-anchor="middle" x="1270.6189" y="-679.4" font-family="Times,serif" font-size="14.00" fill="#000000">Explorer</text>
+</g>
+<!-- step_36&#45;&gt;label_36 -->
+<g id="edge24" class="edge">
+<title>step_36-&gt;label_36</title>
+<path fill="none" stroke="#000000" d="M1342.4588,-761.4183C1330.3548,-749.7223 1313.8447,-733.7687 1299.704,-720.1048"/>
+<polygon fill="#000000" stroke="#000000" points="1301.7583,-717.2227 1292.1349,-712.7908 1296.8941,-722.2566 1301.7583,-717.2227"/>
+</g>
+<!-- step_37 -->
+<g id="node44" class="node">
+<title>step_37</title>
+<ellipse fill="none" stroke="#000000" cx="1359.6189" cy="-692" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="1359.6189" y="-687.8" font-family="Times,serif" font-size="14.00" fill="#000000">step 37</text>
+</g>
+<!-- step_36&#45;&gt;step_37 -->
+<g id="edge37" class="edge">
+<title>step_36-&gt;step_37</title>
+<path fill="none" stroke="#000000" d="M1359.6189,-759.7616C1359.6189,-748.3597 1359.6189,-733.4342 1359.6189,-720.494"/>
+<polygon fill="#000000" stroke="#000000" points="1363.119,-720.2121 1359.6189,-710.2121 1356.119,-720.2121 1363.119,-720.2121"/>
+</g>
+<!-- label_37 -->
+<g id="node45" class="node">
+<title>label_37</title>
+<polygon fill="none" stroke="#000000" points="1303.2718,-635.2 1219.966,-635.2 1219.966,-599.2 1303.2718,-599.2 1303.2718,-635.2"/>
+<text text-anchor="middle" x="1261.6189" y="-613" font-family="Times,serif" font-size="14.00" fill="#000000">nitrocaption</text>
+</g>
+<!-- step_37&#45;&gt;label_37 -->
+<g id="edge25" class="edge">
+<title>step_37-&gt;label_37</title>
+<path fill="none" stroke="#000000" d="M1339.3132,-676.5014C1326.0681,-666.3918 1308.5041,-652.9858 1293.4269,-641.4779"/>
+<polygon fill="#000000" stroke="#000000" points="1295.4225,-638.5981 1285.3498,-635.313 1291.1753,-644.1625 1295.4225,-638.5981"/>
+</g>
+<!-- step_38 -->
+<g id="node46" class="node">
+<title>step_38</title>
+<ellipse fill="none" stroke="#000000" cx="1359.6189" cy="-617.2" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="1359.6189" y="-613" font-family="Times,serif" font-size="14.00" fill="#000000">step 38</text>
+</g>
+<!-- step_37&#45;&gt;step_38 -->
+<g id="edge36" class="edge">
+<title>step_37-&gt;step_38</title>
+<path fill="none" stroke="#000000" d="M1359.6189,-673.893C1359.6189,-665.4112 1359.6189,-655.1062 1359.6189,-645.6204"/>
+<polygon fill="#000000" stroke="#000000" points="1363.119,-645.3995 1359.6189,-635.3995 1356.119,-645.3995 1363.119,-645.3995"/>
+</g>
+<!-- label_38 -->
+<g id="node47" class="node">
+<title>label_38</title>
+<polygon fill="#add8e6" stroke="#000000" points="1303.2848,-563.4014 1137.953,-563.4014 1137.953,-504.5986 1303.2848,-504.5986 1303.2848,-563.4014"/>
+<text text-anchor="middle" x="1220.6189" y="-546.6" font-family="Times,serif" font-size="14.00" fill="#000000">cd ..</text>
+<text text-anchor="middle" x="1220.6189" y="-529.8" font-family="Times,serif" font-size="14.00" fill="#000000">[ /, fb=True ]</text>
+<text text-anchor="middle" x="1220.6189" y="-513" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Server_Basic</text>
+</g>
+<!-- step_38&#45;&gt;label_38 -->
+<g id="edge26" class="edge">
+<title>step_38-&gt;label_38</title>
+<path fill="none" stroke="#000000" d="M1335.7239,-602.8974C1319.9019,-593.427 1298.4341,-580.5772 1278.3236,-568.5398"/>
+<polygon fill="#000000" stroke="#000000" points="1279.8855,-565.3956 1269.5075,-563.2628 1276.2903,-571.4019 1279.8855,-565.3956"/>
+</g>
+<!-- step_39 -->
+<g id="node48" class="node">
+<title>step_39</title>
+<ellipse fill="none" stroke="#000000" cx="1359.6189" cy="-534" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="1359.6189" y="-529.8" font-family="Times,serif" font-size="14.00" fill="#000000">step 39</text>
+</g>
+<!-- step_38&#45;&gt;step_39 -->
+<g id="edge35" class="edge">
+<title>step_38-&gt;step_39</title>
+<path fill="none" stroke="#000000" d="M1359.6189,-599.1468C1359.6189,-588.3532 1359.6189,-574.4061 1359.6189,-562.1876"/>
+<polygon fill="#000000" stroke="#000000" points="1363.119,-562.0179 1359.6189,-552.0179 1356.119,-562.018 1363.119,-562.0179"/>
+</g>
+<!-- label_39 -->
+<g id="node49" class="node">
+<title>label_39</title>
+<polygon fill="#add8e6" stroke="#000000" points="1303.2848,-469.0014 1137.953,-469.0014 1137.953,-410.1986 1303.2848,-410.1986 1303.2848,-469.0014"/>
+<text text-anchor="middle" x="1220.6189" y="-452.2" font-family="Times,serif" font-size="14.00" fill="#000000">cd</text>
+<text text-anchor="middle" x="1220.6189" y="-435.4" font-family="Times,serif" font-size="14.00" fill="#000000">[ /Documents/, fb=True ]</text>
+<text text-anchor="middle" x="1220.6189" y="-418.6" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Server_Basic</text>
+</g>
+<!-- step_39&#45;&gt;label_39 -->
+<g id="edge27" class="edge">
+<title>step_39-&gt;label_39</title>
+<path fill="none" stroke="#000000" d="M1337.5939,-519.042C1320.081,-507.1484 1294.8643,-490.0228 1272.3247,-474.7153"/>
+<polygon fill="#000000" stroke="#000000" points="1274.0779,-471.6751 1263.8389,-468.9523 1270.1451,-477.466 1274.0779,-471.6751"/>
+</g>
+<!-- step_40 -->
+<g id="node50" class="node">
+<title>step_40</title>
+<ellipse fill="none" stroke="#000000" cx="1359.6189" cy="-439.6" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="1359.6189" y="-435.4" font-family="Times,serif" font-size="14.00" fill="#000000">step 40</text>
+</g>
+<!-- step_39&#45;&gt;step_40 -->
+<g id="edge34" class="edge">
+<title>step_39-&gt;step_40</title>
+<path fill="none" stroke="#000000" d="M1359.6189,-515.7987C1359.6189,-502.2169 1359.6189,-483.4048 1359.6189,-467.8711"/>
+<polygon fill="#000000" stroke="#000000" points="1363.119,-467.7454 1359.6189,-457.7454 1356.119,-467.7454 1363.119,-467.7454"/>
+</g>
+<!-- label_40 -->
+<g id="node51" class="node">
+<title>label_40</title>
+<polygon fill="#add8e6" stroke="#000000" points="1303.3616,-374.6014 1035.8762,-374.6014 1035.8762,-315.7986 1303.3616,-315.7986 1303.3616,-374.6014"/>
+<text text-anchor="middle" x="1169.6189" y="-357.8" font-family="Times,serif" font-size="14.00" fill="#000000">cd</text>
+<text text-anchor="middle" x="1169.6189" y="-341" font-family="Times,serif" font-size="14.00" fill="#000000">[ /Documents/Intercepted-Emails/, fb=True ]</text>
+<text text-anchor="middle" x="1169.6189" y="-324.2" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Server_Basic</text>
+</g>
+<!-- step_40&#45;&gt;label_40 -->
+<g id="edge28" class="edge">
+<title>step_40-&gt;label_40</title>
+<path fill="none" stroke="#000000" d="M1337.016,-424.7428C1329.3893,-419.9502 1320.7477,-414.7552 1312.6189,-410.4 1291.9827,-399.3438 1269.1155,-388.3745 1247.8309,-378.676"/>
+<polygon fill="#000000" stroke="#000000" points="1249.0521,-375.3871 1238.4981,-374.4577 1246.169,-381.7658 1249.0521,-375.3871"/>
+</g>
+<!-- step_41 -->
+<g id="node52" class="node">
+<title>step_41</title>
+<ellipse fill="none" stroke="#000000" cx="1359.6189" cy="-345.2" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="1359.6189" y="-341" font-family="Times,serif" font-size="14.00" fill="#000000">step 41</text>
+</g>
+<!-- step_40&#45;&gt;step_41 -->
+<g id="edge33" class="edge">
+<title>step_40-&gt;step_41</title>
+<path fill="none" stroke="#000000" d="M1359.6189,-421.3987C1359.6189,-407.8169 1359.6189,-389.0048 1359.6189,-373.4711"/>
+<polygon fill="#000000" stroke="#000000" points="1363.119,-373.3454 1359.6189,-363.3454 1356.119,-373.3454 1363.119,-373.3454"/>
+</g>
+<!-- label_41 -->
+<g id="node53" class="node">
+<title>label_41</title>
+<polygon fill="none" stroke="#000000" points="1303.2718,-280 1219.966,-280 1219.966,-244 1303.2718,-244 1303.2718,-280"/>
+<text text-anchor="middle" x="1261.6189" y="-257.8" font-family="Times,serif" font-size="14.00" fill="#000000">nitrocaption</text>
+</g>
+<!-- step_41&#45;&gt;label_41 -->
+<g id="edge29" class="edge">
+<title>step_41-&gt;label_41</title>
+<path fill="none" stroke="#000000" d="M1340.7235,-329.1582C1326.4795,-317.0653 1306.694,-300.2679 1290.4743,-286.4976"/>
+<polygon fill="#000000" stroke="#000000" points="1292.7266,-283.8186 1282.8382,-280.0147 1288.1962,-289.1549 1292.7266,-283.8186"/>
+</g>
+<!-- step_42 -->
+<g id="node54" class="node">
+<title>step_42</title>
+<ellipse fill="none" stroke="#000000" cx="1359.6189" cy="-262" rx="38.8249" ry="18"/>
+<text text-anchor="middle" x="1359.6189" y="-257.8" font-family="Times,serif" font-size="14.00" fill="#000000">step 42</text>
+</g>
+<!-- step_41&#45;&gt;step_42 -->
+<g id="edge32" class="edge">
+<title>step_41-&gt;step_42</title>
+<path fill="none" stroke="#000000" d="M1359.6189,-327.1468C1359.6189,-316.3532 1359.6189,-302.4061 1359.6189,-290.1876"/>
+<polygon fill="#000000" stroke="#000000" points="1363.119,-290.0179 1359.6189,-280.0179 1356.119,-290.018 1363.119,-290.0179"/>
+</g>
+<!-- step_42&#45;&gt;step_44 -->
+<g id="edge31" class="edge">
+<title>step_42-&gt;step_44</title>
+<path fill="none" stroke="#000000" d="M1330.571,-249.8991C1324.6953,-247.7293 1318.5112,-245.6402 1312.6189,-244 1253.5435,-227.5553 1079.9434,-199.3471 995.6356,-186.0888"/>
+<polygon fill="#000000" stroke="#000000" points="995.9887,-182.6015 985.5672,-184.5098 994.9041,-189.517 995.9887,-182.6015"/>
+</g>
+<!-- label_42 -->
+<g id="node55" class="node">
+<title>label_42</title>
+<polygon fill="#add8e6" stroke="#000000" points="1561.314,-208.2014 1157.9238,-208.2014 1157.9238,-149.3986 1561.314,-149.3986 1561.314,-208.2014"/>
+<text text-anchor="middle" x="1359.6189" y="-191.4" font-family="Times,serif" font-size="14.00" fill="#000000">cat</text>
+<text text-anchor="middle" x="1359.6189" y="-174.6" font-family="Times,serif" font-size="14.00" fill="#000000">[ /Documents/Intercepted-Emails/Acquiring-Source-0.eml, fb=True ]</text>
+<text text-anchor="middle" x="1359.6189" y="-157.8" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Server_Basic</text>
+</g>
+<!-- step_42&#45;&gt;label_42 -->
+<g id="edge30" class="edge">
+<title>step_42-&gt;label_42</title>
+<path fill="none" stroke="#000000" d="M1359.6189,-243.9468C1359.6189,-236.3769 1359.6189,-227.256 1359.6189,-218.2681"/>
+<polygon fill="#000000" stroke="#000000" points="1363.119,-218.2667 1359.6189,-208.2668 1356.119,-218.2668 1363.119,-218.2667"/>
+</g>
+<!-- step_ZION KEY&#45;&gt;step_44 -->
+<g id="edge41" class="edge">
+<title>step_ZION KEY-&gt;step_44</title>
+<path fill="none" stroke="#000000" d="M1008.87,-844.9734C993.95,-835.9018 977.4589,-823.1803 967.6189,-807.2 940.4106,-763.0134 948.6189,-743.8917 948.6189,-692 948.6189,-692 948.6189,-692 948.6189,-345.2 948.6189,-296.924 948.6189,-240.7696 948.6189,-207.5933"/>
+<polygon fill="#000000" stroke="#000000" points="952.119,-207.2677 948.6189,-197.2677 945.119,-207.2677 952.119,-207.2677"/>
+</g>
+<!-- label_ZION KEY -->
+<g id="node57" class="node">
+<title>label_ZION KEY</title>
+<polygon fill="#add8e6" stroke="#000000" points="1142.2848,-807.4014 976.953,-807.4014 976.953,-748.5986 1142.2848,-748.5986 1142.2848,-807.4014"/>
+<text text-anchor="middle" x="1059.6189" y="-790.6" font-family="Times,serif" font-size="14.00" fill="#000000">cd</text>
+<text text-anchor="middle" x="1059.6189" y="-773.8" font-family="Times,serif" font-size="14.00" fill="#000000">/Trash/</text>
+<text text-anchor="middle" x="1059.6189" y="-757" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Server_Basic</text>
+</g>
+<!-- step_ZION KEY&#45;&gt;label_ZION KEY -->
+<g id="edge40" class="edge">
+<title>step_ZION KEY-&gt;label_ZION KEY</title>
+<path fill="none" stroke="#000000" d="M1045.5246,-843.1468C1047.1623,-835.5769 1049.1356,-826.456 1051.0801,-817.4681"/>
+<polygon fill="#000000" stroke="#000000" points="1054.5501,-817.9808 1053.2439,-807.4668 1047.7084,-816.5005 1054.5501,-817.9808"/>
+</g>
+<!-- step_23&#45;&gt;step_24 -->
+<g id="edge47" class="edge">
+<title>step_23-&gt;step_24</title>
+<path fill="none" stroke="#000000" d="M922.6514,-1087.5554C916.2332,-1076.1938 907.772,-1061.2157 900.5577,-1048.4449"/>
+<polygon fill="#000000" stroke="#000000" points="903.538,-1046.6045 895.572,-1039.6191 897.4432,-1050.0474 903.538,-1046.6045"/>
+</g>
+<!-- label_23 -->
+<g id="node59" class="node">
+<title>label_23</title>
+<polygon fill="#add8e6" stroke="#000000" points="1320.8436,-1051.4014 942.3942,-1051.4014 942.3942,-992.5986 1320.8436,-992.5986 1320.8436,-1051.4014"/>
+<text text-anchor="middle" x="1131.6189" y="-1034.6" font-family="Times,serif" font-size="14.00" fill="#000000">cat</text>
+<text text-anchor="middle" x="1131.6189" y="-1017.8" font-family="Times,serif" font-size="14.00" fill="#000000">/downloads/saved-emails/Inbox/Domain-Transfer-Complete.eml</text>
+<text text-anchor="middle" x="1131.6189" y="-1001" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Workstation_02</text>
+</g>
+<!-- step_23&#45;&gt;label_23 -->
+<g id="edge46" class="edge">
+<title>step_23-&gt;label_23</title>
+<path fill="none" stroke="#000000" d="M961.5552,-1093.102C985.2984,-1083.1752 1020.0861,-1068.6308 1052.0218,-1055.2788"/>
+<polygon fill="#000000" stroke="#000000" points="1053.5064,-1058.4518 1061.3824,-1051.3652 1050.8062,-1051.9935 1053.5064,-1058.4518"/>
+</g>
+<!-- step_16&#45;&gt;step_17 -->
+<g id="edge55" class="edge">
+<title>step_16-&gt;step_17</title>
+<path fill="none" stroke="#000000" d="M655.6514,-1497.9554C649.2332,-1486.5938 640.772,-1471.6157 633.5577,-1458.8449"/>
+<polygon fill="#000000" stroke="#000000" points="636.538,-1457.0045 628.572,-1450.0191 630.4432,-1460.4474 636.538,-1457.0045"/>
+</g>
+<!-- label_16 -->
+<g id="node61" class="node">
+<title>label_16</title>
+<polygon fill="#add8e6" stroke="#000000" points="947.854,-1461.8014 675.3838,-1461.8014 675.3838,-1402.9986 947.854,-1402.9986 947.854,-1461.8014"/>
+<text text-anchor="middle" x="811.6189" y="-1445" font-family="Times,serif" font-size="14.00" fill="#000000">cat</text>
+<text text-anchor="middle" x="811.6189" y="-1428.2" font-family="Times,serif" font-size="14.00" fill="#000000">/downloads/Domain Registration Invoice.xml</text>
+<text text-anchor="middle" x="811.6189" y="-1411.4" font-family="Times,serif" font-size="14.00" fill="#000000">device: N_1_Workstation_01</text>
+</g>
+<!-- step_16&#45;&gt;label_16 -->
+<g id="edge54" class="edge">
+<title>step_16-&gt;label_16</title>
+<path fill="none" stroke="#000000" d="M690.3858,-1501.4863C707.1894,-1491.9105 730.1646,-1478.8178 751.5975,-1466.604"/>
+<polygon fill="#000000" stroke="#000000" points="753.3931,-1469.6092 760.3485,-1461.6171 749.9272,-1463.5274 753.3931,-1469.6092"/>
+</g>
+<!-- dbg -->
+<g id="node62" class="node">
+<title>dbg</title>
+<ellipse fill="none" stroke="#000000" cx="334.6189" cy="-2248.4" rx="39.3836" ry="18"/>
+<text text-anchor="middle" x="334.6189" y="-2244.2" font-family="Times,serif" font-size="14.00" fill="#000000">step ID</text>
+</g>
+<!-- dbg1 -->
+<g id="node63" class="node">
+<title>dbg1</title>
+<polygon fill="#add8e6" stroke="#000000" points="269.3102,-2186.4 173.9276,-2186.4 173.9276,-2150.4 269.3102,-2150.4 269.3102,-2186.4"/>
+<text text-anchor="middle" x="221.6189" y="-2164.2" font-family="Times,serif" font-size="14.00" fill="#000000">required goals</text>
+</g>
+<!-- dbg&#45;&gt;dbg1 -->
+<g id="edge65" class="edge">
+<title>dbg-&gt;dbg1</title>
+<path fill="none" stroke="#000000" d="M313.0985,-2233.1643C296.8836,-2221.6848 274.3318,-2205.7189 255.6772,-2192.5121"/>
+<polygon fill="#000000" stroke="#000000" points="257.6013,-2189.5859 247.4172,-2186.6643 253.5565,-2195.2991 257.6013,-2189.5859"/>
+</g>
+<!-- dbg2 -->
+<g id="node64" class="node">
+<title>dbg2</title>
+<polygon fill="none" stroke="#000000" points="382.0551,-2186.4 287.1827,-2186.4 287.1827,-2150.4 382.0551,-2150.4 382.0551,-2186.4"/>
+<text text-anchor="middle" x="334.6189" y="-2164.2" font-family="Times,serif" font-size="14.00" fill="#000000">optional goals</text>
+</g>
+<!-- dbg&#45;&gt;dbg2 -->
+<g id="edge66" class="edge">
+<title>dbg-&gt;dbg2</title>
+<path fill="none" stroke="#000000" d="M334.6189,-2230.2468C334.6189,-2220.3251 334.6189,-2207.8167 334.6189,-2196.6492"/>
+<polygon fill="#000000" stroke="#000000" points="338.119,-2196.4814 334.6189,-2186.4814 331.119,-2196.4814 338.119,-2196.4814"/>
+</g>
+<!-- dbg3 -->
+<g id="node65" class="node">
+<title>dbg3</title>
+<polygon fill="none" stroke="#000000" points="515.2042,-2160.9442 515.2042,-2175.8558 482.6431,-2186.4 436.5947,-2186.4 404.0336,-2175.8558 404.0336,-2160.9442 436.5947,-2150.4 482.6431,-2150.4 515.2042,-2160.9442"/>
+<polygon fill="none" stroke="#000000" points="519.1898,-2158.0318 519.1898,-2178.7682 483.2702,-2190.4 435.9676,-2190.4 400.048,-2178.7682 400.048,-2158.0318 435.9676,-2146.4 483.2702,-2146.4 519.1898,-2158.0318"/>
+<text text-anchor="middle" x="459.6189" y="-2164.2" font-family="Times,serif" font-size="14.00" fill="#000000">initial step</text>
+</g>
+<!-- dbg&#45;&gt;dbg3 -->
+<g id="edge67" class="edge">
+<title>dbg-&gt;dbg3</title>
+<path fill="none" stroke="#000000" d="M357.5458,-2233.7268C375.0604,-2222.5174 399.6185,-2206.8002 420.2571,-2193.5915"/>
+<polygon fill="#000000" stroke="#000000" points="422.2943,-2196.4433 428.8303,-2188.1047 418.5208,-2190.5473 422.2943,-2196.4433"/>
+</g>
+</g>
+</svg>
