@@ -212,6 +212,30 @@ Most of these functions are *Bindings*, code that binds the unity implementation
     unlockToolbarAppTemporarily("file editor")
     ```
 
+<div id="SetAppClosable"></div>
+??? note "set_app_closable"
+
+    Prevent the player from closing the Web Browser or a custom windowed application, or allow it again. While closing is disabled, the window's close button is greyed out, the close hotkey does nothing, and the '*kill*' command answers 'Operation not permitted' for that app.
+
+    You can call it before the app is opened: the app opens normally, but the player can't close it. The setting stays until you call the function again or a new mission starts, so remember to allow closing again before the mission is completed.
+
+    Returns 1 on success, or 0 if the app name is not the Web Browser or a custom windowed application of this mission (an error is also printed to the terminal).
+
+    **Arguments**
+
+    | app_name | string, `web browser` (or `browser`) for the Web Browser, or the name of a custom windowed application. Custom application names are case-sensitive. |
+    | --- | --- |
+    | *is_closable* | *optional, number, 0 to stop the player from closing the app, 1 to allow it again. The default value is 1.* |
+
+    **Example**
+
+    ```lua
+    //the player has to stay in the browser until they find the flag
+    set_app_closable("web browser", 0)
+    //...
+    set_app_closable("web browser", 1)
+    ```
+
 ??? note "runSimulatedApplication"
 
     Add a running process to the operating system. This process can be displayed by the '*ps*', *‘netstat’* commands or stopped by the '*kill*' command.
@@ -1641,6 +1665,8 @@ The second input field is for the terminal command name that opens the applicati
 The application icon can be set from network storage. If the icon is not set or cannot be loaded from the network, the application button will not be visible in the top-right toolbar. However, the application can still be launched using the terminal command.
 
 All custom windowed applications can be locked or unlocked. By default, all custom applications are unlocked. However, you can lock or unlock your windowed application using the [lockToolbarAppTemporarily](story-creation-with-miniscript.md) and [unlockToolbarAppTemporarily](story-creation-with-miniscript.md) MiniScript functions in the main mission script.
+
+You can also stop the player from closing an open windowed application with the [set_app_closable](story-creation-with-miniscript.md#SetAppClosable) function.
 
 Creating and editing applications is done in the Visual Web Editor. The visual part is edited like a regular web page, and all [web page script functions](web-sites-creation/miniscript-for-web-browser.md) can be applied. If a background block is not created, the default window background will be used (unlike Web Browser pages, which use a white background). The application script can be edited here:
 
